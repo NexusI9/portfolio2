@@ -1,0 +1,222 @@
+:root{
+/* Color variables*/
+--color-surface-highest: #ffffff;
+--color-surface-higher: #f6f7f8;
+--color-surface-high: #e6e8e9;
+--color-surface-base: #a9b1b5;
+--color-surface-low: #404a54;
+--color-surface-lower: #243040;
+--color-surface-lowest: #172233;
+
+--color-background-case-study: #ffffff;
+
+--color-background-blanket-light: #00000066;
+--color-background-blanket-medium: #00000099;
+--color-background-blanket-strong: #000000e5;
+
+--color-background-system-base-on-light: #f6f7f8;
+--color-background-system-base-on-dark: #243040;
+
+--color-background-system-subtle-on-light: #f5f6f6;
+--color-background-system-subtle-on-dark: #172233;
+--color-text-subtle-on-dark: #a9b1b5;
+--color-text-subtle-on-light: #707d87;
+--color-icon-subtle-on-light: #a9b1b5;
+--color-icon-subtle-on-dark: #707d87;
+--color-border-subtle-on-light: #a9b1b5;
+--color-border-subtle-on-dark: #707d87;
+
+--color-background-system-strong-on-light: #a9b1b5;
+--color-background-system-strong-on-dark: #0d1626;
+
+--color-background-system-hovered-on-light: #e6e8e9;
+--color-background-system-hovered-on-dark: #34404d;
+
+--color-background-brand-base: #5d47ff;
+--color-background-brand-subtle: #e6d1ff;
+--color-background-brand-subtlest: #f6edff;
+--color-background-brand-strong: #271a99;
+--color-background-brand-hovered: #9f80ff;
+--color-text-brand-base: #5d47ff;
+--color-text-brand-subtle: #9f80ff;
+--color-text-brand-strong: #3728bf;
+--color-text-brand-on-brand: #faf5ff;
+--color-icon-brand-base: #5d47ff;
+--color-icon-brand-subtle: #9f80ff;
+--color-icon-brand-strong: #3728bf;
+--color-icon-brand-on-brand: #faf5ff;
+--color-border-brand-subtle: #d1b5ff;
+--color-border-brand-base: #5d47ff;
+--color-border-brand-strong: #271a99;
+
+--color-background-secondary-base: #5b6e9a;
+--color-background-secondary-subtle: #b4c6d6;
+--color-background-secondary-strong: #202e5c;
+--color-background-secondary-hovered: #8298b8;
+--color-text-secondary-base: #5b6e9a;
+--color-text-secondary-subtle: #8298b8;
+--color-text-secondary-strong: #202e5c;
+--color-text-secondary-on-secondary: #f5f8fa;
+--color-icon-secondary-base: #5b6e9a;
+--color-icon-secondary-subtle: #8298b8;
+--color-icon-secondary-strong: #202e5c;
+--color-icon-secondary-on-secondary: #f5f8fa;
+--color-border-secondary-subtle: #b4c6d6;
+--color-border-secondary-base: #5b6e9a;
+--color-border-secondary-strong: #202e5c;
+
+--color-background-danger-base: #bc1010;
+--color-background-danger-subtle: #f7ebe1;
+--color-background-danger-strong: #bc1010;
+--color-background-danger-hovered: #d15f4b;
+--color-text-danger-base: #bc1010;
+--color-text-danger-subtle: #d15f4b;
+--color-text-danger-strong: #8c0a0a;
+--color-text-danger-on-danger: #fcf6f0;
+--color-icon-danger-base: #bc1010;
+--color-icon-danger-subtle: #d15f4b;
+--color-icon-danger-strong: #8c0a0a;
+--color-icon-danger-on-danger: #fcf6f0;
+--color-border-danger-subtle: #e6ac93;
+--color-border-danger-base: #d15f4b;
+--color-border-danger-strong: #ab0e0e;
+
+--color-background-warning-base: #f2bd52;
+--color-background-warning-subtle: #fcf6e6;
+--color-background-warning-strong: #ed9b0c;
+--color-background-warning-hovered: #f2bd52;
+--color-text-warning-base: #8f4704;
+--color-text-warning-subtle: #ed9b0c;
+--color-text-warning-strong: #6b2e02;
+--color-text-warning-on-warning: #fffcf2;
+--color-icon-warning-base: #b36207;
+--color-icon-warning-subtle: #f2bd52;
+--color-icon-warning-strong: #8f4704;
+--color-icon-warning-on-warning: #fffcf2;
+--color-border-warning-subtle: #f7da99;
+--color-border-warning-base: #f2bd52;
+--color-border-warning-strong: #b36207;
+
+--color-background-success-base: #2fbc46;
+--color-background-success-subtle: #e6f7f0;
+--color-background-success-strong: #27ab3d;
+--color-background-success-hovered: #64d185;
+--color-text-success-base: #11701e;
+--color-text-success-subtle: #2fbc46;
+--color-text-success-strong: #043609;
+--color-text-success-on-success: #f2fcf8;
+--color-icon-success-base: #11701e;
+--color-icon-success-subtle: #2fbc46;
+--color-icon-success-strong: #043609;
+--color-icon-success-on-success: #f2fcf8;
+--color-border-success-subtle: #a1e6bd;
+--color-border-success-base: #64d185;
+--color-border-success-strong: #11701e;
+
+--color-background-information-base: #77a1d1;
+--color-background-information-subtle: #e3f3fa;
+--color-background-information-strong: #35578c;
+--color-background-information-hovered: #b1d5f0;
+--color-text-information-base: #35578c;
+--color-text-information-subtle: #92bbe8;
+--color-text-information-strong: #35578c;
+--color-text-information-on-information: #fafeff;
+--color-icon-information-base: #35578c;
+--color-icon-information-subtle: #b1d5f0;
+--color-icon-information-strong: #35578c;
+--color-icon-information-on-information: #fafeff;
+--color-border-information-subtle: #d0e7f5;
+--color-border-information-base: #b1d5f0;
+--color-border-information-strong: #5178ad;
+
+--color-background-disabled-on-light: #f5f6f6;
+--color-background-disabled-on-dark: #34404d;
+--color-text-disabled-on-light: #a9b1b5;
+--color-text-disabled-on-dark: #707d87;
+--color-icon-disabled-on-light: #c9cdd0;
+--color-icon-disabled-on-dark: #707d87;
+--color-border-disabled-on-light: #c9cdd0;
+--color-border-disabled-on-dark: #34404d;
+
+--color-text-on-dark: #f6f7f8;
+--color-text-on-light: #172233;
+--color-text-interactive: #5d47ff;
+
+--color-text-subtlest-on-dark: #404a54;
+--color-text-subtlest-on-light: #a9b1b5;
+--color-icon-subtlest-on-light: #c9cdd0;
+--color-icon-subtlest-on-dark: #34404d;
+--color-border-subtlest-on-light: #c9cdd0;
+--color-border-subtlest-on-dark: #34404d;
+
+--color-icon-on-dark: #f6f7f8;
+--color-icon-on-light: #172233;
+
+--color-border-on-dark: #f6f7f8;
+--color-border-on-light: #172233;
+
+
+
+/* Variables used by text styles */
+--font-letter-spacing-heading-1: -0.09em;
+--font-size-heading-1: 6em;
+--font-weight-light: 300;
+--font-family-default-heading: Raleway;
+--font-line-height-heading-1: 6em;
+
+--font-letter-spacing-heading-2: -0.03em;
+--font-size-heading-2: 3.75em;
+--font-line-height-heading-2: 4.13em;
+
+--font-letter-spacing-heading-3: 0em;
+--font-size-heading-3: 3em;
+--font-weight-normal: 400;
+
+--font-letter-spacing-heading-4: 0.02em;
+--font-size-heading-4: 2.13em;
+
+--font-letter-spacing-heading-5: 0em;
+--font-size-heading-5: 1.5em;
+--font-weight-medium: 500;
+
+--font-letter-spacing-heading-6: 0.01em;
+--font-size-heading-6: 1.25em;
+
+--font-letter-spacing-subtitle-1: 0.01em;
+--font-size-subtitle-1: 1.13em;
+
+--font-letter-spacing-subtitle-2: 0.01em;
+--font-size-subtitle-2: 1em;
+
+--font-letter-spacing-body-1: 0.03em;
+--font-size-body-1: 1em;
+--font-family-default-body: Raleway;
+--font-line-height-body-1: 1.38em;
+
+--font-weight-italic: Italic;
+
+--font-weight-strong: 700;
+
+--font-letter-spacing-body-2: 0.02em;
+--font-size-body-2: 0.88em;
+
+--font-letter-spacing-caption: 0.03em;
+--font-size-caption: 0.75em;
+
+--font-letter-spacing-footnote: 0.03em;
+--font-size-foonote: 0.69em;
+
+--font-letter-spacing-overline: 0.09em;
+--font-size-overline: 0.75em;
+
+--font-letter-spacing-label: 0.08em;
+--font-size-label-large: 1em;
+
+--font-size-label-medium: 0.88em;
+
+--font-size-label-small: 0.69em;
+
+--font-family-email-heading: Arial;
+
+--font-family-email-body: Arial;
+}
