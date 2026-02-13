@@ -1,14 +1,16 @@
+"use client"
+
 import { IComponentSize } from "@/app/_types/component";
 import styles from "./label.module.scss"
-import { createElement } from "react";
+import { createElement, FC, SVGProps } from "react";
 import { Text } from "../text/text";
 import { catClass } from "@lib/utils";
 
 interface ILabel {
 	className?: string;
 	size: IComponentSize;
-	leadingIcon?: string;
-	trailingIcon?: string;
+	leadingIcon?: FC<SVGProps<SVGElement>>;
+	trailingIcon?: FC<SVGProps<SVGElement>>;
 	children?: React.ReactNode;
 }
 
@@ -18,7 +20,7 @@ export default function Label({ className, size, leadingIcon, trailingIcon, chil
 
 	return (<div className={catClass([styles.label, className])} data-size={size}>
 		{leadingIcon && createElement(leadingIcon)}
-		{children && <TextWrapper>children</TextWrapper>}
+		  {children && <TextWrapper>{children}</TextWrapper>}
 		{trailingIcon && createElement(trailingIcon)}
 	</div>);
 

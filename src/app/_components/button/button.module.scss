@@ -19,6 +19,10 @@
     padding: 0 var(--size-space-extra-large-2);
     cursor:pointer;
     
+    &[data-type=ICON]{
+	aspect-ratio: 1/1;
+    }
+    
     &[data-size=LARGE]{
 	height:var(--size-height-input-large);
     }
@@ -29,7 +33,7 @@
 
     &[data-size=SMALL]{
 	padding: 0 var(--size-space-extra-large);
-	height:var(--size-height-input-small);
+	height:fit-content;
     }
     
 
@@ -54,6 +58,7 @@
      }
 
      &[data-style=GHOST]{
+	 padding:0;
 	 transition: fill, color, var(--transition-short);
 
 	 @include interaction.hover{

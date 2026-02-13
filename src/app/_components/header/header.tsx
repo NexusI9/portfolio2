@@ -1,13 +1,17 @@
+"use client"
+
 import { Text } from "@components/text/text";
 import Logo from "@assets/icons/nek-logo.svg"
 import Link from "next/link";
 import styles from "./header.module.scss"
 import { Button } from "@components/button/button";
-import Circle from "@assets/icons/circle.svg"
+import Combobox from "@components/combobox/combobox";
 
 export default function Header() {
 
-	return (<div className={styles.header}>
+	const comboboxOptions = [{ value: "en", label: "EN" }, { value: "zh", label: "ZH" }];
+
+	return (<div className={`${styles.header} flex flex-row justify-between items-center`}>
 		<Link href="./" className={`${styles.signature} flex flex-row gap-(--size-space-medium) items-center`}>
 			<Logo />
 			<div>
@@ -16,45 +20,14 @@ export default function Header() {
 			</div>
 		</Link>
 
-		<Button leadingIcon={Circle} trailingIcon={Circle} size="LARGE" role="PRIMARY" style="SOLID">
-			Button
-		</Button>
 
-		<Button leadingIcon={Circle} trailingIcon={Circle} size="LARGE" role="PRIMARY" style="OUTLINE">
-			Button
-		</Button>
-
-		<Button leadingIcon={Circle} trailingIcon={Circle} size="LARGE" role="PRIMARY" style="GHOST">
-			Button
-		</Button>
-
-
-
-		<Button leadingIcon={Circle} trailingIcon={Circle} size="MEDIUM" role="PRIMARY" style="SOLID">
-			Button
-		</Button>
-
-		<Button leadingIcon={Circle} trailingIcon={Circle} size="MEDIUM" role="PRIMARY" style="OUTLINE">
-			Button
-		</Button>
-
-		<Button leadingIcon={Circle} trailingIcon={Circle} size="MEDIUM" role="PRIMARY" style="GHOST">
-			Button
-		</Button>
-
-
-		<Button leadingIcon={Circle} trailingIcon={Circle} size="SMALL" role="PRIMARY" style="SOLID">
-			Button
-		</Button>
-
-		<Button leadingIcon={Circle} trailingIcon={Circle} size="SMALL" role="PRIMARY" style="OUTLINE">
-			Button
-		</Button>
-
-		<Button leadingIcon={Circle} trailingIcon={Circle} size="SMALL" role="PRIMARY" style="GHOST">
-			Button
-		</Button>
-
+		<div className="flex flex-row gap-(--size-space-extra-large-3) items-center">
+			<div className="flex flex-row gap-(--size-space-extra-large-3) items-center">
+				<Button size="MEDIUM" role="PRIMARY" style="GHOST">Resume</Button>
+				<Button size="MEDIUM" role="PRIMARY" style="GHOST">Contact</Button>
+			</div>
+			<Combobox options={comboboxOptions} />
+		</div>
 
 
 	</div>);
