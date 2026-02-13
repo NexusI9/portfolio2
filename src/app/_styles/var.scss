@@ -204,7 +204,7 @@
 --font-size-caption: 0.75em;
 
 --font-letter-spacing-footnote: 0.03em;
---font-size-foonote: 0.69em;
+--font-size-footnote: 0.69em;
 
 --font-letter-spacing-overline: 0.09em;
 --font-size-overline: 0.75em;
@@ -219,4 +219,67 @@
 --font-family-email-heading: Arial;
 
 --font-family-email-body: Arial;
+
+/* Other variables*/
+--size-margin-tablet: 52px;
+
+--size-width-desktop-full: 1440px;
+--size-width-desktop-container: 1348px;
+--size-width-tablet-full: 768px;
+--size-width-tablet-container: 664px;
+--size-width-mobile-full: 360px;
+--size-width-input-large: 124px;
+--size-width-border-base: 1px;
+--size-width-border-large: 3px;
+--size-width-border-flow-arrow: 2px;
+--size-width-border-stats-small: 16px;
+--size-width-border-stats-medium: 24px;
+--size-width-border-stats-large: 32px;
+--size-width-border-stats-extra-large: 46px;
+--size-width-input-medium: 110px;
+--size-width-input-small: 80px;
+--size-width-mobile-container: 320px;
+--size-width-email: 720px;
+
+--size-icon-medium: 24px;
+
+--size-height-input-large: 52px;
+--size-height-input-medium: 46px;
+--size-height-input-small: 32px;
+
+--size-height-tag: 24px;
+--font-weight-medium-italic: 500 Italic;
+
+--font-letter-spacing-body-xs: -1.5px;
+--font-letter-spacing-body-s: -1px;
+--font-letter-spacing-body-m: -1px;
+
+--text-company-name: Client Name;
+--size-radius-small: 1px;
+--size-icon-extra-small: 8px;
+--size-icon-small: 16px;
+--size-margin-mobile: 20px;
+--size-margin-desktop: 46px;
+--size-icon-large: 46px;
+
+--size-space-extra-small: 2px;
+
+--size-radius-base: 2px;
+--size-radius-large: 12px;
+--size-radius-pill: 9999px;
+
+--size-space-small: 4px;
+--size-space-medium: 8px;
+--size-space-large: 12px;
+--size-space-extra-large: 16px;
+--size-space-extra-large-2: 20px;
+--size-space-extra-large-3: 32px;
+--size-space-extra-large-4: 46px;
+--size-space-extra-large-5: 64px;
+--size-space-extra-large-6: 96px;
+--size-space-extra-large-7: 128px;
+
+--size-radius-button: 2px;
+--size-radius-input: 2px;
+--size-radius-surface: 2px;
 }

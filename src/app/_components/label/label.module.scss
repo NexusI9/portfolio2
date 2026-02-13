@@ -1,0 +1,19 @@
+.label{
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--size-space-medium);
+
+    svg{
+	width: var(--size-icon-medium);
+	aspect-ratio:1/1;
+    }
+    
+    &[data-size=SMALL]{
+	gap: var(--size-space-small);
+	svg{
+	    width: var(--size-icon-small);
+	}
+    }
+}

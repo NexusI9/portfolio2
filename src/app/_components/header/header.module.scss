@@ -1,0 +1,41 @@
+@use "@styles/interaction" as interaction;
+@use "@styles/animation";
+
+.header{
+
+    width: 100vw;
+    padding: var(--size-space-extra-large-4) var(--size-margin-desktop) 0 var(--size-margin-desktop);
+    position: fixed;
+
+    .signature{
+
+	svg{
+	    fill:var(--color-icon-on-light);
+	    transition: fill var(--transition-short);
+	    width:30px;
+	    aspect-ratio:1/1;
+	    height:auto;
+	}
+
+	p{
+	    transition: color var(--transition-short);
+	}
+	
+        @include interaction.hover{
+
+    	    color: var(--color-text-brand-base);
+	    
+	    .caption{
+		color: var(--color-text-brand-subtle);
+	    }
+
+	    svg{
+		fill: var(--color-icon-brand-base);
+	       }
+        }
+	
+    }
+
+
+    
+}

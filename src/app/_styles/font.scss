@@ -1,0 +1,107 @@
+@use "./var";
+
+h1{
+
+    letter-spacing: var(--font-letter-spacing-heading-1);
+    font-size: var(--font-size-heading-1);
+    font-weight: var(--font-weight-light);
+    line-height: var(--font-line-height-heading-1);
+    
+    &.display{
+	font-family: var(--font-display);
+	font-size: 6.56em;
+	letter-spacing: -0.4px;
+	line-height: 116px;
+	font-style: italic;
+    }
+}
+
+h2{
+    letter-spacing: var(--font-letter-spacing-heading-2);
+    font-size: var(--font-size-heading-2);
+    line-height: var(--font-line-height-heading-2);
+}
+
+h3{
+    letter-spacing: var(--font-letter-spacing-heading-3);
+    font-size: var(--font-size-heading-3);
+    font-weight: var(--font-weight-normal);
+}
+
+h4{
+    letter-spacing: var(--font-letter-spacing-heading-4);
+    font-size: var(--font-size-heading-4);
+}
+
+h5{
+    letter-spacing: var(--font-letter-spacing-heading-5);
+    font-size: var(--font-size-heading-5);
+    font-weight: var(--font-weight-medium);
+}
+
+h6{
+    letter-spacing: var(--font-letter-spacing-heading-6);
+    font-size: var(--font-size-heading-6);
+}
+
+
+p{
+    font-size: var(--font-size-body-1);
+    line-height: var(--font-line-height-body-1);
+    letter-spacing: var(--font-letter-spacing-body-1);
+    
+    &.body-2{
+	font-size: var(--font-size-body-2);
+	letter-spacing: var(--font-letter-spacing-body-2);
+    }
+
+    &.caption{
+	font-size: var(--font-size-caption);
+	letter-spacing: var(--font-letter-spacing-caption);
+    }
+
+    &.overline{
+	font-size: var(--font-size-overline);
+	letter-spacing: var(--font-letter-spacing-overline);
+	text-transform: uppercase;
+    }
+
+    &.subtitle-1{
+	letter-spacing: var(--font-letter-spacing-subtitle-1);
+	font-size: var(--font-size-subtitle-1);
+    }
+
+    &.subtitle-2{
+	letter-spacing: var(--font-letter-spacing-subtitle-2);
+	font-size: var(--font-size-subtitle-2);
+    }
+
+    &.label{
+	&-large{
+
+		letter-spacing: var(--font-letter-spacing-label);
+		font-size: var(--font-size-label-large);
+		font-weight: var(--font-weight-medium);
+
+	}
+
+	&-medium{
+
+		font-size: var(--font-size-label-medium);
+		font-weight: var(--font-weight-medium);
+
+	}
+	
+	&-small{
+
+	   	font-size: var(--font-size-label-small);
+		font-weight: var(--font-weight-medium);
+
+	}
+    }
+}
+
+small{
+    font-size: var(--font-size-footnote);
+    letter-spacing: var(--font-letter-spacing-footnote);
+}

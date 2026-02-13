@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./styles/globals.css";
+import { Instrument_Serif, Raleway } from "next/font/google";
+import "./_styles/globals.scss";
+import Header from "@components/header/header";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const fontBody = Raleway({
+	variable: "--font-body",
 	subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const fontHeading = Raleway({
+	variable: "--font-heading",
+	subsets: ["latin"],
+});
+
+const fontDisplay = Instrument_Serif({
+	weight: '400',
+	variable: "--font-display",
 	subsets: ["latin"],
 });
 
@@ -24,7 +31,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+			<body className={`${fontBody.variable} ${fontHeading.variable}  ${fontDisplay.variable}`}>
+				<Header />
 				{children}
 			</body>
 		</html>

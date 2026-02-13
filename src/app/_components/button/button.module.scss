@@ -1,0 +1,64 @@
+@use "@styles/var";
+@use "@styles/animation";
+@use "@styles/interaction" as interaction;
+
+.button{
+
+
+    svg{
+	stroke:currentcolor;
+    }
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width:fit-content;
+    gap: var(--size-space-medium);
+    border-radius: var(--size-radius-button);
+    padding: 0 var(--size-space-extra-large-2);
+    cursor:pointer;
+    
+    &[data-size=LARGE]{
+	height:var(--size-height-input-large);
+    }
+    
+    &[data-size=MEDIUM]{
+	height:var(--size-height-input-medium);
+    }
+
+    &[data-size=SMALL]{
+	padding: 0 var(--size-space-extra-large);
+	height:var(--size-height-input-small);
+    }
+    
+
+    &[data-style=SOLID], &[data-style=OUTLINE]{
+
+	transition: background, color, border-color, var(--transition-short);
+	
+	@include interaction.hover{
+	    background: var(--color-background-brand-hovered);
+	    border-color: transparent;
+	    color: var(--color-text-brand-on-brand);
+	}
+    }
+    
+    &[data-style=SOLID]{
+	background: var(--color-background-brand-base);
+	color: var(--color-text-brand-on-brand);
+    }
+
+     &[data-style=OUTLINE]{
+	 border: solid var(--size-width-border-base) var(--color-border-brand-base);	 
+     }
+
+     &[data-style=GHOST]{
+	 transition: fill, color, var(--transition-short);
+
+	 @include interaction.hover{
+	     color: var(--color-text-brand-base);
+	 }
+     }
+    
+}
