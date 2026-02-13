@@ -1,7 +1,9 @@
 @use "@styles/var";
+@use "@styles/animation";
 
 .navbar{
 
+    position:relative;
     background:var(--color-surface-highest);
     box-shadow: var(--shadow-low);
 
@@ -12,16 +14,49 @@
     justify-items: center;
     
     max-width: 684px;
-    width: 100%;
+    width: 100vw;
     
     height: var(--size-height-input-large);
     
 
     a{
-	padding: 0 var(--size-space-extra-large-2);
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
 	&.active{
 	    color: var(--color-text-brand-base);
+
+	    .corner-frame{
+		height: 100%;
+		opacity:1;
+
+		& > div{
+		    width:100%;
+		}
+	    }
+	}
+	
+	.corner-frame{
+	    transition: opacity, height, var(--transition-base);
+	    pointer-events:none;
+	    height: 0%;
+	    width:100%;
+	    opacity:0;
+	    padding:var(--size-space-small);
+	    position: absolute;
+
+	    & > div{
+		width:0%;
+		transition: width var(--transition-long);
+		transition-delay: 0.25s;
+	    }
 	}
     }
+
     
 }
+
