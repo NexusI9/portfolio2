@@ -1,1 +1,22 @@
-.combobox{}
+@use "@styles/var";
+@use "@styles/interaction" as interaction;
+@use "@styles/animation";
+
+.combobox{
+
+    cursor: pointer;
+
+    transition: color var(--transition-short);
+    
+    @include interaction.hover{
+	color: var(--color-text-brand-base);
+    }
+
+    svg{
+	width: var(--size-icon-medium);
+	aspect-ratio:1/1;
+	height:auto;
+    }
+
+    
+}

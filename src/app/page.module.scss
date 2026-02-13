@@ -1,0 +1,9 @@
+@use "@styles/var";
+
+.navbar-wrapper{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+    margin-top: var(--size-space-extra-large-3);    
+}

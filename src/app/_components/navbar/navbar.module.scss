@@ -1,0 +1,27 @@
+@use "@styles/var";
+
+.navbar{
+
+    background:var(--color-surface-highest);
+    box-shadow: var(--shadow-low);
+
+    border-radius: var(--size-radius-base);
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-items: center;
+    
+    max-width: 684px;
+    width: 100%;
+    
+    height: var(--size-height-input-large);
+    
+
+    a{
+	padding: 0 var(--size-space-extra-large-2);
+	&.active{
+	    color: var(--color-text-brand-base);
+	}
+    }
+    
+}

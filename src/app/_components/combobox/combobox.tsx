@@ -9,6 +9,10 @@ import {
 	RefObject,
 } from "react"
 import DropdownList from "./_components/dropdown-list"
+import styles from "./combobox.module.scss"
+import { catClass } from "@lib/utils"
+import ChevronDown from "@assets/icons/chevron-down.svg"
+import ChevronUp from "@assets/icons/chevron-up.svg"
 
 
 type Option = {
@@ -90,17 +94,15 @@ export default function Combobox({
 	return (
 		<div
 			ref={wrapperRef}
-			className={`relative w-64 ${className ?? ""}`}
+			className={catClass([styles.combobox, className])}
 			tabIndex={0}
 			onKeyDown={handleKeyDown}
 			role="combobox"
 			aria-expanded={open}
 		>
-			<div
-				className="border px-3 py-2 rounded cursor-pointer bg-white"
-				onClick={() => setOpen(o => !o)}
-			>
+			<div onClick={() => setOpen(o => !o)} className="flex flex-row gap-(--size-space-medium)">
 				{selected?.label ?? placeholder}
+				{open ? <ChevronUp /> : <ChevronDown />}
 			</div>
 
 

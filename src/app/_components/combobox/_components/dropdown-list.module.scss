@@ -1,0 +1,22 @@
+@use "@styles/var";
+
+
+.dropdown-list{
+
+    background: var(--color-surface-highest);
+    padding: var(--size-space-small) 0;
+    box-shadow: var(--shadow-medium);
+    min-width:64px;
+
+    border-radius: var(--size-radius-base);
+
+    li{
+	padding: 0 var(--size-space-medium);
+	
+	&.highlight{
+	    background: var(--color-background-brand-subtle);
+	    color: var(--color-text-brand-strong);
+	}
+    }
+    
+}

@@ -31,6 +31,7 @@ export const Button = ({ leadingIcon, trailingIcon, size, role, style, children,
 			data-style={style}
 			data-type={type}
 			onClick={onClick && onClick}
+			role="button"
 			href={String(href)}
 		>
 			<Label size={size} leadingIcon={leadingIcon} trailingIcon={trailingIcon}>{children}</Label>

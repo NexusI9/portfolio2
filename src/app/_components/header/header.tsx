@@ -11,7 +11,7 @@ export default function Header() {
 
 	const comboboxOptions = [{ value: "en", label: "EN" }, { value: "zh", label: "ZH" }];
 
-	return (<div className={`${styles.header} flex flex-row justify-between items-center`}>
+	return (<div className={`${styles.header} flex flex-row justify-between items-center`} role="menubar">
 		<Link href="./" className={`${styles.signature} flex flex-row gap-(--size-space-medium) items-center`}>
 			<Logo />
 			<div>
