@@ -1,7 +1,6 @@
 import { Dictionary } from "@/i18n/Context";
 import { IProjectDescriptor, TProjectDesciptorFn } from "../../_types/project";
 
-
 export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dictionary) => ({
 	name: "Style Studio",
 	description: dico.projects.stylestudio.description,
@@ -17,7 +16,7 @@ export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dicti
 	context: [dico.projects.common.context.prod_ready],
 	stack: ["TYPESCRIPT", "REACT", "REDUX", "FIGMA", "ADOBE"],
 	diagram: "/assets/diagrams/style-studio.svg",
-	tableContent: [],
+	tableContent: dico.projects.stylestudio,
 });
 
 export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: Dictionary) => ({
@@ -38,7 +37,7 @@ export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: D
 	],
 	stack: ["C", "C++", "WEBGPU", "WASM", "FIGMA", "ADOBE"],
 	diagram: "/assets/diagrams/emotional-mapper.svg",
-	tableContent: [],
+	tableContent: dico.projects.emma,
 });
 
 export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) => ({
@@ -60,7 +59,7 @@ export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) 
 	],
 	stack: ["C", "C#", "UNITY", "ZBRUSH", "BLENDER", "SUBSTANCE_PAINTER", "ADOBE", "FIGMA"],
 	diagram: "/assets/diagrams/azusa.svg",
-	tableContent: [],
+	tableContent: dico.projects.azusa,
 });
 
 export const PROJECT_DESCRIPTOR_WEBGPU: TProjectDesciptorFn = (dico: Dictionary) => ({
@@ -81,7 +80,7 @@ export const PROJECT_DESCRIPTOR_WEBGPU: TProjectDesciptorFn = (dico: Dictionary)
 	],
 	stack: ["C", "C++", "WEBGPU", "WASM", "BLENDER", "FIGMA", "ADOBE"],
 	diagram: "/assets/diagrams/webgpu.svg",
-	tableContent: [],
+	tableContent: dico.projects.webgpu,
 });
 
 
@@ -100,7 +99,7 @@ export const PROJECT_DESCRIPTOR_ANIMAL: TProjectDesciptorFn = (dico: Dictionary)
 	context: [dico.projects.common.context.prod_ready],
 	stack: ["BLENDER", "ZBRUSH", "ADOBE", "SUBSTANCE_PAINTER"],
 	diagram: "/assets/diagrams/animal.svg",
-	tableContent: [],
+	tableContent: dico.projects.animal,
 });
 
 

@@ -31,7 +31,7 @@ export const mapFromDescriptor: (desc: IProjectDescriptor, dico: Dictionary, loc
 			diagram: desc.diagram,
 		},
 		sidebar: {
-			tableContent: desc.tableContent,
+			content: desc.tableContent,
 			projects: projectList(desc.name, dico, locale),
 		}
 	});

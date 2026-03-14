@@ -4,12 +4,9 @@ import { Text } from "@components/text/text";
 import styles from "./sidebar.module.scss"
 import { Button } from "@components/button/button";
 import { useDictionary } from "@/i18n/Context";
+import TableOfContents from "../table-of-content/table-of-content";
 
-interface ITableContentItem {
-	label: string;
-	anchor: string;
-	children: ITableContentItem[];
-}
+
 
 
 interface IProject {
@@ -19,11 +16,11 @@ interface IProject {
 }
 
 interface ISidebar {
-	tableContent: Array<ITableContentItem>;
+	content: Record<any, any>;
 	projects: Array<IProject>;
 }
 
-export default function Sidebar({ tableContent, projects }: ISidebar) {
+export default function Sidebar({ content, projects }: ISidebar) {
 
 	const dico = useDictionary();
 
@@ -31,6 +28,7 @@ export default function Sidebar({ tableContent, projects }: ISidebar) {
 
 		<div>
 			<Text.H6>{dico.projects.common.sidebar.table_content}</Text.H6>
+			<TableOfContents data={content} />
 		</div>
 
 		<div className="flex flex-col gap-(--size-space-large)">

@@ -22,7 +22,7 @@ export interface IProjectDescriptor {
 	stack: Array<ComponentPropsWithoutRef<typeof Stack>["type"]>;
 	diagram: string;
 
-	tableContent: ComponentPropsWithoutRef<typeof Sidebar>["tableContent"];
+	tableContent: ComponentPropsWithoutRef<typeof Sidebar>["content"];
 
 }
 
