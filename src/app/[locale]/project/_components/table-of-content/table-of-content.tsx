@@ -1,8 +1,8 @@
 "use client"
 
-
 import { slugify } from "@components/blog/helper";
 import { extractHeadlines } from "./helper";
+import styles from "./table-of-content.module.scss";
 
 
 interface TocProps {
@@ -20,7 +20,7 @@ function TocList({ nodes, maxLevel }: { nodes: any[]; maxLevel?: number }) {
 				const id = slugify(node.headline);
 
 				return (
-					<li key={i}>
+					<li key={i} className={styles.item}>
 						<a href={`#${id}`}>{node.headline}</a>
 
 						{node.children?.length > 0 && (

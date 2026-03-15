@@ -1,0 +1,13 @@
+@use "@styles/animation";
+
+.item{
+
+    a{
+	transition:color, var(--transition-short);
+
+	&:hover{
+	    color: var(--color-text-brand-base);
+	}
+    }
+    
+}

@@ -8,3 +8,25 @@
     width:260px;
     flex-shrink: 0;
 }
+
+.floating-picture{
+    
+    position: fixed;
+    pointer-events: none;
+    opacity:0;
+    transform: translate3D(0px, 6px, 0px);
+    transition: opacity 160ms ease, transform 160ms ease;
+    z-index: 9999;
+
+    &[data-visible=true]{
+	opacity: 1;
+        transform: translate3d(0px, -20px, 0px);
+    }
+    
+    img{
+	border-radius: var(--size-radius-small);
+	width: 260px;
+	box-shadow: var(--shadow-low);
+    }
+
+}

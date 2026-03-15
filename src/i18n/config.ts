@@ -7,7 +7,7 @@ export const locales = ["en", "zh-TW"] as const;
 export type Locale = (typeof locales)[number];
 
 // Set the default locale used when no locale is specified
-export const defaultLocale: Locale = "en";
+export const DEFAULT_LOCALE: Locale = "en";
 
 // Right-to-left languages that need special text direction handling
 export const rtlLocales = ["ar", "he", "fa", "ur"] as const;
@@ -21,7 +21,7 @@ export const isRtl = (locale: string) =>
 // Default locale paths don't have a prefix (e.g., "/about" instead of "/en/about")
 // Other locales are prefixed (e.g., "/fr/about")
 export function localizedPath(locale: string, path: string) {
-  return locale === defaultLocale ? path : `/${locale}${path}`;
+  return locale === DEFAULT_LOCALE ? path : `/${locale}${path}`;
 }
 
 // Base URL for absolute URLs (used in sitemaps, metadata, etc.)

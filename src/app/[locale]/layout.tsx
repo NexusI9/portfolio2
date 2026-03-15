@@ -4,7 +4,7 @@ import "./_styles/globals.scss";
 import Header from "@components/header/header";
 import Footer from "./_components/footer/footer";
 import { NavigationProvider } from "./_context/navigation/navigation";
-import { defaultLocale, isRtl, Locale, locales, } from "@/i18n/config";
+import { DEFAULT_LOCALE, isRtl, Locale, locales, } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { DictionaryProvider } from "@/i18n/Context";
 import localFont from "next/font/local";
@@ -53,7 +53,7 @@ export default async function RootLayout({
 	// Validate locale from URL params
 	// If invalid locale is provided, fall back to default locale
 	if (!locales.includes(locale as Locale))
-		locale = defaultLocale;
+		locale = DEFAULT_LOCALE;
 
 	const dico = await getDictionary(locale);
 

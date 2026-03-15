@@ -14,6 +14,7 @@ export interface IProjectDescriptor {
 	description: string;
 	pageName: string;
 	thumbnail: string;
+	preview: string;
 	alt: string;
 
 	roles: string[];

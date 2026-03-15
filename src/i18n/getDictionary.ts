@@ -2,7 +2,7 @@
 import path from "path";
 import fs from "fs/promises";
 import type { Dictionary } from "./Context";
-import { defaultLocale, locales, Locale } from "./config";
+import { DEFAULT_LOCALE, locales, Locale } from "./config";
 
 const dictionaryStructure = {
 	common: "common.json",
@@ -50,7 +50,7 @@ async function loadStructure(
 
 export async function getDictionary(locale: string): Promise<Dictionary> {
 	// fallback if locale is invalid
-	const usedLocale = locales.includes(locale as Locale) ? locale : defaultLocale;
+	const usedLocale = locales.includes(locale as Locale) ? locale : DEFAULT_LOCALE;
 
 	const basePath = path.resolve("./locales", usedLocale);
 

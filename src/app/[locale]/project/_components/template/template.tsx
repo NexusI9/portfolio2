@@ -18,11 +18,8 @@ interface ITemplate {
 export default function Template({ project, children }: ITemplate) {
 
 	const dico = useDictionary();
-	const params = useParams();
-	const { locale } = params;
-
 	const projectDescriptor = project(dico);
-	const { banner, sidebar } = mapFromDescriptor(projectDescriptor, dico, locale as string);
+	const { banner, sidebar } = mapFromDescriptor(projectDescriptor, dico);
 
 	return (<>
 		<Banner {...banner} />

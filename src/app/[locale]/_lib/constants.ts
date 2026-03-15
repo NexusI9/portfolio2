@@ -19,3 +19,8 @@ export const PROJECT_CATEGORIES_ANCHORS: (dico: Dictionary) => Array<IProjectCat
 		anchor: PROJECT_CATEGORY_ID_FILM_PRODUCTION
 	},
 ];
+
+
+export const THUMBNAIL_WIDTH = 500;
+export const THUMBNAIL_HEIGHT = 437;
+export const THUMBNAIL_WIDTH_WIDE = 1120;
