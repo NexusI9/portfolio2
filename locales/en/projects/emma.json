@@ -4,15 +4,18 @@
 		"headline": "Problem Statement",
 		"body": "Develop a marketable strategy and actionable solutions to strengthen sustainable engagement, improving employee retention and attracting next-generation talent."
 	},
-	"constraints": [
-		"Use only predefined modules (Dining, Event Registration, etc.)",
-		"Easily implementable and configurable within backend systems",
-		"Include trackable metrics for KPI monitoring",
-		"Leverage WebGPU for faster rendering",
-		"Adaptable across multiple industries",
-		"Translate technical features into business value",
-		"Adjustable solution according to budget"
-	],
+	"constraints": {
+		"headline": "Constraints",
+		"body": [
+			"Use only predefined modules (Dining, Event Registration, etc.)",
+			"Easily implementable and configurable within backend systems",
+			"Include trackable metrics for KPI monitoring",
+			"Leverage WebGPU for faster rendering",
+			"Adaptable across multiple industries",
+			"Translate technical features into business value",
+			"Adjustable solution according to budget"
+		]
+	},
 	"strategic_framing": {
 		"headline": "Strategic Framing",
 		"scope": {
@@ -79,12 +82,12 @@
 				"body": "As our concepts matured, we aimed to bridge them with practical solutions. This led to the Module-Action Model: a module-based infrastructure where each module acts as an interface with predefined actions, configurable and linkable to any system via event hooks or similar mechanisms, allowing us to translate human emotions and behavior into trackable data."
 			},
 			"architecture": {
-				"headline": "Flow Architecture",
-				"body": "The next challenge was defining the behavioral, temporal, and motivational properties of actions. Actions could be clicks or swipes, deliver rewards, and be available temporarily or permanently. All elements are configurable, leading to the first flow of the Module ↔ Action relationship with their respective properties."
+				"headline": "Data Modeling",
+				"body": "The next challenge was defining the behavioral, temporal, and motivational properties of modules and actions. Modules own actions and actions could be clicks or swipes, deliver rewards, and be available temporarily or permanently. All elements are configurable, leading to the first flow of the Module ↔ Action relationship with their respective properties."
 			}
 		},
 		"formulas": {
-			"headline": "Translating Emotions into Data",
+			"headline": "Translating Emotions Into Data",
 			"intro": {
 				"headline": "Weighted-Sum Approach",
 				"body": "After clarifying the metrics we wanted to track and the triggers for them, we focused on defining fundamental formulas to bridge user emotions with tangible, actionable data. To keep the system flexible and configurable, we used a weighted sum approach, allowing precise control over how each data point impacts a specific motivation."
@@ -100,7 +103,7 @@
 		}
 	},
 	"software_architecture": {
-		"headline": "Software Architecture & Semantics",
+		"headline": "Software Architecture",
 		"body": "Once the formulas were set, it became intuitive to define the key software functionalities needed to model our projections through user flow.",
 		"optimizations": {
 			"headline": "Performance Optimization Designs"
@@ -157,7 +160,7 @@
 			"body": "Finally, since the choice of interface library may change based on the results of this initial experiment, we decided to separate the domain from the visual presentation. This means core data is independent from the visual and interaction behaviors."
 		},
 		"heatmap_flow": {
-			"headline": "Leverage WebGPU",
+			"headline": "Leverage WebGPU For Heatmap Computation",
 			"body": "Early on, we identified the need for a heatmap system to analyze user flow strengths, weaknesses, and potential emotional impacts. To implement this, we established a WebGPU compute and render pipeline. The main challenge was integrating custom shaders with the existing UI library rendering system."
 		}
 	},
@@ -185,90 +188,96 @@
 			"body": "A key outcome of this project was the development of EMMA (Emotional Mapper), a user flow software that evaluates flow efficiency based on various metrics such as excitement and social bonding."
 		}
 	},
-	"tradeoffs": [
-		{
-			"heading": [
-				"Decoupled Core",
-				"Development Complexity"
-			],
-			"benefits": [
-				"Cleaner mental model",
-				"Safer evolution of the system",
-				"Better reasoning and debugging"
-			],
-			"costs": [
-				"More boilerplate",
-				"Higher cognitive load",
-				"Ownership can be confusing (who owns what)"
-			]
-		},
-		{
-			"heading": [
-				"Immediate-mode UI",
-				"Long-term Scalability"
-			],
-			"benefits": [
-				"Fast prototyping",
-				"Convenient to experiment",
-				"Minimal setup cost"
-			],
-			"costs": [
-				"Tight coupling between frame logic and rendering",
-				"Harder state management (confusing event system)",
-				"Performance optimizations require manual caching"
-			]
-		},
-		{
-			"heading": [
-				"Solo Development",
-				"Production Readiness"
-			],
-			"benefits": [
-				"Cohesive vision",
-				"Fast decision-making",
-				"Fitting R&D project like such"
-			],
-			"costs": [
-				"Slower development speed",
-				"Limited peer review (regret some architecture decisions)",
-				"Harder to reach production-level robustness"
-			]
-		},
-		{
-			"heading": [
-				"Formula Flexibility",
-				"Interpretability"
-			],
-			"benefits": [
-				"Flexible tuning",
-				"Reusable framework",
-				"Requires documentation that adds transparency for all stakeholders"
-			],
-			"costs": [
-				"Harder to simply explain",
-				"Risk of misconfiguration",
-				"Requires guardrails and education"
-			]
-		},
-		{
-			"heading": [
-				"Native UI Library",
-				"Web Based Library"
-			],
-			"benefits": [
-				"Predictable performance",
-				"Direct control over rendering",
-				"Lower latency"
-			],
-			"costs": [
-				"Harder collaboration and sharing",
-				"Heavy overhead (Emscripten API)",
-				"Very low product"
-			]
-		}
-	],
-	"outcomes": [
-		"For larger, production-level projects, choose a more suitable UI framework, potentially even a JavaScript-based one, especially for web applications like EMMA.",
-		"Technical explorations can lead down a rabbit hole. Always track the initial business goals and coordinate with stakeholders to ensure the project aligns with market needs and company direction. For this project, I was fortunate to collaborate with a talented, market-oriented colleague who helped keep the project on track while continuously contributing fresh ideas."
-	]
+	"tradeoffs": {
+		"headline": "Trade-offs",
+		"body": [
+			{
+				"heading": [
+					"Decoupled Core",
+					"Development Complexity"
+				],
+				"benefits": [
+					"Cleaner mental model",
+					"Safer evolution of the system",
+					"Better reasoning and debugging"
+				],
+				"costs": [
+					"More boilerplate",
+					"Higher cognitive load",
+					"Ownership can be confusing (who owns what)"
+				]
+			},
+			{
+				"heading": [
+					"Immediate-mode UI",
+					"Long-term Scalability"
+				],
+				"benefits": [
+					"Fast prototyping",
+					"Convenient to experiment",
+					"Minimal setup cost"
+				],
+				"costs": [
+					"Tight coupling between frame logic and rendering",
+					"Harder state management (confusing event system)",
+					"Performance optimizations require manual caching"
+				]
+			},
+			{
+				"heading": [
+					"Solo Development",
+					"Production Readiness"
+				],
+				"benefits": [
+					"Cohesive vision",
+					"Fast decision-making",
+					"Fitting R&D project like such"
+				],
+				"costs": [
+					"Slower development speed",
+					"Limited peer review (regret some architecture decisions)",
+					"Harder to reach production-level robustness"
+				]
+			},
+			{
+				"heading": [
+					"Formula Flexibility",
+					"Interpretability"
+				],
+				"benefits": [
+					"Flexible tuning",
+					"Reusable framework",
+					"Requires documentation that adds transparency for all stakeholders"
+				],
+				"costs": [
+					"Harder to simply explain",
+					"Risk of misconfiguration",
+					"Requires guardrails and education"
+				]
+			},
+			{
+				"heading": [
+					"Native UI Library",
+					"Web Based Library"
+				],
+				"benefits": [
+					"Predictable performance",
+					"Direct control over rendering",
+					"Lower latency"
+				],
+				"costs": [
+					"Harder collaboration and sharing",
+					"Heavy overhead (Emscripten API)",
+					"Very low product"
+				]
+			}
+		]
+	},
+	"outcomes": {
+		"headline": "Outcomes & Learning",
+		"body": [
+			"For larger, production-level projects, choose a more suitable UI framework, potentially even a JavaScript-based one, especially for web applications like EMMA.",
+			"Technical explorations can lead down a rabbit hole. Always track the initial business goals and coordinate with stakeholders to ensure the project aligns with market needs and company direction. For this project, I was fortunate to collaborate with a talented, market-oriented colleague who helped keep the project on track while continuously contributing fresh ideas."
+		]
+	}
 }

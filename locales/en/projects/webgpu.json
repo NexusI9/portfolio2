@@ -4,13 +4,16 @@
 		"headline": "Problem Statement",
 		"body": "With the advent of WebGPU, major 3D libraries have started adopting this technology. However, many recent implementations still struggle to run smoothly on older devices. This engine development was therefore part of an R&D initiative aimed at gaining greater autonomy and a deeper understanding of WebGPU capabilities, in order to optimize performance and accessibility for future interactive 3D projects."
 	},
-	"constraints": [
-		"Optimize engine for older or low-performance devices",
-		"Enable selectable performance modes for higher-quality renders",
-		"Use C for core engine and native export",
-		"Compile with WASM and Emscripten for web",
-		"Implement PBR graphics: lighting, shadows, reflections, PostFX"
-	],
+	"constraints": {
+		"headline": "Constraints",
+		"body": [
+			"Optimize engine for older or low-performance devices",
+			"Enable selectable performance modes for higher-quality renders",
+			"Use C for core engine and native export",
+			"Compile with WASM and Emscripten for web",
+			"Implement PBR graphics: lighting, shadows, reflections, PostFX"
+		]
+	},
 	"exploration": {
 		"headline": "Exploration",
 		"ui_research": {
@@ -63,11 +66,11 @@
 		"segmentation": {
 			"headline": "Domains Segmentation",
 			"systems": {
-				"headline": "Data & Behavior",
+				"headline": "Systems as Cross-Domain Orchestrator",
 				"body": "To prevent circular references, 'god objects,' and maintain structure, I designed systems as cross-domain crossroads. This preserves data integrity and centralizes complex or risky operations."
 			},
 			"core_split": {
-				"headline": "Core & Editor",
+				"headline": "Core & Editor Partitioning",
 				"body": "The engine separates its core from the editor: the core uses C, while the editor relies on C++ UI libraries. This approach ensures better performance control."
 			}
 		},
@@ -89,7 +92,7 @@
 				"body": "To improve performance and avoid branching in hot loops, I adopted a clear cold/hot path function semantic where naming reflects call frequency. Initialization functions are designed to run only a few times and may include more conditional logic, while update and draw functions are optimized for linear, array-based processing with minimal last-minute decisions."
 			},
 			"process": {
-				"headline": "Register Flow",
+				"headline": "Channel-Based Control Flow",
 				"body": "To ensure a smooth transition from initialization to continuous processing, I used a register pattern. Cold functions (init, loading) handle conditions and configuration, then register objects into dedicated channels so they can be processed contiguously during hot-path execution."
 			}
 		},
@@ -99,75 +102,82 @@
 		},
 		"dynamic_rendering": {
 			"headline": "Runtime Dynamic Rendering",
-			"body": [
-				"Since a key feature was runtime dynamic render modes (bounding box, wireframe, solid, textured), each mesh supports specific render modes. Therefore, every mesh includes predefined shaders and vertex topologies to enable these variations.",
-				"The engine uses a topology system to generate wireframe and bounding box meshes derived from the base mesh. For faster dynamic updates, it relies on hash-based indexing to efficiently regenerate derived topologies when the base topology changes."
-			]
+			"body": "Since a key feature was runtime dynamic render modes (bounding box, wireframe, solid, textured), each mesh supports specific render modes. Therefore, every mesh includes predefined shaders and vertex topologies to enable these variations.",
+			"topology": {
+				"headline": "Mesh Topology Flow",
+				"body": "The engine uses a topology system to generate wireframe and bounding box meshes derived from the base mesh. For faster dynamic updates, it relies on hash-based indexing to efficiently regenerate derived topologies when the base topology changes."
+			}
 		},
 		"ui_presentation": {
 			"headline": "UI Presentation"
 		}
 	},
-	"tradeoffs": [
-		{
-			"heading": [
-				"Performance on low-end devices",
-				"Feature completeness"
-			],
-			"benefits": [
-				"Stable frame rate on low-end hardware",
-				"Better understanding of WebGPU bottlenecks"
-			],
-			"costs": [
-				"Reduced visual fidelity compared to high-end engines",
-				"Limited advanced effects"
-			]
-		},
-		{
-			"heading": [
-				"Data-Oriented Design",
-				"Development complexity"
-			],
-			"benefits": [
-				"Reduced cache misses",
-				"Clear separation between hot and cold paths"
-			],
-			"costs": [
-				"Lower readability compared to OOP",
-				"Refactoring cost when data layout assumptions were wrong"
-			]
-		},
-		{
-			"heading": [
-				"Centralized Resource Manager",
-				"Local ownership simplicity"
-			],
-			"benefits": [
-				"Better profiling and memory tracking",
-				"Unified lifetime and ID management"
-			],
-			"costs": [
-				"More complex mental model",
-				"Harder Ownership Control"
-			]
-		},
-		{
-			"heading": [
-				"ECS architecture",
-				"OOP"
-			],
-			"benefits": [
-				"Easy to test systems independently",
-				"Scales well as engine grows"
-			],
-			"costs": [
-				"Harder to debug execution flow",
-				"Requires strong discipline in system design"
-			]
-		}
-	],
-	"outcomes": [
-		"Data-Oriented Design granularity is challenging; depending on call frequency (hot vs cold paths), readability may be traded for cache-friendly structures over traditional OOP patterns.",
-		"API design is a discipline of its own; I sometimes focused too much on low-level technical complexity rather than overall API usability."
-	]
+	"tradeoffs": {
+		"headline": "Trade-offs",
+		"body": [
+			{
+				"heading": [
+					"Performance on low-end devices",
+					"Feature completeness"
+				],
+				"benefits": [
+					"Stable frame rate on low-end hardware",
+					"Better understanding of WebGPU bottlenecks"
+				],
+				"costs": [
+					"Reduced visual fidelity compared to high-end engines",
+					"Limited advanced effects"
+				]
+			},
+			{
+				"heading": [
+					"Data-Oriented Design",
+					"Development complexity"
+				],
+				"benefits": [
+					"Reduced cache misses",
+					"Clear separation between hot and cold paths"
+				],
+				"costs": [
+					"Lower readability compared to OOP",
+					"Refactoring cost when data layout assumptions were wrong"
+				]
+			},
+			{
+				"heading": [
+					"Centralized Resource Manager",
+					"Local ownership simplicity"
+				],
+				"benefits": [
+					"Better profiling and memory tracking",
+					"Unified lifetime and ID management"
+				],
+				"costs": [
+					"More complex mental model",
+					"Harder Ownership Control"
+				]
+			},
+			{
+				"heading": [
+					"ECS architecture",
+					"OOP"
+				],
+				"benefits": [
+					"Easy to test systems independently",
+					"Scales well as engine grows"
+				],
+				"costs": [
+					"Harder to debug execution flow",
+					"Requires strong discipline in system design"
+				]
+			}
+		]
+	},
+	"outcomes": {
+		"headline": "Outcomes & Learning",
+		"body": [
+			"Data-Oriented Design granularity is challenging; depending on call frequency (hot vs cold paths), readability may be traded for cache-friendly structures over traditional OOP patterns.",
+			"API design is a discipline of its own; I sometimes focused too much on low-level technical complexity rather than overall API usability."
+		]
+	}
 }

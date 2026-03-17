@@ -4,13 +4,16 @@
 		"headline": "Intention",
 		"body": "Starting as simple sketches, then concept art and drafted scripts in a notebook, Azusa is a long-term world-building project that never reached a final form. The following project explores a variant of Azusa through the lens of technical art and video game design."
 	},
-	"constraints": [
-		"Create a cohesive game design experience",
-		"Reuse concepts and designs from previous projects",
-		"Deliver visually appealing results within 3–6 months",
-		"Develop Unity prototypes",
-		"Design art direction for low-performance devices"
-	],
+	"constraints": {
+		"headline": "Constraints",
+		"body": [
+			"Create a cohesive game design experience",
+			"Reuse concepts and designs from previous projects",
+			"Deliver visually appealing results within 3–6 months",
+			"Develop Unity prototypes",
+			"Design art direction for low-performance devices"
+		]
+	},
 	"exploration": {
 		"headline": "Exploration",
 		"creative_research": {

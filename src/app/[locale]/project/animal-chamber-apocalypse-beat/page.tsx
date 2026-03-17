@@ -24,7 +24,7 @@ export default function AnimalChamberApocalypseBeat() {
 			</Blog.Group>
 		</Blog.Section>
 
-		<Blog.Constraints items={p.constraints} />
+		<Blog.Constraints headline={p.constraints.headline} items={p.constraints.body} />
 
 
 		<Blog.Section>
@@ -212,8 +212,8 @@ export default function AnimalChamberApocalypseBeat() {
 		</Blog.Section>
 
 
-		<Blog.TradeOffs items={p.tradeoffs.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
-		<Blog.Outcome items={p.outcomes} />
+		<Blog.TradeOffs headline={p.tradeoffs.headline} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.Outcome headline={p.outcomes.headline} items={p.outcomes.body} />
 
 
 	</Template>);

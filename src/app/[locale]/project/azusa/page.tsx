@@ -28,7 +28,7 @@ export default function Azusa() {
 			</Blog.Group>
 		</Blog.Section>
 
-		<Blog.Constraints items={p.constraints} />
+		<Blog.Constraints headline={p.constraints.headline} items={p.constraints.body} />
 
 		<Blog.Section>
 

@@ -62,7 +62,7 @@ export default async function RootLayout({
 	const dir = isRtl(locale) ? "rtl" : "ltr";
 
 	return (
-		<html lang={locale} dir={dir}>
+		<html lang={locale} dir={dir} data-scroll-behavior="smooth">
 			<body className={`${fontBody.variable} ${fontHeading.variable} ${fontDisplay.variable} ${fontDisplayZh.variable}`}>
 				<DictionaryProvider dictionary={dico}>
 					<NavigationProvider>

@@ -4,8 +4,6 @@ import { useDictionary } from "@/i18n/Context";
 import Template from "../_components/template/template"
 import { PROJECT_DESCRIPTOR_WEBGPU } from "../_lib/descriptors";
 import { Blog } from "../../_components/blog/blog";
-import { List } from "../../_components/list/list";
-import { Text } from "../../_components/text/text";
 import { Gallery } from "../../_components/gallery/gallery";
 import { imPath } from "../_lib/helper";
 import TradeOffHeader from "../_components/tradeoff-header/tradeoff-header";
@@ -27,7 +25,7 @@ export default function WebgpuEngine() {
 
 		</Blog.Section>
 
-		<Blog.Constraints items={p.constraints} />
+		<Blog.Constraints headline={p.constraints.headline} items={p.constraints.body} />
 
 		<Blog.Section>
 			<Blog.Heading>{p.exploration.headline}</Blog.Heading>
@@ -248,18 +246,25 @@ export default function WebgpuEngine() {
 			</Blog.Group >
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.solution.dynamic_rendering.headline}</Blog.Heading>
-				<Blog.Paragraph>{p.solution.dynamic_rendering.body}</Blog.Paragraph>
+				<Gallery.Wrapper>
+					<Blog.Heading role="H4">{p.solution.dynamic_rendering.headline}</Blog.Heading>
+					<Blog.Paragraph>{p.solution.dynamic_rendering.body}</Blog.Paragraph>
 
-				<Gallery.AutoLayout rows={[
-					[imPath(pName, "core-dynamic-rendering")],
-					[
-						imPath(pName, "core-dynamic-rendering-route"),
-						imPath(pName, "core-dynamic-rendering-topo"),
-						imPath(pName, "core-dynamic-rendering-anchor")
-					]
-				]} />
+					<Gallery.AutoLayout noWrapper rows={[
+						[imPath(pName, "core-dynamic-rendering")]
+					]} />
 
+					<Blog.Heading role="H5">{p.solution.dynamic_rendering.topology.headline}</Blog.Heading>
+					<Blog.Paragraph>{p.solution.dynamic_rendering.topology.body}</Blog.Paragraph>
+					<Gallery.AutoLayout noWrapper rows={[
+						[
+							imPath(pName, "core-dynamic-rendering-route"),
+							imPath(pName, "core-dynamic-rendering-topo"),
+							imPath(pName, "core-dynamic-rendering-anchor")
+						]
+					]} />
+
+				</Gallery.Wrapper>
 			</Blog.Group >
 
 			<Blog.Group>
@@ -295,8 +300,8 @@ export default function WebgpuEngine() {
 		</Blog.Section >
 
 
-		<Blog.TradeOffs items={p.tradeoffs.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.TradeOffs headline={p.tradeoffs.headline} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
 
-		<Blog.Outcome items={p.outcomes} />
+		<Blog.Outcome headline={p.outcomes.headline} items={p.outcomes.body} />
 	</Template >);
 }

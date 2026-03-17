@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
-import Logo from "@assets/icons/solid/nek-logo.svg"
-import LocaleSelector from "./locale-selector"
+import { useState } from "react";
+import Logo from "@assets/icons/solid/nek-logo.svg";
+import LocaleSelector from "./locale-selector";
+import styles from "./header.module.scss";
 
 export default function MobileHeader() {
 
@@ -13,20 +14,18 @@ export default function MobileHeader() {
 	}
 
 	return (
-		<header className={`mobile-menu`} data-open={open}>
+		<header className={styles["mobile-menu"]} data-open={open}>
 
-			<div className="mobile-menu__bar">
+			<div className={styles["mobile-menu-bar"]}>
 
-				<div className="mobile-menu__logo">
-					<Logo />
-				</div>
+				<Logo className={styles["mobile-menu-logo"]} />
 
-				<div className="mobile-menu__actions">
+				<div className={styles["mobile-menu-actions"]}>
 
 					{open && <LocaleSelector />}
 
 					<button
-						className="mobile-menu__toggle"
+						className={styles["mobile-menu-toggle"]}
 						onClick={toggleMenu}
 						aria-label="menu"
 					>
@@ -39,22 +38,17 @@ export default function MobileHeader() {
 			</div>
 
 
-			<nav className="mobile-menu__panel">
+			<nav className={styles["mobile-menu-panel"]}>
 
-				<div className="mobile-menu__section mobile-menu__categories">
+				<div className={[styles["mobile-menu-section"], styles["mobile-menu-categories"]].join(" ")}>
 					<a href="#">Category 1</a>
 					<a href="#">Category 2</a>
 					<a href="#">Category 3</a>
 				</div>
 
-				<div className="mobile-menu__section mobile-menu__secondary">
+				<div className={[styles["mobile-menu-section"], styles["mobile-menu-secondary"]].join(" ")}>
 					<a href="#">Resume</a>
 					<a href="#">Contact</a>
-				</div>
-
-				<div className="mobile-menu__section mobile-menu__language">
-					<a href="#">EN</a>
-					<a href="#">FR</a>
 				</div>
 
 			</nav>

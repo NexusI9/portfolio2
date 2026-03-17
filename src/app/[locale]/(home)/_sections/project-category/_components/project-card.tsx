@@ -14,7 +14,7 @@ interface IProjectCard {
 }
 
 export default function ProjectCard({ headline, subtitle, thumbnail, alt, href }: IProjectCard) {
-  
+
 	return (
 		<Link
 			href={href}

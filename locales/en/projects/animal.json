@@ -4,13 +4,16 @@
 		"headline": "Intention",
 		"body": "Commissioned by French musician Philip Pentacle, I had the pleasure of collaborating on his second EP for the track 'Animal Chamber Apocalypse Beat'. For this project, I challenged myself to explore an art direction I wasn’t familiar with—something more stylized rather than realistic, moving away from the usual physical rendering pipeline. Emerging during lockdown, I used this project as a form of cinematic escapism, which inspired bold and highly saturated aesthetic choices."
 	},
-	"constraints": [
-		"Adopt a cartoonish, stylized art direction.",
-		"Design characters and build the project’s world.",
-		"Manage entire pipeline: storyboarding, art direction, animation.",
-		"Complement hypnotic track while keeping viewer engaged.",
-		"Complete project within six months for EP release."
-	],
+	"constraints": {
+		"headline": "Constraints",
+		"body": [
+			"Adopt a cartoonish, stylized art direction.",
+			"Design characters and build the project’s world.",
+			"Manage entire pipeline: storyboarding, art direction, animation.",
+			"Complement hypnotic track while keeping viewer engaged.",
+			"Complete project within six months for EP release."
+		]
+	},
 	"exploration": {
 		"headline": "Exploration",
 		"genre": {
@@ -42,7 +45,7 @@
 		},
 		"pachinko": {
 			"headline": "Enter the Pachinko",
-		  "body": "I randomly discovered the Japanese game Pachinko, which quickly sparked my interest and eventually became a key narrative element in the final animation. I was fascinated by the hybrid nature of the game: a mix of pinball and casual slot mechanics—and by how democratic and publicly accessible Pachinko parlors are, far from the exclusive, closed-door atmosphere of traditional casinos."
+			"body": "I randomly discovered the Japanese game Pachinko, which quickly sparked my interest and eventually became a key narrative element in the final animation. I was fascinated by the hybrid nature of the game: a mix of pinball and casual slot mechanics—and by how democratic and publicly accessible Pachinko parlors are, far from the exclusive, closed-door atmosphere of traditional casinos."
 		}
 	},
 	"production": {
@@ -60,80 +63,86 @@
 			"body": "The final music video combines 3D characters and key elements with 2D hand-painted backgrounds. This approach ensured a cohesive visual result while easing technical constraints. Animating characters in 3D was more efficient, while keeping backgrounds in 2D reduced complexity and supported the overall cartoon-inspired art direction."
 		}
 	},
-	"tradeoffs": [
-		{
-			"heading": [
-				"non-PBR visual language",
-				"PBR rendering"
-			],
-			"benefits": [
-				"Strong artistic identity",
-				"Freedom in color, contrast, and shape exaggeration"
-			],
-			"costs": [
-				"Harder to set up",
-				"May lead to inconsistent result depending on light"
-			]
-		},
-		{
-			"heading": [
-				"Metaphor",
-				"Narrative Clarity"
-			],
-			"benefits": [
-				"Encourages interpretation and imagination",
-				"Direct focus on visuals quality rather than story"
-			],
-			"costs": [
-				"Some viewers may feel lost or disconnected",
-				"Can be seen as lazy and lose value"
-			]
-		},
-		{
-			"heading": [
-				"Hybrid 2D/3D pipeline",
-				"Fully unified medium"
-			],
-			"benefits": [
-				"Reduced technical overhead",
-				"Faster production under time constraints"
-			],
-			"costs": [
-				"Less camera freedom than a full 3D environment",
-				"Occasional visual dissonance"
-			]
-		},
-		{
-			"heading": [
-				"Library based assets",
-				"Full custom sculpting"
-			],
-			"benefits": [
-				"Rapid iteration",
-				"More energy for art direction"
-			],
-			"costs": [
-				"Heavily influence final design",
-				"Reduced uniqueness at the base mesh level"
-			]
-		},
-		{
-			"heading": [
-				"3D animation",
-				"Frame-by-frame animation"
-			],
-			"benefits": [
-				"Reusability of assets",
-				"Better control over timing"
-			],
-			"costs": [
-				"Less organic, more cheap looking",
-				"Reduced hand-crafted feel"
-			]
-		}
-	],
-	"outcomes": [
-		"To this day, one of the creative projects I am most proud of, reaching over 3k views and receiving an award.",
-		"The project highlighted my limitations with complex animation, pushing me to develop technical and narrative workarounds to balance these constraints."
-	]
+	"tradeoffs": {
+		"headline": "Trade-offs",
+		"body": [
+			{
+				"heading": [
+					"non-PBR visual language",
+					"PBR rendering"
+				],
+				"benefits": [
+					"Strong artistic identity",
+					"Freedom in color, contrast, and shape exaggeration"
+				],
+				"costs": [
+					"Harder to set up",
+					"May lead to inconsistent result depending on light"
+				]
+			},
+			{
+				"heading": [
+					"Metaphor",
+					"Narrative Clarity"
+				],
+				"benefits": [
+					"Encourages interpretation and imagination",
+					"Direct focus on visuals quality rather than story"
+				],
+				"costs": [
+					"Some viewers may feel lost or disconnected",
+					"Can be seen as lazy and lose value"
+				]
+			},
+			{
+				"heading": [
+					"Hybrid 2D/3D pipeline",
+					"Fully unified medium"
+				],
+				"benefits": [
+					"Reduced technical overhead",
+					"Faster production under time constraints"
+				],
+				"costs": [
+					"Less camera freedom than a full 3D environment",
+					"Occasional visual dissonance"
+				]
+			},
+			{
+				"heading": [
+					"Library based assets",
+					"Full custom sculpting"
+				],
+				"benefits": [
+					"Rapid iteration",
+					"More energy for art direction"
+				],
+				"costs": [
+					"Heavily influence final design",
+					"Reduced uniqueness at the base mesh level"
+				]
+			},
+			{
+				"heading": [
+					"3D animation",
+					"Frame-by-frame animation"
+				],
+				"benefits": [
+					"Reusability of assets",
+					"Better control over timing"
+				],
+				"costs": [
+					"Less organic, more cheap looking",
+					"Reduced hand-crafted feel"
+				]
+			}
+		]
+	},
+	"outcomes": {
+		"headline": "Outcomes & Learning",
+		"body": [
+			"To this day, one of the creative projects I am most proud of, reaching over 3k views and receiving an award.",
+			"The project highlighted my limitations with complex animation, pushing me to develop technical and narrative workarounds to balance these constraints."
+		]
+	}
 }

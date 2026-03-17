@@ -52,14 +52,14 @@
     
     /* BAR */
     
-    &__bar{
+    &-bar{
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
 	padding:16px;
     }
     
-    &__actions{
+    &-actions{
 	display:flex;
 	align-items:center;
 	gap:16px;
@@ -67,7 +67,7 @@
     
     /* MENU BUTTON */
     
-    &__toggle{
+    &-toggle{
 	width:28px;
 	height:20px;
 	
@@ -79,7 +79,7 @@
 	border:none;
     }
     
-    &__toggle span{
+    &-toggle span{
 	height:2px;
 	background:black;
 	display:block;
@@ -88,7 +88,7 @@
     
     /* PANEL */
     
-    &__panel{
+    &-panel{
 	
 	position:fixed;
 	top:0;
@@ -116,24 +116,24 @@
 	transform:translateX(0);
     }
     
-    &__panel{
+    &-panel{
 	transform:translateX(0);
     }
     
     
     /* SECTIONS */
     
-    &__section{
+    &-section{
 	display:flex;
 	flex-direction:column;
 	gap:16px;
     }
     
-    &__categories{
+    &-categories{
 	font-size:28px;
     }
     
-    &__secondary{
+    &-secondary{
 	font-size:18px;
     }
     

@@ -10,14 +10,17 @@
 			"Generate configurable color palettes for brand guidelines or handbook documentation"
 		]
 	},
-	"constraints": [
-		"Complement existing Figma features",
-		"Use TypeScript with the Figma Plugin API",
-		"Fast design and development (~1 month timeline)",
-		"Use modular functions and an Agile approach",
-		"Keep architecture flexible for future Figma API changes",
-		"Maintain adaptable plugin architecture and data structures"
-	],
+	"constraints": {
+		"headline": "Constraints",
+		"body": [
+			"Complement existing Figma features",
+			"Use TypeScript with the Figma Plugin API",
+			"Fast design and development (~1 month timeline)",
+			"Use modular functions and an Agile approach",
+			"Keep architecture flexible for future Figma API changes",
+			"Maintain adaptable plugin architecture and data structures"
+		]
+	},
 	"ui_research": {
 		"headline": "UI Research",
 		"benchmark": {
@@ -66,67 +69,73 @@
 			"headline": "Key Plugin Features"
 		}
 	},
-	"tradeoffs": [
-		{
-			"heading": [
-				"System-level Control",
-				"Low Learning Curve"
-			],
-			"benefits": [
-				"Reduces long-term maintenance cost",
-				"Aligns with brand and design system needs"
-			],
-			"costs": [
-				"Requires onboarding and documentation",
-				"Slower first interaction compared to simple palette tools"
-			]
-		},
-		{
-			"heading": [
-				"Complementing Figma",
-				"Owning the Source of Truth"
-			],
-			"benefits": [
-				"Easier structure decision following Figma styles",
-				"Lower risk of conflicts with native features"
-			],
-			"costs": [
-				"Must adapt to Figma’s constraints and API design",
-				"Requires careful ownership rules (set, map, strict)"
-			]
-		},
-		{
-			"heading": [
-				"Fast Delivery",
-				"Scalable Architecture"
-			],
-			"benefits": [
-				"Necessary features shipped in time for an upcoming project",
-				"Clear separation of concerns"
-			],
-			"costs": [
-				"Deferred optimizations",
-				"Non-elegant architecture choice"
-			]
-		},
-		{
-			"heading": [
-				"Wider Scope",
-				"Reduced Feature Depth"
-			],
-			"benefits": [
-				"Reduced context switching for teams",
-				"Consistent and centralized workflows across styles"
-			],
-			"costs": [
-				"Higher overall system complexity",
-				"Limits each features deeper development to maintain balance"
-			]
-		}
-	],
-	"outcomes": [
-		"The plugin has received consistently positive feedback and continues to be improved over time.",
-		"This project highlighted the importance of using a robust technical stack for complex applications. Strongly typed languages with clearly defined interfaces help maintain consistency and structure, whereas JavaScript’s flexibility can sometimes lead to architectural inconsistencies despite its rapid development advantages.",
-		"One key improvement area is the synchronization between the client, the store, and the Figma API. The introduction of asynchronous requests added unexpected complexity, and the overall data flow would benefit from refactoring now that the full lifecycle of the system is better understood."
-	]
+	"tradeoffs": {
+		"headline": "Trade-offs",
+		"body": [
+			{
+				"heading": [
+					"System-level Control",
+					"Low Learning Curve"
+				],
+				"benefits": [
+					"Reduces long-term maintenance cost",
+					"Aligns with brand and design system needs"
+				],
+				"costs": [
+					"Requires onboarding and documentation",
+					"Slower first interaction compared to simple palette tools"
+				]
+			},
+			{
+				"heading": [
+					"Complementing Figma",
+					"Owning the Source of Truth"
+				],
+				"benefits": [
+					"Easier structure decision following Figma styles",
+					"Lower risk of conflicts with native features"
+				],
+				"costs": [
+					"Must adapt to Figma’s constraints and API design",
+					"Requires careful ownership rules (set, map, strict)"
+				]
+			},
+			{
+				"heading": [
+					"Fast Delivery",
+					"Scalable Architecture"
+				],
+				"benefits": [
+					"Necessary features shipped in time for an upcoming project",
+					"Clear separation of concerns"
+				],
+				"costs": [
+					"Deferred optimizations",
+					"Non-elegant architecture choice"
+				]
+			},
+			{
+				"heading": [
+					"Wider Scope",
+					"Reduced Feature Depth"
+				],
+				"benefits": [
+					"Reduced context switching for teams",
+					"Consistent and centralized workflows across styles"
+				],
+				"costs": [
+					"Higher overall system complexity",
+					"Limits each features deeper development to maintain balance"
+				]
+			}
+		]
+	},
+	"outcomes": {
+		"headline": "Outcomes & Learning",
+		"body": [
+			"The plugin has received consistently positive feedback and continues to be improved over time.",
+			"This project highlighted the importance of using a robust technical stack for complex applications. Strongly typed languages with clearly defined interfaces help maintain consistency and structure, whereas JavaScript’s flexibility can sometimes lead to architectural inconsistencies despite its rapid development advantages.",
+			"One key improvement area is the synchronization between the client, the store, and the Figma API. The introduction of asynchronous requests added unexpected complexity, and the overall data flow would benefit from refactoring now that the full lifecycle of the system is better understood."
+		]
+	}
 }

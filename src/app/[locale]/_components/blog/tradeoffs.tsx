@@ -8,16 +8,17 @@ import styles from "./tradeoffs.module.scss";
 import { Blog } from "./blog";
 
 interface ITradeoffs {
+	headline: string;
 	items: ComponentPropsWithoutRef<typeof TradeOffCard>[];
 }
 
 
-export default function TradeOffs({ items }: ITradeoffs) {
+export default function TradeOffs({ headline, items }: ITradeoffs) {
 	return (
 		<Section type="FLUID">
 			<Slider.Root>
 				<hgroup className="flex flex-row justify-between items-center pr-(--size-margin-desktop) pl-(--size-margin-blog)">
-					<Blog.Heading role="H3">Trade-offs</Blog.Heading>
+					<Blog.Heading role="H3">{headline}</Blog.Heading>
 					<div className="flex flex-row gap-(--size-space-large)">
 						<Slider.ButtonLeft />
 						<Slider.ButtonRight />

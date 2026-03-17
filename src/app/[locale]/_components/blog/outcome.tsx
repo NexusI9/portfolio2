@@ -8,18 +8,16 @@ import { catClass } from "@lib/utils";
 import { Blog } from "./blog";
 
 interface IOutcome {
+	headline: string;
 	items: string[];
 }
 
 
-export default function Outcome({ items }: IOutcome) {
+export default function Outcome({ headline, items }: IOutcome) {
 	return (
 		<Blog.Section>
 
-			<Blog.Headline>
-				<Blog.Heading role="H3">Outcomes & Learning</Blog.Heading>
-			</Blog.Headline>
-
+			<Blog.Heading role="H3">{headline}</Blog.Heading>
 			<ul className={styles.outcome}>
 				{items.map((item, i) => <li key={item + i} className={styles.item}>
 					<div className="relative">

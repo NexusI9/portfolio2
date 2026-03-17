@@ -8,8 +8,6 @@ import { Gallery } from "../../_components/gallery/gallery";
 import { imPath } from "../_lib/helper";
 import { List } from "../../_components/list/list";
 import TradeOffHeader from "../_components/tradeoff-header/tradeoff-header";
-import Tag from "../../_components/tag/tag";
-import { Text } from "../../_components/text/text";
 
 export default function EmotionalMapper() {
 
@@ -26,7 +24,7 @@ export default function EmotionalMapper() {
 			</Blog.Group>
 		</Blog.Section>
 
-		<Blog.Constraints items={p.constraints} />
+		<Blog.Constraints headline={p.constraints.headline} items={p.constraints.body} />
 
 		<Blog.Section>
 
@@ -166,12 +164,15 @@ export default function EmotionalMapper() {
 					<Gallery.AutoLayout rows={[[imPath(pName, "module-action-reward")]]} />
 				</Blog.Group>
 
-				<Blog.Group direction="ROW">
-					<Gallery.AutoLayout rows={[[imPath(pName, "module-action-reward-flow")]]} />
+				<Blog.Group >
 					<Blog.Group>
 						<Blog.Heading role="H5">{p.tech_research.system_design.architecture.headline}</Blog.Heading>
 						<Blog.Paragraph>{p.tech_research.system_design.architecture.body}</Blog.Paragraph>
 					</Blog.Group>
+					<Gallery.AutoLayout rows={[[
+						imPath(pName, "module-action-reward-flow"),
+						imPath(pName, "persona-action-reward-flow")
+					]]} />
 				</Blog.Group>
 			</Blog.Group>
 
@@ -362,8 +363,8 @@ export default function EmotionalMapper() {
 
 		</Blog.Section>
 
-		<Blog.TradeOffs items={p.tradeoffs.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
-		<Blog.Outcome items={p.outcomes} />
+		<Blog.TradeOffs headline={p.tradeoffs.headline} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.Outcome headline={p.outcomes.headline} items={p.outcomes.body} />
 
 
 
