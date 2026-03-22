@@ -1,8 +1,9 @@
 "use client"
 
 import { Text, TextBase } from "@components/text/text";
-import { ComponentPropsWithoutRef, createElement } from "react";
+import { ComponentPropsWithoutRef, createElement, Fragment } from "react";
 import { slugify } from "./helper";
+import Mosaic from "../mosaic/mosaic";
 
 interface IHeading {
 	role?: ComponentPropsWithoutRef<typeof TextBase>["role"];
@@ -11,8 +12,21 @@ interface IHeading {
 
 export default function Heading({ role = "H3", children }: IHeading) {
 
-	return (<>{createElement(Text[role], {
-		children,
-		id: slugify(children)
-	})}</>);
+
+	if (role == "H3")
+	  return (<div className="flex flex-row items-center gap-(--size-space-large)">
+		    <Mosaic row={3} column={2} animation="BLINK"/>
+			{createElement(Text[role], {
+				children,
+				id: slugify(children),
+			})}
+		</div>);
+
+
+	return (<>
+		{createElement(Text[role], {
+			children,
+			id: slugify(children),
+		})}
+	</>);
 }
