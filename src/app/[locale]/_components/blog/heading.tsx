@@ -1,7 +1,7 @@
 "use client"
 
 import { Text, TextBase } from "@components/text/text";
-import { ComponentPropsWithoutRef, createElement, Fragment } from "react";
+import { ComponentPropsWithoutRef, createElement } from "react";
 import { slugify } from "./helper";
 import Mosaic from "../mosaic/mosaic";
 

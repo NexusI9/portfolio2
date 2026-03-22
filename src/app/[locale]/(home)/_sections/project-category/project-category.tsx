@@ -38,7 +38,7 @@ export default function ProjectCategory({ headline, projects, id }: IProjectCate
 				</hgroup>
 
 				<div className={styles["project-wrapper"]}>
-					{projects.map((props) => <ProjectCard key={props.thumbnail} {...props} />)}
+					{projects.map((props) => <ProjectCard key={props.thumbnail.src} {...props} />)}
 				</div>
 
 

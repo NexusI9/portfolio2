@@ -9,11 +9,17 @@ export interface IProjectCategoriesAnchors {
 	anchor: string;
 }
 
+export interface IThumbnail {
+	ratio: "DEFAULT" | "WIDE";
+	src: string;
+	small?: string;
+}
+
 export interface IProjectDescriptor {
 	name: string;
 	description: string;
 	pageName: string;
-	thumbnail: string;
+	thumbnail: IThumbnail;
 	preview: string;
 	alt: string;
 

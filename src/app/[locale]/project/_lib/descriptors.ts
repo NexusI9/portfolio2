@@ -6,7 +6,7 @@ export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dicti
 	description: dico.projects.stylestudio.description,
 	pageName: "style-studio",
 	alt: "Style Studio plugin snapshot displayed on a macbook mockup.",
-	thumbnail: "/assets/thumbnails/style-studio.png",
+	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/style-studio.png" },
 	preview: "/assets/thumbnails/style-studio.png",
 	roles: [
 		dico.projects.common.roles.product_owner,
@@ -25,7 +25,7 @@ export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: D
 	description: dico.projects.emma.description,
 	pageName: "emotional-mapper",
 	alt: "Emotional Mapper software snapshot displayed on a macbook mockup with icons and other UI elements floating out of it.",
-	thumbnail: "/assets/thumbnails/emotional-mapper.png",
+	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/emotional-mapper.png" },
 	preview: "/assets/thumbnails/emotional-mapper.png",
 	roles: [
 		dico.projects.common.roles.business_strategist,
@@ -47,7 +47,7 @@ export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) 
 	description: dico.projects.azusa.description,
 	pageName: "azusa",
 	alt: "Video game snapshot with 3D characters in front.",
-	thumbnail: "/assets/thumbnails/azusa.png",
+	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/azusa.png" },
 	preview: "/assets/thumbnails/azusa.png",
 	roles: [
 		dico.projects.common.roles.developer,
@@ -70,7 +70,7 @@ export const PROJECT_DESCRIPTOR_WEBGPU: TProjectDesciptorFn = (dico: Dictionary)
 	description: dico.projects.webgpu.description,
 	pageName: "webgpu-3d-engine",
 	alt: "A macbook mockup with a 3D engine interface displayed on the screen.",
-	thumbnail: "/assets/thumbnails/webgpu-engine.png",
+	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/webgpu-engine.png" },
 	preview: "/assets/thumbnails/webgpu-engine.png",
 	roles: [
 		dico.projects.common.roles.developer,
@@ -93,7 +93,11 @@ export const PROJECT_DESCRIPTOR_ANIMAL: TProjectDesciptorFn = (dico: Dictionary)
 	description: dico.projects.animal.description,
 	pageName: "animal-chamber-apocalypse-beat",
 	alt: "Video snapshots layed out next to 3D characters standing close to one another.",
-	thumbnail: "/assets/thumbnails/animal.png",
+	thumbnail: {
+		ratio: "WIDE",
+		src: "/assets/thumbnails/animal.png",
+		small: "/assets/thumbnails/animal-sm.png",
+	},
 	preview: "/assets/thumbnails/animal-sm.png",
 	roles: [
 		dico.projects.common.roles.art_director,
