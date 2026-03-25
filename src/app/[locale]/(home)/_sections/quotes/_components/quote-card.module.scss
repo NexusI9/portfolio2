@@ -9,8 +9,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width:  362px;
+    max-width: 362px;
+    flex: 1;
+    min-width: 300px;
 
+    
+    
     hr{
 	border-color: var(--color-border-subtlest-on-light);
     }
@@ -22,4 +26,8 @@
 	font-weight: var(--font-weight-medium);
     }
     
+}
+
+.body{
+    padding-bottom: var(--size-space-extra-large);
 }

@@ -2,6 +2,11 @@
 @use "@styles/animation";
 @use "@styles/utils" as utils;
 
+
+:root{
+    --size-width-sidebar: 260px;
+}
+
 .sidebar{
 
     --position: sticky;
@@ -12,7 +17,7 @@
     position: var(--position);
     top: var(--size-space-extra-large-6);
     align-self: flex-start;
-    width: utils.fluid-clamp(responsive.$tablet, responsive.$widescreen, 160px, 260px);
+    width: utils.fluid-clamp(responsive.$tablet, responsive.$default-screen, 160px, 260px);
     flex-shrink: 0;
     
 

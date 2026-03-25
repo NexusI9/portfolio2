@@ -28,26 +28,29 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 
 	const dico = useDictionary();
 
-	return (<Container className={styles.banner}>
+	return (
+		<div className={styles["banner-wrapper"]}>
+			<Container className={styles.banner}>
 
-		<div className="flex flex-col gap-(--size-space-extra-large-4)">
-			<hgroup>
-				{overline && <Text.Overline className="text-(--color-text-brand-base)">{overline}</Text.Overline>}
-				{headline && <Text.H2>{headline}</Text.H2>}
-				{subtitle && <Text.Subtitle1 className="text-(--color-text-subtle-on-light)">{subtitle}</Text.Subtitle1>}
-			</hgroup>
+				<div className="flex flex-col gap-(--size-space-extra-large-4)">
+					<hgroup>
+						{overline && <Text.Overline className="text-(--color-text-brand-base)">{overline}</Text.Overline>}
+						{headline && <Text.H2>{headline}</Text.H2>}
+						{subtitle && <Text.Subtitle1 className="text-(--color-text-subtle-on-light)">{subtitle}</Text.Subtitle1>}
+					</hgroup>
 
-			<ul className="flex flex-col gap-(--size-space-extra-large-2)">
-				{roles && <AttributeRow header={dico.projects.common.attributes.roles} value={roles.join(dico.common.glyphs.separator_comma)} />}
-				{status && <AttributeRow header={dico.projects.common.attributes.status}><Status type={status} /></AttributeRow>}
-				{context && <AttributeRow header={dico.projects.common.attributes.context} value={context.join(dico.common.glyphs.separator_comma)} />}
-				{stack && <AttributeRow header={dico.projects.common.attributes.stack}>{
-					stack.map(item => <Stack key={item} type={item} />)
-				}</AttributeRow>}
-			</ul>
-		</div>
+					<ul className="flex flex-col gap-(--size-space-extra-large-2)">
+						{roles && <AttributeRow header={dico.projects.common.attributes.roles} value={roles.join(dico.common.glyphs.separator_comma)} />}
+						{status && <AttributeRow header={dico.projects.common.attributes.status}><Status type={status} /></AttributeRow>}
+						{context && <AttributeRow header={dico.projects.common.attributes.context} value={context.join(dico.common.glyphs.separator_comma)} />}
+						{stack && <AttributeRow header={dico.projects.common.attributes.stack}>{
+							stack.map(item => <Stack key={item} type={item} />)
+						}</AttributeRow>}
+					</ul>
+				</div>
 
-		  {diagram && <Image src={diagram} className={styles.diagram} alt="Triangular diagram highlighting project key expertises." width={545} height={347} />}
+				{diagram && <Image src={diagram} className={styles.diagram} alt="Triangular diagram highlighting project key expertises." width={545} height={347} />}
 
-	</Container>);
+			</Container>
+		</div>);
 }

@@ -3,7 +3,7 @@
 
 :root{
     
-    --size-margin-blog: #{utils.fluid-clamp(responsive.$tablet, responsive.$widescreen, 30px, 112px)};
+    --size-margin-blog: #{utils.fluid-clamp(responsive.$tablet, responsive.$default-screen, 30px, 112px)};
     
 }
 

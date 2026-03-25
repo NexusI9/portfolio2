@@ -5,25 +5,35 @@
 
 .video{
 
-    // TODO fix hard coded width
-    --ratio:4/3;
-    
-    max-width: utils.fluid-clamp(responsive.$smallscreen, responsive.$widescreen, 500px, 728px);
-    aspect-ratio: var(--ratio);
 
+    $default-width: 700px;
+    $large-width: 1228px;
+
+    $default-height: calc($default-width * 3/4);
+    $large-height: calc($large-width * 9/16);
+
+    // TODO fix hard coded width
+    max-width: utils.fluid-clamp(responsive.$default-screen, responsive.$large-screen, $default-width, $large-width);
+
+    max-height: utils.fluid-clamp(responsive.$default-screen, responsive.$large-screen, $default-height, $large-height);
+    
+    aspect-ratio: var(--ratio);
+    height: 100%;
+
+    
     video{
 	height:100%;
     }
 
-    @include responsive.smallscreen{
+    @include responsive.small-screen{
 	max-width: none;
-	--ratio: auto;
+	--height: auto;
     }
 
     
     @include responsive.tablet{
 	max-width: none;
-	--ratio: auto;
+	--height: auto;
     }
     
     

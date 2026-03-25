@@ -71,7 +71,7 @@ export function TextBase({ id, className, children, role, style }: TTextBase) {
 
 	const props: any = {
 		children,
-		className: catClass([STYLE_CLASS[style], className]),
+		className: catClass([className, STYLE_CLASS[style]]),
 		id,
 	};
 

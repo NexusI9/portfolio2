@@ -4,12 +4,10 @@
 .blog-section{
 
     // TODO replace hardcoded value:  96 >> --size-space-extra-large-6
-    padding-bottom:utils.fluid-clamp(responsive.$tablet, responsive.$widescreen, 32px, 96px);    display:flex;
+    padding-bottom:utils.fluid-clamp(responsive.$tablet, responsive.$default-screen, 32px, 96px);    display:flex;
     flex-direction: column;
     gap:var(--size-space-extra-large-4);
-    padding-right: var(--size-margin-container);
-    padding-left: var(--size-margin-blog);
-    
+
     &[data-layout=COLUMN_2]{
 	display:grid;
 	grid-template-columns: repeat(2, 1fr);

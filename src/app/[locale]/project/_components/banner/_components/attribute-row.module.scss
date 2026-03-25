@@ -6,8 +6,8 @@
 
 .attribute-row{
     display:grid;
-    grid-template-columns: utils.fluid-clamp(responsive.$smallscreen, responsive.$widescreen, 75px, 100px) auto;
-    gap: utils.fluid-clamp(responsive.$smallscreen, responsive.$widescreen, 6px, 32px);
+    grid-template-columns: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 75px, 100px) auto;
+    gap: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 6px, 32px);
 
     & > p:first-child{
 	padding-top:var(--size-space-extra-small);

@@ -4,24 +4,32 @@
 	position:relative;
 	background: var(--color-surface-higher);
 	margin-top: var(--project-banner-height);
-
+	padding-top: var(--size-space-extra-large-5);
 	display:flex;
 	flex-direction:row;
-
+	--breakpoint: calc( 2 * (var(--size-margin-container) + var(--size-width-sidebar) + var(--size-margin-blog)) + var(--size-width-desktop-full)  );
+	max-width: var(--breakpoint);
+	gap: var(--size-margin-blog);
+    
+	
 	@include responsive.tablet{
 	    padding-left: 0;
 	    display: block;
 	}
 
-	&[data-type=FLUID]{
 
-	    --padding-left: var(--size-margin-container);
-	    padding-top: var(--size-space-extra-large-5);
-	    padding-left: var(--padding-left);
-
-	    @include responsive.tablet{
-		--padding-left: 0;
-		display: block;
-	    }
+	&::before{
+	    content: '';
+	    display: block;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    transform: translate3d(0px, -100%, 0px);
+	    height: 30px;
+	    width: 100%;
+	    background: linear-gradient(0deg, var(--color-surface-lower) -810%, transparent 100%);
 	}
+
+	
+
 }

@@ -30,11 +30,11 @@ export default function ProjectCategory({ headline, projects, id }: IProjectCate
 			targetRef={containerRef as RefObject<HTMLElement>}
 			onEnter={onEnter}
 		>
-			<Container ref={containerRef} id={id} className={`${styles["project-category"]} flex flex-col gap-(--size-space-extra-large-4)`}>
+		  <Container ref={containerRef} id={id} size="WIDE" className={`${styles["project-category"]} flex flex-col gap-(--size-space-extra-large-4)`}>
 
 				<hgroup>
 					<Mosaic row={3} column={3} className={styles.mosaic} animation="BLINK" />
-					<Text.Display className="relative">{headline}</Text.Display>
+				  <Text.Display className={styles.display}>{headline}</Text.Display>
 				</hgroup>
 
 				<div className={styles["project-wrapper"]}>

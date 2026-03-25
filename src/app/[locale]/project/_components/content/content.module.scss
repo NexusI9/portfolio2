@@ -1,4 +1,9 @@
+@use "@styles/responsive" as responsive;
+@use "@styles/utils" as utils;
+
 .content{
     min-height: 100vh;
     overflow: hidden;
+
+    max-width:responsive.$default-screen;
 }

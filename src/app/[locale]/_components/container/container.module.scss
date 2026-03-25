@@ -5,8 +5,12 @@
 
     width:100vw;
     margin: auto;
-    max-width: var(--size-width-desktop-full);
+    max-width: responsive.$default-screen;
     padding: 0 var(--size-margin-container);
+
+    &[data-size="WIDE"]{
+	max-width: responsive.$large-screen;
+    }
 
     @include responsive.tablet{
 	padding: 0 var(--size-margin-tablet);

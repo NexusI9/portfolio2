@@ -2,6 +2,7 @@
 @use "@styles/var";
 @use "@styles/responsive" as responsive;
 
+
 .project-category{
 
     aspect-ratio:16/7;
@@ -11,12 +12,21 @@
     padding-top: var(--padding-v);
     padding-bottom: var(--padding-v);
 
-    margin-top: utils.fluid-clamp(responsive.$smallscreen, responsive.$widescreen, 0px, 96px); //var(--size-space-extra-large-6)
-    margin-bottom: utils.fluid-clamp(responsive.$smallscreen, responsive.$widescreen, 0px, 96px);
+    margin-top: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 0px, 96px); //var(--size-space-extra-large-6)
+    margin-bottom: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 0px, 96px);
 
     @include responsive.mobile{
 	--padding-v: var(--size-space-extra-large-2);
     }
+
+    h1.display{
+	position: relative;
+
+	// TODO replace hardcoded value
+
+	font-size: utils.fluid-clamp(responsive.$default-screen, responsive.$extra-large-screen, 6.56rem, 10rem);
+    }
+
 }
 
 .mosaic{
@@ -34,7 +44,7 @@
     --desktop-ratio: 500 / 437;
     --desktop-ratio-wide: 1120 / 437;
    // TODO OPTI: replace hardcoded widths by dynamic (var)
-    padding-left: utils.fluid-clamp(responsive.$smallscreen, responsive.$widescreen, 0px, 228px);
+    padding-left: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 0px, 228px);
 
     display: flex;
     flex-direction:row;

@@ -11,7 +11,7 @@
     background: linear-gradient(180deg, var(--color-surface-higher) 50%, var(--color-background-brand-base) 120%);
     padding-top: var(--padding-top);
 
-    @include responsive.smallscreen{
+    @include responsive.small-screen{
 	--padding-top: var(--size-space-extra-large-4);
     }
 
@@ -51,9 +51,9 @@
 
 .contact{
     display:grid;
-    grid-template-columns: utils.fluid-clamp(responsive.$smallscreen, responsive.$widescreen, 240px, 456px) auto;
+    grid-template-columns: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 240px, 456px) auto;
     align-items: center;
-    gap: utils.fluid-clamp(responsive.$smallscreen, responsive.$widescreen, 0px, 64px);
+    gap: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 0px, 64px);
 
     @include responsive.tablet{
 	grid-template-columns: none;
@@ -70,10 +70,10 @@
 	}
     }
 
-    @include responsive.smallscreen{
+    @include responsive.small-screen{
 	h2.display{    
-	    font-size: utils.fluid-clamp(responsive.$tablet, responsive.$widescreen, 57px, 104.96px);
-	    line-height: utils.fluid-clamp(responsive.$tablet, responsive.$widescreen, 64px, 116px);
+	    font-size: utils.fluid-clamp(responsive.$tablet, responsive.$default-screen, 57px, 104.96px);
+	    line-height: utils.fluid-clamp(responsive.$tablet, responsive.$default-screen, 64px, 116px);
 	}
     }
 }
@@ -133,7 +133,7 @@
 
     h4{
 	@include responsive.desktop{
-	    font-size: utils.fluid-clamp(responsive.$tablet, responsive.$widescreen, 20px, 34.08px);
+	    font-size: utils.fluid-clamp(responsive.$tablet, responsive.$default-screen, 20px, 34.08px);
 	}
 
 	@include responsive.tablet{

@@ -16,7 +16,7 @@ export default function Footer() {
 
 	return (<footer className={styles.footer}>
 
-		<Container className={styles.container}>
+		  <Container className={styles.container}>
 			<div className={styles.inner}>
 
 				<div className={styles.contact}>

@@ -18,7 +18,7 @@
     justify-items: center;
 
     $baseWidth: 684px;
-    width: utils.fluid-clamp( responsive.$smallscreen, responsive.$widescreen, 545px, $baseWidth);
+    width: utils.fluid-clamp( responsive.$small-screen, responsive.$default-screen, 545px, $baseWidth);
     height: var(--size-height-input-large);
 
     @include responsive.tablet{

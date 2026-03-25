@@ -3,7 +3,7 @@
 import { Text } from "@components/text/text";
 import Image from "next/image";
 import styles from "./quote-card.module.scss"
-import { ComponentPropsWithoutRef, useEffect, useRef } from "react";
+import { ComponentPropsWithoutRef } from "react";
 import { catClass } from "@lib/utils";
 
 interface IQuoteCard extends ComponentPropsWithoutRef<"blockquote"> {
@@ -19,9 +19,9 @@ interface IQuoteCard extends ComponentPropsWithoutRef<"blockquote"> {
 export default function QuoteCard({ children, thumbnail, name, position, location, className }: IQuoteCard) {
 
 	return (
-		<blockquote className={catClass([styles["quote-card"], className])}>
+		<blockquote className={catClass([className, styles["quote-card"]])}>
 
-			<Text.Body>{children}</Text.Body>
+			<Text.Body className={styles.body}>{children}</Text.Body>
 			<div className="flex flex-col gap-(--size-space-medium)">
 				<hr />
 				<div className="flex flex-row items-start gap-(--size-space-medium)">

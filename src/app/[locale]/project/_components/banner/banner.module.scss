@@ -6,7 +6,7 @@
 :root{
     --project-banner-height:600px;
 
-    @include responsive.smallscreen{
+    @include responsive.small-screen{
 	--project-banner-height:0px;	
     }
 
@@ -19,16 +19,22 @@
     }
 }
 
+
+.banner-wrapper{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .banner{
     
     height: var(--project-banner-height);
     padding-top: var(--size-space-extra-large-7);
     display: grid;
-    background: linear-gradient(0deg, var(--color-surface-lower) -20%, transparent 3%);
-
-    grid-template-columns: auto utils.fluid-clamp(responsive.$tablet, responsive.$widescreen, 300px, 545px);
+    grid-template-columns: auto utils.fluid-clamp(responsive.$tablet, responsive.$default-screen, 300px, 545px);
     align-items: start;
-    gap: utils.fluid-clamp(responsive.$smallscreen, responsive.$widescreen, 12px, 96px);
+    gap: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 12px, 96px);
     position:fixed;
     top:0;
 
@@ -42,7 +48,7 @@
 	padding-bottom: var(--size-space-extra-large-5);
     }
 
-    @include responsive.smallscreen{
+    @include responsive.small-screen{
 	@include relative-mode();
     }
     
@@ -62,7 +68,7 @@
 .diagram{
 
 
-    @include responsive.smallscreen{
+    @include responsive.small-screen{
         align-self: center;
     }
 

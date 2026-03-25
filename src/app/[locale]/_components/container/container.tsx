@@ -8,13 +8,14 @@ interface IContainer
 	extends ComponentPropsWithoutRef<"section"> {
 	children?: React.ReactNode;
 	type?: "DEFAULT" | "FLUID";
+	size?: "DEFAULT" | "WIDE";
 }
 
 const Container = forwardRef<
 	HTMLElement,
 	IContainer
 >(function Container(
-	{ children, type = "DEFAULT", className, ...props },
+	{ children, type = "DEFAULT", size = "DEFAULT", className, ...props },
 	ref
 ) {
 	return (
@@ -22,6 +23,7 @@ const Container = forwardRef<
 			ref={ref}
 			className={catClass([styles.container, className])}
 			data-type={type}
+			data-size={size}
 			{...props}
 		>
 			{children}
