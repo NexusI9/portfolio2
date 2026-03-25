@@ -1,16 +1,20 @@
 @use "@styles/responsive" as responsive;
+@use "@styles/utils" as utils;
 
 .container{
 	position:relative;
 	background: var(--color-surface-higher);
 	margin-top: var(--project-banner-height);
-	padding-top: var(--size-space-extra-large-5);
-	display:flex;
-	flex-direction:row;
-	--breakpoint: calc( 2 * (var(--size-margin-container) + var(--size-width-sidebar) + var(--size-margin-blog)) + var(--size-width-desktop-full)  );
-	max-width: var(--breakpoint);
-	gap: var(--size-margin-blog);
-    
+	// ex: tradeoff section
+	&[data-type=FLUID]{
+	    max-width: none;
+	    padding-top: var(--size-space-extra-large-5);
+	}
+
+
+	&[data-type=FLUID]{
+	    padding-left: var(--size-margin-container);
+	}
 	
 	@include responsive.tablet{
 	    display: block;
@@ -31,4 +35,17 @@
 
 	
 
+}
+
+.inner{
+    	display:flex;
+	flex-direction:row;
+	--breakpoint: calc(
+	    2 * (var(--size-width-sidebar)
+		 + var(--size-margin-blog)
+		 - var(--size-margin-container) / 2)
+	    + var(--size-width-desktop-full)  );
+	
+	max-width: var(--breakpoint);
+	margin: auto;
 }

@@ -12,9 +12,10 @@
     justify-content: space-between;
     align-items: center;
 
-    padding-right: var(--size-margin-container);
+    //padding-right: var(--size-margin-container);
     padding-left: var(--size-margin-blog);
     column-gap: var(--size-space-extra-large-2);
+    max-width: var(--size-width-desktop-full);
 }
 
 .nav{
