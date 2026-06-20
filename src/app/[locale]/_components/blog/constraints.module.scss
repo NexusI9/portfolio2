@@ -13,6 +13,7 @@
 	--flex-basis: calc((100% - 2 * var(--gap)) / 3);
 	flex-basis: var(--flex-basis);
 	flex-grow: 1;
+	max-width: 400px;
 
 	@include responsive.tablet{
 	    --flex-basis: calc((100% - 2 * var(--gap)) / 2);

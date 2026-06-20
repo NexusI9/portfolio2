@@ -53,6 +53,120 @@
 					"For the UI, I aimed for a sci-fi look that still felt friendly and stylized, while keeping it simple enough for low-performance devices. The overall direction combines futuristic elements with playful visual patterns inspired by interfaces like Mahjong pieces or card games."
 				]
 			}
+		},
+		"procedural_systems": {
+			"headline": "Procedural Systems",
+			"island": {
+				"headline": "Island Terrain",
+				"body": [
+					"The game features a floating-island building mechanic that allows players to paint and merge island chunks together. Topology generation relies on a marching squares approach combined with Delaunay triangulation to seamlessly connect painted areas.",
+					"The underside of each island is generated using weighted noise displacement, while texturing is handled through an offscreen rendering pass that generates masks fed into a dedicated shader, allowing the terrain to update dynamically."
+				]
+			},
+			"vegetation": {
+				"headline": "Vegetation",
+				"body": [
+					"The initial Perlin-based distribution resulted in excessive mesh clumping, so the flora generation was redesigned around a hierarchical jittered grid system.",
+					"Vegetation is divided into three categories based on spatial footprint (large, medium, and small), with elements placed progressively from the largest footprint, such as trees, down to the smallest, such as grass. This approach produces a more balanced and readable distribution."
+				]
+			},
+			"nomad_house": {
+				"headline": "Nomad Houses",
+				"body": "The nomad house procedural generation relies on a simple radial rule set, where elements are distributed around a central base. To introduce visual variation, UVs are randomly offset along predefined texture patterns on the X axis, allowing multiple appearances from the same asset set."
+			}
 		}
+	},
+	"tradeoffs": {
+		"headline": "Trade-offs",
+		"body": [
+			{
+				"heading": [
+					"Rapid prototyping in Unity",
+					"Custom engine control"
+				],
+				"benefits": [
+					"Reduced engineering overhead",
+					"Existing tooling for gameplay, lighting, and asset integration"
+				],
+				"costs": [
+					"Less control over the full rendering pipeline",
+					"Performance and workflow tied to Unity’s abstractions"
+				]
+			},
+			{
+				"heading": [
+					"Metaphor",
+					"Narrative Clarity"
+				],
+				"benefits": [
+					"Encourages interpretation and imagination",
+					"Direct focus on visuals quality rather than story"
+				],
+				"costs": [
+					"Some viewers may feel lost or disconnected",
+					"Can be seen as lazy and lose value"
+				]
+			},
+			{
+				"heading": [
+					"Hybrid 2D/3D pipeline",
+					"Fully unified medium"
+				],
+				"benefits": [
+					"Reduced technical overhead",
+					"Faster production under time constraints"
+				],
+				"costs": [
+					"Less camera freedom than a full 3D environment",
+					"Occasional visual dissonance"
+				]
+			},
+			{
+				"heading": [
+					"Library based assets",
+					"Full custom sculpting"
+				],
+				"benefits": [
+					"Rapid iteration",
+					"More energy for art direction"
+				],
+				"costs": [
+					"Heavily influence final design",
+					"Reduced uniqueness at the base mesh level"
+				]
+			},
+			{
+				"heading": [
+					"3D animation",
+					"Frame-by-frame animation"
+				],
+				"benefits": [
+					"Reusability of assets",
+					"Better control over timing"
+				],
+				"costs": [
+					"Less organic, more cheap looking",
+					"Reduced hand-crafted feel"
+				]
+			}
+		]
+	},
+	"solution": {
+		"headline": "Solution",
+		"props": {
+			"headline": "Props Modelling",
+			"body": "Multiple props were modeled and textured to support the game's early functionalities and mechanics. The focus was placed on the assets most necessary for the first experiments. Creating original props rather than relying on downloaded assets also provided an opportunity to explore and better evaluate the project's future art direction."
+		},
+		"scenes": {
+			"headline": "Game Scenes",
+			"body": "For this first stage, the focus was placed on two core scenes: the island-building system and the character editor. These provided a solid foundation for testing the project's main mechanics and overall direction."
+		}
+	},
+	"outcomes": {
+		"headline": "Outcomes & Learning",
+		"body": [
+			"It’s not necessarily unproductive to develop a constellation of prototypes or unfinished artworks. While they may seem disconnected at first, they often find resonance with one another over time, eventually becoming valuable foundations for future projects.",
+			"It was important to find a better balance between key project objectives and practical constraints. For instance, while building a custom engine could have been lighter than using Unity, the development overhead and time required to rebuild core features would have far outweighed the actual performance gains."
+		]
 	}
 }

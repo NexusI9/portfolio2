@@ -1,10 +1,11 @@
 @use "@styles/responsive" as responsive;
+@use "@styles/utils" as utils;
 
 .tradeoffs{
 
     padding-bottom: var(--size-space-extra-large-3);    
     padding-left :var(--size-margin-blog);
-    padding-right: var(--size-margin-container);
+    padding-right :var(--after-width);
 }
 
 .header{
@@ -25,16 +26,24 @@
 }
 
 .wrapper{
-    position: relative;    
-    &::after{
-	--display: block;
+
+    	
+    // TODO replace harcoded value
+    $after-breakpoint: calc(responsive.$large-screen - 260px);
+    --after-width: var(--size-margin-container);
+    
+    position: relative;
+    max-width: calc( var(--size-width-desktop-full) + var(--after-width));
+
+    @media (min-width: #{$after-breakpoint}) {
+	--after-width:260px;
+    }
+
+    &::before, &::after{
 	content: '';
 	position: absolute;
-	width:var(--size-margin-blog);
 	height:100%;
 	top:0;
-	left:0;
-	background: linear-gradient(90deg, var(--color-surface-higher) 80%, transparent);
 	display: var(--display);
 
 	@include responsive.tablet{
@@ -43,6 +52,24 @@
 	
 	@include responsive.mobile{
 	    --display:none;	
+	}
+    }
+
+    &::before{
+	--display: block;
+	left:0;
+	background: linear-gradient(90deg, var(--color-surface-higher) 60%, transparent);
+	width:var(--size-margin-blog);
+    }
+
+    &::after{
+	--display: none;
+	width:var(--after-width);
+	right:0;
+	background: linear-gradient(-90deg, var(--color-surface-higher) 20%, transparent);
+
+	@media (min-width: #{$after-breakpoint}) {
+	    --display:block;
 	}
     }
     

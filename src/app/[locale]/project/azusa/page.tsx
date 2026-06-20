@@ -8,6 +8,7 @@ import { Gallery } from "../../_components/gallery/gallery";
 import { List } from "../../_components/list/list";
 import { Text } from "../../_components/text/text";
 import { imPath } from "../_lib/helper";
+import TradeOffHeader from "../_components/tradeoff-header/tradeoff-header";
 
 export default function Azusa() {
 
@@ -108,12 +109,24 @@ export default function Azusa() {
 
 
 			<Blog.Group>
+				<Gallery.Wrapper>
+					<Blog.Group direction="ROW">
 
-				<Blog.Heading role="H5">{p.exploration.creative_research.character_design.headline}</Blog.Heading>
+						<Blog.Group>
+							<Blog.Heading role="H5">{p.exploration.creative_research.character_design.headline}</Blog.Heading>
 
-				<Blog.Paragraph>{p.exploration.creative_research.character_design.body}</Blog.Paragraph>
+							<Blog.Paragraph>{p.exploration.creative_research.character_design.body}</Blog.Paragraph>
+						</Blog.Group>
 
-				<Gallery.AutoLayout rows={[[imPath(pName, "character-design")]]} />
+						<Gallery.AutoLayout noWrapper rows={[[imPath(pName, "character-design")]]} />
+
+					</Blog.Group>
+
+
+
+
+					<Gallery.AutoLayout noWrapper rows={[[imPath(pName, "character-model")]]} />
+				</Gallery.Wrapper>
 			</Blog.Group>
 
 			<Blog.Group>
@@ -152,7 +165,82 @@ export default function Azusa() {
 				</Gallery.Wrapper>
 
 			</Blog.Group>
+
+			<Blog.Group>
+
+				<Blog.Heading role="H4">{p.exploration.procedural_systems.headline}</Blog.Heading>
+
+				<Blog.Group>
+					<Blog.Heading role="H5">{p.exploration.procedural_systems.island.headline}</Blog.Heading>
+					<Blog.Paragraph>{p.exploration.procedural_systems.island.body}</Blog.Paragraph>
+
+					<Gallery.AutoLayout rows={[
+						[
+							imPath(pName, "island-generation-topo"),
+							imPath(pName, "island-generation-texture"),
+						],
+						[
+							imPath(pName, "island-generation-ingame"),
+						]
+					]} />
+				</Blog.Group>
+
+				<Blog.Group>
+					<Blog.Heading role="H5">{p.exploration.procedural_systems.vegetation.headline}</Blog.Heading>
+					<Blog.Paragraph>{p.exploration.procedural_systems.vegetation.body}</Blog.Paragraph>
+
+					<Gallery.AutoLayout rows={[
+						[
+							imPath(pName, "flora-perlin-grid"),
+							imPath(pName, "flora-jittered-process"),
+						],
+						[
+							imPath(pName, "flora-foot-print"),
+							imPath(pName, "flora-jittered-ingame"),
+						]
+					]} />
+
+				</Blog.Group>
+
+				<Blog.Group>
+					<Blog.Heading role="H5">{p.exploration.procedural_systems.nomad_house.headline}</Blog.Heading>
+					<Blog.Paragraph>{p.exploration.procedural_systems.nomad_house.body}</Blog.Paragraph>
+
+					<Gallery.AutoLayout rows={[
+						[
+							imPath(pName, "nomad-kit-slot"),
+							imPath(pName, "nomad-kit-texture"),
+						],
+						[
+							imPath(pName, "nomad-kit-ingame"),
+						]
+					]} />
+				</Blog.Group>
+
+			</Blog.Group>
 		</Blog.Section>
+
+		<Blog.Section>
+
+			<Blog.Heading>{p.solution.headline}</Blog.Heading>
+
+			<Blog.Group>
+				<Blog.Heading role="H5">{p.solution.props.headline}</Blog.Heading>
+				<Blog.Paragraph>{p.solution.props.body}</Blog.Paragraph>
+
+			</Blog.Group>
+
+
+			<Blog.Group>
+				<Blog.Heading role="H5">{p.solution.scenes.headline}</Blog.Heading>
+				<Blog.Paragraph>{p.solution.scenes.body}</Blog.Paragraph>
+
+			</Blog.Group>
+
+		</Blog.Section>
+
+		<Blog.TradeOffs headline={p.tradeoffs.headline} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.Outcome headline={p.outcomes.headline} items={p.outcomes.body} />
 
 	</Template>);
 }

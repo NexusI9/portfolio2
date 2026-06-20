@@ -41,7 +41,7 @@
 			},
 			"callback": {
 				"headline": "Render Callbacks",
-				"body": "Another feature improving control over the main loop was a callback registration system. A more advanced approach, inspired by Bevy, would use a Scheduler object for greater flexibility, allowing functions to register at start, update, or end—similar to Unity’s MonoBehaviour methods like onUpdate() and onAwake()."
+			    "body": "Another feature improving control over the main loop was a callback registration system. A more advanced approach, inspired by Bevy, would use a Scheduler object for greater flexibility, allowing functions to register at start, update, or end, similar to Unity’s MonoBehaviour methods like onUpdate() and onAwake()."
 			},
 			"mbin": {
 				"headline": "Mesh Loading",

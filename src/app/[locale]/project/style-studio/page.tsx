@@ -156,18 +156,30 @@ export default function StyleStudio() {
 				</Gallery.Wrapper>
 			</Blog.Group>
 
-
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.tech_research.sync.headline}</Blog.Heading>
-				<Blog.Paragraph>{p.tech_research.sync.body}</Blog.Paragraph>
-				<Gallery.AutoLayout
-					rows={[
-						[
-							imPath(pName, "sync-1"),
-							imPath(pName, "sync-2"),
-						],
-					]} />
+
+				<Gallery.Wrapper>
+					<Blog.Heading role="H4">{p.tech_research.sync.headline}</Blog.Heading>
+
+					<Blog.Group direction="ROW">
+						<Blog.Paragraph>{p.tech_research.sync.body}</Blog.Paragraph>
+						<Gallery.AutoLayout noWrapper
+							rows={[
+								[
+									imPath(pName, "sync-1"),
+								]
+							]} />
+					</Blog.Group>
+
+					<Gallery.AutoLayout noWrapper
+						rows={[
+							[
+								imPath(pName, "sync-2"),
+							],
+						]} />
+				</Gallery.Wrapper>
 			</Blog.Group>
+
 
 		</Blog.Section>
 

@@ -47,77 +47,6 @@ export default function EmotionalMapper() {
 
 		<Blog.Section>
 
-			<Blog.Heading>{p.ui_research.headline}</Blog.Heading>
-
-			<Blog.Group>
-				<Blog.Heading role="H4">{p.ui_research.brainstorm.headline}</Blog.Heading>
-				<Blog.Paragraph>{p.ui_research.brainstorm.body}</Blog.Paragraph>
-
-				<Gallery.AutoLayout rows={[[imPath(pName, "ui-global-brainstorm")]]} />
-			</Blog.Group>
-
-			<Blog.Group>
-
-				<Blog.Heading role="H4">{p.ui_research.physical.headline}</Blog.Heading>
-				<Blog.Paragraph>{p.ui_research.physical.body}</Blog.Paragraph>
-				<Gallery.Wrapper>
-					<Gallery.Mosaic images={[
-						imPath(pName, "ui-knob-sketches"),
-						imPath(pName, "ui-navbar-sketches"),
-						imPath(pName, "ui-bookmark-sketches"),
-					]} />
-				</Gallery.Wrapper>
-			</Blog.Group>
-
-			<Blog.Group>
-				<Gallery.Wrapper>
-					<Blog.Group direction="ROW">
-						<Blog.Paragraph>{p.ui_research.industrial.body}</Blog.Paragraph>
-						<Gallery.Row>
-							<Gallery.Image src={imPath(pName, "ui-slide-movement")} />
-						</Gallery.Row>
-					</Blog.Group>
-
-					<Gallery.Row>
-						<Gallery.Image src={imPath(pName, "ui-knob-table")} />
-					</Gallery.Row>
-
-				</Gallery.Wrapper>
-			</Blog.Group>
-
-			<Blog.Group direction="ROW">
-				<Blog.Group>
-					<Blog.Heading role="H4">{p.ui_research.documentation.headline}</Blog.Heading>
-					<Blog.Paragraph>{p.ui_research.documentation.body}</Blog.Paragraph>
-				</Blog.Group>
-
-				<Gallery.AutoLayout rows={[[imPath(pName, "ui-docu-brainstorm")]]} />
-
-			</Blog.Group>
-
-			<Blog.Group>
-				<Gallery.Wrapper>
-					<Blog.Group direction="ROW">
-						<Gallery.Row>
-							<Gallery.Image src={imPath(pName, "ui-pod-sketches")} />
-						</Gallery.Row>
-						<Blog.Group>
-							<Blog.Heading role="H4">{p.ui_research.gamified.headline}</Blog.Heading>
-							<Blog.Paragraph>{p.ui_research.gamified.body}</Blog.Paragraph></Blog.Group>
-
-					</Blog.Group>
-
-					<Gallery.Row>
-						<Gallery.Image src={imPath(pName, "ui-pod-brainstorm")} />
-					</Gallery.Row>
-				</Gallery.Wrapper>
-			</Blog.Group>
-
-
-		</Blog.Section>
-
-		<Blog.Section>
-
 			<Blog.Heading>{p.tech_research.headline}</Blog.Heading>
 
 			<Blog.Group>
@@ -303,6 +232,79 @@ export default function EmotionalMapper() {
 			</Blog.Group>
 
 		</Blog.Section>
+
+
+		<Blog.Section>
+
+			<Blog.Heading>{p.ui_research.headline}</Blog.Heading>
+
+			<Blog.Group>
+				<Blog.Heading role="H4">{p.ui_research.brainstorm.headline}</Blog.Heading>
+				<Blog.Paragraph>{p.ui_research.brainstorm.body}</Blog.Paragraph>
+
+				<Gallery.AutoLayout rows={[[imPath(pName, "ui-global-brainstorm")]]} />
+			</Blog.Group>
+
+			<Blog.Group>
+
+				<Blog.Heading role="H4">{p.ui_research.physical.headline}</Blog.Heading>
+				<Blog.Paragraph>{p.ui_research.physical.body}</Blog.Paragraph>
+				<Gallery.Wrapper>
+					<Gallery.Mosaic images={[
+						imPath(pName, "ui-knob-sketches"),
+						imPath(pName, "ui-navbar-sketches"),
+						imPath(pName, "ui-bookmark-sketches"),
+					]} />
+				</Gallery.Wrapper>
+			</Blog.Group>
+
+			<Blog.Group>
+				<Gallery.Wrapper>
+					<Blog.Group direction="ROW">
+						<Blog.Paragraph>{p.ui_research.industrial.body}</Blog.Paragraph>
+						<Gallery.Row>
+							<Gallery.Image src={imPath(pName, "ui-slide-movement")} />
+						</Gallery.Row>
+					</Blog.Group>
+
+					<Gallery.Row>
+						<Gallery.Image src={imPath(pName, "ui-knob-table")} />
+					</Gallery.Row>
+
+				</Gallery.Wrapper>
+			</Blog.Group>
+
+			<Blog.Group direction="ROW">
+				<Blog.Group>
+					<Blog.Heading role="H4">{p.ui_research.documentation.headline}</Blog.Heading>
+					<Blog.Paragraph>{p.ui_research.documentation.body}</Blog.Paragraph>
+				</Blog.Group>
+
+				<Gallery.AutoLayout rows={[[imPath(pName, "ui-docu-brainstorm")]]} />
+
+			</Blog.Group>
+
+			<Blog.Group>
+				<Gallery.Wrapper>
+					<Blog.Group direction="ROW">
+						<Gallery.Row>
+							<Gallery.Image src={imPath(pName, "ui-pod-sketches")} />
+						</Gallery.Row>
+						<Blog.Group>
+							<Blog.Heading role="H4">{p.ui_research.gamified.headline}</Blog.Heading>
+							<Blog.Paragraph>{p.ui_research.gamified.body}</Blog.Paragraph></Blog.Group>
+
+					</Blog.Group>
+
+					<Gallery.Row>
+						<Gallery.Image src={imPath(pName, "ui-pod-brainstorm")} />
+					</Gallery.Row>
+				</Gallery.Wrapper>
+			</Blog.Group>
+
+
+		</Blog.Section>
+
 
 		<Blog.Section>
 

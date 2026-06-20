@@ -30,31 +30,6 @@
 			]
 		}
 	},
-	"ui_research": {
-		"headline": "UI Research",
-		"brainstorm": {
-			"headline": "Inspiration Brainstorm",
-			"body": "Since our project was closely related to gamification, it felt relevant to mix a 'professional look' with a 'table-top'-style game where strategy is defined using frames, modules, personas, and flows (VST served as a strong inspiration for blending highly functional interfaces with strong visual design)."
-		},
-		"physical": {
-			"headline": "Infusing Physicality",
-			"body": [
-				"Since the software relied heavily on gamification, it felt natural to give the interface a more physical quality. ",
-				"I drew inspiration from early-2000s interfaces like Windows XP and early versions of Mac OS X, as well as the tactile UI styles often found in video games. The goal was to bring a sense of material and playfulness to the overall interface."
-			]
-		},
-		"industrial": {
-			"body": "A key idea was to balance a professional feel with a more playful tone. This led to experimenting with components in a way similar to industrial design by assigning them materials, and carefully considering how different shapes might suggest particular movements or uses."
-		},
-		"documentation": {
-			"headline": "In-App Documentation",
-			"body": "Given the complexity of the software and overall strategy, it was necessary to include a diegetic journal panel to gather formulas and documentation, helping properly educate the user."
-		},
-		"gamified": {
-			"headline": "Gamified UI",
-			"body": "We added higher narrative value through physical objects like 'pods' or 3D-based icons and personas. This 'gamified UI', similar to FigJam, creates a 'draft-and-try' tone that encourages productivity."
-		}
-	},
 	"tech_research": {
 		"headline": "Technical Research",
 		"persona": {
@@ -173,10 +148,35 @@
 			"body": "Early on, we identified the need for a heatmap system to analyze user flow strengths, weaknesses, and potential emotional impacts. To implement this, we established a WebGPU compute and render pipeline. The main challenge was integrating custom shaders with the existing UI library rendering system."
 		}
 	},
+	"ui_research": {
+		"headline": "UI Research",
+		"brainstorm": {
+			"headline": "Inspiration Brainstorm",
+			"body": "Since our project was closely related to gamification, it felt relevant to mix a 'professional look' with a 'table-top'-style game where strategy is defined using frames, modules, personas, and flows (VST served as a strong inspiration for blending highly functional interfaces with strong visual design)."
+		},
+		"physical": {
+			"headline": "Infusing Physicality",
+			"body": [
+				"Since the software relied heavily on gamification, it felt natural to give the interface a more physical quality. ",
+				"I drew inspiration from early-2000s interfaces like Windows XP and early versions of Mac OS X, as well as the tactile UI styles often found in video games. The goal was to bring a sense of material and playfulness to the overall interface."
+			]
+		},
+		"industrial": {
+			"body": "A key idea was to balance a professional feel with a more playful tone. This led to experimenting with components in a way similar to industrial design by assigning them materials, and carefully considering how different shapes might suggest particular movements or uses."
+		},
+		"documentation": {
+			"headline": "In-App Documentation",
+			"body": "Given the complexity of the software and overall strategy, it was necessary to include a diegetic journal panel to gather formulas and documentation, helping properly educate the user."
+		},
+		"gamified": {
+			"headline": "Gamified UI",
+			"body": "We added higher narrative value through physical objects like 'pods' or 3D-based icons and personas. This 'gamified UI', similar to FigJam, creates a 'draft-and-try' tone that encourages productivity."
+		}
+	},
 	"solution": {
 		"headline": "Solution",
 		"brand": {
-			"headline": "A Branded Solutions",
+			"headline": "A Branded Framework",
 			"body": "We consolidated all previous research and solutions into an official branded framework, enhancing credibility and making the solution more memorable and engaging during client presentations."
 		},
 		"analysis": {
