@@ -95,30 +95,30 @@
 			},
 			{
 				"heading": [
-					"Metaphor",
-					"Narrative Clarity"
+					"Custom Shading",
+					"Native PBR shader"
 				],
 				"benefits": [
-					"Encourages interpretation and imagination",
-					"Direct focus on visuals quality rather than story"
+					"Stronger art direction",
+					"Greater agency over vibe"
 				],
 				"costs": [
-					"Some viewers may feel lost or disconnected",
-					"Can be seen as lazy and lose value"
+					"Lighting Require extra attention",
+					"May lead to visual inconsistency or glitch"
 				]
 			},
 			{
 				"heading": [
-					"Hybrid 2D/3D pipeline",
-					"Fully unified medium"
+					"Procedural Generation",
+					"Crafted Assets"
 				],
 				"benefits": [
-					"Reduced technical overhead",
-					"Faster production under time constraints"
+					"Faster batch generation",
+					"Nice organic look & feel"
 				],
 				"costs": [
-					"Less camera freedom than a full 3D environment",
-					"Occasional visual dissonance"
+					"Less control over final result",
+					"May lack of scalability"
 				]
 			},
 			{

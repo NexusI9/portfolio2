@@ -228,6 +228,20 @@ export default function Azusa() {
 				<Blog.Heading role="H5">{p.solution.props.headline}</Blog.Heading>
 				<Blog.Paragraph>{p.solution.props.body}</Blog.Paragraph>
 
+				<Gallery.AutoLayout rows={[
+					[
+						imPath(pName, "props-plant-1"),
+						imPath(pName, "props-plant-2"),
+						imPath(pName, "props-potion"),
+					],
+					[
+						imPath(pName, "props-nomad house"),
+						imPath(pName, "props-character"),
+						imPath(pName, "props-potion"),
+					],
+				]} />
+
+
 			</Blog.Group>
 
 

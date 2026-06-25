@@ -13,14 +13,14 @@ interface IHeading {
 export default function Heading({ role = "H3", children }: IHeading) {
 
 
-	if (role == "H3")
-	  return (<div className="flex flex-row items-center gap-(--size-space-large)">
-		    <Mosaic row={3} column={2} animation="BLINK"/>
-			{createElement(Text[role], {
-				children,
-				id: slugify(children),
-			})}
-		</div>);
+	//if (role == "H3")
+	//  return (<div className="flex flex-row items-center gap-(--size-space-large)">
+	//	    <Mosaic row={3} column={2} animation="BLINK"/>
+	//		{createElement(Text[role], {
+	//			children,
+	//			id: slugify(children),
+	//		})}
+	//	</div>);
 
 
 	return (<>
