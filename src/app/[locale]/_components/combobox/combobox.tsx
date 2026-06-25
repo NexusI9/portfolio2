@@ -11,9 +11,8 @@ import {
 import DropdownList from "./_components/dropdown-list"
 import styles from "./combobox.module.scss"
 import { catClass } from "@lib/utils"
-import ChevronDown from "@assets/icons/outline/chevron-down.svg"
-import ChevronUp from "@assets/icons/outline/chevron-up.svg"
 import { Text } from "../text/text"
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 
 
 type Option = {
@@ -101,9 +100,9 @@ export default function Combobox({
 			role="combobox"
 			aria-expanded={open}
 		>
-		  <div onClick={() => setOpen(o => !o)} className="flex flex-row items-center gap-(--size-space-small)">
+			<div onClick={() => setOpen(o => !o)} className="flex flex-row items-center gap-(--size-space-small)">
 				<Text.LabelMedium>{selected?.label ?? placeholder}</Text.LabelMedium>
-				{open ? <ChevronUp /> : <ChevronDown />}
+				{open ? <ChevronUpIcon /> : <ChevronDownIcon />}
 			</div>
 
 

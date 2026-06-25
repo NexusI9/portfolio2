@@ -1,13 +1,46 @@
 @use "@styles/animation";
 
-.item{
+.item {
+  a {
+    transition: color, var(--transition-short);
 
-    a{
-	transition:color, var(--transition-short);
-
-	&:hover{
-	    color: var(--color-text-brand-base);
-	}
+    &:hover {
+      color: var(--color-text-brand-base);
     }
-    
+  }
+}
+
+.active-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background-color: var(--color-accent, currentColor);
+  flex-shrink: 0;
+  margin-left: 2px;
+  opacity: 0.85;
+}
+
+.tree {
+  &-chevron {
+    background: none;
+    border: none;
+    padding: 0 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: inherit;
+    opacity: 0.6;
+  }
+
+  &-label {
+    transition:
+      color 150ms ease,
+      font-weight 150ms ease;
+
+    &[data-highlighted="true"] {
+      font-weight: 500;
+      color: var(--color-text-brand-base);
+    }
+  }
 }

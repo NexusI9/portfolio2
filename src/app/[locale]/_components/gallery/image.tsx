@@ -4,14 +4,14 @@ import { useMemo, useEffect } from "react";
 import NextImage from "next/image";
 import { useGallery } from "./context";
 import styles from "./gallery.module.scss";
-import LensIcon from "@assets/icons/outline/search.svg";
+import { SearchIcon } from "lucide-react";
 
 interface IImage {
 	src: string;
 	alt?: string;
 };
 
-export interface IRegisterableImage extends IImage{
+export interface IRegisterableImage extends IImage {
 	id: string;
 };
 
@@ -31,7 +31,7 @@ export default function Image({ src, alt }: IImage) {
 			<NextImage src={src} alt={alt || ""} fill className={styles.image} />
 
 			{/* Hover square */}
-			<LensIcon className={styles["image-lens"]} />
+			<SearchIcon className={styles["image-lens"]} />
 
 		</div>
 	);

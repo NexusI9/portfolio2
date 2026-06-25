@@ -2,15 +2,15 @@
 
 import { IComponentRole, IComponentSize, IComponentStyle } from "@/app/[locale]/_types/component";
 import styles from "./button.module.scss"
-import { BaseSyntheticEvent, FC, SVGProps } from "react";
+import { BaseSyntheticEvent } from "react";
 import Link from "next/link";
 import Label from "../label/label";
 import { catClass } from "@lib/utils"
 import Brackets from "../brackets/brackets";
 
 interface IButton {
-	leadingIcon?: FC<SVGProps<SVGElement>>;
-	trailingIcon?: FC<SVGProps<SVGElement>>;
+	leadingIcon?: React.ReactNode;
+	trailingIcon?: React.ReactNode;
 	size: IComponentSize;
 	role: IComponentRole;
 	style: IComponentStyle;

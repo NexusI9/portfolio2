@@ -1,8 +1,8 @@
 "use client"
 
+import { XIcon } from "lucide-react";
 import { useEffect } from "react"
 import { createPortal } from "react-dom"
-import Close from "@assets/icons/outline/x.svg"
 
 interface IOverlay {
 	open: boolean;
@@ -29,9 +29,9 @@ export function Overlay({ open, children, onClose }: IOverlay) {
 				onClick={onClose}
 			/>
 
-			<Close
+			<XIcon
 				onClick={onClose}
-			  className="absolute top-(--size-space-large) right-(--size-space-large) z-20 stroke-(--color-icon-on-dark) w-(--size-icon-medium) h-auto aspect-square cursor-pointer"
+				className="absolute top-(--size-space-large) right-(--size-space-large) z-20 stroke-(--color-icon-on-dark) w-(--size-icon-medium) h-auto aspect-square cursor-pointer"
 			/>
 
 

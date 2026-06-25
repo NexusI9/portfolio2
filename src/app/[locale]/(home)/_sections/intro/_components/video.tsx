@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import styles from "./video.module.scss"
-import Play from "@assets/icons/outline/play.svg"
+import { PlayIcon } from "lucide-react";
 
 interface IVideo {
 	previewSrc: string;
@@ -97,13 +97,13 @@ export function Video({
 			/>
 
 			{/* Smooth Follow Play Button */}
-			{ hovering && (
+			{hovering && (
 				<div
 					ref={cursorRef}
 					className="absolute pointer-events-none transition-opacity duration-300 top-0 left-0"
 				>
 					<div className="w-30 h-30 rounded-full bg-(--color-surface-highest) flex items-center justify-center shadow-(--shadow-medium)  pl-(--size-space-large)">
-					  <Play className="fill-(--color-icon-brand-base) stroke-none w-(--size-icon-extra-large) aspect-square h-auto" />
+						<PlayIcon className="fill-(--color-icon-brand-base) stroke-none w-(--size-icon-extra-large) aspect-square h-auto" />
 					</div>
 				</div>
 			)}

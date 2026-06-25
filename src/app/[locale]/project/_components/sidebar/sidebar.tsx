@@ -8,8 +8,7 @@ import ProjectsList from "./projects-list";
 import { IProjectDescriptor } from "@/app/[locale]/_types/project";
 import { useState } from "react";
 import { Button } from "@/app/[locale]/_components/button/button";
-import ChevDown from "@assets/icons/outline/chevron-down.svg"
-import ChevUp from "@assets/icons/outline/chevron-up.svg"
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 
 interface ISidebar {
 	content: Record<any, any>;
@@ -29,13 +28,13 @@ export default function Sidebar({ content, projects, activeProject }: ISidebar) 
 					style="GHOST"
 					size="LARGE"
 					onClick={() => setOpen(!open)}
-					trailingIcon={open ? ChevUp : ChevDown}
+					trailingIcon={open ? <ChevronUpIcon /> : <ChevronDownIcon />}
 					decoration={false}
 				>Table of Content
 				</Button>
 			</div>
 			<aside className={styles.sidebar} data-open={open}>
-			  <div className="flex flex-col gap-(--size-space-medium)">
+				<div className="flex flex-col gap-(--size-space-medium)">
 					<Text.H6>{dico.projects.common.sidebar.table_content}</Text.H6>
 					<TableOfContents data={content} maxLevel={1} />
 				</div>

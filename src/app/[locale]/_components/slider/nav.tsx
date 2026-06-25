@@ -3,8 +3,7 @@
 import { ReactNode } from "react";
 import { Button } from "@components/button/button";
 import { useSlider } from "./context";
-import ChevronLeft from "@assets/icons/outline/chevron-left.svg";
-import ChevronRight from "@assets/icons/outline/chevron-right.svg";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 
 type ButtonProps = {
@@ -22,7 +21,7 @@ export function ButtonLeft({ className }: ButtonProps) {
 			type="ICON"
 			onClick={scrollLeft}
 			className={className}>
-			<ChevronLeft />
+			<ChevronLeftIcon />
 		</Button>
 	);
 }
@@ -37,7 +36,7 @@ export function ButtonRight({ className }: ButtonProps) {
 			type="ICON"
 			onClick={scrollRight}
 			className={className}>
-			<ChevronRight />
+			<ChevronRightIcon />
 		</Button>
 	);
 }
