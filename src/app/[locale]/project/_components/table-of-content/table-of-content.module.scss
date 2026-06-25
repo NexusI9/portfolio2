@@ -12,16 +12,33 @@
 
 .active-dot {
   display: inline-block;
-  width: 6px;
-  height: 6px;
+  --size: 6px;
+  width: var(--size);
+  height: var(--size);
   border-radius: 1px;
-  background-color: var(--color-accent, currentColor);
+  background-color: var(--color-background-brand-base);
   flex-shrink: 0;
   margin-left: 2px;
   opacity: 0.85;
 }
 
 .tree {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-space-small);
+    padding-left: var(--size-space-extra-large-2);
+    margin-bottom: var(--size-space-small);
+
+    &[data-level="1"] {
+      padding-left: var(--size-space-small);
+    }
+
+    &:not([data-level="1"]) {
+      margin-top: var(--size-space-small);
+    }
+  }
+
   &-chevron {
     background: none;
     border: none;
@@ -34,6 +51,19 @@
   }
 
   &-label {
+    display: flex;
+    align-items: center;
+    gap: var(--size-space-small);
+    flex-direction: row;
+    width: 100%;
+
+    &-content {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0;
+    }
+
     transition:
       color 150ms ease,
       font-weight 150ms ease;

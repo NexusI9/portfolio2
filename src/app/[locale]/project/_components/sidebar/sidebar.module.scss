@@ -2,102 +2,114 @@
 @use "@styles/animation";
 @use "@styles/utils" as utils;
 
-
-:root{
-    --size-width-sidebar: 260px;
+:root {
+  --size-width-sidebar: 260px;
 }
 
-.sidebar{
+.sidebar {
+  --position: sticky;
 
-    --position: sticky;
-    
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-space-extra-large-3);
-    position: var(--position);
-    top: var(--size-space-extra-large-6);
-    align-self: flex-start;
-    width: utils.fluid-clamp(responsive.$tablet, responsive.$default-screen, 160px, 260px);
-    flex-shrink: 0;
-    
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-space-extra-large-3);
+  position: var(--position);
+  top: var(--size-space-extra-large-6);
+  align-self: flex-start;
+  width: utils.fluid-clamp(
+    responsive.$tablet,
+    responsive.$default-screen,
+    160px,
+    260px
+  );
+  flex-shrink: 0;
 
-    @include responsive.tablet{
-
-	--position: fixed;
-	
-	background: var(--color-surface-highest);
-	top: 0;
-	left:0;
-	// TODO replace hardcoded value
-	width: utils.fluid-clamp(responsive.$mobile, responsive.$tablet, 300px, 700px);
-	padding: var(--size-space-extra-large-3);
-	padding-top: var(--size-space-extra-large-2);
-	padding-bottom: var(--size-space-extra-large-4);
-	margin: auto;
-	left: 50%;
-	transform: translate3d(-50%, -10px, 0px);
-	pointer-events:none;
-	opacity:0;
-	
-	transition: transform, opacity, var(--transition-long);
-	box-shadow: var(--shadow-low);
-	border-radius: var(--size-radius-small);
-	z-index: 99;
-
-	&[data-open=true]{
-	    transform: translate3d(-50%, 70px, 0px);
-	    pointer-events:auto;
-	    opacity:1;
-	}
-    }
-
-
-
-}
-
-.floating-picture{
-    
-    position: fixed;
-    pointer-events: none;
-    opacity:0;
-    transform: translate3D(0px, 6px, 0px);
-    transition: opacity 160ms ease, transform 160ms ease;
-    z-index: 9999;
-
-    &[data-visible=true]{
-	opacity: 1;
-        transform: translate3d(0px, -20px, 0px);
-    }
-    
-    img{
-	border-radius: var(--size-radius-small);
-	width: 260px;
-	box-shadow: var(--shadow-low);
-    }
-
-}
-
-.button{
-    z-index:99;
-    position:fixed;
-    width: max-content;
-    top: 0;
-    margin: auto;
-    left: 50%;
-    transform: translate3d(-50%, 0px, 0px);
-    margin-top: 14px;
+  @include responsive.tablet {
+    --position: fixed;
 
     background: var(--color-surface-highest);
+    top: 0;
+    left: 0;
+    // TODO replace hardcoded value
+    width: utils.fluid-clamp(
+      responsive.$mobile,
+      responsive.$tablet,
+      300px,
+      700px
+    );
+    padding: var(--size-space-extra-large-3);
+    padding-top: var(--size-space-extra-large-2);
+    padding-bottom: var(--size-space-extra-large-4);
+    margin: auto;
+    left: 50%;
+    transform: translate3d(-50%, -10px, 0px);
+    pointer-events: none;
+    opacity: 0;
+
+    transition: transform, opacity, var(--transition-long);
     box-shadow: var(--shadow-low);
-    border-radius: var(--size-radius-base);
-    padding: var(--size-space-large) var(--size-space-extra-large-2);
+    border-radius: var(--size-radius-small);
+    z-index: 99;
 
-    @include responsive.mobile{
-	padding: var(--size-space-medium);
+    &[data-open="true"] {
+      transform: translate3d(-50%, 70px, 0px);
+      pointer-events: auto;
+      opacity: 1;
     }
-    
-    @include responsive.desktop{
-	display:none;
-    }
+  }
+}
 
+.floating-picture {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3D(0px, 6px, 0px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+  z-index: 9999;
+
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: translate3d(0px, -20px, 0px);
+  }
+
+  img {
+    border-radius: var(--size-radius-small);
+    width: 260px;
+    box-shadow: var(--shadow-low);
+  }
+}
+
+.button {
+  z-index: 99;
+  position: fixed;
+  width: max-content;
+  top: 0;
+  margin: auto;
+  left: 50%;
+  transform: translate3d(-50%, 0px, 0px);
+  margin-top: 14px;
+
+  background: var(--color-surface-highest);
+  box-shadow: var(--shadow-low);
+  border-radius: var(--size-radius-base);
+  padding: var(--size-space-large) var(--size-space-extra-large-2);
+
+  @include responsive.mobile {
+    padding: var(--size-space-medium);
+  }
+
+  @include responsive.desktop {
+    display: none;
+  }
+}
+
+.toc-wrapper {
+  max-height: 300px;
+  overflow: auto;
+  padding-right: var(--size-space-extra-large-2);
+
+  @include responsive.tablet {
+    max-height: none;
+  }
 }

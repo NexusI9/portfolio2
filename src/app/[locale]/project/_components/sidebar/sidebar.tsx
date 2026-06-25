@@ -36,7 +36,9 @@ export default function Sidebar({ content, projects, activeProject }: ISidebar) 
 			<aside className={styles.sidebar} data-open={open}>
 				<div className="flex flex-col gap-(--size-space-medium)">
 					<Text.H6>{dico.projects.common.sidebar.table_content}</Text.H6>
-					<TableOfContents data={content} maxLevel={1} />
+					<div className={styles["toc-wrapper"]}>
+						<TableOfContents data={content} maxLevel={2} collapsible />
+					</div>
 				</div>
 
 				<div className="flex flex-col gap-(--size-space-large)">

@@ -5,6 +5,7 @@ import { slugify } from "@components/blog/helper";
 import { extractHeadlines, flattenNodes, nodeContainsActive, nodeHasActiveDescendant } from "./helper";
 import styles from "./table-of-content.module.scss";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
+import { SIZE_ICON_SM } from "@/app/[locale]/_lib/constants";
 
 
 interface TocProps {
@@ -34,22 +35,21 @@ interface TocListProps {
 }
 
 function TocList({ nodes, maxLevel, collapsible, activeId }: TocListProps) {
-	const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
+	const [collapsed, setCollapsed] = useState<Map<string, boolean>>(new Map());
 
 	function toggle(headline: string) {
-		setCollapsed((prev) => ({ ...prev, [headline]: !prev[headline] }));
+		setCollapsed((prev) => new Map(prev).set(headline, !(prev.has(headline) ? prev.get(headline)! : true)));
 	}
 
-	const padding = nodes[0].level === 0 ? "--size-space-small" : "--size-space-extra-large-2";
-
 	return (
-		<ul className={`pl-(${padding}) flex flex-col gap-(--size-space-small)`}>
+		<ul className={styles["tree-container"]} data-level={nodes[0].level}>
 			{nodes.map((node, i) => {
 				if (maxLevel && node.level > maxLevel) return null;
 
 				const id = slugify(node.headline);
 				const hasChildren = node.children?.length > 0;
-				const isCollapsed = collapsible && !!collapsed[node.headline];
+				const isCollapsed = collapsible && (collapsed.has(node.headline) ? collapsed.get(node.headline)! : true);
+
 
 				// Is this node itself the active heading?
 				const isSelf = activeId === id;
@@ -66,21 +66,7 @@ function TocList({ nodes, maxLevel, collapsible, activeId }: TocListProps) {
 
 				return (
 					<li key={i} className={styles.item}>
-						<span className="flex items-center gap(--size-space-xl)">
-							{/* Chevron toggle – collapsible mode only */}
-							{collapsible && hasChildren ? (
-								<button
-									type="button"
-									onClick={() => toggle(node.headline)}
-									aria-expanded={!isCollapsed}
-									aria-label={isCollapsed ? "Expand section" : "Collapse section"}
-									className={styles["tree-chevron"]}
-								>
-									{isCollapsed ? <ChevronDownIcon /> : <ChevronUpIcon />}
-								</button>
-							) : collapsible ? (
-								<span className="inline-block w-[16px] flex-no-shrink" />
-							) : null}
+						<span className="flex items-center justify-between gap(--size-space-xl)">
 
 							<a
 								href={`#${id}`}
@@ -88,11 +74,27 @@ function TocList({ nodes, maxLevel, collapsible, activeId }: TocListProps) {
 								aria-current={isSelf ? "location" : undefined}
 								data-highlighted={isHighlighted}
 							>
-								{node.headline}
+								<span className={styles["tree-label-content"]}>{node.headline}</span>
+
+								{/* Dot indicator: collapsed parent with an active child */}
+								{hasHiddenActiveChild && <ActiveChildDot />}
 							</a>
 
-							{/* Dot indicator: collapsed parent with an active child */}
-							{hasHiddenActiveChild && <ActiveChildDot />}
+
+							{/* Chevron toggle – collapsible mode only */}
+							{collapsible && hasChildren && (maxLevel && node.level < maxLevel) ? (
+								<button
+									type="button"
+									onClick={() => toggle(node.headline)}
+									aria-expanded={!isCollapsed}
+									aria-label={isCollapsed ? "Expand section" : "Collapse section"}
+									className={styles["tree-chevron"]}
+								>
+									{isCollapsed ? <ChevronDownIcon size={SIZE_ICON_SM} /> : <ChevronUpIcon size={SIZE_ICON_SM} />}
+								</button>
+							) : collapsible ? (
+								<span className="inline-block w-[16px] flex-no-shrink" />
+							) : null}
 						</span>
 
 						{/* Children – hidden when collapsed */}
