@@ -28,7 +28,7 @@ export default function Template({ project, children }: ITemplate) {
 					<Sidebar {...sidebar} />
 					<Content>{children}</Content>
 				</Container>
-			</div >
+			</div>
 		</div>
 	</>);
 
