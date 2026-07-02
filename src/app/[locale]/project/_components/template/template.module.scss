@@ -31,17 +31,6 @@
   display: flex;
   flex-direction: row;
   padding-top: var(--size-space-extra-large-3);
-  gap: var(--size-space-extra-large-2);
-
-  --breakpoint: calc(
-    2 *
-      (
-        var(--size-width-sidebar) +
-          var(--size-margin-blog) - var(--size-margin-container) / 2
-      ) +
-      var(--size-width-desktop-full)
-  );
-
-  //max-width: var(--breakpoint);
+  gap: var(--size-space-extra-large-6);
   margin: auto;
 }

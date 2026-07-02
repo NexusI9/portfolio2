@@ -107,15 +107,12 @@
 .toc-wrapper {
   max-height: 300px;
   overflow: auto;
-  padding-right: var(--size-space-extra-large-2);
 
   @include responsive.tablet {
     max-height: none;
-    padding-right: 0;
   }
 
   @include responsive.mobile {
     max-height: none;
-    padding-right: 0;
   }
 }
