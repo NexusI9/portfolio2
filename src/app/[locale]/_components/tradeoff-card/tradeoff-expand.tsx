@@ -35,6 +35,7 @@ duration-300
 ease-in-out
 
 data-[expanded='true']:gap-(--size-space-extra-large)
+hover:gap-(--size-space-extra-large)
 "
 		>
 			<button

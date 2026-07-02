@@ -23,7 +23,7 @@ export default function Template({ project, children }: ITemplate) {
 	return (<>
 		<Banner {...banner} />
 		<div className="inline-block w-full">
-			<Container className={styles.container} type="FLUID">
+			<Container className={styles.container}>
 				<div className={styles.inner}>
 					<Sidebar {...sidebar} />
 					<Content>{children}</Content>
