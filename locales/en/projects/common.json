@@ -29,6 +29,7 @@
 	},
 	"sidebar": {
 		"table_content": "Table of Content",
+		"collapse_all": "Collapse All",
 		"all_projects": "All projects"
 	}
 }

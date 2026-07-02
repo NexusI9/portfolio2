@@ -29,13 +29,10 @@
     gap: var(--size-space-small);
     padding-left: var(--size-space-extra-large-2);
     margin-bottom: var(--size-space-small);
+    margin-top: var(--size-space-medium);
 
     &[data-level="1"] {
       padding-left: var(--size-space-small);
-    }
-
-    &:not([data-level="1"]) {
-      margin-top: var(--size-space-small);
     }
   }
 

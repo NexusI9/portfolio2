@@ -35,6 +35,7 @@ export const Button = ({ leadingIcon, trailingIcon, size, role, style, children,
 			onClick={onClick && onClick}
 			role="button"
 			href={String(href)}
+			{...(role === "DISABLED" && { disabled: true })}
 		>
 			{decoration && style == "GHOST" && <Brackets className={styles.brackets} />}
 			<Label size={size} leadingIcon={leadingIcon} trailingIcon={trailingIcon}>{children}</Label>

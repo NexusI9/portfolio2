@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react";
+import { createContext, useContext, useState, useEffect, useRef } from "react";
 import { slugify } from "@components/blog/helper";
 import { extractHeadlines, flattenNodes, nodeContainsActive, nodeHasActiveDescendant } from "./helper";
 import styles from "./table-of-content.module.scss";
@@ -8,12 +8,33 @@ import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { SIZE_ICON_SM } from "@/app/[locale]/_lib/constants";
 
 
-interface TocProps {
-	data: any;
-	maxLevel?: number;
-	collapsible?: boolean;
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+export type TocCollapsedMap = Map<string, boolean>;
+
+type TocAction = "COLLAPSE_ALL" | "EXPAND_ALL" | "COLLAPSE_NODE" | "EXPAND_NODE";
+
+interface TocContextValue {
+	tree: any[];
+	activeId: string | null;
+	collapsed: TocCollapsedMap;
+	setCollapsed: React.Dispatch<React.SetStateAction<TocCollapsedMap>>;
+	maxLevel: number;
+	collapsible: boolean;
+	onCollapseChange?: (collapsed: TocCollapsedMap) => void;
 }
 
+// ─── Context ──────────────────────────────────────────────────────────────────
+
+const TocContext = createContext<TocContextValue | null>(null);
+
+function useTocContext() {
+	const ctx = useContext(TocContext);
+	if (!ctx) throw new Error("TableOfContents: must be used inside <TableOfContents.Root>");
+	return ctx;
+}
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function ActiveChildDot() {
 	return (
@@ -25,20 +46,18 @@ function ActiveChildDot() {
 	);
 }
 
-// ─── Recursive list ───────────────────────────────────────────────────────────
+// ─── TocList (internal) ───────────────────────────────────────────────────────
 
-interface TocListProps {
-	nodes: any[];
-	maxLevel?: number;
-	collapsible: boolean;
-	activeId: string | null;
-}
-
-function TocList({ nodes, maxLevel, collapsible, activeId }: TocListProps) {
-	const [collapsed, setCollapsed] = useState<Map<string, boolean>>(new Map());
+function TocList({ nodes }: { nodes: any[] }) {
+	const { maxLevel, collapsible, activeId, collapsed, setCollapsed, onCollapseChange } = useTocContext();
 
 	function toggle(headline: string) {
-		setCollapsed((prev) => new Map(prev).set(headline, !(prev.has(headline) ? prev.get(headline)! : true)));
+		setCollapsed((prev) => {
+			const current = prev.has(headline) ? prev.get(headline)! : true;
+			const updated = new Map(prev).set(headline, !current);
+			onCollapseChange?.(updated);
+			return updated;
+		});
 	}
 
 	return (
@@ -46,28 +65,23 @@ function TocList({ nodes, maxLevel, collapsible, activeId }: TocListProps) {
 			{nodes.map((node, i) => {
 				if (maxLevel && node.level > maxLevel) return null;
 
+
 				const id = slugify(node.headline);
-				const hasChildren = node.children?.length > 0;
+				const hasChildren = node.children?.length > 0 && node.level < maxLevel;
 				const isCollapsed = collapsible && (collapsed.has(node.headline) ? collapsed.get(node.headline)! : true);
 
-
-				// Is this node itself the active heading?
 				const isSelf = activeId === id;
-
-				// Non-collapsible: highlight parent when ANY descendant is active.
-				const isActiveOrParentOfActive =
-					!collapsible && nodeContainsActive(node, activeId);
-
-				// Collapsible + collapsed: show dot when a child is active but hidden.
-				const hasHiddenActiveChild =
-					collapsible && isCollapsed && nodeHasActiveDescendant(node, activeId);
+				const isActiveOrParentOfActive = !collapsible && nodeContainsActive(node, activeId);
+				const hasHiddenActiveChild = hasChildren
+					&& collapsible
+					&& isCollapsed
+					&& nodeHasActiveDescendant(node, activeId);
 
 				const isHighlighted = isSelf || isActiveOrParentOfActive;
 
 				return (
 					<li key={i} className={styles.item}>
 						<span className="flex items-center justify-between gap(--size-space-xl)">
-
 							<a
 								href={`#${id}`}
 								className={styles["tree-label"]}
@@ -75,13 +89,9 @@ function TocList({ nodes, maxLevel, collapsible, activeId }: TocListProps) {
 								data-highlighted={isHighlighted}
 							>
 								<span className={styles["tree-label-content"]}>{node.headline}</span>
-
-								{/* Dot indicator: collapsed parent with an active child */}
 								{hasHiddenActiveChild && <ActiveChildDot />}
 							</a>
 
-
-							{/* Chevron toggle – collapsible mode only */}
 							{collapsible && hasChildren && (maxLevel && node.level < maxLevel) ? (
 								<button
 									type="button"
@@ -90,21 +100,17 @@ function TocList({ nodes, maxLevel, collapsible, activeId }: TocListProps) {
 									aria-label={isCollapsed ? "Expand section" : "Collapse section"}
 									className={styles["tree-chevron"]}
 								>
-									{isCollapsed ? <ChevronDownIcon size={SIZE_ICON_SM} /> : <ChevronUpIcon size={SIZE_ICON_SM} />}
+									{isCollapsed
+										? <ChevronDownIcon size={SIZE_ICON_SM} />
+										: <ChevronUpIcon size={SIZE_ICON_SM} />}
 								</button>
 							) : collapsible ? (
 								<span className="inline-block w-[16px] flex-no-shrink" />
 							) : null}
 						</span>
 
-						{/* Children – hidden when collapsed */}
 						{hasChildren && !isCollapsed && (
-							<TocList
-								nodes={node.children}
-								maxLevel={maxLevel}
-								collapsible={collapsible}
-								activeId={activeId}
-							/>
+							<TocList nodes={node.children} />
 						)}
 					</li>
 				);
@@ -113,15 +119,20 @@ function TocList({ nodes, maxLevel, collapsible, activeId }: TocListProps) {
 	);
 }
 
-// ─── Root component ───────────────────────────────────────────────────────────
+// ─── Root ─────────────────────────────────────────────────────────────────────
 
-export default function TableOfContents({
-	data,
-	maxLevel = 2,
-	collapsible = false,
-}: TocProps) {
+interface RootProps {
+	data: any;
+	maxLevel?: number;
+	collapsible?: boolean;
+	onCollapseChange?: (collapsed: TocCollapsedMap) => void;
+	children: React.ReactNode;
+}
+
+function Root({ data, maxLevel = 2, collapsible = false, onCollapseChange, children }: RootProps) {
 	const tree = extractHeadlines(data);
 	const [activeId, setActiveId] = useState<string | null>(null);
+	const [collapsed, setCollapsed] = useState<TocCollapsedMap>(new Map());
 	const observerRef = useRef<IntersectionObserver | null>(null);
 
 	useEffect(() => {
@@ -129,18 +140,13 @@ export default function TableOfContents({
 		if (!flat.length) return;
 
 		observerRef.current?.disconnect();
-
 		observerRef.current = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) setActiveId(entry.target.id);
 				});
 			},
-			{
-				// Active zone = top 2/3 of the viewport
-				rootMargin: "0px 0px -33.333% 0px",
-				threshold: 0,
-			}
+			{ rootMargin: "0px 0px -33.333% 0px", threshold: 0 }
 		);
 
 		const observer = observerRef.current;
@@ -154,11 +160,72 @@ export default function TableOfContents({
 	}, [data]);
 
 	return (
-		<TocList
-			nodes={tree}
-			maxLevel={maxLevel}
-			collapsible={collapsible}
-			activeId={activeId}
-		/>
+		<TocContext.Provider value={{ tree, activeId, collapsed, setCollapsed, maxLevel, collapsible, onCollapseChange }}>
+			{children}
+		</TocContext.Provider>
 	);
 }
+
+// ─── Content ──────────────────────────────────────────────────────────────────
+
+function Content() {
+	const { tree } = useTocContext();
+	return <TocList nodes={tree} />;
+}
+
+// ─── Trigger ──────────────────────────────────────────────────────────────────
+
+interface TriggerProps {
+	action: TocAction;
+	/** For node-level actions, the exact headline string to target. */
+	headline?: string;
+	children: React.ReactNode;
+	className?: string;
+}
+
+function Trigger({ action, headline, children, className }: TriggerProps) {
+	const { tree, setCollapsed, onCollapseChange } = useTocContext();
+
+	function dispatch() {
+		setCollapsed((prev) => {
+			let updated: TocCollapsedMap;
+
+			switch (action) {
+				case "COLLAPSE_ALL": {
+					const flat = flattenNodes(tree);
+					updated = new Map(flat.map(({ id }) => [id, true]));
+					break;
+				}
+				case "EXPAND_ALL": {
+					const flat = flattenNodes(tree);
+					updated = new Map(flat.map(({ id }) => [id, false]));
+					break;
+				}
+				case "COLLAPSE_NODE": {
+					if (!headline) throw new Error("TableOfContents.Trigger: COLLAPSE_NODE requires a `headline` prop");
+					updated = new Map(prev).set(headline, true);
+					break;
+				}
+				case "EXPAND_NODE": {
+					if (!headline) throw new Error("TableOfContents.Trigger: EXPAND_NODE requires a `headline` prop");
+					updated = new Map(prev).set(headline, false);
+					break;
+				}
+			}
+
+			onCollapseChange?.(updated);
+			return updated;
+		});
+	}
+
+	return (
+		<button type="button" onClick={dispatch} className={className}>
+			{children}
+		</button>
+	);
+}
+
+// ─── Compound export ──────────────────────────────────────────────────────────
+
+const TableOfContents = { Root, Content, Trigger };
+export default TableOfContents;
