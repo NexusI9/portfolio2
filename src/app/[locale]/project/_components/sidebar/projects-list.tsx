@@ -30,6 +30,9 @@ export default function ProjectsList({ projects, activeProject }:
 			<li
 				key={project.name}
 				onMouseEnter={(e) => {
+
+					if (activeProject == project.name) return;
+
 					setPreview({
 						src: project.preview,
 						alt: project.alt
@@ -37,6 +40,9 @@ export default function ProjectsList({ projects, activeProject }:
 					setRect(e.currentTarget.getBoundingClientRect());
 				}}
 				onMouseLeave={() => {
+
+					if (activeProject == project.name) return;
+
 					setPreview({
 						src: null,
 						alt: null
