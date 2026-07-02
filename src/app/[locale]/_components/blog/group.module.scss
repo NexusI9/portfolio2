@@ -1,17 +1,33 @@
-.group{
+@use "@styles/responsive" as responsive;
 
-    display: flex;
-    gap: var(--size-space-large);
-    flex-direction: column;
+.group {
+  display: flex;
+  gap: var(--size-space-large);
+  flex-direction: column;
 
-    &[data-direction=ROW]{
-	flex-direction:row;
-	flex-wrap: wrap;
-	& > *{
-	    flex:1;
-	    min-width: 350px;
-	}
-	
+  &[data-direction="ROW"] {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @include responsive.tablet {
+      flex-direction: column;
     }
-    
+
+    @include responsive.mobile {
+      flex-direction: column;
+    }
+
+    & > * {
+      flex: 1;
+      min-width: 350px;
+
+      @include responsive.tablet {
+        min-width: 0;
+      }
+
+      @include responsive.mobile {
+        min-width: 0;
+      }
+    }
+  }
 }

@@ -111,5 +111,11 @@
 
   @include responsive.tablet {
     max-height: none;
+    padding-right: 0;
+  }
+
+  @include responsive.mobile {
+    max-height: none;
+    padding-right: 0;
   }
 }

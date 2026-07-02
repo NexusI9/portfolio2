@@ -1,27 +1,24 @@
 @use "@styles/responsive" as responsive;
 
-.constraint-cards{
-    --gap: var(--size-space-extra-large-2);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    gap: var(--gap);
-    
-    & > li{
+.constraint-cards {
+  --gap: var(--size-space-extra-large-2);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--gap);
 
-	--flex-basis: calc((100% - 2 * var(--gap)) / 3);
-	flex-basis: var(--flex-basis);
-	flex-grow: 1;
-	max-width: 400px;
+  & > li {
+    --flex-basis: calc((100% - 2 * var(--gap)) / 3);
+    flex-basis: var(--flex-basis);
+    flex-grow: 0;
 
-	@include responsive.tablet{
-	    --flex-basis: calc((100% - 2 * var(--gap)) / 2);
-	}
-
-	@include responsive.mobile{
-	    --flex-basis: 1;
-	}
+    @include responsive.tablet {
+      --flex-basis: calc((100% - 2 * var(--gap)) / 2);
     }
 
+    @include responsive.mobile {
+      --flex-basis: 1;
+    }
+  }
 }
