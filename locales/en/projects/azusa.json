@@ -58,10 +58,15 @@
 			"headline": "Procedural Systems",
 			"island": {
 				"headline": "Island Terrain",
-				"body": [
-					"The game features a floating-island building mechanic that allows players to paint and merge island chunks together. Topology generation relies on a marching squares approach combined with Delaunay triangulation to seamlessly connect painted areas.",
-					"The underside of each island is generated using weighted noise displacement, while texturing is handled through an offscreen rendering pass that generates masks fed into a dedicated shader, allowing the terrain to update dynamically."
-				]
+				"body": "The game features a floating-island building mechanic that allows players to paint and merge island chunks together.",
+				"topology": {
+					"headline": "Topology Generation",
+					"body": "Topology generation relies on a marching squares approach combined with Delaunay triangulation to seamlessly connect painted areas. The underside of each island is generated using weighted noise displacement"
+				},
+				"texture": {
+					"headline": "Texture Generation",
+					"body": "The islands texturing is handled through an offscreen rendering pass that generates masks fed into a dedicated shader, allowing the terrain to update dynamically."
+				}
 			},
 			"vegetation": {
 				"headline": "Vegetation",
@@ -74,6 +79,17 @@
 				"headline": "Nomad Houses",
 				"body": "The nomad house procedural generation relies on a simple radial rule set, where elements are distributed around a central base. To introduce visual variation, UVs are randomly offset along predefined texture patterns on the X axis, allowing multiple appearances from the same asset set."
 			}
+		}
+	},
+	"solution": {
+		"headline": "Solution",
+		"props": {
+			"headline": "Props Modelling",
+			"body": "Multiple props were modeled and textured to support the game's early functionalities and mechanics. The focus was placed on the assets most necessary for the first experiments. Creating original props rather than relying on downloaded assets also provided an opportunity to explore and better evaluate the project's future art direction."
+		},
+		"scenes": {
+			"headline": "Game Scenes",
+			"body": "For this first stage, the focus was placed on two core scenes: the island-building system and the character editor. These provided a solid foundation for testing the project's main mechanics and overall direction."
 		}
 	},
 	"tradeoffs": {
@@ -150,17 +166,6 @@
 				]
 			}
 		]
-	},
-	"solution": {
-		"headline": "Solution",
-		"props": {
-			"headline": "Props Modelling",
-			"body": "Multiple props were modeled and textured to support the game's early functionalities and mechanics. The focus was placed on the assets most necessary for the first experiments. Creating original props rather than relying on downloaded assets also provided an opportunity to explore and better evaluate the project's future art direction."
-		},
-		"scenes": {
-			"headline": "Game Scenes",
-			"body": "For this first stage, the focus was placed on two core scenes: the island-building system and the character editor. These provided a solid foundation for testing the project's main mechanics and overall direction."
-		}
 	},
 	"outcomes": {
 		"headline": "Outcomes & Learning",

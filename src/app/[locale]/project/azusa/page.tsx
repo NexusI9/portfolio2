@@ -171,18 +171,30 @@ export default function Azusa() {
 				<Blog.Heading role="H4">{p.exploration.procedural_systems.headline}</Blog.Heading>
 
 				<Blog.Group>
-					<Blog.Heading role="H5">{p.exploration.procedural_systems.island.headline}</Blog.Heading>
-					<Blog.Paragraph>{p.exploration.procedural_systems.island.body}</Blog.Paragraph>
+					<Gallery.Wrapper>
+						<Blog.Heading role="H5">{p.exploration.procedural_systems.island.headline}</Blog.Heading>
+						<Blog.Paragraph>{p.exploration.procedural_systems.island.body}</Blog.Paragraph>
 
-					<Gallery.AutoLayout rows={[
-						[
-							imPath(pName, "island-generation-topo"),
-							imPath(pName, "island-generation-texture"),
-						],
-						[
-							imPath(pName, "island-generation-ingame"),
-						]
-					]} />
+						<Blog.Group direction="ROW">
+							<Blog.Group>
+								<Blog.Heading role="H6">{p.exploration.procedural_systems.island.topology.headline}</Blog.Heading>
+								<Blog.Paragraph>{p.exploration.procedural_systems.island.topology.body}</Blog.Paragraph>
+							</Blog.Group>
+
+							<Gallery.AutoLayout noWrapper rows={[[imPath(pName, "island-generation-topo")]]} />
+						</Blog.Group>
+
+						<Blog.Group direction="ROW">
+							<Blog.Group>
+								<Blog.Heading role="H6">{p.exploration.procedural_systems.island.texture.headline}</Blog.Heading>
+								<Blog.Paragraph>{p.exploration.procedural_systems.island.texture.body}</Blog.Paragraph>
+							</Blog.Group>
+
+							<Gallery.AutoLayout noWrapper rows={[[imPath(pName, "island-generation-texture")]]} />
+						</Blog.Group>
+
+						<Gallery.AutoLayout noWrapper rows={[[imPath(pName, "island-generation-ingame")]]} />
+					</Gallery.Wrapper>
 				</Blog.Group>
 
 				<Blog.Group>
