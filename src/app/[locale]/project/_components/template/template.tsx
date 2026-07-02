@@ -23,12 +23,12 @@ export default function Template({ project, children }: ITemplate) {
 	return (<>
 		<Banner {...banner} />
 		<div className="inline-block w-full">
-			<Container className={styles.container}>
-				<div className={styles.inner}>
+			<div className={styles.container}>
+				<Container className={styles.inner} size="DEFAULT" type="DEFAULT">
 					<Sidebar {...sidebar} />
 					<Content>{children}</Content>
-				</div>
-			</Container >
+				</Container>
+			</div >
 		</div>
 	</>);
 
