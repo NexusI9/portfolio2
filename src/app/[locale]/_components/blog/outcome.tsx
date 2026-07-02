@@ -20,7 +20,7 @@ export default function Outcome({ headline, items }: IOutcome) {
 			<Blog.Heading role="H3">{headline}</Blog.Heading>
 			<ul className={styles.outcome}>
 				{items.map((item, i) => <li key={item + i} className={styles.item}>
-					<div className="relative">
+					<div className="relative pl-[22px]">
 						<Mosaic row={3} column={3} className={styles.mosaic} animation="BLINK" />
 						<Text.Body className={clsx(blog_styles.number, styles.number)}>{i + 1}</Text.Body>
 					</div>
