@@ -8,6 +8,7 @@ import Mosaic from "@components/mosaic/mosaic";
 import styles from "./project-category.module.scss"
 import ViewCatcher from "@components/view-catcher/view-catcher";
 import { useNavigation } from "@/app/[locale]/_context/navigation/navigation";
+import clsx from "clsx";
 
 interface IProjectCategory extends ComponentPropsWithoutRef<"section"> {
 	headline: string;
@@ -30,7 +31,7 @@ export default function ProjectCategory({ headline, projects, id }: IProjectCate
 			targetRef={containerRef as RefObject<HTMLElement>}
 			onEnter={onEnter}
 		>
-		  <Container ref={containerRef} id={id} size="WIDE" className={`${styles["project-category"]} flex flex-col gap-(--size-space-extra-large-4)`}>
+	  <Container ref={containerRef} id={id} size="WIDE" className={clsx(styles["project-category"],"flex flex-col gap-(--size-space-extra-large-4) py-(--size-space-extra-large-3)")}>
 
 				<hgroup>
 					<Mosaic row={3} column={3} className={styles.mosaic} animation="BLINK" />

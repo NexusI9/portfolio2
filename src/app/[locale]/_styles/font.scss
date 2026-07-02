@@ -2,196 +2,212 @@
 @use "./locale" as locale;
 @use "@styles/responsive" as responsive;
 
-
-@include locale.zh{
-    h1, h2, h3, h4, h5, h6, p, i{
-	&.display{
-	    font-feature-settings: "trad";
-	    font-family: var(--font-display-zh);
-	    font-style: normal;
-	    font-size: 5.56rem;
-	    letter-spacing: -1.2rem;
-	}
+@include locale.zh {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  i {
+    &.display {
+      font-feature-settings: "trad";
+      font-family: var(--font-display-zh);
+      font-style: normal;
+      font-size: 5.56rem;
+      letter-spacing: -1.2rem;
     }
+  }
 
-    p{
+  p {
+    line-height: 1.4rem;
 
-	line-height: 1.4rem;
+    &.label {
+      &-large {
+        font-size: 1rem;
+      }
 
-	&.label{
-	    &-large{
-		font-size: 1rem;
-	    }
-	    
-	    &-medium{
-		font-size: 0.94rem;
-	    }
-	    
-	    &-small{
-		font-size: 0.9rem;
-	    }
-	}
+      &-medium {
+        font-size: 0.94rem;
+      }
+
+      &-small {
+        font-size: 0.9rem;
+      }
     }
+  }
 }
 
-h1, h2, h3, h4, h5, h6, p{
-    &.display{
-	font-family: var(--font-display);
-	font-size: 6.56rem;
-	letter-spacing: -0.4px;
-	line-height: 116px;
-	font-style: italic;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  &.display {
+    font-family: var(--font-display);
+    font-size: 6.56rem;
+    letter-spacing: -0.4px;
+    line-height: 116px;
+    font-style: italic;
 
-	@include responsive.mobile{
-	    font-size: 4.76rem;
-	    line-height: 80px;
-	}
-
-	@include responsive.tablet{
-            font-size: 4.16rem;
-            line-height: 76px;
-	}
+    @include responsive.mobile {
+      font-size: 4.76rem;
+      line-height: 80px;
     }
+
+    @include responsive.tablet {
+      font-size: 4.16rem;
+      line-height: 76px;
+    }
+  }
 }
 
-h1, .h1{
-    letter-spacing: var(--font-letter-spacing-heading-1);
-    font-size: var(--font-size-heading-1);
-    font-weight: var(--font-weight-light);
-    line-height: var(--font-line-height-heading-1);
+h1,
+.h1 {
+  letter-spacing: var(--font-letter-spacing-heading-1);
+  font-size: var(--font-size-heading-1);
+  font-weight: var(--font-weight-light);
+  line-height: var(--font-line-height-heading-1);
 
-    @include responsive.mobile{
-        font-size: var(--font-size-heading-1-mb);
-        line-height: var(--font-line-height-heading-1-mb);
-    }
+  @include responsive.mobile {
+    font-size: var(--font-size-heading-1-mb);
+    line-height: var(--font-line-height-heading-1-mb);
+  }
 }
 
-h2, .h2{
-    letter-spacing: var(--font-letter-spacing-heading-2);
-    font-size: var(--font-size-heading-2);
-    line-height: var(--font-line-height-heading-2);
+h2,
+.h2 {
+  letter-spacing: var(--font-letter-spacing-heading-2);
+  font-size: var(--font-size-heading-2);
+  line-height: var(--font-line-height-heading-2);
 
-    @include responsive.mobile{
-        font-size: var(--font-size-heading-2-mb);
-        line-height: var(--font-line-height-heading-2-mb);
-    }
+  @include responsive.mobile {
+    font-size: var(--font-size-heading-2-mb);
+    line-height: var(--font-line-height-heading-2-mb);
+  }
 }
 
-h3, .h3{
-    letter-spacing: var(--font-letter-spacing-heading-3);
-    font-size: var(--font-size-heading-3);
-    font-weight: var(--font-weight-normal);
+h3,
+.h3 {
+  letter-spacing: var(--font-letter-spacing-heading-3);
+  font-size: var(--font-size-heading-3);
+  font-weight: var(--font-weight-normal);
 
-    @include responsive.mobile{
-        font-size: var(--font-size-heading-3-mb);
-        line-height: var(--font-line-height-heading-3-mb);
-    }
+  @include responsive.mobile {
+    font-size: var(--font-size-heading-3-mb);
+    line-height: var(--font-line-height-heading-3-mb);
+  }
 }
 
-h4, .h4{
-    letter-spacing: var(--font-letter-spacing-heading-4);
-    font-size: var(--font-size-heading-4);
+h4,
+.h4 {
+  letter-spacing: var(--font-letter-spacing-heading-4);
+  font-size: var(--font-size-heading-4);
 
-    @include responsive.mobile{
-        font-size: var(--font-size-heading-4-mb);
-        line-height: var(--font-line-height-heading-4-mb);
-    }
+  @include responsive.mobile {
+    font-size: var(--font-size-heading-4-mb);
+    line-height: var(--font-line-height-heading-4-mb);
+  }
 }
 
-h5, .h5{
-    letter-spacing: var(--font-letter-spacing-heading-5);
-    font-size: var(--font-size-heading-5);
-    font-weight: var(--font-weight-medium);
+h5,
+.h5 {
+  letter-spacing: var(--font-letter-spacing-heading-5);
+  font-size: var(--font-size-heading-5);
+  font-weight: var(--font-weight-medium);
 
-    @include responsive.mobile{
-        font-size: var(--font-size-heading-5-mb);
-        line-height: var(--font-line-height-heading-5-mb);
-    }
+  @include responsive.mobile {
+    font-size: var(--font-size-heading-5-mb);
+    line-height: var(--font-line-height-heading-5-mb);
+  }
 }
 
-h6, .h6{
-    letter-spacing: var(--font-letter-spacing-heading-6);
-    font-size: var(--font-size-heading-6);
+h6,
+.h6 {
+  letter-spacing: var(--font-letter-spacing-heading-6);
+  font-size: var(--font-size-heading-6);
 
-    @include responsive.mobile{
-        font-size: var(--font-size-heading-6-mb);
-        line-height: var(--font-line-height-heading-6-mb);
-    }
+  @include responsive.mobile {
+    font-size: var(--font-size-heading-6-mb);
+    line-height: var(--font-line-height-heading-6-mb);
+  }
 }
 
-p{
-    font-size: var(--font-size-body-1);
-    line-height: var(--font-line-height-body-1);
-    letter-spacing: var(--font-letter-spacing-body-1);
-    
-    &.body-2{
-	font-size: var(--font-size-body-2);
-	letter-spacing: var(--font-letter-spacing-body-2);
-    }
+p {
+  font-size: var(--font-size-body-1);
+  line-height: var(--font-line-height-body-1);
+  letter-spacing: var(--font-letter-spacing-body-1);
 
-    &.caption{
-	font-size: var(--font-size-caption);
-	letter-spacing: var(--font-letter-spacing-caption);
-    }
+  &.body-2 {
+    font-size: var(--font-size-body-2);
+    letter-spacing: var(--font-letter-spacing-body-2);
+  }
 
-    &.footnote{
-	font-size: var(--font-size-footnote);
-	letter-spacing: var(--font-letter-spacing-footnote);
-    }
+  &.caption {
+    font-size: var(--font-size-caption);
+    letter-spacing: var(--font-letter-spacing-caption);
+  }
 
-    &.overline{
-	text-decoration-line: none;
-	font-size: var(--font-size-overline);
-	letter-spacing: var(--font-letter-spacing-overline);
-	text-transform: uppercase;
-    }
-
-    &.subtitle-1{
-	letter-spacing: var(--font-letter-spacing-subtitle-1);
-	font-size: var(--font-size-subtitle-1);
-    }
-
-    &.subtitle-2{
-	letter-spacing: var(--font-letter-spacing-subtitle-2);
-	font-size: var(--font-size-subtitle-2);
-    }
-
-    &.label{
-	&-large{
-	    text-box-trim: trim-both;
-	    letter-spacing: var(--font-letter-spacing-label);
-	    font-size: var(--font-size-label-large);
-	    font-weight: var(--font-weight-medium);
-
-	    @include responsive.mobile{
-		//font-size: var(--font-size-label-large-mobile);		
-	    }
-	}
-
-	&-medium{
-	    text-box-trim: trim-both;
-	    font-size: var(--font-size-label-medium);
-	    font-weight: var(--font-weight-medium);
-
-	    
-	    @include responsive.mobile{
-		//font-size: var(--font-size-label-medium-mobile);		
-	    }
-	}
-	
-	&-small{
-	    text-box-trim: trim-both;
-	    font-size: var(--font-size-label-small);
-	    font-weight: var(--font-weight-medium);
-	    
-	    @include responsive.mobile{
-		//font-size: var(--font-size-label-small-mobile);		
-	    }
-	}
-    }
-}
-
-small{
+  &.footnote {
     font-size: var(--font-size-footnote);
     letter-spacing: var(--font-letter-spacing-footnote);
+  }
+
+  &.overline {
+    text-decoration-line: none;
+    font-size: var(--font-size-overline);
+    letter-spacing: var(--font-letter-spacing-overline);
+    text-transform: uppercase;
+  }
+
+  &.subtitle-1 {
+    letter-spacing: var(--font-letter-spacing-subtitle-1);
+    font-size: var(--font-size-subtitle-1);
+  }
+
+  &.subtitle-2 {
+    letter-spacing: var(--font-letter-spacing-subtitle-2);
+    font-size: var(--font-size-subtitle-2);
+  }
+
+  &.label {
+    &-large {
+      text-box-trim: trim-both;
+      letter-spacing: var(--font-letter-spacing-label);
+      font-size: var(--font-size-label-large);
+      font-weight: var(--font-weight-medium);
+
+      @include responsive.mobile {
+        //font-size: var(--font-size-label-large-mobile);
+      }
+    }
+
+    &-medium {
+      text-box-trim: trim-both;
+      font-size: var(--font-size-label-medium);
+      font-weight: var(--font-weight-medium);
+
+      @include responsive.mobile {
+        //font-size: var(--font-size-label-medium-mobile);
+      }
+    }
+
+    &-small {
+      text-box-trim: trim-both;
+      font-size: var(--font-size-label-small);
+      font-weight: var(--font-weight-medium);
+
+      @include responsive.mobile {
+        //font-size: var(--font-size-label-small-mobile);
+      }
+    }
+  }
+}
+
+small {
+  font-size: var(--font-size-footnote);
+  letter-spacing: var(--font-letter-spacing-footnote);
 }

@@ -1,36 +1,36 @@
 @use "@styles/responsive" as responsive;
 @use "@styles/var";
 
-.container{
+.container {
+  width: 100vw;
+  margin: auto;
+  max-width: responsive.$default-screen;
 
-    width:100vw;
-    margin: auto;
-    max-width: responsive.$default-screen;
-    padding: 0 var(--size-margin-container);
+  --padding: var(--size-margin-container);
+  padding-left: var(--padding);
+  padding-right: var(--padding);
 
-    &[data-size="WIDE"]{
-	max-width: responsive.$large-screen;
+  &[data-size="WIDE"] {
+    max-width: responsive.$large-screen;
+  }
+
+  @include responsive.tablet {
+    --padding: var(--size-margin-tablet);
+
+    &[data-type="FLUID"] {
+      --padding: 0;
     }
+  }
 
-    @include responsive.tablet{
-	padding: 0 var(--size-margin-tablet);
+  @include responsive.tablet {
+    --padding: var(--size-margin-mobile);
 
-	&[data-type="FLUID"]{
-	    padding:0;
-	}
+    &[data-type="FLUID"] {
+      --padding: 0;
     }
+  }
 
-
-    @include responsive.tablet{
-	padding: 0 var(--size-margin-mobile);
-
-	&[data-type="FLUID"]{
-	    padding:0;
-	}
-    }
-
-    &[data-type="FLUID"]{
-	padding:0;
-    }
-    
+  &[data-type="FLUID"] {
+    --padding: 0;
+  }
 }
