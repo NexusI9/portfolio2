@@ -8,7 +8,7 @@ import ProjectsList from "./projects-list";
 import { IProjectDescriptor } from "@/app/[locale]/_types/project";
 import { useState } from "react";
 import { Button } from "@/app/[locale]/_components/button/button";
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
+import { ChevronDownIcon, ChevronUpIcon, ListChevronsDownUpIcon } from "lucide-react";
 
 interface ISidebar {
 	content: Record<any, any>;
@@ -48,10 +48,10 @@ export default function Sidebar({ content, projects, activeProject }: ISidebar) 
 
 							<TableOfContents.Trigger action="COLLAPSE_ALL">
 								<Button role={isExpanded ? "PRIMARY" : "DISABLED"}
-									style="OUTLINE"
+									style="GHOST"
 									size="SMALL"
 								>
-									{dico.projects.common.sidebar.collapse_all}
+									<ListChevronsDownUpIcon />
 								</Button>
 							</TableOfContents.Trigger>
 

@@ -2,10 +2,9 @@
 
 import { ComponentPropsWithoutRef } from "react";
 import TradeOffCard from "@components/tradeoff-card/tradeoff-card";
-import { Slider } from "../slider/slider";
 import Section from "./section";
-import styles from "./tradeoffs.module.scss";
 import { Blog } from "./blog";
+import TradeOffExpand from "../tradeoff-card/tradeoff-expand";
 
 interface ITradeoffs {
 	headline: string;
@@ -15,23 +14,13 @@ interface ITradeoffs {
 
 export default function TradeOffs({ headline, items }: ITradeoffs) {
 	return (
-		<Section type="FLUID">
-			<Slider.Root>
-				<hgroup className={styles.header}>
-					<Blog.Heading role="H3">{headline}</Blog.Heading>
-					<div className={styles.nav}>
-						<Slider.ButtonLeft />
-						<Slider.ButtonRight />
-					</div>
-				</hgroup>
+		<Section>
 
-				<div className={styles.wrapper}>
-					<Slider.Content className={styles.tradeoffs}>
-						{items.map((item, i) => <TradeOffCard key={`tradeoff${i}`} {...item} />)}
-					</Slider.Content>
-				</div>
-			</Slider.Root>
+			<Blog.Heading role="H3">{headline}</Blog.Heading>
+			<div>
+				{items.map((item, i) => <TradeOffExpand key={`tradeoff${i}`} {...item} />)}
+			</div>
 
-		</Section >
+		</Section>
 	);
 }
