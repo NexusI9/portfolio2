@@ -5,6 +5,7 @@ import List from "./_components/list";
 import PlusCircle from "@assets/icons/solid/plus-circle.svg";
 import MinusCircle from "@assets/icons/solid/minus-circle.svg";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
+import styles from "./tradeoff-expand.module.scss";
 
 interface ITradeOffExpand {
 	heading: string | React.ReactNode;
@@ -40,11 +41,11 @@ hover:gap-(--size-space-extra-large)
 		>
 			<button
 				type="button"
-				className="flex flex-row justify-between items-center"
+				className="flex flex-row justify-between items-center cursor-pointer"
 				aria-expanded={isExpanded}
 				onClick={() => setIsExpanded((prev) => !prev)}
 			>
-				<Text.H6>{heading}</Text.H6>
+				<Text.H6 className="text-left">{heading}</Text.H6>
 				<span className="transition-transform duration-300 ease-in-out">
 					{isExpanded ? <ChevronUpIcon /> : <ChevronDownIcon />}
 				</span>
@@ -55,7 +56,7 @@ hover:gap-(--size-space-extra-large)
 				style={{ gridTemplateRows: isExpanded ? "1fr" : "0fr" }}
 			>
 				<div className="overflow-hidden min-h-0">
-					<div className="flex flex-row gap-(--size-space-large)">
+					<div className={styles.content}>
 						<List
 							className="flex-1"
 							heading="Benefits"

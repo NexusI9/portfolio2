@@ -1,6 +1,6 @@
 "use client"
 
-import { catClass } from "@lib/utils"
+import clsx from "clsx";
 import { createElement } from "react";
 
 type TTextRole = "H1"
@@ -71,7 +71,7 @@ export function TextBase({ id, className, children, role, style }: TTextBase) {
 
 	const props: any = {
 		children,
-		className: catClass([className, STYLE_CLASS[style]]),
+		className: clsx(className, STYLE_CLASS[style]),
 		id,
 	};
 

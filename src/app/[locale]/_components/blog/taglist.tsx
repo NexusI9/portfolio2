@@ -1,6 +1,6 @@
 "use client"
 
-import { catClass } from "../../_lib/utils";
+import clsx from "clsx";
 import { IComponentRole } from "../../_types/component";
 import { List } from "../list/list";
 import Tag from "../tag/tag";
@@ -16,7 +16,7 @@ type TagListProps = {
 
 export default function TagList({ role, items, label, className }: TagListProps) {
 	return (
-		<div className={catClass([styles.taglist, className])}>
+		<div className={clsx(styles.taglist, className)}>
 			<Tag className={styles.tag} role={role}>
 				<Text.Overline>{label}</Text.Overline>
 			</Tag>

@@ -52,12 +52,11 @@ function TocList({ nodes }: { nodes: any[] }) {
 	const { maxLevel, collapsible, activeId, collapsed, setCollapsed, onCollapseChange } = useTocContext();
 
 	function toggle(headline: string) {
-		setCollapsed((prev) => {
-			const current = prev.has(headline) ? prev.get(headline)! : true;
-			const updated = new Map(prev).set(headline, !current);
-			onCollapseChange?.(updated);
-			return updated;
-		});
+		const current = collapsed.has(headline) ? collapsed.get(headline)! : true;
+		const updated = new Map(collapsed).set(headline, !current);
+
+		setCollapsed(updated);
+		onCollapseChange?.(updated);
 	}
 
 	return (

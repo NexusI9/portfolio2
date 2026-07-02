@@ -10,9 +10,9 @@ import {
 } from "react"
 import DropdownList from "./_components/dropdown-list"
 import styles from "./combobox.module.scss"
-import { catClass } from "@lib/utils"
 import { Text } from "../text/text"
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
+import clsx from "clsx"
 
 
 type Option = {
@@ -94,7 +94,7 @@ export default function Combobox({
 	return (
 		<div
 			ref={wrapperRef}
-			className={catClass([styles.combobox, className])}
+			className={clsx(styles.combobox, className)}
 			tabIndex={0}
 			onKeyDown={handleKeyDown}
 			role="combobox"

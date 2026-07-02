@@ -1,11 +1,11 @@
 import { ComponentPropsWithoutRef } from "react";
 import Corner from "./corner"
-import { catClass } from "@lib/utils";
+import clsx from "clsx";
 
 
 export default function CornerFrame({ className }: ComponentPropsWithoutRef<"div">) {
 
-	return (<div className={catClass(["flex flex-col justify-between items-center", className])}>
+	return (<div className={clsx("flex flex-col justify-between items-center", className)}>
 		<div className="flex justify-between items-center w-full">
 			<Corner side="TOP_LEFT" />
 			<Corner side="TOP_RIGHT" />

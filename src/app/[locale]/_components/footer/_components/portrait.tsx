@@ -3,7 +3,7 @@
 import Scene from './scene';
 import { ComponentPropsWithoutRef, useEffect, useRef, useState } from 'react';
 import styles from "./portrait.module.scss";
-import { catClass } from '@lib/utils';
+import clsx from 'clsx';
 
 const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 
@@ -45,7 +45,7 @@ const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 	}, [render]);
 
 
-  return (<div className={catClass([className, styles.portrait])} ref={container}>
+  return (<div className={clsx(className, styles.portrait)} ref={container}>
 	    {children}
 	  </div>);
 }

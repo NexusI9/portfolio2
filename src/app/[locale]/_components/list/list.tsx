@@ -2,7 +2,7 @@
 
 import React, { ReactNode } from 'react';
 import styles from "./list.module.scss";
-import { catClass } from '../../_lib/utils';
+import clsx from 'clsx';
 
 // --- Types ---
 type ListType = 'BULLET' | 'NUMBER';
@@ -28,7 +28,7 @@ export const List = {
 
 		return (
 			<ListContext.Provider value={type}>
-				<Tag className={catClass([styles.list, className])}>{children}</Tag>
+				<Tag className={clsx(styles.list, className)}>{children}</Tag>
 			</ListContext.Provider>
 		);
 	},

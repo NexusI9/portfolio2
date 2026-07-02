@@ -1,6 +1,6 @@
 "use client"
 
-import { catClass } from "@lib/utils";
+import clsx from "clsx";
 
 interface IHeadline {
 	children?: React.ReactNode;
@@ -8,5 +8,5 @@ interface IHeadline {
 }
 
 export default function Headline({ children, className }: IHeadline) {
-	return (<hgroup className={catClass(["flex flex-col gap-(--size-space-medium)", className])}>{children}</hgroup>);
+	return (<hgroup className={clsx("flex flex-col gap-(--size-space-medium)", className)}>{children}</hgroup>);
 }

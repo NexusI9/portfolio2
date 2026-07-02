@@ -5,8 +5,8 @@ import styles from "./button.module.scss"
 import { BaseSyntheticEvent } from "react";
 import Link from "next/link";
 import Label from "../label/label";
-import { catClass } from "@lib/utils"
 import Brackets from "../brackets/brackets";
+import clsx from "clsx";
 
 interface IButton {
 	leadingIcon?: React.ReactNode;
@@ -27,7 +27,7 @@ export const Button = ({ leadingIcon, trailingIcon, size, role, style, children,
 	const Wrapper = href ? Link : "div";
 
 	return (
-		<Wrapper className={catClass([className, styles.button])}
+		<Wrapper className={clsx([className, styles.button])}
 			data-size={size}
 			data-role={role}
 			data-style={style}

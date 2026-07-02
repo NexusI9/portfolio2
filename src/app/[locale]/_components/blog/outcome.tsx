@@ -4,8 +4,8 @@ import { Text } from "@components/text/text";
 import styles from "./outcome.module.scss";
 import blog_styles from "./blog.module.scss";
 import Mosaic from "@components/mosaic/mosaic";
-import { catClass } from "@lib/utils";
 import { Blog } from "./blog";
+import clsx from "clsx";
 
 interface IOutcome {
 	headline: string;
@@ -22,7 +22,7 @@ export default function Outcome({ headline, items }: IOutcome) {
 				{items.map((item, i) => <li key={item + i} className={styles.item}>
 					<div className="relative">
 						<Mosaic row={3} column={3} className={styles.mosaic} animation="BLINK" />
-						<Text.Body className={catClass([blog_styles.number, styles.number])}>{i + 1}</Text.Body>
+						<Text.Body className={clsx(blog_styles.number, styles.number)}>{i + 1}</Text.Body>
 					</div>
 					<Text.Body>{item}</Text.Body>
 				</li>)}

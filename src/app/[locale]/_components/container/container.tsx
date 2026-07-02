@@ -1,8 +1,8 @@
 "use client"
 
-import { catClass } from "@lib/utils";
 import styles from "./container.module.scss";
 import { forwardRef, ComponentPropsWithoutRef } from "react";
+import clsx from "clsx";
 
 interface IContainer
 	extends ComponentPropsWithoutRef<"section"> {
@@ -21,7 +21,7 @@ const Container = forwardRef<
 	return (
 		<section
 			ref={ref}
-			className={catClass([styles.container, className])}
+			className={clsx(styles.container, className)}
 			data-type={type}
 			data-size={size}
 			{...props}

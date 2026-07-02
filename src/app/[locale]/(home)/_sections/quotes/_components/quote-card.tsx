@@ -4,7 +4,7 @@ import { Text } from "@components/text/text";
 import Image from "next/image";
 import styles from "./quote-card.module.scss"
 import { ComponentPropsWithoutRef } from "react";
-import { catClass } from "@lib/utils";
+import clsx from "clsx";
 
 interface IQuoteCard extends ComponentPropsWithoutRef<"blockquote"> {
 	children: React.ReactNode;
@@ -19,7 +19,7 @@ interface IQuoteCard extends ComponentPropsWithoutRef<"blockquote"> {
 export default function QuoteCard({ children, thumbnail, name, position, location, className }: IQuoteCard) {
 
 	return (
-		<blockquote className={catClass([className, styles["quote-card"]])}>
+		<blockquote className={clsx([className, styles["quote-card"]])}>
 
 			<Text.Body className={styles.body}>{children}</Text.Body>
 			<div className="flex flex-col gap-(--size-space-medium)">

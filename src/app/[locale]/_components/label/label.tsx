@@ -3,7 +3,7 @@
 import { IComponentSize } from "@/app/[locale]/_types/component";
 import styles from "./label.module.scss"
 import { Text } from "../text/text";
-import { catClass } from "@lib/utils";
+import clsx from "clsx";
 
 interface ILabel {
 	className?: string;
@@ -23,7 +23,7 @@ export default function Label({
 
 	const TextWrapper = size == "MEDIUM" ? Text.LabelMedium : size == "SMALL" ? Text.LabelSmall : Text.LabelLarge;
 
-	return (<div className={catClass([styles.label, className])} data-size={size}>
+	return (<div className={clsx(styles.label, className)} data-size={size}>
 		{LeadingIcon}
 		{children && <TextWrapper>{children}</TextWrapper>}
 		{TrailingIcon}

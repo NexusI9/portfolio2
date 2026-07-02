@@ -1,8 +1,8 @@
 "use client"
 
 import { ComponentPropsWithoutRef } from "react";
-import { catClass } from "../../_lib/utils";
 import styles from "./group.module.scss";
+import clsx from "clsx";
 
 interface IGroup extends ComponentPropsWithoutRef<"div"> {
 	direction?: "COLUMN" | "ROW";
@@ -10,6 +10,6 @@ interface IGroup extends ComponentPropsWithoutRef<"div"> {
 
 export default function Group({ direction = "COLUMN", children, className }: IGroup) {
 
-	return (<div className={catClass([styles.group, className])} data-direction={direction}>{children}</div>);
+	return (<div className={clsx(styles.group, className)} data-direction={direction}>{children}</div>);
 
 }
