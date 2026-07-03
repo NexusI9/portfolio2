@@ -8,6 +8,9 @@ import { Gallery } from "../../_components/gallery/gallery";
 import { imPath } from "../_lib/helper";
 import { List } from "../../_components/list/list";
 import TradeOffHeader from "../_components/tradeoff-header/tradeoff-header";
+import TradeOffList from "../../_components/tradeoff-card/_components/list";
+import PlusIcon from "@assets/icons/solid/plus-circle.svg"
+import MinusIcon from "@assets/icons/solid/minus-circle.svg"
 
 export default function EmotionalMapper() {
 
@@ -148,19 +151,26 @@ export default function EmotionalMapper() {
 
 			<Blog.Group>
 				<Blog.Heading role="H4">{p.software_architecture.optimizations.headline}</Blog.Heading>
+
+				<Blog.Group>
+					<Blog.Heading role="H5">{p.software_architecture.resource_manager.headline}</Blog.Heading>
+					<Blog.Paragraph>{p.software_architecture.resource_manager.body}</Blog.Paragraph>
+				</Blog.Group>
+
 				<Blog.Group direction="ROW">
+
 					<Blog.Group>
-						<Blog.Heading role="H5">{p.software_architecture.resource_manager.headline}</Blog.Heading>
-						<Blog.Paragraph>{p.software_architecture.resource_manager.body}</Blog.Paragraph>
-						<Blog.TagList
-							role="SUCCESS"
-							label={p.software_architecture.resource_manager.benefits.heading}
+						<TradeOffList
+							style="SUCCESS"
+							heading={p.software_architecture.resource_manager.benefits.heading}
+							leadingIcon={<PlusIcon />}
 							items={p.software_architecture.resource_manager.benefits.items}
 						/>
 
-						<Blog.TagList
-							role="DANGER"
-							label={p.software_architecture.resource_manager.limits.heading}
+						<TradeOffList
+							style="DANGER"
+							heading={p.software_architecture.resource_manager.limits.heading}
+							leadingIcon={<MinusIcon />}
 							items={p.software_architecture.resource_manager.limits.items}
 						/>
 
@@ -168,28 +178,34 @@ export default function EmotionalMapper() {
 					<Gallery.AutoLayout rows={[[imPath(pName, "software-rem")]]} />
 				</Blog.Group>
 
-				<Blog.Group direction="ROW">
-					<Blog.Group>
-						<Blog.Heading role="H5">{p.software_architecture.state_array.headline}</Blog.Heading>
-						<Blog.Paragraph>{p.software_architecture.state_array.body}</Blog.Paragraph>
+				<Blog.Group>
+					<Blog.Heading role="H5">{p.software_architecture.state_array.headline}</Blog.Heading>
+					<Blog.Paragraph>{p.software_architecture.state_array.body}</Blog.Paragraph>
+				</Blog.Group>
 
-						<Blog.TagList
-							role="SUCCESS"
-							label={p.software_architecture.state_array.benefits.heading}
+				<Blog.Group direction="ROW">
+
+					<Blog.Group>
+						<TradeOffList
+							style="SUCCESS"
+							heading={p.software_architecture.state_array.benefits.heading}
+							leadingIcon={<PlusIcon />}
 							items={p.software_architecture.state_array.benefits.items}
 						/>
 
-						<Blog.TagList
-							role="DANGER"
-							label={p.software_architecture.state_array.limits.heading}
+						<TradeOffList
+							style="DANGER"
+							heading={p.software_architecture.state_array.limits.heading}
+							leadingIcon={<MinusIcon />}
 							items={p.software_architecture.state_array.limits.items}
 						/>
-
 					</Blog.Group>
+
 
 					<Gallery.AutoLayout rows={[[imPath(pName, "software-state-based-array")]]} />
 
 				</Blog.Group>
+
 			</Blog.Group>
 
 			<Blog.Group>

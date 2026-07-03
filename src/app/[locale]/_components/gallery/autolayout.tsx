@@ -11,7 +11,7 @@ interface IAutoLayout {
 
 export default function AutoLayout({ rows, noWrapper }: IAutoLayout) {
 	const content = (
-		<>
+		<div className="flex flex-col gap-(--size-space-large)">
 			{rows.map((row, rowIndex) => (
 				<Row key={rowIndex}>
 					{row.map((src, imgIndex) => (
@@ -19,7 +19,7 @@ export default function AutoLayout({ rows, noWrapper }: IAutoLayout) {
 					))}
 				</Row>
 			))}
-		</>
+		</div>
 	);
 
 	if (noWrapper) return content;

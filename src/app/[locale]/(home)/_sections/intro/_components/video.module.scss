@@ -2,39 +2,47 @@
 @use "@styles/var";
 @use "@styles/responsive" as responsive;
 
+.video {
+  $default-width: 700px;
+  $large-width: 1228px;
 
-.video{
+  $default-height: calc($default-width * 3 / 4);
+  $large-height: calc($large-width * 9 / 16);
 
+  // TODO fix hard coded width
+  max-width: utils.fluid-clamp(
+    responsive.$default-screen,
+    responsive.$large-screen,
+    $default-width,
+    $large-width
+  );
 
-    $default-width: 700px;
-    $large-width: 1228px;
+  max-height: utils.fluid-clamp(
+    responsive.$default-screen,
+    responsive.$large-screen,
+    $default-height,
+    $large-height
+  );
 
-    $default-height: calc($default-width * 3/4);
-    $large-height: calc($large-width * 9/16);
+  aspect-ratio: var(--ratio);
+  height: 100%;
 
-    // TODO fix hard coded width
-    max-width: utils.fluid-clamp(responsive.$default-screen, responsive.$large-screen, $default-width, $large-width);
-
-    max-height: utils.fluid-clamp(responsive.$default-screen, responsive.$large-screen, $default-height, $large-height);
-    
-    aspect-ratio: var(--ratio);
+  video {
     height: 100%;
+    width: 100%;
+  }
 
-    
-    video{
-	height:100%;
-    }
+  @include responsive.small-screen {
+    max-width: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
 
-    @include responsive.small-screen{
-	max-width: none;
-	--height: auto;
-    }
-
-    
-    @include responsive.tablet{
-	max-width: none;
-	--height: auto;
-    }
-    
-    
+  @include responsive.tablet {
+    max-width: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
 }

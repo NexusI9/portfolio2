@@ -31,7 +31,7 @@ export default function ProjectsList({ projects, activeProject }:
 				key={project.name}
 				onMouseEnter={(e) => {
 
-					if (activeProject == project.name) return;
+					if (activeProject === project.name) return;
 
 					setPreview({
 						src: project.preview,
@@ -41,7 +41,7 @@ export default function ProjectsList({ projects, activeProject }:
 				}}
 				onMouseLeave={() => {
 
-					if (activeProject == project.name) return;
+					if (activeProject === project.name) return;
 
 					setPreview({
 						src: null,
@@ -53,7 +53,7 @@ export default function ProjectsList({ projects, activeProject }:
 					href={projectPath(project.pageName, (locale || DEFAULT_LOCALE) as string)}
 					size="MEDIUM"
 					style="GHOST"
-					role={activeProject == project.name ? "DISABLED" : "PRIMARY"}
+					role={activeProject === project.name ? "DISABLED" : "PRIMARY"}
 				>
 					{project.name}
 				</Button>

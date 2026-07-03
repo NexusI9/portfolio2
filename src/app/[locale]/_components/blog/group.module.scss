@@ -2,7 +2,7 @@
 
 .group {
   display: flex;
-  gap: var(--size-space-large);
+  gap: var(--size-space-extra-large);
   flex-direction: column;
 
   &[data-direction="ROW"] {
