@@ -2,6 +2,6 @@ export function slugify(text: string) {
 	return text
 		.toLowerCase()
 		.trim()
-		.replace(/[^\w\s-]/g, "")
-		.replace(/\s+/g, "-")
+		.replace(/[^\p{L}\p{N}\s-]/gu, "")
+		.replace(/\s+/g, "-");
 }
