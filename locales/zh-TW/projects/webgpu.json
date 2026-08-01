@@ -1,1 +1,183 @@
-{}
+{
+	"description": "以 C 開發、專注於低效能硬體即時渲染的圖形引擎。",
+	"problem": {
+		"headline": "問題陳述",
+		"body": "隨著 WebGPU 的推出，主流 3D 函式庫開始逐步採用這項技術。然而，目前許多實作在較舊或效能較低的裝置上仍難以流暢運行。因此，本引擎作為一項研發（R&D）計畫的一部分，希望透過深入理解 WebGPU 的運作原理，建立更高的技術自主性，並為未來的互動式 3D 專案打造兼具高效能與高可及性的渲染架構。"
+	},
+	"constraints": {
+		"headline": "專案限制",
+		"body": [
+			"針對舊型或低效能裝置進行最佳化。",
+			"提供可切換的效能模式，以支援更高品質的渲染。",
+			"核心引擎使用 C 開發，支援原生平台輸出。",
+			"透過 WASM 與 Emscripten 編譯至 Web 平台。",
+			"實作完整 PBR 渲染流程，包括光照、陰影、反射與 PostFX。"
+		]
+	},
+	"exploration": {
+		"headline": "技術探索",
+		"ui_research": {
+			"headline": "介面研究",
+			"body": "引擎介面與使用體驗參考了 Blender、Unity、Godot，以及 Wicked Engine 等獨立專案。由於執行期間的動態渲染模式對除錯至關重要，因此從一開始便將其列為核心功能。雖然對 UI 的影響有限，卻大幅增加了底層技術複雜度。此外，也加入 Inspector 即時編輯功能，以及效能監控與分析工具，以便即時觀察物件與系統狀態。"
+		},
+		"tech_research": {
+			"headline": "技術研究",
+			"dod": {
+				"headline": "資料導向設計（DOD）",
+				"body": "由於效能是首要目標，因此整體架構採用了較符合 CPU Cache 的 Data-Oriented Design。考量自己當時的經驗有限，要建立真正最佳化的資料布局並不容易，因此額外設計了 Packet System，透過重新排列資料提升空間區域性（Spatial Locality），降低 Cache Miss 與 Pointer Chasing。"
+			},
+			"material": {
+				"headline": "Material API",
+				"body": [
+					"最初建立了一套 Material API，透過介面呼叫即可設定 Mesh 所需 Shader，而不必手動管理 Bind Group 或 Binding Index。",
+					"然而，這也增加了大量額外分支與很少使用的抽象層。",
+					"因此後續重新統一 Render Pipeline 與 Compute Pipeline 的設計，建立包含固定 Bind Group 與 Binding 常數的 Pipeline State Object（PSO）。",
+					"目前 Shader／Material 系統支援 Buffer、Texture 與 Sampler 的動態更新，使 Shader 資料管理更加有效率。"
+				]
+			},
+			"scene_pool": {
+				"headline": "Scene Pool 系統",
+				"body": "最初所有 Mesh 都存放於固定的 Scene Pool，再交由場景渲染流程管理。隨著 Pipeline 標準化與全域 Resource Manager 的建立，Scene Pool 已不再必要，其概念也被擴展為可統一管理所有引擎資源的 Resource Manager。"
+			},
+			"callback": {
+				"headline": "Render Callback",
+				"body": "另一項提升主迴圈彈性的功能，是 Callback 註冊系統。未來更理想的做法將參考 Bevy 的 Scheduler 架構，讓函式能註冊至 Start、Update、End 等不同生命週期，類似 Unity MonoBehaviour 的 onAwake() 與 onUpdate()。"
+			},
+			"mbin": {
+				"headline": "Mesh 載入格式",
+				"body": "我曾嘗試建立自訂 MBIN（Mesh Binary）格式，直接將小型 Mesh（如 Gizmo）映射到記憶體，而非經過 OBJ 或 glTF 的解析流程。雖然能略微提升小型模型的載入速度，但代價是檔案容量明顯增加。"
+			},
+			"ambient": {
+				"headline": "CPU AO Baking",
+				"body": "引擎最初希望提供適合執行期使用的 Light Baking 與 Ambient Occlusion Baking 工具。然而，在完成 AO Baking 後發現其高度依賴 UV 展開，而引擎本身並未提供相關工具，因此現階段繼續擴充此功能的價值有限。"
+			},
+			"reflection": {
+				"headline": "Reflection Probe",
+				"body": "目前引擎支援平面反射（Planar Reflection）與 Reflection Probe，解析度可透過 Inspector 調整。目前解析度仍採全域設定，未來則計畫支援各 Probe 個別設定。由於此功能仍具有較高成本，後續仍需進一步最佳化。"
+			}
+		}
+	},
+	"solution": {
+		"headline": "解決方案",
+		"ubo": {
+			"headline": "UBO 排程",
+			"body": "為提升效能，每個場景皆建立專屬 Uniform Buffer，整合 Mesh Model Matrix、光源資訊，以及 View／Projection Matrix，以減少更新成本。"
+		},
+		"segmentation": {
+			"headline": "模組分層",
+			"systems": {
+				"headline": "System 作為跨領域協調者",
+				"body": "為避免循環依賴（Circular Reference）、God Object 等問題，同時維持架構清晰，我將 System 設計為各領域之間的協調中心，集中處理跨模組操作，確保資料一致性並降低高風險邏輯分散。"
+			},
+			"core_split": {
+				"headline": "Core 與 Editor 分離",
+				"body": "引擎核心與編輯器完全分離：核心使用 C 實作，而 Editor 則使用 C++ UI 函式庫。此做法可降低核心依賴，並提供更好的效能控制。"
+			}
+		},
+		"batch": {
+			"headline": "批次渲染流程",
+			"hash": {
+				"headline": "Pipeline Hashing",
+				"body": "引擎根據 Pipeline 的渲染屬性與用途（例如 Shadow Mapping、Reflection）建立 Hash，使 Pipeline 能依據 Render State 或執行順序快速查詢。"
+			},
+			"organize": {
+				"headline": "物件排序",
+				"body": "Renderer 會先依照 Pipeline 對場景中的物件進行排序，再進行 Batch Rendering，大幅提升執行期間的整體渲染效率。"
+			}
+		},
+		"cold_hot": {
+			"headline": "Hot Loop 無分支策略",
+			"semantic": {
+				"headline": "函式語意",
+				"body": "為了降低 Hot Loop 中的分支判斷，我建立了一套明確的 Cold／Hot Path 命名規則，使函式名稱即可反映其呼叫頻率。初始化函式允許較多條件判斷，而 Update 與 Draw 函式則專注於線性陣列處理，盡量避免執行期間再做額外決策。"
+			},
+			"process": {
+				"headline": "Channel 控制流程",
+				"body": "為了讓初始化與執行階段順利銜接，我採用了 Register Pattern。Cold Path（初始化、載入）負責完成設定與判斷，再將物件註冊至不同 Channel，使 Hot Path 能以連續方式快速處理所有資料。"
+			}
+		},
+		"resource_manager": {
+			"headline": "Resource Manager",
+			"body": "Resource Manager 統一管理所有引擎資源的生命週期，有助於監控記憶體使用、系統容量與效能分析，並搭配全域 Registry 管理資源 ID。由於 WebGPU 的 Opaque Pointer 無法直接儲存 Pool Index，因此另外建立 Hash Table，將 Pointer 對應至其所在資源池。"
+		},
+		"dynamic_rendering": {
+			"headline": "執行期動態渲染",
+			"body": "由於執行期間切換渲染模式（Bounding Box、Wireframe、Solid、Textured）是核心功能，因此每個 Mesh 都預先配置對應的 Shader 與 Vertex Topology，以支援不同渲染方式。",
+			"topology": {
+				"headline": "Mesh Topology 流程",
+				"body": "引擎使用 Topology System，自動由原始 Mesh 產生 Wireframe 與 Bounding Box。為提升動態更新效率，採用 Hash-Based Indexing，使原始 Topology 變更時能快速重新建立衍生拓樸。"
+			}
+		},
+		"ui_presentation": {
+			"headline": "介面展示"
+		}
+	},
+	"tradeoffs": {
+		"headline": "設計取捨",
+		"body": [
+			{
+				"heading": [
+					"低階硬體效能",
+					"完整功能"
+				],
+				"benefits": [
+					"在低效能裝置維持穩定幀率",
+					"更深入理解 WebGPU 的效能瓶頸"
+				],
+				"costs": [
+					"畫面品質不如大型商業引擎",
+					"高階視覺效果較受限制"
+				]
+			},
+			{
+				"heading": [
+					"資料導向設計",
+					"開發複雜度"
+				],
+				"benefits": [
+					"降低 Cache Miss",
+					"清楚區分 Hot Path 與 Cold Path"
+				],
+				"costs": [
+					"可讀性不如 OOP",
+					"若資料布局設計錯誤，重構成本較高"
+				]
+			},
+			{
+				"heading": [
+					"集中式 Resource Manager",
+					"簡單的區域管理"
+				],
+				"benefits": [
+					"更容易進行效能分析與記憶體追蹤",
+					"統一管理資源生命週期與 ID"
+				],
+				"costs": [
+					"整體架構較難理解",
+					"Ownership 管理更加複雜"
+				]
+			},
+			{
+				"heading": [
+					"ECS 架構",
+					"OOP"
+				],
+				"benefits": [
+					"各系統可獨立測試",
+					"更容易隨引擎規模擴充"
+				],
+				"costs": [
+					"執行流程較難追蹤",
+					"需要高度自律的系統設計"
+				]
+			}
+		]
+	},
+	"outcomes": {
+		"headline": "成果與收穫",
+		"body": [
+			"Data-Oriented Design 的資料切分並不容易，需要依據函式呼叫頻率（Hot／Cold Path）權衡可讀性與快取效率，有時甚至必須放棄傳統 OOP 的設計方式，以換取更高的執行效能。",
+			"API 設計本身就是一門獨立的學問。回顧這個專案，我有時過於專注於底層技術細節，而忽略了 API 本身的易用性與整體開發體驗。"
+		]
+	}
+}

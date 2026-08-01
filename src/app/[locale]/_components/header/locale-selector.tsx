@@ -5,7 +5,10 @@ import Combobox from "@components/combobox/combobox";
 
 export default function LocaleSelector() {
 
-	const comboboxOptions = [{ value: "en", label: "EN" }, { value: "zh-TW", label: "繁體" }];
+	const comboboxOptions = [
+		{ value: "en", label: "EN" },
+		{ value: "zh-TW", label: "繁體" }
+	];
 	const params = useParams();
 	const { locale } = params;
 	const router = useRouter();
@@ -20,10 +23,10 @@ export default function LocaleSelector() {
 		router.push('/' + segments.join('/'));
 	};
 
-
 	return (
 		<Combobox
 			options={comboboxOptions}
+			value={currentOption}
 			placeholder={currentOption.label}
 			onChange={handleChange}
 		/>

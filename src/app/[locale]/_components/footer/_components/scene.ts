@@ -67,7 +67,10 @@ export default class Scene {
 	_init_() {
 
 		this.setCanvasSize();
-		this.renderer = new THREE.WebGLRenderer({ alpha: true });
+
+		try {
+			this.renderer = new THREE.WebGLRenderer({ alpha: true });
+		} catch {}
 
 		if (this.renderer) {
 			//this.renderer.outputEncoding = THREE.sRGBEncoding;

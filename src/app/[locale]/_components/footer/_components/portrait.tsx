@@ -28,8 +28,17 @@ const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 		onScroll();
 		window.addEventListener('scroll', onScroll);
 
-		sceneRef.current = new Scene({ container: container.current });
-		sceneRef.current.init();
+		try {
+			sceneRef.current = new Scene({ container: container.current });
+			sceneRef.current.init();
+		} catch {
+			return () => {
+				sceneRef.current = null;
+				window.removeEventListener('scroll', onScroll);
+			}
+		}
+
+
 
 		return () => {
 			//sceneRef.current?.destroy?.();
@@ -40,14 +49,14 @@ const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 
 
 	useEffect(() => {
-	  if (!sceneRef.current) { return; }
-	  render ? sceneRef.current.play() : sceneRef.current.pause()	  
+		if (!sceneRef.current) { return; }
+		render ? sceneRef.current.play() : sceneRef.current.pause()
 	}, [render]);
 
 
-  return (<div className={clsx(className, styles.portrait)} ref={container}>
-	    {children}
-	  </div>);
+	return (<div className={clsx(className, styles.portrait)} ref={container}>
+	 {children}
+	</div>);
 }
 
 export default Portrait;

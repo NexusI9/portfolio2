@@ -62,7 +62,14 @@ export default function Combobox({
 		}
 		document.addEventListener("mousedown", handleClickOutside)
 		return () => document.removeEventListener("mousedown", handleClickOutside)
-	}, [])
+	}, []);
+
+	useEffect(() => {
+		if (open) {
+			const idx = options.findIndex(o => o.value === selected?.value)
+			setHighlightIndex(idx >= 0 ? idx : 0)
+		}
+	}, [open]);
 
 	// Keyboard navigation
 	const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {

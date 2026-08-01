@@ -20,7 +20,11 @@ export default function DesktopHeader() {
 			<Logo />
 			<div>
 				<Text.LabelMedium>{dico.common.header.name}</Text.LabelMedium>
-				<Text.Caption>{dico.common.header.subtitle}</Text.Caption>
+				<div className="flex flex-row gap-(--size-space-medium) items-center">
+					<Text.Caption>{dico.common.header.subtitle}</Text.Caption>
+					<Text.Caption>::</Text.Caption>
+					<Text.Caption>{dico.common.header.location}</Text.Caption>
+				</div>
 			</div>
 		</Link>
 

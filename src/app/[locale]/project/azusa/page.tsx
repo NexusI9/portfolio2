@@ -242,13 +242,18 @@ export default function Azusa() {
 
 				<Gallery.AutoLayout rows={[
 					[
-						imPath(pName, "props-plant-1"),
-						imPath(pName, "props-plant-2"),
-						imPath(pName, "props-potion"),
+						imPath(pName, "props-gem-bag"),
+						imPath(pName, "props-stamina-elixir"),
+						imPath(pName, "props-dispenser"),
 					],
 					[
 						imPath(pName, "props-nomad house"),
 						imPath(pName, "props-character"),
+						imPath(pName, "props-bike"),
+					],
+					[
+						imPath(pName, "props-plant-1"),
+						imPath(pName, "props-plant-2"),
 						imPath(pName, "props-potion"),
 					],
 				]} />

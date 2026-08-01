@@ -28,19 +28,20 @@ const DropdownList = forwardRef<HTMLUListElement, DropdownListProps>(
 
 		useLayoutEffect(() => {
 			if (!anchorRef.current) return
-			const rect = anchorRef.current.getBoundingClientRect()
-			setPosition({
-				top: rect.bottom + window.scrollY,
-				left: rect.left + window.scrollX,
-				width: rect.width,
-			})
-		}, [anchorRef])
+			const updatePosition = () => {
+				const rect = anchorRef.current!.getBoundingClientRect()
+				setPosition({ top: rect.bottom, left: rect.left, width: rect.width })
+			}
+			updatePosition()
+			window.addEventListener("resize", updatePosition)
+			return () => window.removeEventListener("resize", updatePosition)
+		}, [anchorRef]);
 
 		return createPortal(
 			<ul
 				ref={ref}
 				role="listbox"
-			  className={styles["dropdown-list"]}
+				className={styles["dropdown-list"]}
 				style={{
 					top: position.top,
 					left: position.left,
