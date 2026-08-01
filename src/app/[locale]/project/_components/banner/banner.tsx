@@ -36,7 +36,7 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 					<hgroup>
 						{overline && <Text.Overline className="text-(--color-text-brand-base)">{overline}</Text.Overline>}
 						{headline && <Text.H2>{headline}</Text.H2>}
-						{subtitle && <Text.Subtitle1 className="text-(--color-text-subtle-on-light)">{subtitle}</Text.Subtitle1>}
+						{subtitle && <Text.Subtitle1 className="text-(--color-text-subtle-on-light) mt-(--size-space-small)">{subtitle}</Text.Subtitle1>}
 					</hgroup>
 
 					<ul className="flex flex-col gap-(--size-space-extra-large-2)">

@@ -5,6 +5,7 @@ import { randomInt } from '@lib/utils';
 
 interface IScene {
 	onLoad?: Function;
+	onError?: Function;
 	container?: HTMLDivElement | null;
 	background?: number;
 }
@@ -19,6 +20,7 @@ export default class Scene {
 
 	container: HTMLDivElement | null = null;
 	onLoad: Function;
+	onError: Function;
 	background: number = 0x000000;
 	timeline: TimelineLite | null;
 	timeout: NodeJS.Timeout | null;
@@ -36,24 +38,60 @@ export default class Scene {
 	width = () => this.container?.getBoundingClientRect().width || 0;
 	height = () => this.container?.getBoundingClientRect().height || 0;
 	playFlag = true;
+	supported = true;
 
-	constructor({ onLoad = () => 0, container = null, background = 0xf5f7f9 }: IScene) {
+	constructor({ onLoad = () => 0, onError = () => 0, container = null, background = 0xf5f7f9 }: IScene) {
 		this.onLoad = onLoad;
+		this.onError = onError;
 		this.container = container;
 		this.background = background;
 		this.timeline = gsap.timeline({ onComplete: () => this.head.bone && this.noiseMove(this.head.bone) });
 		this.timeout = null;
 	}
 
+	static isWebGLAvailable(): boolean {
+		try {
+			const canvas = document.createElement('canvas');
+			return !!(
+				window.WebGLRenderingContext &&
+				(canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
+			);
+		} catch {
+			return false;
+		}
+	}
+
 
 	//DOM
-
 	init() {
 
-		if (this.container && this.container.querySelectorAll('canvas').length > 0) { return; }
+		if (!Scene.isWebGLAvailable()) {
+			this.supported = false;
+			this.onError('webgl-unavailable');
+			return;
+		}
+		if (this.renderer) { return; }
 		this._init_();
+
+		if (!this.renderer) {
+			this.supported = false;
+			this.onError('webgl-context-failed');
+			return;
+		}
+
 		this._render_();
 		this.events();
+	}
+
+	dispose() {
+		window.removeEventListener('resize', this.onWindowResize.bind(this));
+		window.removeEventListener('mousemove', this.onMouseMove.bind(this));
+		this.playFlag = false;
+		this.renderer?.dispose();
+		if (this.renderer?.domElement?.parentNode) {
+			this.renderer.domElement.parentNode.removeChild(this.renderer.domElement);
+		}
+		this.renderer = null;
 	}
 
 	events() {
@@ -70,16 +108,16 @@ export default class Scene {
 
 		try {
 			this.renderer = new THREE.WebGLRenderer({ alpha: true });
-		} catch {}
-
-		if (this.renderer) {
-			//this.renderer.outputEncoding = THREE.sRGBEncoding;
-			this.renderer.setPixelRatio(window.devicePixelRatio);
-			this.renderer.setClearColor(0xf5f7f9, 0);
-			this.renderer.setSize(this.width(), this.height());
-			this.container?.appendChild(this.renderer.domElement);
+		} catch {
+			this.renderer = null;
+			return;
 		}
 
+		//this.renderer.outputEncoding = THREE.sRGBEncoding;
+		this.renderer.setPixelRatio(window.devicePixelRatio);
+		this.renderer.setClearColor(0xf5f7f9, 0);
+		this.renderer.setSize(this.width(), this.height());
+		this.container?.appendChild(this.renderer.domElement);
 
 		this.scene = new THREE.Scene();
 		//this.scene.background = new THREE.Color(this.background);
@@ -155,7 +193,9 @@ export default class Scene {
 	}
 
 	_render_() {
-		if (!this.playFlag) { return; }
+
+		if (!this.playFlag || !this.renderer) { return; }
+
 		this.renderer?.render(this.scene, this.camera);
 		if (this.playFlag) { requestAnimationFrame(this._render_.bind(this)); }
 	}
@@ -223,7 +263,7 @@ export default class Scene {
 	}
 
 	play() {
-		if (this.playFlag) { return; }
+		if (this.playFlag || !this.supported) { return; }
 		this.playFlag = true;
 		this._render_();
 

@@ -15,6 +15,10 @@
       width: 30px;
       aspect-ratio: 1/1;
       height: auto;
+
+      :lang(zh-TW) & {
+        width: 34px;
+      }
     }
 
     p {

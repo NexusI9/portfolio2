@@ -38,24 +38,25 @@ const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 			}
 		}
 
-
-
 		return () => {
-			//sceneRef.current?.destroy?.();
 			window.removeEventListener('scroll', onScroll);
+			sceneRef.current?.dispose();
 			sceneRef.current = null;
 		};
 	}, []);
 
 
 	useEffect(() => {
+
 		if (!sceneRef.current) { return; }
-		render ? sceneRef.current.play() : sceneRef.current.pause()
+		render ? sceneRef.current.play() : sceneRef.current.pause();
+
 	}, [render]);
 
 
 	return (<div className={clsx(className, styles.portrait)} ref={container}>
-	 {children}
+		{!sceneRef.current && <p>placeholder</p>}
+		{children}
 	</div>);
 }
 

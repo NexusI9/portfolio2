@@ -18,9 +18,9 @@ export default function DesktopHeader() {
 	return (<header className={`${styles.header} flex flex-row justify-between items-center`} role="menubar">
 		<Link href={`/${locale}`} className={`${styles.signature} flex flex-row gap-(--size-space-medium) items-center`}>
 			<Logo />
-			<div>
+			<div className="flex flex-col [:lang(en)_&]:gap-(--size-space-small)">
 				<Text.LabelMedium>{dico.common.header.name}</Text.LabelMedium>
-				<div className="flex flex-row gap-(--size-space-medium) items-center">
+				<div className="flex flex-row gap-(--size-space-small) items-center">
 					<Text.Caption>{dico.common.header.subtitle}</Text.Caption>
 					<Text.Caption>::</Text.Caption>
 					<Text.Caption>{dico.common.header.location}</Text.Caption>
