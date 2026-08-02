@@ -18,7 +18,11 @@
 		"subtitle": "UX 工程師",
 		"location": "台灣",
 		"resume": "履歷",
-		"contact": "聯絡"
+		"contact": "聯絡",
+		"mobile": {
+			"project-categories": "專案分類",
+			"resources": "資源"
+		}
 	},
 	"footer": {
 		"credits": "網站設計與開發：Nassim El Khantour",

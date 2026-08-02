@@ -11,14 +11,18 @@
 		"film": {
 			"default": "Film Production",
 			"headline": "Film Production"
-		},
+		}
 	},
 	"header": {
 		"name": "Nassim El Khantour",
 		"subtitle": "UX Engineer",
 		"location": "Taiwan",
 		"resume": "Resume",
-		"contact": "Contact"
+		"contact": "Contact",
+		"mobile": {
+			"project-categories": "Project Categories",
+			"resources": "Resources"
+		}
 	},
 	"footer": {
 		"credits": "Website Designed & Developed by Nassim El Khantour",

@@ -10,6 +10,9 @@ import { Button } from "../button/button";
 import Link from "next/link";
 import { PROJECT_CATEGORIES_ANCHORS } from "../../_lib/constants";
 import { Text } from "../text/text";
+import { CONTACT_INFO } from "./constants";
+
+import CaseIcon from "@assets/icons/solid/briefcase.svg"
 
 export default function MobileHeader() {
 
@@ -54,7 +57,7 @@ export default function MobileHeader() {
 			<nav className={styles["mobile-menu-panel"]}>
 
 				<div className={styles["mobile-menu-section"]}>
-					<Text.Overline className={styles["mobile-menu-overline"]}>Project Categories</Text.Overline>
+					<Text.Overline className={styles["mobile-menu-overline"]}>{dico.common.header.mobile["project-categories"]}</Text.Overline>
 					{PROJECT_CATEGORIES_ANCHORS(dico).map(({ label, anchor }) =>
 						<Button
 							key={`anchor${label}${anchor}`}
@@ -69,13 +72,15 @@ export default function MobileHeader() {
 				</div>
 				<hr />
 				<div className={styles["mobile-menu-section"]}>
-					<Text.Overline className={styles["mobile-menu-overline"]}>Resources</Text.Overline>
-					<Button size="LARGE" role="PRIMARY" style="GHOST">
+					<Text.Overline className={styles["mobile-menu-overline"]}>{dico.common.header.mobile.resources}</Text.Overline>
+					<Button size="LARGE" role="PRIMARY" style="GHOST" leadingIcon={<CaseIcon />}>
 						{dico.common.header.resume}
 					</Button>
-					<Button size="LARGE" role="PRIMARY" style="GHOST" href="mailto:nassim.elkhantour@gmail.com">
-						{dico.common.header.contact}
-					</Button>
+
+					{CONTACT_INFO(dico).map(({ icon: Icon, link, label }) =>
+						<Button size="MEDIUM" role="PRIMARY" style="GHOST" href={link} leadingIcon={<Icon />}>
+							{label}
+						</Button>)}
 				</div>
 
 			</nav>

@@ -3,29 +3,11 @@
 @use "@styles/responsive" as responsive;
 
 .video {
-  $default-width: 700px;
-  $large-width: 1228px;
+  height: auto;
+  aspect-ratio: 16/9;
 
-  $default-height: calc($default-width * 3 / 4);
-  $large-height: calc($large-width * 9 / 16);
-
-  // TODO fix hard coded width
-  max-width: utils.fluid-clamp(
-    responsive.$default-screen,
-    responsive.$large-screen,
-    $default-width,
-    $large-width
-  );
-
-  max-height: utils.fluid-clamp(
-    responsive.$default-screen,
-    responsive.$large-screen,
-    $default-height,
-    $large-height
-  );
-
-  aspect-ratio: var(--ratio);
-  height: 100%;
+  max-width: calc(100vw * 2 / 3);
+  min-height: 300px;
 
   video {
     height: 100%;
