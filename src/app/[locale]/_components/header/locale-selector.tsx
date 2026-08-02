@@ -2,6 +2,8 @@
 
 import { useParams, usePathname, useRouter } from "next/navigation";
 import Combobox from "@components/combobox/combobox";
+import GlobeIcon from "@assets/icons/solid/globe-alt.svg"
+import { SIZE_ICON_SM } from "../../_lib/constants";
 
 export default function LocaleSelector() {
 
@@ -29,6 +31,7 @@ export default function LocaleSelector() {
 			value={currentOption}
 			placeholder={currentOption.label}
 			onChange={handleChange}
+			triggerIcon={<GlobeIcon />}
 		/>
 	);
 

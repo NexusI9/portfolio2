@@ -1,5 +1,4 @@
 "use client"
-
 import {
 	useState,
 	useRef,
@@ -13,7 +12,7 @@ import styles from "./combobox.module.scss"
 import { Text } from "../text/text"
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 import clsx from "clsx"
-
+import { SIZE_ICON_SM } from "../../_lib/constants"
 
 type Option = {
 	value: string
@@ -26,6 +25,8 @@ type ComboboxProps = {
 	onChange?: (value: Option) => void
 	placeholder?: string
 	className?: string
+	/** Show this instead of the selected label in the trigger (e.g. <GlobeIcon /> for a language picker) */
+	triggerIcon?: React.ReactNode
 }
 
 export default function Combobox({
@@ -34,11 +35,11 @@ export default function Combobox({
 	onChange,
 	placeholder = "Select...",
 	className,
+	triggerIcon,
 }: ComboboxProps) {
 	const [open, setOpen] = useState(false)
 	const [internalValue, setInternalValue] = useState<Option | undefined>(value)
 	const [highlightIndex, setHighlightIndex] = useState(0)
-
 	const wrapperRef = useRef<HTMLDivElement>(null)
 	const dropdownRef = useRef<HTMLUListElement>(null)
 
@@ -48,12 +49,11 @@ export default function Combobox({
 	)
 
 	const handleSelect = (val: Option) => {
-		if (!value) setInternalValue(val);
-		onChange?.(val);
-		setOpen(false);
+		if (!value) setInternalValue(val)
+		onChange?.(val)
+		setOpen(false)
 	}
 
-	// Click outside
 	useEffect(() => {
 		const handleClickOutside = (e: MouseEvent) => {
 			if (!wrapperRef.current?.contains(e.target as Node)) {
@@ -62,24 +62,21 @@ export default function Combobox({
 		}
 		document.addEventListener("mousedown", handleClickOutside)
 		return () => document.removeEventListener("mousedown", handleClickOutside)
-	}, []);
+	}, [])
 
 	useEffect(() => {
 		if (open) {
 			const idx = options.findIndex(o => o.value === selected?.value)
 			setHighlightIndex(idx >= 0 ? idx : 0)
 		}
-	}, [open]);
+	}, [open])
 
-	// Keyboard navigation
 	const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
 		if (!open && (e.key === "ArrowDown" || e.key === "Enter")) {
 			setOpen(true)
 			return
 		}
-
 		if (!open) return
-
 		switch (e.key) {
 			case "ArrowDown":
 				setHighlightIndex(prev => (prev + 1) % options.length)
@@ -106,13 +103,12 @@ export default function Combobox({
 			onKeyDown={handleKeyDown}
 			role="combobox"
 			aria-expanded={open}
+			aria-label={triggerIcon ? (selected?.label ?? placeholder) : undefined}
 		>
 			<div onClick={() => setOpen(o => !o)} className="flex flex-row items-center gap-(--size-space-small)">
-				<Text.LabelMedium>{selected?.label ?? placeholder}</Text.LabelMedium>
+				{triggerIcon ?? <Text.LabelMedium>{selected?.label ?? placeholder}</Text.LabelMedium>}
 				{open ? <ChevronUpIcon /> : <ChevronDownIcon />}
 			</div>
-
-
 			{open && (
 				<DropdownList
 					anchorRef={wrapperRef as RefObject<HTMLDivElement>}
@@ -124,9 +120,6 @@ export default function Combobox({
 					onSelect={handleSelect}
 				/>
 			)}
-
-
-
 		</div>
 	)
 }

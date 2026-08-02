@@ -2,21 +2,18 @@
 @use "@styles/interaction" as interaction;
 @use "@styles/animation";
 
-.combobox{
+.combobox {
+  cursor: pointer;
 
-    cursor: pointer;
+  transition: color var(--transition-short);
 
-    transition: color var(--transition-short);
-    
-    @include interaction.hover{
-	color: var(--color-text-brand-base);
-    }
+  @include interaction.hover {
+    color: var(--color-text-brand-base);
+  }
 
-    svg{
-	width: var(--size-icon-medium);
-	aspect-ratio:1/1;
-	height:auto;
-    }
-
-    
+  svg {
+    width: var(--size-icon-medium);
+    aspect-ratio: 1/1;
+    height: auto;
+  }
 }
