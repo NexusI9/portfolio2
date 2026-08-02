@@ -20,7 +20,7 @@ export default function ProjectCategoryWrapper() {
 
 	const PROJECT_SECTIONS: Array<ComponentPropsWithoutRef<typeof ProjectCategory>> = [
 		{
-			headline: PROJECT_CATEGORIES_ANCHORS(dico)[0].label,
+			headline: PROJECT_CATEGORIES_ANCHORS(dico)[0].headline,
 			id: PROJECT_CATEGORIES_ANCHORS(dico)[0].anchor,
 			projects: [
 				mapFromDescriptor(PROJECT_DESCRIPTOR_STYLE_STUDIO(dico), locale as string),
@@ -28,7 +28,7 @@ export default function ProjectCategoryWrapper() {
 			],
 		},
 		{
-			headline: PROJECT_CATEGORIES_ANCHORS(dico)[1].label,
+			headline: PROJECT_CATEGORIES_ANCHORS(dico)[1].headline,
 			id: PROJECT_CATEGORIES_ANCHORS(dico)[1].anchor,
 			projects: [
 				mapFromDescriptor(PROJECT_DESCRIPTOR_AZUSA(dico), locale as string),
@@ -36,7 +36,7 @@ export default function ProjectCategoryWrapper() {
 			]
 		},
 		{
-			headline: PROJECT_CATEGORIES_ANCHORS(dico)[2].label,
+			headline: PROJECT_CATEGORIES_ANCHORS(dico)[2].headline,
 			id: PROJECT_CATEGORIES_ANCHORS(dico)[2].anchor,
 			projects: [
 				mapFromDescriptor(PROJECT_DESCRIPTOR_ANIMAL(dico), locale as string),

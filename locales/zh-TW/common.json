@@ -1,8 +1,17 @@
 {
 	"categories": {
-		"digital": "數位產品",
-		"game": "遊戲開發",
-		"film": "影視製作"
+		"digital": {
+			"default": "數位產品",
+			"headline": "数位产品"
+		},
+		"game": {
+			"default": "遊戲開發",
+			"headline": "游戏开发"
+		},
+		"film": {
+			"default": "影視製作",
+			"headline": "影视制作"
+		}
 	},
 	"header": {
 		"name": "安俊凱",

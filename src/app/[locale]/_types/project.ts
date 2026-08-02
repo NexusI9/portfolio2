@@ -6,6 +6,7 @@ import { Dictionary } from "@/i18n/Context";
 
 export interface IProjectCategoriesAnchors {
 	label: string;
+	headline: string; // add a headline attribute cause chinese font use a simplified character, but menus use traditional
 	anchor: string;
 }
 

@@ -7,15 +7,18 @@ export const PROJECT_CATEGORY_ID_FILM_PRODUCTION = "film-production";
 
 export const PROJECT_CATEGORIES_ANCHORS: (dico: Dictionary) => Array<IProjectCategoriesAnchors> = (dico) => [
 	{
-		label: dico.common.categories.digital,
+		label: dico.common.categories.digital.default,
+		headline: dico.common.categories.digital.headline,
 		anchor: PROJECT_CATEGORY_ID_DIGITAL_PRODUCT
 	},
 	{
-		label: dico.common.categories.game,
+		label: dico.common.categories.game.default,
+		headline: dico.common.categories.game.headline,
 		anchor: PROJECT_CATEGORY_ID_GAME_DEVELOPMENT
 	},
 	{
-		label: dico.common.categories.film,
+		label: dico.common.categories.film.default,
+		headline: dico.common.categories.film.headline,
 		anchor: PROJECT_CATEGORY_ID_FILM_PRODUCTION
 	},
 ];

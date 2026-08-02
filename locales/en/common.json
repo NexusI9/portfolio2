@@ -1,8 +1,17 @@
 {
 	"categories": {
-		"digital": "Digital Product",
-		"game": "Game Development",
-		"film": "Film Production"
+		"digital": {
+			"default": "Digital Product",
+			"headline": "Digital Product"
+		},
+		"game": {
+			"default": "Game Development",
+			"headline": "Game Development"
+		},
+		"film": {
+			"default": "Film Production",
+			"headline": "Film Production"
+		},
 	},
 	"header": {
 		"name": "Nassim El Khantour",
