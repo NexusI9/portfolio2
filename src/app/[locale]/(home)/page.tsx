@@ -1,7 +1,7 @@
 "use client"
 
 import NavBar from "@components/navbar/navbar";
-import styles from "./page.module.scss";
+import styles from "@components/navbar/navbar.module.scss";
 import { PROJECT_CATEGORIES_ANCHORS } from "@lib/constants";
 import Intro from "./_sections/intro/intro";
 import Quotes from "./_sections/quotes/quotes";
