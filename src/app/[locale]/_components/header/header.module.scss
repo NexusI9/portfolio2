@@ -20,6 +20,13 @@
     border-color: var(--color-border-subtle-on-light);
   }
 
+  &-locale-selector {
+    opacity: 0;
+    transition: opacity 0.1s linear;
+    pointer-events: none;
+    width: 0;
+  }
+
   /* BAR */
 
   &-bar {
@@ -73,6 +80,14 @@
   /* OPEN STATE */
   &[data-open="true"] {
     transform: translateX(0);
+
+    .mobile-menu-locale-selector {
+      opacity: 1;
+      pointer-events: auto;
+      transition-delay: 0.4s;
+      transition-duration: 0.3s;
+      width: auto;
+    }
 
     .mobile-menu-panel {
       transform: translateX(0);

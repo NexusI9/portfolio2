@@ -8,7 +8,8 @@ import ProjectsList from "./projects-list";
 import { IProjectDescriptor } from "@/app/[locale]/_types/project";
 import { useState } from "react";
 import { Button } from "@/app/[locale]/_components/button/button";
-import { ChevronDownIcon, ChevronUpIcon, ListChevronsDownUpIcon } from "lucide-react";
+import { ListChevronsDownUpIcon } from "lucide-react";
+import TocIcon from "@assets/icons/solid/book-open.svg";
 import { useOverflowDetection } from "./helper";
 
 interface ISidebar {
@@ -36,10 +37,9 @@ export default function Sidebar({ content, projects, activeProject }: ISidebar) 
 					style="GHOST"
 					size="LARGE"
 					onClick={() => setOpen(!open)}
-					trailingIcon={open ? <ChevronUpIcon /> : <ChevronDownIcon />}
 					decoration={false}
 				>
-					{dico.projects.common.sidebar.table_content}
+					<TocIcon />
 				</Button>
 			</div>
 			<aside className={styles.sidebar} data-open={open}>

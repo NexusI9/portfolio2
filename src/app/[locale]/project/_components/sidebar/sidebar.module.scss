@@ -89,18 +89,10 @@
   width: max-content;
   top: 0;
   margin: auto;
-  left: 50%;
-  transform: translate3d(-50%, 0px, 0px);
-  margin-top: 14px;
+  right: 3rem;
+  margin-top: 1rem;
 
-  background: var(--color-surface-highest);
-  box-shadow: var(--shadow-low);
-  border-radius: var(--size-radius-base);
   padding: var(--size-space-large) var(--size-space-extra-large-2);
-
-  @include responsive.mobile {
-    padding: var(--size-space-medium);
-  }
 
   @include responsive.desktop {
     display: none;

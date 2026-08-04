@@ -32,7 +32,9 @@ export default function MobileHeader() {
 
 				<div className={styles["mobile-menu-actions"]}>
 
-					{open && <LocaleSelector />}
+					<div className={styles["mobile-menu-locale-selector"]}>
+						<LocaleSelector />
+					</div>
 
 					<button className={styles["mobile-menu-bars"]} onClick={toggleMenu} aria-label="menu">
 						<div className={styles["mobile-menu-bars-default"]}>

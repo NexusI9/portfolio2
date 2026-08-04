@@ -3,9 +3,12 @@
 import { useParams, usePathname, useRouter } from "next/navigation";
 import Combobox from "@components/combobox/combobox";
 import GlobeIcon from "@assets/icons/solid/globe-alt.svg"
-import { SIZE_ICON_SM } from "../../_lib/constants";
 
-export default function LocaleSelector() {
+interface ILocaleSelector {
+	className?: string;
+}
+
+export default function LocaleSelector({ className }: ILocaleSelector) {
 
 	const comboboxOptions = [
 		{ value: "en", label: "EN" },
@@ -27,6 +30,7 @@ export default function LocaleSelector() {
 
 	return (
 		<Combobox
+			className={className}
 			options={comboboxOptions}
 			value={currentOption}
 			placeholder={currentOption.label}
