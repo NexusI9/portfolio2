@@ -1,18 +1,16 @@
 "use client"
-
 import { useState } from "react";
-import Logo from "@assets/icons/solid/nek-logo.svg";
-import LocaleSelector from "./locale-selector";
-import styles from "./header.module.scss";
+import LocaleSelector from "../locale-selector";
+import styles from "../header.module.scss";
 import { useDictionary } from "@/i18n/Context";
 import { useParams } from "next/navigation";
-import { Button } from "../button/button";
-import Link from "next/link";
-import { PROJECT_CATEGORIES_ANCHORS } from "../../_lib/constants";
-import { Text } from "../text/text";
-import { CONTACT_INFO } from "./constants";
+import { Button } from "@components/button/button";
+import { PROJECT_CATEGORIES_ANCHORS } from "@lib/constants";
+import { Text } from "@components/text/text";
+import { CONTACT_INFO } from "../constants";
 
 import CaseIcon from "@assets/icons/solid/briefcase.svg"
+import { Signature } from "../_components/signature";
 
 export default function MobileHeader() {
 
@@ -30,9 +28,7 @@ export default function MobileHeader() {
 
 			<div className={styles["mobile-menu-bar"]}>
 
-				<Link href={`/${locale}`}>
-					<Logo className={styles["mobile-menu-logo"]} />
-				</Link>
+				<Signature />
 
 				<div className={styles["mobile-menu-actions"]}>
 

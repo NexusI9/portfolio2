@@ -50,6 +50,9 @@
     border-radius: var(--size-radius-small);
     z-index: 99;
 
+    overflow: auto;
+    max-height: 90vh;
+
     &[data-open="true"] {
       transform: translate3d(-50%, 70px, 0px);
       pointer-events: auto;

@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { TABLET_WIDTH } from "../../_lib/constants";
-import DesktopHeader from "./desktop";
-import MobileHeader from "./mobile";
+import DesktopHeader from "./_layouts/desktop";
+import MobileHeader from "./_layouts/mobile";
 
 export default function Header() {
 
