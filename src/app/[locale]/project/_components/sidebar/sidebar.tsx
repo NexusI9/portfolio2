@@ -9,6 +9,7 @@ import { IProjectDescriptor } from "@/app/[locale]/_types/project";
 import { useState } from "react";
 import { Button } from "@/app/[locale]/_components/button/button";
 import { ChevronDownIcon, ChevronUpIcon, ListChevronsDownUpIcon } from "lucide-react";
+import { useOverflowDetection } from "./helper";
 
 interface ISidebar {
 	content: Record<any, any>;
@@ -20,6 +21,7 @@ export default function Sidebar({ content, projects, activeProject }: ISidebar) 
 	const dico = useDictionary();
 	const [open, setOpen] = useState(false);
 	const [isExpanded, setIsExpanded] = useState(false);
+	const { ref: tocWrapperRef, isOverflowing: isTocOverflowing } = useOverflowDetection<HTMLDivElement>([content]);
 
 	const handleOnCollapseChange = (collapsed: TocCollapsedMap) => {
 		setIsExpanded(collapsed.values().some(t => !t));
@@ -56,7 +58,11 @@ export default function Sidebar({ content, projects, activeProject }: ISidebar) 
 							</TableOfContents.Trigger>
 
 						</div>
-						<div className={styles["toc-wrapper"]}>
+						<div
+							ref={tocWrapperRef}
+							className={styles["toc-wrapper"]}
+							data-overflowing={isTocOverflowing}
+						>
 							<TableOfContents.Content />
 						</div>
 					</TableOfContents.Root>
