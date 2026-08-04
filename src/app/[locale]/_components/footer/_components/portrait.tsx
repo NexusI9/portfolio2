@@ -4,6 +4,7 @@ import Scene from './scene';
 import { ComponentPropsWithoutRef, useEffect, useRef, useState } from 'react';
 import styles from "./portrait.module.scss";
 import clsx from 'clsx';
+import Image from 'next/image';
 
 const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 
@@ -58,8 +59,7 @@ const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 
 		{children}
 		<div className={styles["portrait-container"]} ref={container}>
-			{/*TODO: Replace placeholder with static render picture*/}
-			{!sceneRef.current && <p>placeholder</p>}
+	 {!sceneRef.current && <Image alt="3D Render Static Portrait" src="/assets/portrait-static.png" width={1327} height={1590}/>}
 		</div>
 	</div>);
 }
