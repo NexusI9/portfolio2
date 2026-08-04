@@ -21,12 +21,12 @@ export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dicti
 });
 
 export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: Dictionary) => ({
-	name: "Emotional Mapper",
-	description: dico.projects.emma.description,
-	pageName: "emotional-mapper",
+	name: "PULSE Framework",
+	description: dico.projects.pulse.description,
+	pageName: "pulse",
 	alt: "Emotional Mapper software snapshot displayed on a macbook mockup with icons and other UI elements floating out of it.",
-	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/emotional-mapper.png" },
-	preview: "/assets/thumbnails/emotional-mapper.png",
+	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/pulse.png" },
+	preview: "/assets/thumbnails/pulse.png",
 	roles: [
 		dico.projects.common.roles.business_strategist,
 		dico.projects.common.roles.developer,
@@ -38,8 +38,8 @@ export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: D
 		dico.projects.common.context.internal_rd
 	],
 	stack: ["C", "C++", "WEBGPU", "WASM", "FIGMA", "ADOBE"],
-	diagram: "/assets/diagrams/emotional-mapper.svg",
-	tableContent: dico.projects.emma,
+	diagram: "/assets/diagrams/pulse.svg",
+	tableContent: dico.projects.pulse,
 });
 
 export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) => ({

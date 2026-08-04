@@ -15,8 +15,8 @@ import MinusIcon from "@assets/icons/solid/minus-circle.svg"
 export default function EmotionalMapper() {
 
 	const dico = useDictionary();
-	const p = dico.projects.emma;
-	const pName = "emma";
+	const p = dico.projects.pulse;
+	const pName = "pulse";
 
 	return (<Template project={PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER}>
 

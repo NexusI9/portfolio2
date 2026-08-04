@@ -11,7 +11,7 @@ const dictionaryStructure = {
 		common: "projects/common.json",
 		animal: "projects/animal.json",
 		azusa: "projects/azusa.json",
-		emma: "projects/emma.json",
+		pulse: "projects/pulse.json",
 		stylestudio: "projects/stylestudio.json",
 		webgpu: "projects/webgpu.json",
 	},

@@ -1,5 +1,5 @@
 {
-	"description": "Bolstering productivity by generating and scaling Design Systems in a click",
+	"description": "Figma plugin bolstering productivity by generating and scaling Design Systems in a click",
 	"problem": {
 		"headline": "Problem Statement",
 		"body": "While working on freelance project I noticed I was repeatedly doing the same boilerplate for each project and was lacking of a centralized way to actually create, edit and export my design systems for productions. <br/> Many disparate plugins already offer simple basic color scheme generation but they seems very Design Centered and very few actually encompass broader and realistic production scope including:",

@@ -113,6 +113,9 @@ export default class Scene {
 			return;
 		}
 
+
+		console.log("container dimension: " + this.width() + " : " + this.height());
+
 		//this.renderer.outputEncoding = THREE.sRGBEncoding;
 		this.renderer.setPixelRatio(window.devicePixelRatio);
 		this.renderer.setClearColor(0xf5f7f9, 0);
@@ -164,7 +167,6 @@ export default class Scene {
 				this.head.group = gltf.scene.children[0] as THREE.Object3D;
 				this.head.bone = gltf.scene.children[0].children[1].children[0] as THREE.Bone;
 
-				console.log(this.head.mesh);
 				if (this.head.mesh)
 					this.closeEyes(this.head.mesh);
 

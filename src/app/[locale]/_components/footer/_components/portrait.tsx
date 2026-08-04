@@ -29,15 +29,9 @@ const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 		onScroll();
 		window.addEventListener('scroll', onScroll);
 
-		try {
-			sceneRef.current = new Scene({ container: container.current });
-			sceneRef.current.init();
-		} catch {
-			return () => {
-				sceneRef.current = null;
-				window.removeEventListener('scroll', onScroll);
-			}
-		}
+
+		sceneRef.current = new Scene({ container: container.current });
+		sceneRef.current?.init();
 
 		return () => {
 			window.removeEventListener('scroll', onScroll);
@@ -59,7 +53,7 @@ const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 
 		{children}
 		<div className={styles["portrait-container"]} ref={container}>
-	 {!sceneRef.current && <Image alt="3D Render Static Portrait" src="/assets/portrait-static.png" width={1327} height={1590}/>}
+			{!sceneRef.current && <Image alt="3D Render Static Portrait" src="/assets/portrait-static.png" fill />}
 		</div>
 	</div>);
 }
