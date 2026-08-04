@@ -164,6 +164,7 @@ export default class Scene {
 				this.head.group = gltf.scene.children[0] as THREE.Object3D;
 				this.head.bone = gltf.scene.children[0].children[1].children[0] as THREE.Bone;
 
+				console.log(this.head.mesh);
 				if (this.head.mesh)
 					this.closeEyes(this.head.mesh);
 

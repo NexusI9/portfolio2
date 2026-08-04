@@ -2,78 +2,79 @@
 @use "@styles/responsive" as responsive;
 @use "@styles/utils" as utils;
 
+:root {
+  --project-banner-height: 600px;
 
-:root{
-    --project-banner-height:600px;
+  @include responsive.small-screen {
+    --project-banner-height: 0px;
+  }
 
-    @include responsive.small-screen{
-	--project-banner-height:0px;	
-    }
+  @include responsive.tablet {
+    --project-banner-height: 0px;
+  }
 
-    @include responsive.tablet{
-	--project-banner-height:0px;	
-    }
-	
-    @include responsive.mobile{
-	--project-banner-height:0px;	
-    }
+  @include responsive.mobile {
+    --project-banner-height: 0px;
+  }
 }
 
+.banner-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.banner-wrapper{
-    width:100%;
+.banner {
+  height: var(--project-banner-height);
+  padding-top: 110px;
+  display: grid;
+  grid-template-columns: auto utils.fluid-clamp(
+      responsive.$tablet,
+      responsive.$default-screen,
+      300px,
+      545px
+    );
+  align-items: start;
+  gap: utils.fluid-clamp(
+    responsive.$small-screen,
+    responsive.$default-screen,
+    12px,
+    96px
+  );
+  position: fixed;
+  top: 0;
+
+  @mixin relative-mode() {
+    position: relative;
+    height: fit-content;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    gap: var(--size-space-extra-large-4);
+    padding-bottom: var(--size-space-extra-large-5);
+  }
+
+  @include responsive.small-screen {
+    @include relative-mode();
+  }
+
+  @include responsive.tablet {
+    @include relative-mode();
+  }
+
+  @include responsive.mobile {
+    @include relative-mode();
+    padding-top: var(--size-space-extra-large-6);
+  }
 }
 
-.banner{
-    
-    height: var(--project-banner-height);
-    padding-top: var(--size-space-extra-large-7);
-    display: grid;
-    grid-template-columns: auto utils.fluid-clamp(responsive.$tablet, responsive.$default-screen, 300px, 545px);
-    align-items: start;
-    gap: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 12px, 96px);
-    position:fixed;
-    top:0;
+.diagram {
+  @include responsive.small-screen {
+    align-self: center;
+  }
 
-    @mixin relative-mode(){
-	position:relative;
-	height:fit-content;
-	display:flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: var(--size-space-extra-large-4);
-	padding-bottom: var(--size-space-extra-large-5);
-    }
-
-    @include responsive.small-screen{
-	@include relative-mode();
-    }
-    
-
-    @include responsive.tablet{
-	@include relative-mode();
-    }
-        
-    
-    @include responsive.mobile{
-	@include relative-mode();
-	padding-top: var(--size-space-extra-large-6);
-    }
-}
-
-
-.diagram{
-
-
-    @include responsive.small-screen{
-        align-self: center;
-    }
-
-    
-    @include responsive.tablet{
-        align-self: center;
-    }
+  @include responsive.tablet {
+    align-self: center;
+  }
 }

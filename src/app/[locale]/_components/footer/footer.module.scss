@@ -34,6 +34,8 @@
   background: var(--color-surface-highest);
   box-shadow: var(--shadow-medium);
 
+  justify-content: center;
+
   --padding-side: var(--size-margin-desktop);
   --padding-top: var(--size-space-extra-large-5);
   padding-top: var(--padding-top);
@@ -53,20 +55,21 @@
 
 .contact {
   display: grid;
+
   grid-template-columns:
     utils.fluid-clamp(
       responsive.$small-screen,
-      responsive.$default-screen,
+      responsive.$large-screen,
       240px,
-      456px
+      666px
     )
     auto;
   align-items: center;
   gap: utils.fluid-clamp(
     responsive.$small-screen,
-    responsive.$default-screen,
+    responsive.$large-screen,
     0px,
-    64px
+    124px
   );
 
   @include responsive.tablet {

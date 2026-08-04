@@ -54,10 +54,13 @@ const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 	}, [render]);
 
 
-	return (<div className={clsx(className, styles.portrait)} ref={container}>
-		{/*TODO: Replace placeholder with static render picture*/}
-		{!sceneRef.current && <p>placeholder</p>}
+	return (<div className={clsx(className, styles.portrait)}>
+
 		{children}
+		<div className={styles["portrait-container"]} ref={container}>
+			{/*TODO: Replace placeholder with static render picture*/}
+			{!sceneRef.current && <p>placeholder</p>}
+		</div>
 	</div>);
 }
 

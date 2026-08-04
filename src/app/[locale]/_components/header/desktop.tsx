@@ -20,7 +20,7 @@ export default function DesktopHeader() {
 	return (<header className={`${styles.header} flex flex-row justify-between items-center`} role="menubar">
 		<Link href={`/${locale}`} className={`${styles.signature} flex flex-row gap-(--size-space-medium)  [:lang(zh-TW)_&]:gap-(--size-space-large) items-center`}>
 			<Logo />
-			<div className="flex flex-col [:lang(en)_&]:gap-(--size-space-small)">
+			<div className="flex flex-col">
 				<Text.LabelMedium>{dico.common.header.name}</Text.LabelMedium>
 				<div className="flex flex-row gap-(--size-space-small) items-center">
 					<Text.Caption>{dico.common.header.subtitle}</Text.Caption>
@@ -36,8 +36,8 @@ export default function DesktopHeader() {
 				<b>{dico.common.header.resume}</b>
 			</Button>
 			<div className="flex flex-row gap-(--size-space-extra-large) items-center">
-				{CONTACT_INFO(dico).map(({ icon: Icon, link }) =>
-					<Button size="MEDIUM" role="PRIMARY" style="GHOST" href={link}>
+				{CONTACT_INFO(dico).map(({ icon: Icon, link, label }) =>
+					<Button key={label} size="MEDIUM" role="PRIMARY" style="GHOST" href={link}>
 						<Icon />
 					</Button>)}
 				<LocaleSelector />
