@@ -30,9 +30,7 @@ export default function Quotes() {
 		<Container id="quotes" className={styles.quotes}>
 			<hgroup className="w-fit m-auto relative">
 				<Text.Display className="text-center relative">
-					{dico.home.headlines.quotes.map((txt, i) => (
-						<Fragment key={`quotehead${i}`}>{txt}</Fragment>
-					))}
+					{dico.home.headlines.quotes}
 				</Text.Display>
 			</hgroup>
 			<div className={styles["quotes-wrapper"]}>

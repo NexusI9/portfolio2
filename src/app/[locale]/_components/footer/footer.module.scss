@@ -6,7 +6,7 @@
 @use "@styles/utils" as utils;
 
 .footer {
-  --padding-top: 228px;
+  --padding-top: var(--size-space-extra-large-4);
   position: relative;
   background: linear-gradient(
     180deg,

@@ -6,6 +6,8 @@ import styles from "./project-card.module.scss"
 import { Text } from "@components/text/text";
 import { IThumbnail } from "@/app/[locale]/_types/project";
 import { TABLET_WIDTH, THUMBNAIL_HEIGHT, THUMBNAIL_WIDTH, THUMBNAIL_WIDTH_WIDE } from "@/app/[locale]/_lib/constants";
+import { useDictionary } from "@/i18n/Context";
+import CornerFrame from "@/app/[locale]/_components/corner-frame/corner-frame";
 
 interface IProjectCard {
 	headline?: string;
@@ -22,6 +24,7 @@ export default function ProjectCard({ headline, subtitle, thumbnail, alt, href }
 
 	let Picture = <Image src={thumbnail.src} width={width} height={THUMBNAIL_HEIGHT} alt={alt} />;
 
+	const dico = useDictionary();
 
 	if (thumbnail.small) {
 		const common = { alt, sizes: '100vw' }
@@ -61,8 +64,14 @@ export default function ProjectCard({ headline, subtitle, thumbnail, alt, href }
 			<div className={styles["project-card-visual"]}>
 				{Picture}
 				<div className={styles["project-card-description"]}>
-
-					{/*TODO: Make tags in phase 2?*/}
+					<div className={styles["label-wrapper"]}>
+						<CornerFrame
+							role="ON DARK"
+							className={styles["corner-frame"]}
+						/>
+						<Text.LabelMedium
+							className={styles["label"]}>{dico.home["work-button"]}</Text.LabelMedium>
+					</div>
 				</div>
 			</div>
 
