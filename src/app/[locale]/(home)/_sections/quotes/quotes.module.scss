@@ -102,17 +102,4 @@
   --v-padding: var(--size-space-extra-large-5);
   padding-top: var(--v-padding);
   padding-bottom: var(--v-padding);
-
-  &::before {
-    content: "";
-    width: 100%;
-    height: calc(100%);
-    background: linear-gradient(
-      180deg,
-      var(--color-background-brand-subtlest) 0%,
-      var(--color-background-brand-subtle) 100%
-    );
-    display: block;
-    position: absolute;
-  }
 }

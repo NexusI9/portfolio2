@@ -103,7 +103,7 @@ export function Video({
 					className="absolute pointer-events-none transition-opacity duration-300 top-0 left-0"
 				>
 					<div className="w-30 h-30 rounded-full bg-(--color-surface-highest) flex items-center justify-center shadow-(--shadow-medium)  pl-(--size-space-large)">
-						<PlayIcon className="fill-(--color-icon-brand-base) stroke-none w-(--size-icon-extra-large) aspect-square h-auto" />
+						<PlayIcon className="fill-(--color-icon-brand-base) stroke-none w-(--size-icon-extra-large) aspect-square h-auto mr-2" />
 					</div>
 				</div>
 			)}

@@ -1,33 +1,31 @@
 @use "@styles/var";
 
-.quote-card{
+.quote-card {
+  background: var(--color-surface-highest);
+  padding-inline: var(--size-space-extra-large);
+  padding-top: var(--size-space-extra-large);
+  padding-bottom: var(--size-space-extra-large-2);
+  box-shadow: var(--shadow-medium);
 
-    background: var(--color-surface-highest);
-    padding: var(--size-space-extra-large) var(--size-space-extra-large) var(--size-space-large) var(--size-space-extra-large);
-    box-shadow: var(--shadow-medium);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 362px;
+  flex: 1;
+  min-width: 300px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 362px;
-    flex: 1;
-    min-width: 300px;
+  hr {
+    border-color: var(--color-border-subtlest-on-light);
+  }
 
-    
-    
-    hr{
-	border-color: var(--color-border-subtlest-on-light);
-    }
-
-    mark{
-	background: var(--color-background-brand-subtle);
-	width:fit-content;
-	color: var(--color-text-brand-strong);
-	font-weight: var(--font-weight-medium);
-    }
-    
+  mark {
+    background: var(--color-background-brand-subtle);
+    width: fit-content;
+    color: var(--color-text-brand-strong);
+    font-weight: var(--font-weight-medium);
+  }
 }
 
-.body{
-    padding-bottom: var(--size-space-extra-large);
+.body {
+  padding-bottom: var(--size-space-extra-large);
 }

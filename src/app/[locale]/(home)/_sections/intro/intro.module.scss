@@ -1,45 +1,97 @@
 @use "@styles/responsive" as responsive;
 
-.intro{
+.intro {
+  $wrap-breakpoint: 1185px;
+  width: 100%;
+  height: auto;
 
-    width:100%;
-    aspect-ratio: 16/9;
-    height:auto;
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--size-space-extra-large-2);
+  aspect-ratio: 16/9;
+  height: auto;
 
+  padding-top: var(--size-space-extra-large-7);
+  padding-bottom: var(--size-space-extra-large-7);
+
+  // calculated according to H1 height so the video never get smaller than it and both heights are always even
+  @media (max-width: #{$wrap-breakpoint}) {
+    aspect-ratio: auto;
+    flex-direction: column;
+    gap: var(--size-space-extra-large-4);
+  }
+
+  @include responsive.small-screen {
+    align-items: flex-start;
+    padding-top: var(--size-space-extra-large-6);
+  }
+
+  @include responsive.tablet {
+    align-items: flex-start;
+    padding-top: var(--size-space-extra-large-6);
+  }
+
+  .left {
+    flex: 1;
     display: flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content: space-between;
-    row-gap: var(--size-space-extra-large-5);
-    column-gap: var(--size-space-extra-large-4);
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    flex-direction: column;
+    gap: var(--size-space-extra-large-4);
 
-    @include responsive.small-screen{
-	flex-direction: column;
-	align-items: flex-start;
-	padding-top: var(--size-space-extra-large-6);
+    @media (max-width: #{$wrap-breakpoint}) {
+      gap: var(--size-space-extra-large-2);
     }
 
-    @include responsive.tablet{
-	flex-direction: column;
-	align-items: flex-start;
-	padding-top: var(--size-space-extra-large-6);
+    @include responsive.tablet {
+      .button {
+        display: none;
+      }
     }
-    
-}
 
-.category-list{
+    h1 {
+      min-width: 500px;
+      height: calc(100% / 1.5);
+      text-wrap: pretty;
+
+      @media (max-width: #{$wrap-breakpoint}) {
+        height: auto;
+      }
+    }
+  }
+
+  .right {
+    flex-shrink: 0;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
-    
-    --gap: var(--size-space-extra-large-4);
-    gap: var(--gap);
+    gap: var(--size-space-extra-large-4);
 
-    @include responsive.small-screen{
-	--gap: var(--size-space-extra-large-2);
+    @media (max-width: #{$wrap-breakpoint}) {
+      flex-direction: row;
     }
 
-    @include responsive.tablet{
-	--gap: var(--size-space-extra-large-2);
+    @include responsive.tablet {
+      flex-direction: column-reverse;
     }
+  }
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+
+  --gap: var(--size-space-extra-large-4);
+  gap: var(--gap);
+
+  @include responsive.small-screen {
+    --gap: var(--size-space-extra-large-2);
+  }
+
+  @include responsive.tablet {
+    --gap: var(--size-space-extra-large-2);
+  }
 }

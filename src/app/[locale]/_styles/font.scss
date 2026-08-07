@@ -9,6 +9,12 @@
   h4,
   h5,
   h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
   p,
   i {
     &.display {
@@ -43,6 +49,10 @@
   }
 }
 
+body {
+  font-family: var(--font-body);
+}
+
 h1,
 h2,
 h3,
@@ -70,16 +80,8 @@ p {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: capitalize;
-}
-
-h1,
 .h1 {
+  font-family: var(--font-heading);
   letter-spacing: var(--font-letter-spacing-heading-1);
   font-size: var(--font-size-heading-1);
   font-weight: var(--font-weight-light);
@@ -93,6 +95,7 @@ h1,
 
 h2,
 .h2 {
+  font-family: var(--font-heading);
   letter-spacing: var(--font-letter-spacing-heading-2);
   font-size: var(--font-size-heading-2);
   line-height: var(--font-line-height-heading-2);
@@ -105,6 +108,7 @@ h2,
 
 h3,
 .h3 {
+  font-family: var(--font-heading);
   letter-spacing: var(--font-letter-spacing-heading-3);
   font-size: var(--font-size-heading-3);
   font-weight: var(--font-weight-normal);
@@ -117,6 +121,7 @@ h3,
 
 h4,
 .h4 {
+  font-family: var(--font-heading);
   letter-spacing: var(--font-letter-spacing-heading-4);
   font-size: var(--font-size-heading-4);
   line-height: var(--font-line-height-heading-4);
@@ -129,6 +134,7 @@ h4,
 
 h5,
 .h5 {
+  font-family: var(--font-heading);
   letter-spacing: var(--font-letter-spacing-heading-5);
   font-size: var(--font-size-heading-5);
   font-weight: var(--font-weight-medium);
@@ -141,6 +147,7 @@ h5,
 
 h6,
 .h6 {
+  font-family: var(--font-heading);
   letter-spacing: var(--font-letter-spacing-heading-6);
   font-size: var(--font-size-heading-6);
 

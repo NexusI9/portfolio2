@@ -57,6 +57,12 @@ export function TextBase({ id, className, children, role, style }: TTextBase) {
 
 
 	const STYLE_CLASS: Partial<Record<TTextStyle, string>> = {
+		H1: "h1",
+		H2: "h2",
+		H3: "h3",
+		H4: "h4",
+		H5: "h5",
+		H6: "h6",
 		DISPLAY: "display",
 		SUBTITLE_1: "subtitle-1",
 		SUBTITLE_2: "subtitle-2",
