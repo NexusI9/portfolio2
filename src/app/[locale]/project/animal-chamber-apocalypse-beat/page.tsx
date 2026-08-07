@@ -19,19 +19,19 @@ export default function AnimalChamberApocalypseBeat() {
 
 		<Blog.Section>
 			<Blog.Group>
-				<Blog.Heading>{p.intention.headline}</Blog.Heading>
+				<Blog.Headline>{p.intention.headline}</Blog.Headline>
 				<Blog.Paragraph>{p.intention.body}</Blog.Paragraph>
 			</Blog.Group>
 		</Blog.Section>
 
-		<Blog.Constraints headline={p.constraints.headline} items={p.constraints.body} />
+		<Blog.Constraints headline={p.constraints.anchor} items={p.constraints.body} />
 
 
 		<Blog.Section>
-			<Blog.Heading>{p.exploration.headline}</Blog.Heading>
+			<Blog.Headline>{p.exploration.anchor}</Blog.Headline>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.exploration.genre.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.exploration.genre.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.exploration.genre.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[
 					[imPath(pName, "overall-moodboard")],
@@ -41,9 +41,9 @@ export default function AnimalChamberApocalypseBeat() {
 
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.exploration.character.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.exploration.character.anchor}</Blog.Headline>
 				<Blog.Group>
-					<Blog.Heading role="H5">{p.exploration.character.design.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.exploration.character.design.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.exploration.character.design.body}</Blog.Paragraph>
 
 					<Gallery.AutoLayout rows={[
@@ -67,7 +67,7 @@ export default function AnimalChamberApocalypseBeat() {
 
 					<Blog.Group direction="ROW">
 						<Blog.Group>
-							<Blog.Heading role="H5">{p.exploration.character.tech.headline}</Blog.Heading>
+							<Blog.Headline role="H5">{p.exploration.character.tech.anchor}</Blog.Headline>
 							<Blog.Paragraph>{p.exploration.character.tech.body}</Blog.Paragraph>
 						</Blog.Group>
 						<Gallery.Row>
@@ -81,7 +81,7 @@ export default function AnimalChamberApocalypseBeat() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.exploration.environment.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.exploration.environment.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.exploration.environment.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[
 					imPath(pName, "city-step-1"),
@@ -91,7 +91,7 @@ export default function AnimalChamberApocalypseBeat() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.exploration.vehicles.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.exploration.vehicles.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.exploration.vehicles.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[
 					[
@@ -107,7 +107,7 @@ export default function AnimalChamberApocalypseBeat() {
 
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.exploration.design_language.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.exploration.design_language.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.exploration.design_language.body}</Blog.Paragraph>
 
 				<Gallery.AutoLayout rows={[
@@ -123,7 +123,7 @@ export default function AnimalChamberApocalypseBeat() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.exploration.pachinko.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.exploration.pachinko.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.exploration.pachinko.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[
 					imPath(pName, "pachinko-addict"),
@@ -135,10 +135,10 @@ export default function AnimalChamberApocalypseBeat() {
 
 
 		<Blog.Section>
-			<Blog.Heading>{p.production.headline}</Blog.Heading>
+			<Blog.Headline>{p.production.anchor}</Blog.Headline>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.production.storyboard.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.production.storyboard.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.production.storyboard.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[
 					imPath(pName, "storyboard-1"),
@@ -153,7 +153,7 @@ export default function AnimalChamberApocalypseBeat() {
 					<Blog.Group direction="ROW">
 
 						<Blog.Group>
-							<Blog.Heading role="H4">{p.production.shader.headline}</Blog.Heading>
+							<Blog.Headline role="H4">{p.production.shader.anchor}</Blog.Headline>
 							<Blog.Paragraph>{p.production.shader.body}</Blog.Paragraph>
 						</Blog.Group>
 
@@ -172,7 +172,7 @@ export default function AnimalChamberApocalypseBeat() {
 
 			<Blog.Group>
 
-				<Blog.Heading role="H4">{p.production.render.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.production.render.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.production.render.body}</Blog.Paragraph>
 
 				<div style={{ padding: "41.28% 0 0 0", position: "relative" }}><iframe src="https://player.vimeo.com/video/502583843?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Philip Pentacle - ACAB (Animal Chamber Apocalypse Beat )"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
@@ -212,8 +212,8 @@ export default function AnimalChamberApocalypseBeat() {
 		</Blog.Section>
 
 
-		<Blog.TradeOffs headline={p.tradeoffs.headline} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
-		<Blog.Outcome headline={p.outcomes.headline} items={p.outcomes.body} />
+		<Blog.TradeOffs headline={p.tradeoffs.anchor} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.Outcome headline={p.outcomes.anchor} items={p.outcomes.body} />
 
 
 	</Template>);

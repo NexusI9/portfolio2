@@ -25,8 +25,8 @@ export default function Template({ project, children }: ITemplate) {
 		<div className="inline-block w-full">
 			<div className={styles.container}>
 				<Container className={styles.inner} size="DEFAULT" type="DEFAULT">
-					<Sidebar {...sidebar} />
 					<Content>{children}</Content>
+					<Sidebar {...sidebar} />
 				</Container>
 			</div>
 		</div>

@@ -47,7 +47,7 @@ export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) 
 	description: dico.projects.azusa.description,
 	pageName: "azusa",
 	alt: "Video game snapshot with 3D characters in front.",
-	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/azusa.png" },
+	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/usability.png" },
 	preview: "/assets/thumbnails/azusa.png",
 	roles: [
 		dico.projects.common.roles.developer,
@@ -70,7 +70,7 @@ export const PROJECT_DESCRIPTOR_WEBGPU: TProjectDesciptorFn = (dico: Dictionary)
 	description: dico.projects.webgpu.description,
 	pageName: "webgpu-3d-engine",
 	alt: "A macbook mockup with a 3D engine interface displayed on the screen.",
-	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/webgpu-engine.png" },
+	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/webgpu.png" },
 	preview: "/assets/thumbnails/webgpu-engine.png",
 	roles: [
 		dico.projects.common.roles.developer,

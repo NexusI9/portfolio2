@@ -51,13 +51,30 @@ function ActiveChildDot() {
 function TocList({ nodes }: { nodes: any[] }) {
 	const { maxLevel, collapsible, activeId, collapsed, setCollapsed, onCollapseChange } = useTocContext();
 
-	function toggle(headline: string) {
-		const current = collapsed.has(headline) ? collapsed.get(headline)! : true;
-		const updated = new Map(collapsed).set(headline, !current);
+	function toggle(anchor: string) {
+		const current = collapsed.has(anchor) ? collapsed.get(anchor)! : true;
+		const updated = new Map(collapsed).set(anchor, !current);
 
 		setCollapsed(updated);
 		onCollapseChange?.(updated);
 	}
+
+	function handleAnchorClick(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
+		e.preventDefault();
+
+		const el = document.getElementById(id);
+		if (!el) return;
+
+		const OFFSET = 84; // px — height of your sticky header + breathing room
+
+		const top = el.getBoundingClientRect().top + window.scrollY - OFFSET;
+		window.scrollTo({ top, behavior: "smooth" });
+
+		// keep the URL hash in sync without triggering the browser's
+		// own (un-offset) jump-to-anchor behavior
+		history.pushState(null, "", `#${id}`);
+	}
+
 
 	return (
 		<ul className={styles["tree-container"]} data-level={nodes[0].level}>
@@ -65,15 +82,25 @@ function TocList({ nodes }: { nodes: any[] }) {
 				if (maxLevel && node.level > maxLevel) return null;
 
 
-				const id = slugify(node.headline);
-				const hasChildren = node.children?.length > 0 && node.level < maxLevel;
-				const isCollapsed = collapsible && (collapsed.has(node.headline) ? collapsed.get(node.headline)! : true);
+				const id = slugify(node.anchor);
+
+				const hasChildrenInData = node.children?.length > 0;
+				const canExpandChildren = hasChildrenInData && node.level < maxLevel;
+				const isCollapsed = collapsible && (collapsed.has(node.anchor) ? collapsed.get(node.anchor)! : true);
 
 				const isSelf = activeId === id;
-				const isActiveOrParentOfActive = !collapsible && nodeContainsActive(node, activeId);
-				const hasHiddenActiveChild = hasChildren
-					&& collapsible
-					&& isCollapsed
+
+				// maxLevel === 1: children are never rendered at all, so the parent
+				// must self-highlight whenever a descendant is active — regardless
+				// of `collapsible`, since there's no chevron/expansion to rely on.
+				//
+				// maxLevel > 1: keep the original system as-is.
+				const isActiveOrParentOfActive = maxLevel === 1
+					? hasChildrenInData && nodeContainsActive(node, activeId) && !isSelf
+					: !collapsible && nodeContainsActive(node, activeId);
+
+				const hasHiddenActiveChild = hasChildrenInData
+					&& (!canExpandChildren || (collapsible && isCollapsed))
 					&& nodeHasActiveDescendant(node, activeId);
 
 				const isHighlighted = isSelf || isActiveOrParentOfActive;
@@ -85,16 +112,17 @@ function TocList({ nodes }: { nodes: any[] }) {
 								href={`#${id}`}
 								className={styles["tree-label"]}
 								aria-current={isSelf ? "location" : undefined}
+								onClick={(e) => handleAnchorClick(e, id)}
 								data-highlighted={isHighlighted}
 							>
-								<span className={styles["tree-label-content"]}>{node.headline}</span>
-								{hasHiddenActiveChild && <ActiveChildDot />}
+								<span className={styles["tree-label-content"]}>{node.anchor}</span>
+								{maxLevel > 1 && hasHiddenActiveChild && <ActiveChildDot />}
 							</a>
 
-							{collapsible && hasChildren && (maxLevel && node.level < maxLevel) ? (
+							{collapsible && hasChildrenInData && (maxLevel && node.level < maxLevel) ? (
 								<button
 									type="button"
-									onClick={() => toggle(node.headline)}
+									onClick={() => toggle(node.anchor)}
 									aria-expanded={!isCollapsed}
 									aria-label={isCollapsed ? "Expand section" : "Collapse section"}
 									className={styles["tree-chevron"]}
@@ -108,7 +136,7 @@ function TocList({ nodes }: { nodes: any[] }) {
 							) : null}
 						</span>
 
-						{hasChildren && !isCollapsed && (
+						{hasChildrenInData && !isCollapsed && (
 							<TocList nodes={node.children} />
 						)}
 					</li>
@@ -142,7 +170,10 @@ function Root({ data, maxLevel = 2, collapsible = false, onCollapseChange, child
 		observerRef.current = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
-					if (entry.isIntersecting) setActiveId(entry.target.id);
+					if (entry.isIntersecting) {
+						console.log("intersecting: " + entry.target.id);
+						setActiveId(entry.target.id);
+					}
 				});
 			},
 			{ rootMargin: "0px 0px -33.333% 0px", threshold: 0 }
@@ -177,12 +208,12 @@ function Content() {
 interface TriggerProps {
 	action: TocAction;
 	/** For node-level actions, the exact headline string to target. */
-	headline?: string;
+	anchor?: string;
 	children: React.ReactNode;
 	className?: string;
 }
 
-function Trigger({ action, headline, children, className }: TriggerProps) {
+function Trigger({ action, anchor, children, className }: TriggerProps) {
 	const { tree, setCollapsed, onCollapseChange } = useTocContext();
 
 	function dispatch() {
@@ -201,13 +232,13 @@ function Trigger({ action, headline, children, className }: TriggerProps) {
 					break;
 				}
 				case "COLLAPSE_NODE": {
-					if (!headline) throw new Error("TableOfContents.Trigger: COLLAPSE_NODE requires a `headline` prop");
-					updated = new Map(prev).set(headline, true);
+					if (!anchor) throw new Error("TableOfContents.Trigger: COLLAPSE_NODE requires a `anchor` prop");
+					updated = new Map(prev).set(anchor, true);
 					break;
 				}
 				case "EXPAND_NODE": {
-					if (!headline) throw new Error("TableOfContents.Trigger: EXPAND_NODE requires a `headline` prop");
-					updated = new Map(prev).set(headline, false);
+					if (!anchor) throw new Error("TableOfContents.Trigger: EXPAND_NODE requires a `anchor` prop");
+					updated = new Map(prev).set(anchor, false);
 					break;
 				}
 			}

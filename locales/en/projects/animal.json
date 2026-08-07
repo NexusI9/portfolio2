@@ -1,11 +1,11 @@
 {
 	"description": "Awarded short movie depicting a vibrant future inhabiting an uncanny entity",
 	"intention": {
-		"headline": "Intention",
+		"anchor": "Intention",
 	    "body": "Commissioned by French musician Philip Pentacle, I had the pleasure of collaborating on his second EP for the track 'Animal Chamber Apocalypse Beat'. For this project, I challenged myself to explore an art direction I wasn’t familiar with: something more stylized rather than realistic, moving away from the usual physical rendering pipeline. Emerging during lockdown, I used this project as a form of cinematic escapism, which inspired bold and highly saturated aesthetic choices."
 	},
 	"constraints": {
-		"headline": "Constraints",
+		"anchor": "Constraints",
 		"body": [
 			"Adopt a cartoonish, stylized art direction.",
 			"Design characters and build the project’s world.",
@@ -15,56 +15,56 @@
 		]
 	},
 	"exploration": {
-		"headline": "Exploration",
+		"anchor": "Exploration",
 		"genre": {
-			"headline": "Key Inspiration",
+			"anchor": "Key Inspiration",
 			"body": "A key inspiration was the sci-fi genre. Notable examples include 'The Fifth Element' and Warren Ellis’ 'Transmetropolitan', both capturing an extravagant, colorful futuristic style. More contemporary influences include 'Love, Death & Robots' and 'Black Mirror' for their distinctive artistic universes and intense, thought-provoking storytelling."
 		},
 		"character": {
-			"headline": "Character Design",
+			"anchor": "Character Design",
 			"design": {
-				"headline": "Overal Direction",
+				"anchor": "Overal Direction",
 				"body": "For the character design, I drew inspiration from Jamie Hewlett’s demonic style with white eyes and grotesquely exaggerated facial features often seen in Philippe Druillet's design or manga. I also added personal touches, such as slightly enlarged hands and feet."
 			},
 			"tech": {
-				"headline": "Technical & Project Constraints",
+				"anchor": "Technical & Project Constraints",
 				"body": "Being aware of my technical limitations and time constraints, I needed a reliable workflow for character and prop modeling, as well as rigging. I looked for tools that would allow quick experimentation with shapes, sculpting, and rigging possibilities. As a result, I used Daz3D as a base for models and rapid rigging exploration."
 			}
 		},
 		"environment": {
-			"headline": "Environment",
+			"anchor": "Environment",
 			"body": "Fascinated by bridges and overlapping urban structures, I aimed to convey their vertiginous feeling by creating a highly layered environment, where movement extends vertically as well as horizontally. A dense, bustling space with roads and communication channels interweaving in every direction."
 		},
 		"vehicles": {
-			"headline": "Vehicles",
+			"anchor": "Vehicles",
 			"body": "Regarding the vehicles, I focused on hover-cars and gravity-defying trains. I explored different shapes to study how visual language can imply function. As instance, round and wide vehicles for families and civilians, and needle-shaped designs conveying speed or aggression for law enforcement."
 		},
 		"design_language": {
-			"headline": "Design Language",
+			"anchor": "Design Language",
 			"body": "As the art direction became clearer, I established technical guidelines, defining key shapes with model kits and specific brush techniques consistently applied across all scenes."
 		},
 		"pachinko": {
-			"headline": "Enter the Pachinko",
+			"anchor": "Enter the Pachinko",
 		    "body": "I randomly discovered the Japanese game Pachinko, which quickly sparked my interest and eventually became a key narrative element in the final animation. I was fascinated by the hybrid nature of the game: a mix of pinball and casual slot mechanics, and by how democratic and publicly accessible Pachinko parlors are, far from the exclusive, closed-door atmosphere of traditional casinos."
 		}
 	},
 	"production": {
-		"headline": "Production",
+		"anchor": "Production",
 		"storyboard": {
-			"headline": "Hi-Fi Storyboard",
+			"anchor": "Hi-Fi Storyboard",
 			"body": "As stylized art direction was relatively new to me, I wanted full control over color progression, lighting, and style across the frames. I therefore created a high-fidelity storyboard, which later proved useful as a base for the final frames, saving both time and effort."
 		},
 		"shader": {
-			"headline": "Shader Graph & Grease Pencil",
+			"anchor": "Shader Graph & Grease Pencil",
 			"body": "I also experimented extensively with Blender material nodes to create non-PBR materials with textured, configurable shadow and light edges. I explored the Grease Pencil tool as well; although I was less comfortable with its frame-by-frame, onion-skin animation workflow, I appreciated the flexibility it offers, especially the ability to sculpt lines and treat them almost like 3D curves."
 		},
 		"render": {
-			"headline": "Final Render",
+			"anchor": "Final Render",
 			"body": "The final music video combines 3D characters and key elements with 2D hand-painted backgrounds. This approach ensured a cohesive visual result while easing technical constraints. Animating characters in 3D was more efficient, while keeping backgrounds in 2D reduced complexity and supported the overall cartoon-inspired art direction."
 		}
 	},
 	"tradeoffs": {
-		"headline": "Trade-offs",
+		"anchor": "Trade-offs",
 		"body": [
 			{
 				"heading": [
@@ -139,7 +139,7 @@
 		]
 	},
 	"outcomes": {
-		"headline": "Outcomes & Learning",
+		"anchor": "Outcomes & Learning",
 		"body": [
 			"To this day, one of the creative projects I am most proud of, reaching over 3k views and receiving an award.",
 			"The project highlighted my limitations with complex animation, pushing me to develop technical and narrative workarounds to balance these constraints."

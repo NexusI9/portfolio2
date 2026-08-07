@@ -1,11 +1,11 @@
 {
 	"description": "Realtime rendering engine focused on lower-performance hardware, developed in C",
 	"problem": {
-		"headline": "Problem Statement",
+		"anchor": "Problem Statement",
 		"body": "With the advent of WebGPU, major 3D libraries have started adopting this technology. However, many recent implementations still struggle to run smoothly on older devices. This engine development was therefore part of an R&D initiative aimed at gaining greater autonomy and a deeper understanding of WebGPU capabilities, in order to optimize performance and accessibility for future interactive 3D projects."
 	},
 	"constraints": {
-		"headline": "Constraints",
+		"anchor": "Constraints",
 		"body": [
 			"Optimize engine for older or low-performance devices",
 			"Enable selectable performance modes for higher-quality renders",
@@ -15,19 +15,19 @@
 		]
 	},
 	"exploration": {
-		"headline": "Exploration",
+		"anchor": "Exploration",
 		"ui_research": {
-			"headline": "UI Research",
+			"anchor": "UI Research",
 			"body": "The engine layout and UX was inspired by Blender, Unity, Godot, and independent projects like Wicked Engine. From the start, runtime dynamic rendering was prioritized for debugging; though UI impact was minimal, the technical footprint was significant. An inspector was included to update object properties live, alongside monitoring and profiling tools to track performance."
 		},
 		"tech_research": {
-			"headline": "Technical Research",
+			"anchor": "Technical Research",
 			"dod": {
-				"headline": "Data Oriented Design",
+				"anchor": "Data Oriented Design",
 				"body": "Prioritizing performance, I chose a DOD cache-friendly structure. Due to limited experience, establishing a fully optimized layout was challenging. To address this, I implemented a Packet System, where packets reorganize data to improve spatial locality, reducing cache misses and pointer chasing."
 			},
 			"material": {
-				"headline": "Material API",
+				"anchor": "Material API",
 				"body": [
 					"Initially, a Material API was implemented to simplify setting native mesh shaders via interface calls, avoiding manual bind group/index guessing.",
 					"However, this added complexity with extra branches and underused alternatives.",
@@ -36,84 +36,84 @@
 				]
 			},
 			"scene_pool": {
-				"headline": "Scene Pool System",
+				"anchor": "Scene Pool System",
 				"body": "Initially, all meshes were stored in a static pool and dispatched through the scene pipeline. After standardizing pipelines and adopting a global Resource Manager, the pool became unnecessary. The Resource Manager expanded the mesh pool concept to manage all engine resources globally."
 			},
 			"callback": {
-				"headline": "Render Callbacks",
+				"anchor": "Render Callbacks",
 			    "body": "Another feature improving control over the main loop was a callback registration system. A more advanced approach, inspired by Bevy, would use a Scheduler object for greater flexibility, allowing functions to register at start, update, or end, similar to Unity’s MonoBehaviour methods like onUpdate() and onAwake()."
 			},
 			"mbin": {
-				"headline": "Mesh Loading",
+				"anchor": "Mesh Loading",
 				"body": "I experimented with directly importing small meshes, like gizmos, mapping them to memory without interleaving OBJ or glTF data to improve speed with a custom MBIN (Mesh Binary) format. While this slightly improved load-time for smaller meshes, the trade-off was significantly larger file sizes."
 			},
 			"ambient": {
-				"headline": "CPU AO Baking",
+				"anchor": "CPU AO Baking",
 				"body": "An initial goal for the engine was to provide runtime performance-friendly tools like light and ambient occlusion baking. However, after implementing the AO baker, it became clear that its UV dependency posed constraints. Without UV tools in the engine, expanding this feature was not meaningful at this stage."
 			},
 			"reflection": {
-				"headline": "Probe Reflections",
+				"anchor": "Probe Reflections",
 				"body": "The engine currently supports both planar and probe-based reflections, with resolutions adjustable via the inspector. Currently, resolution is global, but future updates will allow per-probe grid settings. These reflections remain costly and will require further optimization."
 			}
 		}
 	},
 	"solution": {
-		"headline": "Solutions",
+		"anchor": "Solutions",
 		"ubo": {
-			"headline": "UBO Queuing",
+			"anchor": "UBO Queuing",
 			"body": "For performance, each scene uses a dedicated uniform buffer combining mesh model matrices, light data, and view/projection information."
 		},
 		"segmentation": {
-			"headline": "Domains Segmentation",
+			"anchor": "Domains Segmentation",
 			"systems": {
-				"headline": "Systems as Cross-Domain Orchestrator",
+				"anchor": "Systems as Cross-Domain Orchestrator",
 				"body": "To prevent circular references, 'god objects,' and maintain structure, I designed systems as cross-domain crossroads. This preserves data integrity and centralizes complex or risky operations."
 			},
 			"core_split": {
-				"headline": "Core & Editor Partitioning",
+				"anchor": "Core & Editor Partitioning",
 				"body": "The engine separates its core from the editor: the core uses C, while the editor relies on C++ UI libraries. This approach ensures better performance control."
 			}
 		},
 		"batch": {
-			"headline": "Batch Pipeline Rendering",
+			"anchor": "Batch Pipeline Rendering",
 			"hash": {
-				"headline": "Pipeline Hashing",
+				"anchor": "Pipeline Hashing",
 				"body": "The engine hashes predefined pipelines based on their render attributes and role-specific flags, such as shadow mapping or reflections. This system makes it easier to retrieve pipelines by render state or execution order."
 			},
 			"organize": {
-				"headline": "Object Sorting",
+				"anchor": "Object Sorting",
 				"body": "The renderer then sort each scene objects by pipelines to batch render them. Which proved to significantly improve the runtime performance."
 			}
 		},
 		"cold_hot": {
-			"headline": "Branch-Free Hot Loop Strategy",
+			"anchor": "Branch-Free Hot Loop Strategy",
 			"semantic": {
-				"headline": "Functions semantic",
+				"anchor": "Functions semantic",
 				"body": "To improve performance and avoid branching in hot loops, I adopted a clear cold/hot path function semantic where naming reflects call frequency. Initialization functions are designed to run only a few times and may include more conditional logic, while update and draw functions are optimized for linear, array-based processing with minimal last-minute decisions."
 			},
 			"process": {
-				"headline": "Channel-Based Control Flow",
+				"anchor": "Channel-Based Control Flow",
 				"body": "To ensure a smooth transition from initialization to continuous processing, I used a register pattern. Cold functions (init, loading) handle conditions and configuration, then register objects into dedicated channels so they can be processed contiguously during hot-path execution."
 			}
 		},
 		"resource_manager": {
-			"headline": "Resource Manager",
+			"anchor": "Resource Manager",
 			"body": "A resource manager handles the lifecycle of engine entities, improving control and profiling of resource usage and system capacity. It works alongside a global registry for ID indexing. Since WebGPU opaque pointers cannot store pool identifiers, a hash table maps generated pointers to their corresponding pool indices."
 		},
 		"dynamic_rendering": {
-			"headline": "Runtime Dynamic Rendering",
+			"anchor": "Runtime Dynamic Rendering",
 			"body": "Since a key feature was runtime dynamic render modes (bounding box, wireframe, solid, textured), each mesh supports specific render modes. Therefore, every mesh includes predefined shaders and vertex topologies to enable these variations.",
 			"topology": {
-				"headline": "Mesh Topology Flow",
+				"anchor": "Mesh Topology Flow",
 				"body": "The engine uses a topology system to generate wireframe and bounding box meshes derived from the base mesh. For faster dynamic updates, it relies on hash-based indexing to efficiently regenerate derived topologies when the base topology changes."
 			}
 		},
 		"ui_presentation": {
-			"headline": "UI Presentation"
+			"anchor": "UI Presentation"
 		}
 	},
 	"tradeoffs": {
-		"headline": "Trade-offs",
+		"anchor": "Trade-offs",
 		"body": [
 			{
 				"heading": [
@@ -174,7 +174,7 @@
 		]
 	},
 	"outcomes": {
-		"headline": "Outcomes & Learning",
+		"anchor": "Outcomes & Learning",
 		"body": [
 			"Data-Oriented Design granularity is challenging; depending on call frequency (hot vs cold paths), readability may be traded for cache-friendly structures over traditional OOP patterns.",
 			"API design is a discipline of its own; I sometimes focused too much on low-level technical complexity rather than overall API usability."

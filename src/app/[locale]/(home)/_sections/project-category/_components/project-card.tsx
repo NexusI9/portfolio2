@@ -58,15 +58,17 @@ export default function ProjectCard({ headline, subtitle, thumbnail, alt, href }
 			href={href}
 			className={styles["project-card"]}
 		>
+			<div className={styles["project-card-visual"]}>
+				{Picture}
+				<div className={styles["project-card-description"]}>
 
-			{Picture}
-			<div className={styles["project-card-description"]}>
-				<hgroup className="flex flex-col gap-(--size-space-small)">
-					<Text.H4>{headline}</Text.H4>
-					<Text.Subtitle1>{subtitle}</Text.Subtitle1>
-				</hgroup>
-
-				{/*TODO: Make tags in phase 2?*/}
+					{/*TODO: Make tags in phase 2?*/}
+				</div>
 			</div>
+
+			<hgroup className="flex flex-col gap-(--size-space-small)">
+				<Text.H4>{headline}</Text.H4>
+				<Text.Subtitle1>{subtitle}</Text.Subtitle1>
+			</hgroup>
 		</Link>);
 }

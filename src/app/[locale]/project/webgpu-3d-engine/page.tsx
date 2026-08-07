@@ -19,43 +19,43 @@ export default function WebgpuEngine() {
 		<Blog.Section>
 
 			<Blog.Group>
-				<Blog.Heading>{p.problem.headline}</Blog.Heading>
+				<Blog.Headline>{p.problem.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.problem.body}</Blog.Paragraph>
 			</Blog.Group>
 
 		</Blog.Section>
 
-		<Blog.Constraints headline={p.constraints.headline} items={p.constraints.body} />
+		<Blog.Constraints headline={p.constraints.anchor} items={p.constraints.body} />
 
 		<Blog.Section>
-			<Blog.Heading>{p.exploration.headline}</Blog.Heading>
+			<Blog.Headline>{p.exploration.anchor}</Blog.Headline>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.exploration.ui_research.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.exploration.ui_research.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.exploration.ui_research.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[imPath(pName, "ui-research")]]} />
 			</Blog.Group>
 
-			<Blog.Heading role="H4">{p.exploration.tech_research.headline}</Blog.Heading>
+			<Blog.Headline role="H4">{p.exploration.tech_research.anchor}</Blog.Headline>
 
 			<Blog.Group direction="ROW">
 
 				<Blog.Group>
-					<Blog.Heading role="H5">{p.exploration.tech_research.dod.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.exploration.tech_research.dod.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.exploration.tech_research.dod.body}</Blog.Paragraph>
 				</Blog.Group>
 				<Gallery.AutoLayout rows={[[imPath(pName, "packet")]]} />
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H5">{p.exploration.tech_research.material.headline}</Blog.Heading>
+				<Blog.Headline role="H5">{p.exploration.tech_research.material.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.exploration.tech_research.material.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[imPath(pName, "material"), imPath(pName, "pso")]]} />
 
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H5">{p.exploration.tech_research.scene_pool.headline}</Blog.Heading>
+				<Blog.Headline role="H5">{p.exploration.tech_research.scene_pool.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.exploration.tech_research.scene_pool.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[imPath(pName, "scene-pool"), imPath(pName, "ressource-manager")]]} />
 
@@ -64,7 +64,7 @@ export default function WebgpuEngine() {
 			<Blog.Group direction="ROW">
 
 				<Blog.Group>
-					<Blog.Heading role="H5">{p.exploration.tech_research.callback.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.exploration.tech_research.callback.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.exploration.tech_research.callback.body}</Blog.Paragraph>
 				</Blog.Group>
 				<Gallery.AutoLayout rows={[[imPath(pName, "extended-callback")]]} />
@@ -77,7 +77,7 @@ export default function WebgpuEngine() {
 					<Blog.Group direction="ROW">
 
 						<Blog.Group>
-							<Blog.Heading role="H5">{p.exploration.tech_research.mbin.headline}</Blog.Heading>
+							<Blog.Headline role="H5">{p.exploration.tech_research.mbin.anchor}</Blog.Headline>
 							<Blog.Paragraph>{p.exploration.tech_research.mbin.body}</Blog.Paragraph>
 						</Blog.Group>
 
@@ -106,7 +106,7 @@ export default function WebgpuEngine() {
 
 
 					<Blog.Group>
-						<Blog.Heading role="H5">{p.exploration.tech_research.ambient.headline}</Blog.Heading>
+						<Blog.Headline role="H5">{p.exploration.tech_research.ambient.anchor}</Blog.Headline>
 						<Blog.Paragraph>{p.exploration.tech_research.ambient.body}</ Blog.Paragraph>
 					</Blog.Group>
 
@@ -126,7 +126,7 @@ export default function WebgpuEngine() {
 				<Gallery.Wrapper>
 					<Blog.Group direction="ROW">
 						<Blog.Group>
-							<Blog.Heading role="H5">{p.exploration.tech_research.reflection.headline}</Blog.Heading>
+							<Blog.Headline role="H5">{p.exploration.tech_research.reflection.anchor}</Blog.Headline>
 							<Blog.Paragraph>{p.exploration.tech_research.reflection.body}</ Blog.Paragraph>
 						</Blog.Group>
 
@@ -146,10 +146,10 @@ export default function WebgpuEngine() {
 
 		<Blog.Section>
 
-			<Blog.Heading>{p.solution.headline}</Blog.Heading>
+			<Blog.Headline>{p.solution.anchor}</Blog.Headline>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.solution.ubo.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.solution.ubo.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.solution.ubo.body}</Blog.Paragraph>
 
 				<Gallery.AutoLayout rows={[[
@@ -159,9 +159,9 @@ export default function WebgpuEngine() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.solution.segmentation.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.solution.segmentation.anchor}</Blog.Headline>
 				<Blog.Group>
-					<Blog.Heading role="H5">{p.solution.segmentation.systems.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.solution.segmentation.systems.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.solution.segmentation.systems.body}</Blog.Paragraph>
 
 					<Gallery.AutoLayout rows={[[
@@ -171,7 +171,7 @@ export default function WebgpuEngine() {
 
 				<Blog.Group direction="ROW">
 					<Blog.Group>
-						<Blog.Heading role="H5">{p.solution.segmentation.core_split.headline}</Blog.Heading>
+						<Blog.Headline role="H5">{p.solution.segmentation.core_split.anchor}</Blog.Headline>
 						<Blog.Paragraph>{p.solution.segmentation.core_split.body}</Blog.Paragraph>
 					</Blog.Group>
 
@@ -185,11 +185,11 @@ export default function WebgpuEngine() {
 
 				<Gallery.Wrapper>
 
-					<Blog.Heading role="H4">{p.solution.batch.headline}</Blog.Heading>
+					<Blog.Headline role="H4">{p.solution.batch.anchor}</Blog.Headline>
 
 					<Blog.Group direction="ROW">
 						<Blog.Group>
-							<Blog.Heading role="H5">{p.solution.batch.hash.headline}</Blog.Heading>
+							<Blog.Headline role="H5">{p.solution.batch.hash.anchor}</Blog.Headline>
 							<Blog.Paragraph>{p.solution.batch.hash.body}</Blog.Paragraph>
 						</Blog.Group>
 						<Gallery.Row>
@@ -197,7 +197,7 @@ export default function WebgpuEngine() {
 						</Gallery.Row>
 					</Blog.Group>
 
-					<Blog.Heading role="H5">{p.solution.batch.organize.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.solution.batch.organize.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.solution.batch.organize.body}</Blog.Paragraph>
 
 					<Gallery.Row>
@@ -212,11 +212,11 @@ export default function WebgpuEngine() {
 
 				<Gallery.Wrapper>
 
-					<Blog.Heading role="H4">{p.solution.cold_hot.headline}</Blog.Heading>
+					<Blog.Headline role="H4">{p.solution.cold_hot.anchor}</Blog.Headline>
 
 					<Blog.Group direction="ROW">
 						<Blog.Group>
-							<Blog.Heading role="H5">{p.solution.cold_hot.semantic.headline}</Blog.Heading>
+							<Blog.Headline role="H5">{p.solution.cold_hot.semantic.anchor}</Blog.Headline>
 							<Blog.Paragraph>{p.solution.cold_hot.semantic.body}</Blog.Paragraph>
 						</Blog.Group>
 						<Gallery.Row>
@@ -226,7 +226,7 @@ export default function WebgpuEngine() {
 
 					<Blog.Group direction="ROW">
 						<Blog.Group>
-							<Blog.Heading role="H5">{p.solution.cold_hot.process.headline}</Blog.Heading>
+							<Blog.Headline role="H5">{p.solution.cold_hot.process.anchor}</Blog.Headline>
 							<Blog.Paragraph>{p.solution.cold_hot.process.body}</Blog.Paragraph>
 						</Blog.Group>
 						<Gallery.Row>
@@ -239,7 +239,7 @@ export default function WebgpuEngine() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.solution.resource_manager.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.solution.resource_manager.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.solution.resource_manager.body}</Blog.Paragraph>
 
 				<Gallery.AutoLayout rows={[[imPath(pName, "core-rem-registry")]]} />
@@ -247,14 +247,14 @@ export default function WebgpuEngine() {
 
 			<Blog.Group>
 				<Gallery.Wrapper>
-					<Blog.Heading role="H4">{p.solution.dynamic_rendering.headline}</Blog.Heading>
+					<Blog.Headline role="H4">{p.solution.dynamic_rendering.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.solution.dynamic_rendering.body}</Blog.Paragraph>
 
 					<Gallery.AutoLayout noWrapper rows={[
 						[imPath(pName, "core-dynamic-rendering")]
 					]} />
 
-					<Blog.Heading role="H5">{p.solution.dynamic_rendering.topology.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.solution.dynamic_rendering.topology.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.solution.dynamic_rendering.topology.body}</Blog.Paragraph>
 					<Gallery.AutoLayout noWrapper rows={[
 						[
@@ -268,7 +268,7 @@ export default function WebgpuEngine() {
 			</Blog.Group >
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.solution.ui_presentation.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.solution.ui_presentation.anchor}</Blog.Headline>
 				<Gallery.AutoLayout rows={[
 					[
 						imPath(pName, "UI-postfx"),
@@ -300,8 +300,8 @@ export default function WebgpuEngine() {
 		</Blog.Section >
 
 
-		<Blog.TradeOffs headline={p.tradeoffs.headline} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.TradeOffs headline={p.tradeoffs.anchor} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
 
-		<Blog.Outcome headline={p.outcomes.headline} items={p.outcomes.body} />
+		<Blog.Outcome headline={p.outcomes.anchor} items={p.outcomes.body} />
 	</Template >);
 }

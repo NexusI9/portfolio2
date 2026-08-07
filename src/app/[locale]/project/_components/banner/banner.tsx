@@ -49,7 +49,7 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 					</ul>
 				</div>
 
-				{diagram && <Image src={diagram} className={styles.diagram} alt="Triangular diagram highlighting project key expertises." width={545} height={347} />}
+				{/*diagram && <Image src={diagram} className={styles.diagram} alt="Triangular diagram highlighting project key expertises." width={545} height={347} />*/}
 
 			</Container>
 		</div>);

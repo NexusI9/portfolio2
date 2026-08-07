@@ -3,7 +3,7 @@
 @use "@styles/utils" as utils;
 
 :root {
-  --project-banner-height: 600px;
+  --project-banner-height: 550px;
 
   @include responsive.small-screen {
     --project-banner-height: 0px;
@@ -28,7 +28,7 @@
 .banner {
   height: var(--project-banner-height);
   padding-top: 110px;
-  display: grid;
+  /* display: grid;
   grid-template-columns: auto utils.fluid-clamp(
       responsive.$tablet,
       responsive.$default-screen,
@@ -41,7 +41,7 @@
     responsive.$default-screen,
     12px,
     96px
-  );
+  );*/
   position: fixed;
   top: 0;
   text-wrap: pretty;
@@ -71,6 +71,8 @@
 }
 
 .diagram {
+  margin-top: var(--size-space-extra-large-3);
+
   @include responsive.small-screen {
     align-self: center;
   }

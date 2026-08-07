@@ -13,21 +13,22 @@ export default function DesktopHeader() {
 
 	const dico = useDictionary();
 
-	return (<header className={`${styles.header} flex flex-row justify-between items-center`} role="menubar">
-		<Signature />
-		<div className="flex flex-row gap-(--size-space-extra-large-3) items-center">
-			<Button size="MEDIUM" role="PRIMARY" style="GHOST">
-				<b>{dico.common.header.resume}</b>
-			</Button>
-			<div className="flex flex-row gap-(--size-space-extra-large) items-center">
-				{CONTACT_INFO(dico).map(({ icon: Icon, link, label }) =>
-					<Button key={label} size="MEDIUM" role="PRIMARY" style="GHOST" href={link}>
-						<Icon />
-					</Button>)}
-				<LocaleSelector />
+	return (<header className={styles.header} role="menubar">
+		<div className={styles["header-inner"]}>
+			<Signature />
+			<div className="flex flex-row gap-(--size-space-extra-large-3) items-center">
+				<Button size="MEDIUM" role="PRIMARY" style="GHOST">
+					<b>{dico.common.header.resume}</b>
+				</Button>
+				<div className="flex flex-row gap-(--size-space-extra-large) items-center">
+					{CONTACT_INFO(dico).map(({ icon: Icon, link, label }) =>
+						<Button key={label} size="MEDIUM" role="PRIMARY" style="GHOST" href={link}>
+							<Icon />
+						</Button>)}
+					<LocaleSelector />
+				</div>
 			</div>
 		</div>
-
 
 	</header>);
 

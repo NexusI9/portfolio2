@@ -21,8 +21,10 @@ export default function StyleStudio() {
 		<Blog.Section>
 
 			<Blog.Group>
-
-				<Blog.Heading>{p.problem.headline}</Blog.Heading>
+				<Blog.HeadingOverline
+					overline={p.problem.anchor}
+					headline={p.problem.headline}
+				/>
 
 				<Blog.Paragraph>
 					{p.problem.body}
@@ -41,22 +43,27 @@ export default function StyleStudio() {
 
 		</Blog.Section>
 
-		<Blog.Constraints headline={p.constraints.headline} items={p.constraints.body} />
+		<Blog.Constraints headline={p.constraints.anchor} items={p.constraints.body} />
 
 		<Blog.Section>
 
-			<Blog.Heading>{p.ui_research.headline}</Blog.Heading>
+			<Blog.Anchor role="H3" style="H3">{p.ui_research.anchor}</Blog.Anchor>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.ui_research.benchmark.headline}</Blog.Heading>
+
+
+				<Blog.HeadingOverline
+					overline={p.ui_research.benchmark.anchor}
+					headline={p.ui_research.benchmark.headline}
+				/>
+
 				<Blog.Paragraph>{p.ui_research.benchmark.body}</Blog.Paragraph>
+
 
 				<Gallery.AutoLayout
 					rows={[
 						[
 							imPath(pName, "reference-moodboard-UIUX"),
-						],
-						[
 							imPath(pName, "reference-moodboard-tokens"),
 							imPath(pName, "reference-moodboard-design-systems"),
 						],
@@ -67,16 +74,22 @@ export default function StyleStudio() {
 			<Blog.Group>
 
 				<Gallery.Wrapper>
-					<Blog.Heading role="H4">{p.ui_research.layouts.headline}</Blog.Heading>
+
+					<Blog.HeadingOverline
+						overline={p.ui_research.layouts.anchor}
+						headline={p.ui_research.layouts.headline}
+					/>
+
 					<Blog.Group direction="ROW">
 						<Blog.Paragraph>{p.ui_research.layouts.body}</Blog.Paragraph>
-						<Gallery.AutoLayout noWrapper
+					</Blog.Group>
+					{/*DELETEME <Gallery.AutoLayout noWrapper
 							rows={[
 								[
 									imPath(pName, "ui-1"),
 								],
-							]} />
-					</Blog.Group>
+								]} />*/}
+
 					<Gallery.AutoLayout noWrapper
 						rows={[
 							[
@@ -87,8 +100,16 @@ export default function StyleStudio() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.ui_research.swatch.headline}</Blog.Heading>
+
+
+				<Blog.HeadingOverline
+					overline={p.ui_research.swatch.anchor}
+					headline={p.ui_research.swatch.headline}
+				/>
+
+
 				<Blog.Paragraph>{p.ui_research.swatch.body}</Blog.Paragraph>
+
 				<Gallery.AutoLayout
 					rows={[
 						[
@@ -98,12 +119,17 @@ export default function StyleStudio() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.ui_research.google.headline}</Blog.Heading>
+
+				<Blog.HeadingOverline
+					overline={p.ui_research.google.anchor}
+					headline={p.ui_research.google.headline}
+				/>
+
 				<Gallery.Wrapper>
 
 					<Blog.Group direction="ROW">
 						<Blog.Paragraph>{p.ui_research.google.body}</Blog.Paragraph>
-						<Gallery.Row><Gallery.Image src={imPath(pName, "workbench-function-based")} /></Gallery.Row>
+						{/* DELETEME <Gallery.Row><Gallery.Image src={imPath(pName, "workbench-function-based")} /></Gallery.Row>*/}
 					</Blog.Group>
 
 					<Gallery.Row><Gallery.Image src={imPath(pName, "workbench-function-based-result")} /></Gallery.Row>
@@ -113,12 +139,18 @@ export default function StyleStudio() {
 
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.ui_research.gradient.headline}</Blog.Heading>
+
+				<Blog.HeadingOverline
+					overline={p.ui_research.gradient.anchor}
+					headline={p.ui_research.gradient.headline}
+				/>
+
+
 				<Gallery.Wrapper>
 
 					<Blog.Group direction="ROW">
 						<Blog.Paragraph>{p.ui_research.gradient.body}</Blog.Paragraph>
-						<Gallery.Row><Gallery.Image src={imPath(pName, "workbench-gradient")} /></Gallery.Row>
+						{/* DELETEME <Gallery.Row><Gallery.Image src={imPath(pName, "workbench-gradient")} /></Gallery.Row>*/}
 					</Blog.Group>
 
 					<Gallery.Row><Gallery.Image src={imPath(pName, "workbench-gradient-result")} /></Gallery.Row>
@@ -130,76 +162,74 @@ export default function StyleStudio() {
 
 		<Blog.Section>
 
-			<Blog.Heading>{p.tech_research.headline}</Blog.Heading>
+			<Blog.Anchor role="H3" style="H3">{p.tech_research.anchor}</Blog.Anchor>
 
 			<Blog.Group>
 
-				<Gallery.Wrapper>
-					<Blog.Heading role="H4">{p.tech_research.ownership.headline}</Blog.Heading>
+				<Blog.HeadingOverline
+					overline={p.tech_research.ownership.anchor}
+					headline={p.tech_research.ownership.headline}
+				/>
 
-					<Blog.Group direction="ROW">
-						<Blog.Paragraph>{p.tech_research.ownership.body}</Blog.Paragraph>
-						<Gallery.AutoLayout noWrapper
-							rows={[
-								[
-									imPath(pName, "server"),
-								]
-							]} />
-					</Blog.Group>
-
-					<Gallery.AutoLayout noWrapper
-						rows={[
-							[
-								imPath(pName, "ownership-2"),
-							],
-						]} />
-				</Gallery.Wrapper>
-			</Blog.Group>
-
-			<Blog.Group>
-
-				<Gallery.Wrapper>
-					<Blog.Heading role="H4">{p.tech_research.sync.headline}</Blog.Heading>
-
-					<Blog.Group direction="ROW">
-						<Blog.Paragraph>{p.tech_research.sync.body}</Blog.Paragraph>
-						<Gallery.AutoLayout noWrapper
-							rows={[
-								[
-									imPath(pName, "sync-1"),
-								]
-							]} />
-					</Blog.Group>
-
-					<Gallery.AutoLayout noWrapper
-						rows={[
-							[
-								imPath(pName, "sync-2"),
-							],
-						]} />
-				</Gallery.Wrapper>
-			</Blog.Group>
-
-
-		</Blog.Section>
-
-		<Blog.Section>
-			<Blog.Heading>{p.solution.headline}</Blog.Heading>
-
-			<Blog.Group>
-				<Blog.Heading role="H4">{p.solution.transformer.headline}</Blog.Heading>
-				<Blog.Paragraph>{p.solution.transformer.body}</Blog.Paragraph>
+				<Blog.Paragraph>{p.tech_research.ownership.body}</Blog.Paragraph>
 				<Gallery.AutoLayout
 					rows={[
 						[
-							imPath(pName, "set-transformer"),
+							imPath(pName, "server"),
+							imPath(pName, "ownership-2"),
 						],
 					]} />
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.solution.library.headline}</Blog.Heading>
-				<Blog.Paragraph>{p.solution.library.body}</Blog.Paragraph>
+
+				<Gallery.Wrapper>
+
+					<Blog.HeadingOverline
+						overline={p.tech_research.sync.anchor}
+						headline={p.tech_research.sync.headline}
+					/>
+
+					<Blog.Group direction="ROW">
+						<Blog.Group>
+							<Blog.Headline role="H5">{p.tech_research.sync.context.anchor}</Blog.Headline>
+							<Blog.Paragraph>{p.tech_research.sync.context.body}</Blog.Paragraph>
+						</Blog.Group>
+
+						<Gallery.AutoLayout noWrapper
+							rows={[
+								[
+									imPath(pName, "sync-2"),
+								],
+							]} />
+
+					</Blog.Group>
+
+
+					<Blog.Group direction="ROW">
+						<Blog.Group>
+							<Blog.Headline role="H5">{p.tech_research.sync.transformer.anchor}</Blog.Headline>
+							<Blog.Paragraph>{p.tech_research.sync.transformer.body}</Blog.Paragraph>
+						</Blog.Group>
+						<Gallery.AutoLayout noWrapper
+							rows={[
+								[
+									imPath(pName, "set-transformer"),
+								],
+							]} />
+					</Blog.Group>
+
+				</Gallery.Wrapper>
+			</Blog.Group>
+
+			<Blog.Group>
+
+				<Blog.HeadingOverline
+					overline={p.tech_research.library.anchor}
+					headline={p.tech_research.library.headline}
+				/>
+
+				<Blog.Paragraph>{p.tech_research.library.body}</Blog.Paragraph>
 				<Gallery.AutoLayout
 					rows={[
 						[
@@ -209,8 +239,12 @@ export default function StyleStudio() {
 					]} />
 			</Blog.Group>
 
+
+		</Blog.Section>
+
+		<Blog.Section>
+			<Blog.Anchor role="H3" style="H3">{p.solution.anchor}</Blog.Anchor>
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.solution.features.headline}</Blog.Heading>
 				<Gallery.AutoLayout
 					rows={[
 						[
@@ -238,8 +272,8 @@ export default function StyleStudio() {
 		</Blog.Section>
 
 
-		<Blog.TradeOffs headline={p.tradeoffs.headline} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
-		<Blog.Outcome headline={p.outcomes.headline} items={p.outcomes.body} />
+		<Blog.TradeOffs headline={p.tradeoffs.anchor} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.Outcome headline={p.outcomes.anchor} items={p.outcomes.body} />
 
 
 	</Template>);

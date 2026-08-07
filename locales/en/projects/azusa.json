@@ -1,11 +1,11 @@
 {
 	"description": "Procedural world-building and video game project developed in Unity",
 	"intention": {
-		"headline": "Intention",
+		"anchor": "Intention",
 		"body": "Starting as simple sketches, then concept art and drafted scripts in a notebook, Azusa is a long-term world-building project that never reached a final form. The following project explores a variant of Azusa through the lens of technical art and video game design."
 	},
 	"constraints": {
-		"headline": "Constraints",
+		"anchor": "Constraints",
 		"body": [
 			"Create a cohesive game design experience",
 			"Reuse concepts and designs from previous projects",
@@ -15,11 +15,11 @@
 		]
 	},
 	"exploration": {
-		"headline": "Exploration",
+		"anchor": "Exploration",
 		"creative_research": {
-			"headline": "Creative Research",
+			"anchor": "Creative Research",
 			"early_concepts": {
-				"headline": "Early Concepts",
+				"anchor": "Early Concepts",
 				"body": "Inspired by Gibson’s Sprawl trilogy, Snow Crash, and cyberpunk anthology Mirrorshades, I began developing environments reflecting these worlds, adding original ideas to create a cohesive narrative. A recurring element that intrigued me was the enclave, or spaces where people conduct alternative business, cultivate underground cultures, and form micro-civilizations with shared goals.",
 				"list": [
 					"The Raft in Snow Crash",
@@ -29,71 +29,71 @@
 				]
 			},
 			"satellite": {
-				"headline": "Satellite Islands",
+				"anchor": "Satellite Islands",
 				"body": "As an avid countryside and hiking enthusiast, I wanted players to experience exploration and vast landscapes. Since the initial citadel concept limited this, I designed a constellation of nomads and wild islands, awaiting settlers, tribes, and colonies."
 			},
 			"cartography": {
-				"headline": "Cartographies",
+				"anchor": "Cartographies",
 				"body": "After defining key locations and environment types, I explored the ideological structures governing these worlds. I also created distinct visual contrasts between environments (sprawl vs. nomad islands) so players could intuitively map mechanics."
 			},
 			"character_design": {
-				"headline": "Character Design",
+				"anchor": "Character Design",
 				"body": "Due to the project constraint of reusing existing styles and assets, I revisited the design explored in Animal Chamber Apocalypse Beat. While technical and time limits had previously restricted character development, this project allowed me to create character designs balancing authenticity and practicality."
 			},
 			"iconography": {
-				"headline": "Iconography",
+				"anchor": "Iconography",
 				"body": [
 					"Once I had a broad idea of the key mechanics, I began designing icons to match them. In terms of style, since a central theme was space tribes and island exploration, I aimed for shapes and concepts rooted in symbolism, archaism, and tribal aesthetics.",
 					"Because icons are often tied to deeper ideas and narratives, creating them early on pushed me to think more carefully about the underlying structures. This process helped clarify several mechanics as well as aspects of the world’s organization."
 				]
 			},
 			"ui": {
-				"headline": "User Interface",
+				"anchor": "User Interface",
 				"body": [
 					"For the UI, I aimed for a sci-fi look that still felt friendly and stylized, while keeping it simple enough for low-performance devices. The overall direction combines futuristic elements with playful visual patterns inspired by interfaces like Mahjong pieces or card games."
 				]
 			}
 		},
 		"procedural_systems": {
-			"headline": "Procedural Systems",
+			"anchor": "Procedural Systems",
 			"island": {
-				"headline": "Island Terrain",
+				"anchor": "Island Terrain",
 				"body": "The game features a floating-island building mechanic that allows players to paint and merge island chunks together.",
 				"topology": {
-					"headline": "Topology Generation",
+					"anchor": "Topology Generation",
 					"body": "Topology generation relies on a marching squares approach combined with Delaunay triangulation to seamlessly connect painted areas. The underside of each island is generated using weighted noise displacement"
 				},
 				"texture": {
-					"headline": "Texture Generation",
+					"anchor": "Texture Generation",
 					"body": "The islands texturing is handled through an offscreen rendering pass that generates masks fed into a dedicated shader, allowing the terrain to update dynamically."
 				}
 			},
 			"vegetation": {
-				"headline": "Vegetation",
+				"anchor": "Vegetation",
 				"body": [
 					"The initial Perlin-based distribution resulted in excessive mesh clumping, so the flora generation was redesigned around a hierarchical jittered grid system.",
 					"Vegetation is divided into three categories based on spatial footprint (large, medium, and small), with elements placed progressively from the largest footprint, such as trees, down to the smallest, such as grass. This approach produces a more balanced and readable distribution."
 				]
 			},
 			"nomad_house": {
-				"headline": "Nomad Houses",
+				"anchor": "Nomad Houses",
 				"body": "The nomad house procedural generation relies on a simple radial rule set, where elements are distributed around a central base. To introduce visual variation, UVs are randomly offset along predefined texture patterns on the X axis, allowing multiple appearances from the same asset set."
 			}
 		}
 	},
 	"solution": {
-		"headline": "Solution",
+		"anchor": "Solution",
 		"props": {
-			"headline": "Props Modelling",
+			"anchor": "Props Modelling",
 			"body": "Multiple props were modeled and textured to support the game's early functionalities and mechanics. The focus was placed on the assets most necessary for the first experiments. Creating original props rather than relying on downloaded assets also provided an opportunity to explore and better evaluate the project's future art direction."
 		},
 		"scenes": {
-			"headline": "Game Scenes",
+			"anchor": "Game Scenes",
 			"body": "For this first stage, the focus was placed on two core scenes: the island-building system and the character editor. These provided a solid foundation for testing the project's main mechanics and overall direction."
 		}
 	},
 	"tradeoffs": {
-		"headline": "Trade-offs",
+		"anchor": "Trade-offs",
 		"body": [
 			{
 				"heading": [
@@ -168,7 +168,7 @@
 		]
 	},
 	"outcomes": {
-		"headline": "Outcomes & Learning",
+		"anchor": "Outcomes & Learning",
 		"body": [
 			"It’s not necessarily unproductive to develop a constellation of prototypes or unfinished artworks. While they may seem disconnected at first, they often find resonance with one another over time, eventually becoming valuable foundations for future projects.",
 			"It was important to find a better balance between key project objectives and practical constraints. For instance, while building a custom engine could have been lighter than using Unity, the development overhead and time required to rebuild core features would have far outweighed the actual performance gains."

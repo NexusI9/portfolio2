@@ -1,7 +1,7 @@
 import { slugify } from "@/app/[locale]/_components/blog/helper";
 
 type TocNode = {
-	headline?: string;
+	anchor?: string;
 	children?: TocNode[];
 	[key: string]: any;
 };
@@ -13,9 +13,9 @@ export function extractHeadlines(node: any, level = 1): any[] {
   let results: TocNode[] = [];
 
   if (typeof node === "object") {
-    if (node.headline) {
+    if (node.anchor) {
       results.push({
-        headline: node.headline,
+        anchor: node.anchor,
         level,
         children: []
       });
@@ -47,7 +47,7 @@ export function extractHeadlines(node: any, level = 1): any[] {
 export function flattenNodes(nodes: any[]): { id: string; level: number }[] {
 	const result: { id: string; level: number }[] = [];
 	for (const node of nodes) {
-		result.push({ id: slugify(node.headline), level: node.level });
+		result.push({ id: slugify(node.anchor), level: node.level });
 		if (node.children?.length) result.push(...flattenNodes(node.children));
 	}
 	return result;
@@ -59,7 +59,7 @@ export function flattenNodes(nodes: any[]): { id: string; level: number }[] {
 	*/
 export function nodeContainsActive(node: any, activeId: string | null): boolean {
 	if (!activeId) return false;
-	if (slugify(node.headline) === activeId) return true;
+	if (slugify(node.anchor) === activeId) return true;
 	return (node.children ?? []).some((child: any) =>
 		nodeContainsActive(child, activeId)
 	);

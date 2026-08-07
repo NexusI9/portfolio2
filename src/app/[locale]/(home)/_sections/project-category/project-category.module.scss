@@ -2,77 +2,49 @@
 @use "@styles/var";
 @use "@styles/responsive" as responsive;
 
+.project-category {
+  height: auto;
 
-.project-category{
+  --padding-v: var(--size-space-extra-large-3);
+  padding-block: var(--padding-v);
 
-    aspect-ratio:16/7;
-    height:auto;
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-space-extra-large-2);
+  width: 100%;
+  justify-content: flex-end;
 
-    --padding-v: var(--size-space-extra-large-6);
-    padding-top: var(--padding-v);
-    padding-bottom: var(--padding-v);
+  & > a {
+    flex: 1;
+    height: fit-content;
+  }
 
-    margin-top: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 0px, 96px); //var(--size-space-extra-large-6)
-    margin-bottom: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 0px, 96px);
+  @include responsive.tablet {
+    flex-direction: column;
+  }
 
-    @include responsive.mobile{
-	--padding-v: var(--size-space-extra-large-2);
-    }
+  @include responsive.mobile {
+    --padding-v: var(--size-space-extra-large-2);
+  }
 
-    h1.display{
-	position: relative;
+  h1.display {
+    position: relative;
 
-	// TODO replace hardcoded value
+    // TODO replace hardcoded value
 
-	font-size: utils.fluid-clamp(responsive.$default-screen, responsive.$extra-large-screen, 6.56rem, 10rem);
-    }
-
+    font-size: utils.fluid-clamp(
+      responsive.$default-screen,
+      responsive.$extra-large-screen,
+      6.56rem,
+      10rem
+    );
+  }
 }
 
-.mosaic{
+.mosaic {
+  position: absolute;
 
-    position: absolute;
-    
-    span{
-	background: var(--color-background-brand-subtle);
-    }
-    
-}
-
-.project-wrapper{
-
-    --desktop-ratio: 500 / 437;
-    --desktop-ratio-wide: 1120 / 437;
-   // TODO OPTI: replace hardcoded widths by dynamic (var)
-    padding-left: utils.fluid-clamp(responsive.$small-screen, responsive.$default-screen, 0px, 228px);
-
-    display: flex;
-    flex-direction:row;
-    gap: var(--size-space-extra-large-2);
-    width: 100%;
-    justify-content: flex-end;
-    
-    &:has(a:nth-child(2)){
-	& > a{
-	    aspect-ratio: var(--desktop-ratio);
-	}
-    }
-
-    &:not(:has(a:nth-child(2))){
-	& > a{
-	    aspect-ratio: var(--desktop-ratio-wide);
-	}
-    }
-    
-    & > a{
-	flex:1;
-	height: auto;
-    }
-
-    @include responsive.tablet{
-	flex-direction: column;
-	//--desktop-ratio: 16 / 10;
-	--desktop-ratio-wide: var(--desktop-ratio);
-    }
-
+  span {
+    background: var(--color-background-brand-subtle);
+  }
 }

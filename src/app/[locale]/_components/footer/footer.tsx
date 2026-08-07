@@ -16,7 +16,7 @@ export default function Footer() {
 
 	return (<footer className={styles.footer}>
 
-		  <Container size="WIDE" className={styles.container}>
+		<Container className={styles.container}>
 			<div className={styles.inner}>
 
 				<div className={styles.contact}>
@@ -30,7 +30,7 @@ export default function Footer() {
 					</Portrait>
 
 					<hgroup className="flex flex-col gap-(--size-space-extra-large-2)">
-					  <TextBase role="H2" style="DISPLAY" className={styles.display}>{dico.common.footer.contact}</TextBase>
+						<TextBase role="H2" style="DISPLAY" className={styles.display}>{dico.common.footer.contact}</TextBase>
 						<a href="mailto:nassim.elkhantour@gmail.com" className="flex flex-row gap-(--size-space-large) items-center">
 							<Arrow className={styles.arrow} />
 							<div className={styles.email}>
@@ -41,7 +41,7 @@ export default function Footer() {
 					</hgroup>
 				</div>
 
-			  <div className={styles.credits}>
+				<div className={styles.credits}>
 					<Text.Footnote>{dico.common.footer.credits}</Text.Footnote>
 					<Text.Footnote>© Nassim El Khantour {new Date().getFullYear()}</Text.Footnote>
 				</div>

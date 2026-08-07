@@ -52,10 +52,12 @@ export default function ProjectCategoryWrapper() {
 	}
 
 	return (
-		<ViewCatcher targetRef={divRef as RefObject<HTMLDivElement>} onLeave={onLeave}>
-			<div ref={divRef}>
-				{PROJECT_SECTIONS.map(project => <ProjectCategory key={project.headline} {...project} />)}
-			</div>);
-		</ViewCatcher>);
+		<>
+			{/* DELETEME <hgroup>
+					<Mosaic row={3} column={3} className={styles.mosaic} animation="BLINK" />
+				  <Text.Display className={styles.display}>{headline}</Text.Display>
+				  </hgroup>*/}
+			{PROJECT_SECTIONS.map(project => <ProjectCategory key={project.headline} {...project} />)}
+		</>);
 
 }

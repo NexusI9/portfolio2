@@ -15,12 +15,7 @@
   position: var(--position);
   top: var(--size-space-extra-large-6);
   align-self: flex-start;
-  width: utils.fluid-clamp(
-    responsive.$tablet,
-    responsive.$default-screen,
-    160px,
-    260px
-  );
+  width: 269px;
   flex-shrink: 0;
 
   @include responsive.tablet {

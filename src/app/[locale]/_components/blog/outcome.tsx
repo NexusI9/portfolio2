@@ -17,7 +17,7 @@ export default function Outcome({ headline, items }: IOutcome) {
 	return (
 		<Blog.Section>
 
-			<Blog.Heading role="H3">{headline}</Blog.Heading>
+			<Blog.Anchor role="H3" style="H3">{headline}</Blog.Anchor>
 			<ul className={styles.outcome}>
 				{items.map((item, i) => <li key={item + i} className={styles.item}>
 					<div className="relative pl-[22px]">

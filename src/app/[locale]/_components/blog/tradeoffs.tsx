@@ -16,7 +16,7 @@ export default function TradeOffs({ headline, items }: ITradeoffs) {
 	return (
 		<Section>
 			<Blog.Group>
-				<Blog.Heading role="H3">{headline}</Blog.Heading>
+				<Blog.Anchor role="H3" style="H3">{headline}</Blog.Anchor>
 				<div>
 					{items.map((item, i) => <TradeOffExpand key={`tradeoff${i}`} {...item} />)}
 				</div>

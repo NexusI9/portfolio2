@@ -15,7 +15,7 @@ export default function Constraints({ headline, items }: IConstraints) {
 	return (
 		<Blog.Section>
 			<Blog.Group>
-				<Blog.Heading role="H3">{headline}</Blog.Heading>
+				<Blog.Anchor role="H3" style="H3">{headline}</Blog.Anchor>
 				<ul className={styles["constraint-cards"]}>
 					{items.map((item, i) => <ConstraintCard key={item + i} label={item} number={i + 1} />)}
 				</ul>

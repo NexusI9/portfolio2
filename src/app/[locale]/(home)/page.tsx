@@ -16,11 +16,6 @@ export default function Home() {
 		<>
 
 			<Intro />
-
-			<div className={styles["navbar-wrapper"]}>
-				<NavBar options={PROJECT_CATEGORIES_ANCHORS(dico)} />
-			</div>
-
 			<ProjectCategoryWrapper />
 			<Quotes />
 

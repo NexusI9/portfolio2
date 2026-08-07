@@ -1,11 +1,11 @@
 {
 	"description": "Gamification framework and software to drive and sustain users engagement",
 	"problem": {
-		"headline": "Problem Statement",
+		"anchor": "Problem Statement",
 		"body": "Develop a marketable strategy and actionable solutions to strengthen sustainable engagement, improving employee retention and attracting next-generation talent."
 	},
 	"constraints": {
-		"headline": "Constraints",
+		"anchor": "Constraints",
 		"body": [
 			"Use only predefined modules (Dining, Event Registration, etc.)",
 			"Easily implementable and configurable within backend systems",
@@ -17,13 +17,13 @@
 		]
 	},
 	"strategic_framing": {
-		"headline": "Strategic Framing",
+		"anchor": "Strategic Framing",
 		"scope": {
-			"headline": "Scope Establishment",
+			"anchor": "Scope Establishment",
 			"body": "Our team first defined the specific use cases for the framework to ensure efficiency and relevance throughout the project. We structured the framework around three key pillars, separating the mechanics and logic from the visual design to allow greater flexibility based on client budget, brand identity, and project objectives."
 		},
 		"workflow": {
-			"headline": "Integration Within Practical Workflow",
+			"anchor": "Integration Within Practical Workflow",
 			"body": [
 				"As my responsibility was to focus on the technical and practical application of the framework rather than sales promotion, I quickly recognized the need to bridge and validate strategic choices with tangible, measurable data.",
 				" Designing a game economy is inherently iterative and requires long-term tracking to better analyze patterns and identify weak points. I found it valuable to develop a predictive modeling tool to assess user flow balance in advance and prevent potential UX issues such as friction or low rewards. As a result, as part of R&D, I initiated a user flow analysis software tailored to the project’s needs: the EMMA project was born."
@@ -31,13 +31,13 @@
 		}
 	},
 	"tech_research": {
-		"headline": "Technical Research",
+		"anchor": "Technical Research",
 		"persona": {
-			"headline": "Persona Definition",
+			"anchor": "Persona Definition",
 			"body": "For research purposes, we worked with a set of predefined generic personas based on various research documents and articles. For each persona, we defined key motivations and aversions to better understand their needs and drivers in daily life, particularly within a professional context, which was the initial target of the project."
 		},
 		"engines": {
-			"headline": "Motivational Engines",
+			"anchor": "Motivational Engines",
 			"challenge": [
 				"We gathered features from previous projects as a base for our gamification framework, but quickly realized they existed as isolated islands rather than a cohesive journey. The challenge became how to connect them into something meaningful, and how to encourage users to explore beyond their comfort zone.",
 				"This led us to look for a more modular and adaptable system, one that could fit different projects, features, and personas."
@@ -53,47 +53,47 @@
 			]
 		},
 		"system_design": {
-			"headline": "System Design Hierarchy",
+			"anchor": "System Design Hierarchy",
 			"expressivity": {
-				"headline": "Expressivity",
+				"anchor": "Expressivity",
 				"body": "Early on, we recognized the need for the system to be flexible according to clients’ organizational culture, stakeholder preferences, and employee personas, which vary widely across industries. We created a two-axis graph to map system adaptability and identify where gamification could be expressed."
 			},
 			"module": {
-				"headline": "Module-Action Model",
+				"anchor": "Module-Action Model",
 				"body": "As our concepts matured, we aimed to bridge them with practical solutions. This led to the Module-Action Model: a module-based infrastructure where each module acts as an interface with predefined actions, configurable and linkable to any system via event hooks or similar mechanisms, allowing us to translate human emotions and behavior into trackable data."
 			},
 			"architecture": {
-				"headline": "Data Modeling",
+				"anchor": "Data Modeling",
 				"body": "The next challenge was defining the behavioral, temporal, and motivational properties of modules and actions. Modules own actions and actions could be clicks or swipes, deliver rewards, and be available temporarily or permanently. All elements are configurable, leading to the first flow of the Module ↔ Action relationship with their respective properties."
 			}
 		},
 		"formulas": {
-			"headline": "Translating Emotions Into Data",
+			"anchor": "Translating Emotions Into Data",
 			"intro": {
-				"headline": "Weighted-Sum Approach",
+				"anchor": "Weighted-Sum Approach",
 				"body": "After clarifying the metrics we wanted to track and the triggers for them, we focused on defining fundamental formulas to bridge user emotions with tangible, actionable data. To keep the system flexible and configurable, we used a weighted sum approach, allowing precise control over how each data point impacts a specific motivation."
 			},
 			"impact": {
-				"headline": "Penalty System",
+				"anchor": "Penalty System",
 				"body": "We explored how to translate and correlate emotions into factors, which led to defining a penalty system based on whether a persona responded to a particular emotional drive."
 			},
 			"tweaking": {
-				"headline": "Normal Distribution",
+				"anchor": "Normal Distribution",
 				"body": "During real-case scenario testing, we noticed some formulas did not yield the expected results. The main issue was the normalization function, so we switched from a linear to a logarithmic normalization to improve accuracy."
 			}
 		}
 	},
 	"software_architecture": {
-		"headline": "Software Architecture",
+		"anchor": "Software Architecture",
 		"body": [
 			"As our strategy became clearer and we better understood how to translate modules into a modular system, we still lacked a way to anticipate how user flows would impact emotions.",
 			"To address this, it felt meaningful to develop a userflow tool capable of displaying analysis metrics per frame. As part of this R&D phase, it also opened the door to experiment with system architecture inspired by a Data-Oriented Design approach."
 		],
 		"optimizations": {
-			"headline": "Performance Optimization Designs"
+			"anchor": "Performance Optimization Designs"
 		},
 		"resource_manager": {
-			"headline": "Resource Manager Model",
+			"anchor": "Resource Manager Model",
 			"body": "A resource manager coupled with an ID registry is used to handle resource lifecycles, from creation to destruction.",
 			"benefits": {
 				"heading": "Benefits",
@@ -111,7 +111,7 @@
 			}
 		},
 		"state_array": {
-			"headline": "State-Based Array",
+			"anchor": "State-Based Array",
 			"body": "A cache-friendly, state-based array approach was implemented to process state-shared objects contiguously.",
 			"benefits": {
 				"heading": "Benefits",
@@ -129,33 +129,33 @@
 			}
 		},
 		"semantics": {
-			"headline": "Semantics",
+			"anchor": "Semantics",
 			"body": "To clarify each function's and object's purpose and usage (hot or cold path), clear semantics were established, ensuring optimizations occur in the right places, such as preventing branch misprediction in hot loops."
 		},
 		"immediate": {
-			"headline": "Immediate UI Mode"
+			"anchor": "Immediate UI Mode"
 		},
 		"ui_caching": {
-			"headline": "Data Caching",
+			"anchor": "Data Caching",
 			"body": "For this project, we used an immediate-mode UI library to explore its limitations and potential workarounds. Since this approach redraws the entire interface every frame, it can introduce notable performance costs. To mitigate this, we developed a dedicated widget lifecycle flow that improves organization and scalability, even if it doesn’t fully resolve the underlying limitation."
 		},
 		"ui_splitting": {
-			"headline": "Domain Splitting",
+			"anchor": "Domain Splitting",
 			"body": "Finally, since the choice of interface library may change based on the results of this initial experiment, we decided to separate the domain from the visual presentation. This means core data is independent from the visual and interaction behaviors."
 		},
 		"heatmap_flow": {
-			"headline": "Leverage WebGPU For Heatmap Computation",
+			"anchor": "Leverage WebGPU For Heatmap Computation",
 			"body": "Early on, we identified the need for a heatmap system to analyze user flow strengths, weaknesses, and potential emotional impacts. To implement this, we established a WebGPU compute and render pipeline. The main challenge was integrating custom shaders with the existing UI library rendering system."
 		}
 	},
 	"ui_research": {
-		"headline": "UI Research",
+		"anchor": "UI Research",
 		"brainstorm": {
-			"headline": "Inspiration Brainstorm",
+			"anchor": "Inspiration Brainstorm",
 			"body": "Since our project was closely related to gamification, it felt relevant to mix a 'professional look' with a 'table-top'-style game where strategy is defined using frames, modules, personas, and flows (VST served as a strong inspiration for blending highly functional interfaces with strong visual design)."
 		},
 		"physical": {
-			"headline": "Infusing Physicality",
+			"anchor": "Infusing Physicality",
 			"body": [
 				"Since the software relied heavily on gamification, it felt natural to give the interface a more physical quality. ",
 				"I drew inspiration from early-2000s interfaces like Windows XP and early versions of Mac OS X, as well as the tactile UI styles often found in video games. The goal was to bring a sense of material and playfulness to the overall interface."
@@ -165,26 +165,26 @@
 			"body": "A key idea was to balance a professional feel with a more playful tone. This led to experimenting with components in a way similar to industrial design by assigning them materials, and carefully considering how different shapes might suggest particular movements or uses."
 		},
 		"documentation": {
-			"headline": "In-App Documentation",
+			"anchor": "In-App Documentation",
 			"body": "Given the complexity of the software and overall strategy, it was necessary to include a diegetic journal panel to gather formulas and documentation, helping properly educate the user."
 		},
 		"gamified": {
-			"headline": "Gamified UI",
+			"anchor": "Gamified UI",
 			"body": "We added higher narrative value through physical objects like 'pods' or 3D-based icons and personas. This 'gamified UI', similar to FigJam, creates a 'draft-and-try' tone that encourages productivity."
 		}
 	},
 	"solution": {
-		"headline": "Solution",
+		"anchor": "Solution",
 		"brand": {
-			"headline": "A Branded Framework",
+			"anchor": "A Branded Framework",
 			"body": "We consolidated all previous research and solutions into an official branded framework, enhancing credibility and making the solution more memorable and engaging during client presentations."
 		},
 		"analysis": {
-			"headline": "Strategic Cultural Analysis",
+			"anchor": "Strategic Cultural Analysis",
 			"body": "We developed a methodology to predefine the most suitable aesthetic direction or module package based on company needs, industry, and budget (CVF/Complex)."
 		},
 		"tools": {
-			"headline": "In-House Tools Ecosystem",
+			"anchor": "In-House Tools Ecosystem",
 			"body": "Other tools were developed to accelerate design system creation and export for development. The overall ecosystem connects multiple tools to enhance efficiency and productivity:",
 			"list": [
 				"Style Studio: A figma plugin to quickly generate and fine tune colors schemes or fonts",
@@ -193,12 +193,12 @@
 			]
 		},
 		"software": {
-			"headline": "Userflow Analysis Software",
+			"anchor": "Userflow Analysis Software",
 			"body": "A key outcome of this project was the development of EMMA (Emotional Mapper), a user flow software that evaluates flow efficiency based on various metrics such as excitement and social bonding."
 		}
 	},
 	"tradeoffs": {
-		"headline": "Trade-offs",
+		"anchor": "Trade-offs",
 		"body": [
 			{
 				"heading": [
@@ -283,7 +283,7 @@
 		]
 	},
 	"outcomes": {
-		"headline": "Outcomes & Learning",
+		"anchor": "Outcomes & Learning",
 		"body": [
 			"For larger, production-level projects, choose a more suitable UI framework, potentially even a JavaScript-based one, especially for web applications like EMMA.",
 			"Technical explorations can lead down a rabbit hole. Always track the initial business goals and coordinate with stakeholders to ensure the project aligns with market needs and company direction. For this project, I was fortunate to collaborate with a talented, market-oriented colleague who helped keep the project on track while continuously contributing fresh ideas."

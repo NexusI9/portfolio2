@@ -24,20 +24,20 @@ export default function Azusa() {
 		<Blog.Section>
 
 			<Blog.Group>
-				<Blog.Heading>{p.intention.headline}</Blog.Heading>
+				<Blog.Headline>{p.intention.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.intention.body}</Blog.Paragraph>
 			</Blog.Group>
 		</Blog.Section>
 
-		<Blog.Constraints headline={p.constraints.headline} items={p.constraints.body} />
+		<Blog.Constraints headline={p.constraints.anchor} items={p.constraints.body} />
 
 		<Blog.Section>
 
-			<Blog.Heading>{p.exploration.headline}</Blog.Heading>
+			<Blog.Headline>{p.exploration.anchor}</Blog.Headline>
 
 			<Blog.Group>
 
-				<Blog.Heading role="H4">{p.exploration.creative_research.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.exploration.creative_research.anchor}</Blog.Headline>
 
 				<Blog.Group>
 					<Gallery.Wrapper>
@@ -45,7 +45,7 @@ export default function Azusa() {
 						<Blog.Group direction="ROW">
 
 							<Blog.Group>
-								<Blog.Heading role="H5">{p.exploration.creative_research.early_concepts.headline}</Blog.Heading>
+								<Blog.Headline role="H5">{p.exploration.creative_research.early_concepts.anchor}</Blog.Headline>
 								<Blog.Paragraph>{p.exploration.creative_research.early_concepts.body}</Blog.Paragraph>
 								<List.Root>
 									{p.exploration.creative_research.early_concepts.list.map(it => <List.Item key={it}><Text.Body>{it}</Text.Body></List.Item>)}
@@ -78,7 +78,7 @@ export default function Azusa() {
 
 			<Blog.Group>
 
-				<Blog.Heading role="H5">{p.exploration.creative_research.satellite.headline}</Blog.Heading>
+				<Blog.Headline role="H5">{p.exploration.creative_research.satellite.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.exploration.creative_research.satellite.body}</Blog.Paragraph>
 
 				<Gallery.AutoLayout rows={[
@@ -94,7 +94,7 @@ export default function Azusa() {
 
 			<Blog.Group>
 
-				<Blog.Heading role="H5">{p.exploration.creative_research.cartography.headline}</Blog.Heading>
+				<Blog.Headline role="H5">{p.exploration.creative_research.cartography.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.exploration.creative_research.cartography.body}</Blog.Paragraph>
 
 				<Gallery.AutoLayout rows={[
@@ -113,7 +113,7 @@ export default function Azusa() {
 					<Blog.Group direction="ROW">
 
 						<Blog.Group>
-							<Blog.Heading role="H5">{p.exploration.creative_research.character_design.headline}</Blog.Heading>
+							<Blog.Headline role="H5">{p.exploration.creative_research.character_design.anchor}</Blog.Headline>
 
 							<Blog.Paragraph>{p.exploration.creative_research.character_design.body}</Blog.Paragraph>
 						</Blog.Group>
@@ -131,7 +131,7 @@ export default function Azusa() {
 
 			<Blog.Group>
 
-				<Blog.Heading role="H5">{p.exploration.creative_research.iconography.headline}</Blog.Heading>
+				<Blog.Headline role="H5">{p.exploration.creative_research.iconography.anchor}</Blog.Headline>
 
 				<Blog.Paragraph>{p.exploration.creative_research.iconography.body}</Blog.Paragraph>
 
@@ -145,7 +145,7 @@ export default function Azusa() {
 					<Blog.Group direction="ROW">
 
 						<Blog.Group>
-							<Blog.Heading role="H5">{p.exploration.creative_research.ui.headline}</Blog.Heading>
+							<Blog.Headline role="H5">{p.exploration.creative_research.ui.anchor}</Blog.Headline>
 							<Blog.Paragraph>{p.exploration.creative_research.ui.body}</Blog.Paragraph>
 
 						</Blog.Group>
@@ -168,16 +168,16 @@ export default function Azusa() {
 
 			<Blog.Group>
 
-				<Blog.Heading role="H4">{p.exploration.procedural_systems.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.exploration.procedural_systems.anchor}</Blog.Headline>
 
 				<Blog.Group>
 					<Gallery.Wrapper>
-						<Blog.Heading role="H5">{p.exploration.procedural_systems.island.headline}</Blog.Heading>
+						<Blog.Headline role="H5">{p.exploration.procedural_systems.island.anchor}</Blog.Headline>
 						<Blog.Paragraph>{p.exploration.procedural_systems.island.body}</Blog.Paragraph>
 
 						<Blog.Group direction="ROW">
 							<Blog.Group>
-								<Blog.Heading role="H6">{p.exploration.procedural_systems.island.topology.headline}</Blog.Heading>
+								<Blog.Headline role="H6">{p.exploration.procedural_systems.island.topology.anchor}</Blog.Headline>
 								<Blog.Paragraph>{p.exploration.procedural_systems.island.topology.body}</Blog.Paragraph>
 							</Blog.Group>
 
@@ -186,7 +186,7 @@ export default function Azusa() {
 
 						<Blog.Group direction="ROW">
 							<Blog.Group>
-								<Blog.Heading role="H6">{p.exploration.procedural_systems.island.texture.headline}</Blog.Heading>
+								<Blog.Headline role="H6">{p.exploration.procedural_systems.island.texture.anchor}</Blog.Headline>
 								<Blog.Paragraph>{p.exploration.procedural_systems.island.texture.body}</Blog.Paragraph>
 							</Blog.Group>
 
@@ -198,7 +198,7 @@ export default function Azusa() {
 				</Blog.Group>
 
 				<Blog.Group>
-					<Blog.Heading role="H5">{p.exploration.procedural_systems.vegetation.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.exploration.procedural_systems.vegetation.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.exploration.procedural_systems.vegetation.body}</Blog.Paragraph>
 
 					<Gallery.AutoLayout rows={[
@@ -215,7 +215,7 @@ export default function Azusa() {
 				</Blog.Group>
 
 				<Blog.Group>
-					<Blog.Heading role="H5">{p.exploration.procedural_systems.nomad_house.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.exploration.procedural_systems.nomad_house.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.exploration.procedural_systems.nomad_house.body}</Blog.Paragraph>
 
 					<Gallery.AutoLayout rows={[
@@ -234,10 +234,10 @@ export default function Azusa() {
 
 		<Blog.Section>
 
-			<Blog.Heading>{p.solution.headline}</Blog.Heading>
+			<Blog.Headline>{p.solution.anchor}</Blog.Headline>
 
 			<Blog.Group>
-				<Blog.Heading role="H5">{p.solution.props.headline}</Blog.Heading>
+				<Blog.Headline role="H5">{p.solution.props.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.solution.props.body}</Blog.Paragraph>
 
 				<Gallery.AutoLayout rows={[
@@ -263,15 +263,15 @@ export default function Azusa() {
 
 
 			<Blog.Group>
-				<Blog.Heading role="H5">{p.solution.scenes.headline}</Blog.Heading>
+				<Blog.Headline role="H5">{p.solution.scenes.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.solution.scenes.body}</Blog.Paragraph>
 
 			</Blog.Group>
 
 		</Blog.Section>
 
-		<Blog.TradeOffs headline={p.tradeoffs.headline} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
-		<Blog.Outcome headline={p.outcomes.headline} items={p.outcomes.body} />
+		<Blog.TradeOffs headline={p.tradeoffs.anchor} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.Outcome headline={p.outcomes.anchor} items={p.outcomes.body} />
 
 	</Template>);
 }

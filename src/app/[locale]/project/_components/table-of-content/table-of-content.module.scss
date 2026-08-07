@@ -1,14 +1,5 @@
 @use "@styles/animation";
-
-.item {
-  a {
-    transition: color, var(--transition-short);
-
-    &:hover {
-      color: var(--color-text-brand-base);
-    }
-  }
-}
+@use "@styles/interaction" as interaction;
 
 .active-dot {
   display: inline-block;
@@ -24,16 +15,13 @@
 
 .tree {
   &-container {
+    border-left: solid 1px var(--color-border-subtlest-on-light);
     display: flex;
     flex-direction: column;
-    gap: var(--size-space-small);
     padding-left: var(--size-space-extra-large-2);
     margin-bottom: var(--size-space-small);
     margin-top: var(--size-space-medium);
-
-    &[data-level="1"] {
-      padding-left: var(--size-space-small);
-    }
+    padding-left: 0;
   }
 
   &-chevron {
@@ -48,6 +36,20 @@
   }
 
   &-label {
+    &::before {
+      transition: color, width, var(--transition-short);
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      background: var(--color-surface-base);
+      left: 0;
+      width: 0px;
+    }
+
+    padding-left: var(--size-space-large);
+    padding-block: var(--size-space-medium);
+    position: relative;
     display: flex;
     align-items: center;
     gap: var(--size-space-small);
@@ -65,9 +67,20 @@
       color 150ms ease,
       font-weight 150ms ease;
 
+    @include interaction.hover {
+      &::before {
+        width: 3px;
+      }
+    }
+
     &[data-highlighted="true"] {
-      font-weight: 500;
       color: var(--color-text-brand-base);
+      background: var(--color-background-brand-subtlest);
+
+      &::before {
+        width: 3px;
+        background: var(--color-background-brand-base);
+      }
     }
   }
 }

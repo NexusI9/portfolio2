@@ -7,6 +7,18 @@
   padding-top: var(--size-space-large);
   padding-bottom: var(--size-space-large);
 
+  &[data-size="HALF"] {
+    max-width: 50%;
+
+    @include responsive.tablet {
+      max-width: none;
+    }
+
+    @include responsive.mobile {
+      max-width: none;
+    }
+  }
+
   &[data-direction="ROW"] {
     flex-direction: row;
     flex-wrap: wrap;

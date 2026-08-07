@@ -22,25 +22,25 @@ export default function EmotionalMapper() {
 
 		<Blog.Section>
 			<Blog.Group>
-				<Blog.Heading>{p.problem.headline}</Blog.Heading>
+				<Blog.Headline>{p.problem.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.problem.body}</Blog.Paragraph>
 			</Blog.Group>
 		</Blog.Section>
 
-		<Blog.Constraints headline={p.constraints.headline} items={p.constraints.body} />
+		<Blog.Constraints headline={p.constraints.anchor} items={p.constraints.body} />
 
 		<Blog.Section>
 
-			<Blog.Heading>{p.strategic_framing.headline}</Blog.Heading>
+			<Blog.Headline>{p.strategic_framing.anchor}</Blog.Headline>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.strategic_framing.scope.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.strategic_framing.scope.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.strategic_framing.scope.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[imPath(pName, "strategy-scope")]]} />
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.strategic_framing.workflow.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.strategic_framing.workflow.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.strategic_framing.workflow.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[imPath(pName, "strategy-workflow")]]} />
 			</Blog.Group>
@@ -50,17 +50,17 @@ export default function EmotionalMapper() {
 
 		<Blog.Section>
 
-			<Blog.Heading>{p.tech_research.headline}</Blog.Heading>
+			<Blog.Headline>{p.tech_research.anchor}</Blog.Headline>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.tech_research.persona.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.tech_research.persona.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.tech_research.persona.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[imPath(pName, "strategy-persona")]]} />
 			</Blog.Group>
 
 			<Blog.Group>
 				<Gallery.Wrapper>
-					<Blog.Heading role="H4">{p.tech_research.engines.headline}</Blog.Heading>
+					<Blog.Headline role="H4">{p.tech_research.engines.anchor}</Blog.Headline>
 
 					<Blog.Group direction="ROW">
 						<Blog.Paragraph>{p.tech_research.engines.challenge}</Blog.Paragraph>
@@ -81,9 +81,9 @@ export default function EmotionalMapper() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.tech_research.system_design.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.tech_research.system_design.anchor}</Blog.Headline>
 				<Blog.Group>
-					<Blog.Heading role="H5">{p.tech_research.system_design.expressivity.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.tech_research.system_design.expressivity.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.tech_research.system_design.expressivity.body}</Blog.Paragraph>
 					<Gallery.AutoLayout rows={[[imPath(pName, "expressivity")]]} />
 				</Blog.Group>
@@ -91,7 +91,7 @@ export default function EmotionalMapper() {
 
 				<Blog.Group direction="ROW">
 					<Blog.Group>
-						<Blog.Heading role="H5">{p.tech_research.system_design.module.headline}</Blog.Heading>
+						<Blog.Headline role="H5">{p.tech_research.system_design.module.anchor}</Blog.Headline>
 						<Blog.Paragraph>{p.tech_research.system_design.module.body}</Blog.Paragraph>
 					</Blog.Group>
 					<Gallery.AutoLayout rows={[[imPath(pName, "module-action-reward")]]} />
@@ -99,7 +99,7 @@ export default function EmotionalMapper() {
 
 				<Blog.Group >
 					<Blog.Group>
-						<Blog.Heading role="H5">{p.tech_research.system_design.architecture.headline}</Blog.Heading>
+						<Blog.Headline role="H5">{p.tech_research.system_design.architecture.anchor}</Blog.Headline>
 						<Blog.Paragraph>{p.tech_research.system_design.architecture.body}</Blog.Paragraph>
 					</Blog.Group>
 					<Gallery.AutoLayout rows={[[
@@ -110,11 +110,11 @@ export default function EmotionalMapper() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.tech_research.formulas.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.tech_research.formulas.anchor}</Blog.Headline>
 
 				<Blog.Group direction="ROW">
 					<Blog.Group>
-						<Blog.Heading role="H5">{p.tech_research.formulas.intro.headline}</Blog.Heading>
+						<Blog.Headline role="H5">{p.tech_research.formulas.intro.anchor}</Blog.Headline>
 						<Blog.Paragraph>{p.tech_research.formulas.intro.body}</Blog.Paragraph>
 					</Blog.Group>
 					<Gallery.AutoLayout rows={[[imPath(pName, "module-formulas")]]} />
@@ -122,7 +122,7 @@ export default function EmotionalMapper() {
 
 				<Blog.Group>
 
-					<Blog.Heading role="H5">{p.tech_research.formulas.impact.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.tech_research.formulas.impact.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.tech_research.formulas.impact.body}</Blog.Paragraph>
 
 					<Gallery.AutoLayout rows={[[imPath(pName, "module-desire-aversion")]]} />
@@ -133,7 +133,7 @@ export default function EmotionalMapper() {
 				<Blog.Group direction="ROW">
 
 					<Blog.Group>
-						<Blog.Heading role="H5">{p.tech_research.formulas.tweaking.headline}</Blog.Heading>
+						<Blog.Headline role="H5">{p.tech_research.formulas.tweaking.anchor}</Blog.Headline>
 						<Blog.Paragraph>{p.tech_research.formulas.tweaking.body}</Blog.Paragraph>
 					</Blog.Group>
 					<Gallery.AutoLayout rows={[[imPath(pName, "normal-distribution")]]} />
@@ -145,15 +145,15 @@ export default function EmotionalMapper() {
 		<Blog.Section>
 
 			<Blog.Group>
-				<Blog.Heading>{p.software_architecture.headline}</Blog.Heading>
+				<Blog.Headline>{p.software_architecture.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.software_architecture.body}</Blog.Paragraph>
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.software_architecture.optimizations.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.software_architecture.optimizations.anchor}</Blog.Headline>
 
 				<Blog.Group>
-					<Blog.Heading role="H5">{p.software_architecture.resource_manager.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.software_architecture.resource_manager.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.software_architecture.resource_manager.body}</Blog.Paragraph>
 				</Blog.Group>
 
@@ -179,7 +179,7 @@ export default function EmotionalMapper() {
 				</Blog.Group>
 
 				<Blog.Group>
-					<Blog.Heading role="H5">{p.software_architecture.state_array.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.software_architecture.state_array.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.software_architecture.state_array.body}</Blog.Paragraph>
 				</Blog.Group>
 
@@ -209,7 +209,7 @@ export default function EmotionalMapper() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.software_architecture.semantics.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.software_architecture.semantics.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.software_architecture.semantics.body}</Blog.Paragraph>
 				<Gallery.AutoLayout
 					rows={[
@@ -220,10 +220,10 @@ export default function EmotionalMapper() {
 			</Blog.Group>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.software_architecture.immediate.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.software_architecture.immediate.anchor}</Blog.Headline>
 				<Blog.Group direction="ROW">
 					<Blog.Group>
-						<Blog.Heading role="H5">{p.software_architecture.ui_caching.headline}</Blog.Heading>
+						<Blog.Headline role="H5">{p.software_architecture.ui_caching.anchor}</Blog.Headline>
 						<Blog.Paragraph>{p.software_architecture.ui_caching.body}</Blog.Paragraph>
 					</Blog.Group>
 					<Gallery.AutoLayout rows={[[imPath(pName, "software-immediate-mode-ui-pipeline")]]} />
@@ -232,7 +232,7 @@ export default function EmotionalMapper() {
 				<Blog.Group direction="ROW">
 					<Gallery.AutoLayout rows={[[imPath(pName, "software-immediate-mode-model-relationship")]]} />
 					<Blog.Group>
-						<Blog.Heading role="H5">{p.software_architecture.ui_splitting.headline}</Blog.Heading>
+						<Blog.Headline role="H5">{p.software_architecture.ui_splitting.anchor}</Blog.Headline>
 						<Blog.Paragraph>{p.software_architecture.ui_splitting.body}</Blog.Paragraph>
 					</Blog.Group>
 
@@ -240,7 +240,7 @@ export default function EmotionalMapper() {
 
 				<Blog.Group>
 
-					<Blog.Heading role="H5">{p.software_architecture.heatmap_flow.headline}</Blog.Heading>
+					<Blog.Headline role="H5">{p.software_architecture.heatmap_flow.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.software_architecture.heatmap_flow.body}</Blog.Paragraph>
 					<Gallery.AutoLayout rows={[[imPath(pName, "software-immediate-mode-heatmap")]]} />
 
@@ -252,10 +252,10 @@ export default function EmotionalMapper() {
 
 		<Blog.Section>
 
-			<Blog.Heading>{p.ui_research.headline}</Blog.Heading>
+			<Blog.Headline>{p.ui_research.anchor}</Blog.Headline>
 
 			<Blog.Group>
-				<Blog.Heading role="H4">{p.ui_research.brainstorm.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.ui_research.brainstorm.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.ui_research.brainstorm.body}</Blog.Paragraph>
 
 				<Gallery.AutoLayout rows={[[imPath(pName, "ui-global-brainstorm")]]} />
@@ -263,7 +263,7 @@ export default function EmotionalMapper() {
 
 			<Blog.Group>
 
-				<Blog.Heading role="H4">{p.ui_research.physical.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.ui_research.physical.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.ui_research.physical.body}</Blog.Paragraph>
 				<Gallery.Wrapper>
 					<Gallery.Mosaic images={[
@@ -292,7 +292,7 @@ export default function EmotionalMapper() {
 
 			<Blog.Group direction="ROW">
 				<Blog.Group>
-					<Blog.Heading role="H4">{p.ui_research.documentation.headline}</Blog.Heading>
+					<Blog.Headline role="H4">{p.ui_research.documentation.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.ui_research.documentation.body}</Blog.Paragraph>
 				</Blog.Group>
 
@@ -307,7 +307,7 @@ export default function EmotionalMapper() {
 							<Gallery.Image src={imPath(pName, "ui-pod-sketches")} />
 						</Gallery.Row>
 						<Blog.Group>
-							<Blog.Heading role="H4">{p.ui_research.gamified.headline}</Blog.Heading>
+							<Blog.Headline role="H4">{p.ui_research.gamified.anchor}</Blog.Headline>
 							<Blog.Paragraph>{p.ui_research.gamified.body}</Blog.Paragraph></Blog.Group>
 
 					</Blog.Group>
@@ -324,11 +324,11 @@ export default function EmotionalMapper() {
 
 		<Blog.Section>
 
-			<Blog.Heading>{p.solution.headline}</Blog.Heading>
+			<Blog.Headline>{p.solution.anchor}</Blog.Headline>
 
 			<Blog.Group>
 
-				<Blog.Heading role="H4">{p.solution.brand.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.solution.brand.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.solution.brand.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[imPath(pName, "solution-brand-bento")]]} />
 
@@ -337,7 +337,7 @@ export default function EmotionalMapper() {
 			<Blog.Group direction="ROW">
 
 				<Blog.Group>
-					<Blog.Heading role="H4">{p.solution.analysis.headline}</Blog.Heading>
+					<Blog.Headline role="H4">{p.solution.analysis.anchor}</Blog.Headline>
 					<Blog.Paragraph>{p.solution.analysis.body}</Blog.Paragraph>
 				</Blog.Group>
 				<Gallery.AutoLayout rows={[[imPath(pName, "solution-process-flow")]]} />
@@ -346,7 +346,7 @@ export default function EmotionalMapper() {
 
 			<Blog.Group>
 
-				<Blog.Heading role="H4">{p.solution.tools.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.solution.tools.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.solution.tools.body}</Blog.Paragraph>
 				<Gallery.AutoLayout rows={[[imPath(pName, "software-immediate-mode")]]} />
 
@@ -354,7 +354,7 @@ export default function EmotionalMapper() {
 
 			<Blog.Group>
 
-				<Blog.Heading role="H4">{p.solution.software.headline}</Blog.Heading>
+				<Blog.Headline role="H4">{p.solution.software.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.solution.software.body}</Blog.Paragraph>
 
 
@@ -382,8 +382,8 @@ export default function EmotionalMapper() {
 
 		</Blog.Section>
 
-		<Blog.TradeOffs headline={p.tradeoffs.headline} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
-		<Blog.Outcome headline={p.outcomes.headline} items={p.outcomes.body} />
+		<Blog.TradeOffs headline={p.tradeoffs.anchor} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.Outcome headline={p.outcomes.anchor} items={p.outcomes.body} />
 
 
 

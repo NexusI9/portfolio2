@@ -44,10 +44,11 @@ export default function Sidebar({ content, projects, activeProject }: ISidebar) 
 			</div>
 			<aside className={styles.sidebar} data-open={open}>
 				<div className="flex flex-col gap-(--size-space-medium)">
-					<TableOfContents.Root data={content} maxLevel={2} collapsible onCollapseChange={handleOnCollapseChange}>
+					<TableOfContents.Root data={content} maxLevel={1} collapsible onCollapseChange={handleOnCollapseChange}>
 						<div className="flex flex-row justify-between items-center">
 							<Text.H6>{dico.projects.common.sidebar.table_content}</Text.H6>
 
+							{/* DELETEME
 							<TableOfContents.Trigger action="COLLAPSE_ALL">
 								<Button role={isExpanded ? "PRIMARY" : "DISABLED"}
 									style="GHOST"
@@ -55,7 +56,8 @@ export default function Sidebar({ content, projects, activeProject }: ISidebar) 
 								>
 									<ListChevronsDownUpIcon />
 								</Button>
-							</TableOfContents.Trigger>
+								</TableOfContents.Trigger>
+								*/}
 
 						</div>
 						<div
@@ -68,10 +70,12 @@ export default function Sidebar({ content, projects, activeProject }: ISidebar) 
 					</TableOfContents.Root>
 				</div>
 
+				{/* DELETEME
 				<div className="flex flex-col gap-(--size-space-large)">
 					<Text.H6>{dico.projects.common.sidebar.all_projects}</Text.H6>
 					<ProjectsList projects={projects} activeProject={activeProject} />
-				</div>
+					</div>*/
+				}
 
 			</aside>
 		</>

@@ -4,9 +4,11 @@ import Paragraph from "./paragraph";
 import Section from "./section";
 import TradeOffs from "./tradeoffs";
 import Constraints from "./constraints";
+import Anchor from "./anchor";
 import Heading from "./heading";
 import Group from "./group";
 import TagList from "./taglist";
+import HeadingOverline from "./HeadingOverline";
 
 export const Blog = {
 	TradeOffs,
@@ -15,7 +17,9 @@ export const Blog = {
 	Outcome,
 	Headline,
 	Constraints,
+	Anchor,
 	Heading,
+	HeadingOverline,
 	Group,
 	TagList,
 };

@@ -1,7 +1,8 @@
 {
 	"description": "Figma plugin bolstering productivity by generating and scaling Design Systems in a click",
 	"problem": {
-		"headline": "Problem Statement",
+		"anchor": "Problem Statement",
+		"headline": "Speeding up Design System creation and ensure proper handoff within a cross-functional team?",
 		"body": "While working on freelance project I noticed I was repeatedly doing the same boilerplate for each project and was lacking of a centralized way to actually create, edit and export my design systems for productions. <br/> Many disparate plugins already offer simple basic color scheme generation but they seems very Design Centered and very few actually encompass broader and realistic production scope including:",
 		"list": [
 			"Global hue adjustment to quickly update colors when clients request changes",
@@ -11,7 +12,7 @@
 		]
 	},
 	"constraints": {
-		"headline": "Constraints",
+		"anchor": "Constraints",
 		"body": [
 			"Complement existing Figma features",
 			"Use TypeScript with the Figma Plugin API",
@@ -22,55 +23,63 @@
 		]
 	},
 	"ui_research": {
-		"headline": "UI Research",
+		"anchor": "UI Research",
 		"benchmark": {
-			"headline": "Benchmark",
+			"anchor": "Benchmark",
+			"headline": "Analysing industry standards and existing plugins features",
 			"body": "A benchmark was conducted to evaluate existing mechanics and useful interface patterns, such as expandable folder trees and curve-based color fine-tuning tools."
 		},
 		"layouts": {
-			"headline": "Dual Layout",
+			"anchor": "Dynamic Layout",
+			"headline": "Getting user quickly to core information",
 			"body": "Due to the plugin’s complexity, a particular attention was given to accessibility and clear UI guidance. Two layout modes: minified and extended were established early-on to provide either a quick overview or detailed control, adapting to both font and color objects while keeping the interface consistent."
 		},
 		"swatch": {
-			"headline": "Swatch Generators",
+			"anchor": "Swatch Generators",
+			"headline": "Assessing technical reusability",
 			"body": "Beyond real-time synchronization, another key focus was style creation. The idea was to provide a dedicated “workbench” where users could craft and automatically generate font sets or color swatches. Since Figma plugins run in a constrained space, custom components were designed to stay flexible and support API interactions without cluttering the interface with too many nested dialogs or unnecessary complexity."
 		},
 		"google": {
-			"headline": "Dynamic Shades",
+			"anchor": "Dynamic Shades",
+			"headline": "Offering users flexibility within a constrained space",
 			"body": "While most external system libraries offer automatic palette generation with minimal options beyond a primary color, the Google Design System library provides extensive configuration. This significantly increased the project’s complexity, although the previously designed workbench sidebar was flexible enough to accommodate these dynamic content changes."
 		},
 		"gradient": {
-			"headline": "Gradient Stops",
+			"anchor": "Gradient Stops",
+			"headline": "Compromising complexity within a constrained space",
 			"body": "The gradient generator (“Interpolation”) required special design consideration. Unlike typical tools like Adobe Photoshop or Figma, where gradients are created by adding stops with automatic interpolation, a design system requires explicitly defining how many colors are generated between stops. At the same time, the entire interpolation module had to fit within the sidebar, since adding controls outside the workbench would have exceeded the intended interface boundaries."
 		}
 	},
 	"tech_research": {
-		"headline": "Technical Research",
+		"anchor": "Technical Research",
 		"sync": {
-			"headline": "Synchronization",
-			"body": "A key challenge was establishing synchronization between the application state and the Figma API, enabling live updates so users can immediately see how their actions impact the design system."
+			"anchor": "Synchronization",
+			"headline": "Ensuring 2-way synchronisation between domains",
+			"context": {
+				"anchor": "Redux Store",
+				"body": "A key challenge was establishing synchronization between the application state and the Figma API, enabling live updates so users can immediately see how their actions impact the design system."
+			},
+			"transformer": {
+				"anchor": "Set Transformer",
+				"body": "A dedicated Transformer acts as a buffer layer that converts complex Figma API objects into simplified plugin domain models while preserving their original IDs for synchronization back to Figma."
+			}
 		},
 		"ownership": {
-			"headline": "Ownership Management",
+			"anchor": "Ownership Management",
+			"headline": "Guaranteeing clear data ownership between Figma and the Plugin",
 			"body": "Another challenge was defining ownership and responsibilities between the plugin and Figma itself and specifically how different objects behave and interact within the Figma project."
+		},
+		"library": {
+			"anchor": "Libraries Ecosystem",
+			"headline": "Efficiently leveraging libraries to save development time",
+			"body": "The Radix UI library is combined with custom widgets to accelerate development while supporting plugin-specific modules. Figma colors ensure native consistency and light/dark mode support, while Radix provides ready-made interaction patterns."
 		}
 	},
 	"solution": {
-		"headline": "Solutions",
-		"transformer": {
-			"headline": "Set Transformer",
-			"body": "A dedicated Transformer acts as a buffer layer that converts complex Figma API objects into simplified plugin domain models while preserving their original IDs for synchronization back to Figma."
-		},
-		"library": {
-			"headline": "Libraries Ecosystem",
-			"body": "The Radix UI library is combined with custom widgets to accelerate development while supporting plugin-specific modules. Figma colors ensure native consistency and light/dark mode support, while Radix provides ready-made interaction patterns."
-		},
-		"features": {
-			"headline": "Key Plugin Features"
-		}
+		"anchor": "Final Application"
 	},
 	"tradeoffs": {
-		"headline": "Trade-offs",
+		"anchor": "Trade-offs",
 		"body": [
 			{
 				"heading": [
@@ -131,7 +140,7 @@
 		]
 	},
 	"outcomes": {
-		"headline": "Outcomes & Learning",
+		"anchor": "Outcomes & Learning",
 		"body": [
 			"The plugin has received consistently positive feedback and continues to be improved over time.",
 			"This project highlighted the importance of using a robust technical stack for complex applications. Strongly typed languages with clearly defined interfaces help maintain consistency and structure, whereas JavaScript’s flexibility can sometimes lead to architectural inconsistencies despite its rapid development advantages.",

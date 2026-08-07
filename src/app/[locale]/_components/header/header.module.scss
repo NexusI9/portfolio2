@@ -1,12 +1,23 @@
 @use "@styles/interaction" as interaction;
+@use "@styles/responsive" as responsive;
 @use "@styles/animation";
 
 .header {
   width: 100vw;
-  padding: var(--size-space-extra-large-3) var(--size-margin-desktop) 0
-    var(--size-margin-desktop);
+  margin: 0;
   position: fixed;
   z-index: 4;
+
+  &-inner {
+    max-width: responsive.$default-screen;
+    padding: var(--size-space-extra-large-3) var(--size-margin-desktop) 0
+      var(--size-margin-desktop);
+    margin: auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .mobile-menu {

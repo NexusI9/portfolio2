@@ -1,12 +1,25 @@
 "use client"
-
-import clsx from "clsx";
+import { Text, TextBase } from "@components/text/text";
+import { ComponentPropsWithoutRef, createElement } from "react";
 
 interface IHeadline {
-	children?: React.ReactNode;
+	role?: ComponentPropsWithoutRef<typeof TextBase>["role"];
+	children: string;
 	className?: string;
 }
-
-export default function Headline({ children, className }: IHeadline) {
-	return (<hgroup className={clsx("flex flex-col gap-(--size-space-medium)", className)}>{children}</hgroup>);
+export default function Headline({ role = "H3", children, className }: IHeadline) {
+	//if (role == "H3")
+	//  return (<div className="flex flex-row items-center gap-(--size-space-large)">
+	//	    <Mosaic row={3} column={2} animation="BLINK"/>
+	//		{createElement(Text[role], {
+	//			children,
+	//			id: slugify(children),
+	//		})}
+	//	</div>);
+	return (<>
+		{createElement(Text[role], {
+			children,
+			className,
+		})}
+	</>);
 }

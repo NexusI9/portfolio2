@@ -70,6 +70,15 @@ p {
 }
 
 h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: capitalize;
+}
+
+h1,
 .h1 {
   letter-spacing: var(--font-letter-spacing-heading-1);
   font-size: var(--font-size-heading-1);
@@ -110,6 +119,7 @@ h4,
 .h4 {
   letter-spacing: var(--font-letter-spacing-heading-4);
   font-size: var(--font-size-heading-4);
+  line-height: var(--font-line-height-heading-4);
 
   @include responsive.mobile {
     font-size: var(--font-size-heading-4-mb);
@@ -161,6 +171,7 @@ p {
   }
 
   &.overline {
+    color: var(--color-text-brand-base);
     text-decoration-line: none;
     font-size: var(--font-size-overline);
     letter-spacing: var(--font-letter-spacing-overline);

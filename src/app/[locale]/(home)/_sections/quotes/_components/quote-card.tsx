@@ -23,7 +23,6 @@ export default function QuoteCard({ children, thumbnail, name, position, locatio
 
 			<Text.Body className={styles.body}>{children}</Text.Body>
 			<div className="flex flex-col gap-(--size-space-medium)">
-				<hr />
 				<div className="flex flex-row items-start gap-(--size-space-medium)">
 					<Image className="rounded-full" alt="small avatar picture" width={32} height={32} src={thumbnail} />
 					<div className="flex flex-col">
