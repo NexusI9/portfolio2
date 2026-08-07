@@ -55,8 +55,8 @@
         transition:
           background,
           width,
-          opacity,
-          0.3s ease-out 0.4s;
+          0.3s ease-out 0.4s,
+          opacity 0.1s linear 0.4s;
         width: 0px;
         opacity: 0;
         overflow: hidden;

@@ -6,14 +6,16 @@ import LocaleSelector from "../locale-selector";
 import { useDictionary } from "@/i18n/Context";
 import { CONTACT_INFO } from "../constants";
 import { Signature } from "../_components/signature";
+import { useScrolled } from "../use-scrolled";
 
 
 
 export default function DesktopHeader() {
 
 	const dico = useDictionary();
+	const scrolled = useScrolled(24);
 
-	return (<header className={styles.header} role="menubar">
+	return (<header className={styles.header} role="menubar" data-scrolled={scrolled}>
 		<div className={styles["header-inner"]}>
 			<Signature />
 			<div className="flex flex-row gap-(--size-space-extra-large-3) items-center">

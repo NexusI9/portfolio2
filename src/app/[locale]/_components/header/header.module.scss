@@ -7,16 +7,26 @@
   margin: 0;
   position: fixed;
   z-index: 4;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--transition-short),
+    border-color var(--transition-long);
 
   &-inner {
     max-width: responsive.$default-screen;
-    padding: var(--size-space-extra-large-3) var(--size-margin-desktop) 0
-      var(--size-margin-desktop);
+    padding-inline: var(--size-margin-desktop);
+    padding-top: var(--size-space-extra-large-3);
+    padding-bottom: var(--size-space-extra-large);
     margin: auto;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &[data-scrolled="true"] {
+    background: var(--color-surface-higher);
   }
 }
 
@@ -48,6 +58,18 @@
     padding: var(--size-space-extra-large-2) var(--size-margin-mobile);
     position: relative;
     z-index: 1;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition:
+      background-color var(--transition-long),
+      border-color var(--transition-long);
+  }
+
+  &[data-scrolled="true"] {
+    .mobile-menu-bar {
+      background: var(--color-surface-highest);
+      border-bottom-color: var(--color-border-subtle-on-light);
+    }
   }
 
   &-actions {

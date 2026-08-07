@@ -16,7 +16,7 @@ export default function Intro() {
 		<div className={styles.left}>
 			<TextBase role="H1" style="H3"><b>{dico.home.headlines.uvp}</b></TextBase>
 			<div>
-				<Button size="LARGE" style="GHOST" role="PRIMARY" trailingIcon={<ArrowDownIcon />}>{dico.home["intro-button"]}</Button>
+				<Button size="LARGE" style="GHOST" role="PRIMARY" href="#work" trailingIcon={<ArrowDownIcon />}>{dico.home["intro-button"]}</Button>
 			</div>
 
 		</div>

@@ -41,7 +41,7 @@ export default function ProjectCategoryWrapper() {
 
 	return (
 		<>
-	  <Text.Display className="text-center relative mb-(--size-space-extra-large-4)">
+	  <Text.Display id="work" className="text-center relative mb-(--size-space-extra-large-4) pt-(--size-space-extra-large-7)">
 				{dico.home.headlines.work}
 			</Text.Display>
 			{PROJECT_SECTIONS.map(project => <ProjectCategory key={project.id} {...project} />)}

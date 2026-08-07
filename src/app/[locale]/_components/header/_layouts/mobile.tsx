@@ -11,6 +11,7 @@ import { CONTACT_INFO } from "../constants";
 
 import CaseIcon from "@assets/icons/solid/briefcase.svg"
 import { Signature } from "../_components/signature";
+import { useScrolled } from "../use-scrolled";
 
 export default function MobileHeader() {
 
@@ -18,13 +19,14 @@ export default function MobileHeader() {
 	const dico = useDictionary();
 	const params = useParams();
 	const { locale } = params;
+	const scrolled = useScrolled(24);
 
 	function toggleMenu() {
 		setOpen(!open)
 	}
 
 	return (
-		<header className={styles["mobile-menu"]} data-open={open}>
+		<header className={styles["mobile-menu"]} data-open={open} data-scrolled={scrolled}>
 
 			<div className={styles["mobile-menu-bar"]}>
 
