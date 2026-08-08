@@ -70,6 +70,9 @@
 
     @media (max-width: #{$wrap-breakpoint}) {
       flex-direction: row;
+      & > * {
+        flex-basis: 100%;
+      }
     }
 
     @include responsive.tablet {
