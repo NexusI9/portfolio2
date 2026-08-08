@@ -1,8 +1,38 @@
 {
-	"description": "Awarded short movie depicting a vibrant future inhabiting an uncanny entity",
+	"name": "Animal Chamber Apocalypse Beat",
+	"description": "An award-winning collaborative music video project, reaching a wide audience and gaining editorial recognition",
+	"impact": {
+		"anchor": "Impact",
+		"items": [
+			{
+				"value": "4,800",
+				"suffix": [
+					{
+						"text": "+",
+						"format": "exponent"
+					}
+				],
+				"label": "Views across online platforms"
+			},
+			{
+				"value": "6",
+				"label": "International editorial features"
+			},
+			{
+				"value": "1",
+				"suffix": [
+					{
+						"text": "st",
+						"format": "exponent"
+					}
+				],
+				"label": "Prize at Seize Neuvième Festival"
+			}
+		]
+	},
 	"intention": {
 		"anchor": "Intention",
-	    "body": "Commissioned by French musician Philip Pentacle, I had the pleasure of collaborating on his second EP for the track 'Animal Chamber Apocalypse Beat'. For this project, I challenged myself to explore an art direction I wasn’t familiar with: something more stylized rather than realistic, moving away from the usual physical rendering pipeline. Emerging during lockdown, I used this project as a form of cinematic escapism, which inspired bold and highly saturated aesthetic choices."
+		"body": "Commissioned by French musician Philip Pentacle, I had the pleasure of collaborating on his second EP for the track 'Animal Chamber Apocalypse Beat'. For this project, I challenged myself to explore an art direction I wasn’t familiar with: something more stylized rather than realistic, moving away from the usual physical rendering pipeline. Emerging during lockdown, I used this project as a form of cinematic escapism, which inspired bold and highly saturated aesthetic choices."
 	},
 	"constraints": {
 		"anchor": "Constraints",
@@ -45,7 +75,7 @@
 		},
 		"pachinko": {
 			"anchor": "Enter the Pachinko",
-		    "body": "I randomly discovered the Japanese game Pachinko, which quickly sparked my interest and eventually became a key narrative element in the final animation. I was fascinated by the hybrid nature of the game: a mix of pinball and casual slot mechanics, and by how democratic and publicly accessible Pachinko parlors are, far from the exclusive, closed-door atmosphere of traditional casinos."
+			"body": "I randomly discovered the Japanese game Pachinko, which quickly sparked my interest and eventually became a key narrative element in the final animation. I was fascinated by the hybrid nature of the game: a mix of pinball and casual slot mechanics, and by how democratic and publicly accessible Pachinko parlors are, far from the exclusive, closed-door atmosphere of traditional casinos."
 		}
 	},
 	"production": {

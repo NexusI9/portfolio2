@@ -8,6 +8,7 @@ import Container from "@components/container/container";
 import { TProjectDesciptorFn } from "@/app/[locale]/_types/project";
 import { useDictionary } from "@/i18n/Context";
 import { mapFromDescriptor } from "../../_lib/helper";
+import OtherProjects from "../other-projects/other-projects";
 
 interface ITemplate {
 	children?: React.ReactNode;
@@ -28,6 +29,8 @@ export default function Template({ project, children }: ITemplate) {
 					<Content>{children}</Content>
 					<Sidebar {...sidebar} />
 				</Container>
+
+				<OtherProjects activeProject={project} />
 			</div>
 		</div>
 	</>);

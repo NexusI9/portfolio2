@@ -31,6 +31,7 @@
     }
 
     &.highlight {
+      background: var(--color-background-brand-subtlest);
       &::before {
         width: var(--size-width-border-large);
       }

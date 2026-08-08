@@ -1,5 +1,41 @@
 {
-	"description": "Realtime rendering engine focused on lower-performance hardware, developed in C",
+	"name": "WebGPU 3D Engine",
+	"description": "Enabling new business opportunities with a in-house 3D engine",
+	"impact": {
+		"anchor": "Impact",
+		"items": [
+			{
+				"value": "60",
+				"suffix": [
+					{
+					    "text": "FPS",
+					    "format":"exponent"
+					}
+				],
+				"label": "Stable real-time performance on lower-end devices"
+			},
+			{
+				"value": "87",
+				"suffix": [
+					{
+						"text": "%",
+						"format": "exponent"
+					}
+				],
+				"label": "Improvement on ambient occlusion baking speed"
+			},
+			{
+				"value": "48",
+				"suffix": [
+					{
+						"text": "%",
+						"format": "exponent"
+					}
+				],
+				"label": "Faster mesh loading and initialization"
+			}
+		]
+	},
 	"problem": {
 		"anchor": "Problem Statement",
 		"body": "With the advent of WebGPU, major 3D libraries have started adopting this technology. However, many recent implementations still struggle to run smoothly on older devices. This engine development was therefore part of an R&D initiative aimed at gaining greater autonomy and a deeper understanding of WebGPU capabilities, in order to optimize performance and accessibility for future interactive 3D projects."
@@ -41,7 +77,7 @@
 			},
 			"callback": {
 				"anchor": "Render Callbacks",
-			    "body": "Another feature improving control over the main loop was a callback registration system. A more advanced approach, inspired by Bevy, would use a Scheduler object for greater flexibility, allowing functions to register at start, update, or end, similar to Unity’s MonoBehaviour methods like onUpdate() and onAwake()."
+				"body": "Another feature improving control over the main loop was a callback registration system. A more advanced approach, inspired by Bevy, would use a Scheduler object for greater flexibility, allowing functions to register at start, update, or end, similar to Unity’s MonoBehaviour methods like onUpdate() and onAwake()."
 			},
 			"mbin": {
 				"anchor": "Mesh Loading",

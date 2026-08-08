@@ -67,8 +67,7 @@
 
   &[data-scrolled="true"] {
     .mobile-menu-bar {
-      background: var(--color-surface-highest);
-      border-bottom-color: var(--color-border-subtle-on-light);
+      background: var(--color-surface-higher);
     }
   }
 
@@ -113,6 +112,10 @@
   /* OPEN STATE */
   &[data-open="true"] {
     transform: translateX(0);
+
+    .mobile-menu-bar {
+      background: var(--color-surface-highest);
+    }
 
     .mobile-menu-locale-selector {
       opacity: 1;

@@ -8,6 +8,7 @@ import { IThumbnail } from "@/app/[locale]/_types/project";
 import { TABLET_WIDTH, THUMBNAIL_HEIGHT, THUMBNAIL_WIDTH, THUMBNAIL_WIDTH_WIDE } from "@/app/[locale]/_lib/constants";
 import { useDictionary } from "@/i18n/Context";
 import CornerFrame from "@/app/[locale]/_components/corner-frame/corner-frame";
+import { ComponentPropsWithoutRef } from "react";
 
 interface IProjectCard {
 	headline?: string;
@@ -15,46 +16,53 @@ interface IProjectCard {
 	thumbnail: IThumbnail;
 	alt: string;
 	href: string;
+	size?: "DEFAULT" | "SMALL";
 }
 
-export default function ProjectCard({ headline, subtitle, thumbnail, alt, href }: IProjectCard) {
+export default function ProjectCard({ headline, subtitle, thumbnail, alt, href, size = "DEFAULT" }: IProjectCard) {
+
+	const dico = useDictionary();
+
+	const Name = size === "DEFAULT" ? Text.H5 : Text.Body;
+	const Desc = size === "DEFAULT" ? Text.Subtitle1 : Text.Body2;
 
 	const width = thumbnail.ratio
 		== "DEFAULT" ? THUMBNAIL_WIDTH : THUMBNAIL_WIDTH_WIDE;
 
 	let Picture = <Image src={thumbnail.src} width={width} height={THUMBNAIL_HEIGHT} alt={alt} />;
 
-	const dico = useDictionary();
+	if (size === "SMALL")
+		Picture = <Image src={thumbnail.small || thumbnail.src} width={width} height={THUMBNAIL_HEIGHT} alt={alt} />;
+	else
+		if (thumbnail.small) {
+			const common = { alt, sizes: '100vw' }
+			const {
+				props: { srcSet: desktop },
+			} = getImageProps({
+				...common,
+				width: THUMBNAIL_WIDTH_WIDE,
+				height: THUMBNAIL_HEIGHT,
+				quality: 80,
+				src: thumbnail.src,
+			});
 
-	if (thumbnail.small) {
-		const common = { alt, sizes: '100vw' }
-		const {
-			props: { srcSet: desktop },
-		} = getImageProps({
-			...common,
-			width: THUMBNAIL_WIDTH_WIDE,
-			height: THUMBNAIL_HEIGHT,
-			quality: 80,
-			src: thumbnail.src,
-		});
+			const {
+				props: { srcSet: mobile, ...rest },
+			} = getImageProps({
+				...common,
+				width: THUMBNAIL_WIDTH,
+				height: THUMBNAIL_HEIGHT,
+				quality: 70,
+				src: thumbnail.small,
+			});
 
-		const {
-			props: { srcSet: mobile, ...rest },
-		} = getImageProps({
-			...common,
-			width: THUMBNAIL_WIDTH,
-			height: THUMBNAIL_HEIGHT,
-			quality: 70,
-			src: thumbnail.small,
-		});
-
-		Picture =
-			<picture>
-				<source media={`(min-width: ${TABLET_WIDTH}px)`} srcSet={desktop} />
-				<source media={`(max-width: ${TABLET_WIDTH - 1}px)`} srcSet={mobile} />
-				<img {...rest} style={{ width: '100%', height: '100%', objectFit: "cover" }} />
-			</picture>
-	}
+			Picture =
+				<picture>
+					<source media={`(min-width: ${TABLET_WIDTH}px)`} srcSet={desktop} />
+					<source media={`(max-width: ${TABLET_WIDTH - 1}px)`} srcSet={mobile} />
+					<img {...rest} style={{ width: '100%', height: '100%', objectFit: "cover" }} />
+				</picture>
+		}
 
 	return (
 		<Link
@@ -76,8 +84,8 @@ export default function ProjectCard({ headline, subtitle, thumbnail, alt, href }
 			</div>
 
 			<hgroup className="flex flex-col gap-(--size-space-small)">
-				<Text.H4>{headline}</Text.H4>
-				<Text.Subtitle1>{subtitle}</Text.Subtitle1>
+				<Name>{headline}</Name>
+				<Desc>{subtitle}</Desc>
 			</hgroup>
 		</Link>);
 }

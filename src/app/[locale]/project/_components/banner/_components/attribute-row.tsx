@@ -13,9 +13,9 @@ export default function AttributeRow({ header, value, children }: IAttributeRow)
 
 	return (
 		<li className={styles["attribute-row"]}>
-			<Text.LabelLarge className="text-(--color-text-subtle-on-light)">{header}</Text.LabelLarge>
+	  <Text.Body2 className="uppercase tracking-(--font-letter-spacing-overline) text-(--color-text-subtle-on-light)">{header}</Text.Body2>
 			<div className="flex flex-row gap-x-(--size-space-extra-large-3) gap-y-(--size-space-extra-large) flex-wrap">
-				{value && <Text.Subtitle1>{value}</Text.Subtitle1>}
+				{value && <Text.Body>{value}</Text.Body>}
 				{children}
 			</div>
 		</li>)

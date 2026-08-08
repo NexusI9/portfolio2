@@ -10,6 +10,7 @@ const dictionaryStructure = {
 	projects: {
 		common: "projects/common.json",
 		animal: "projects/animal.json",
+		usability: "projects/usability.json",
 		azusa: "projects/azusa.json",
 		pulse: "projects/pulse.json",
 		stylestudio: "projects/stylestudio.json",

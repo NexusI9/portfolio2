@@ -1,0 +1,23 @@
+@use "@styles/animation";
+@use "@styles/interaction" as interaction;
+@use "@styles/responsive" as responsive;
+
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-space-extra-large-2);
+
+  & > * {
+    flex-basis: 100%;
+  }
+
+  @include responsive.tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive.mobile {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -18,6 +18,7 @@ export default function StyleStudio() {
 
 	return (<Template project={PROJECT_DESCRIPTOR_STYLE_STUDIO}>
 
+		<Blog.Impact headline={p.impact.anchor} items={p.impact.items as any} />
 		<Blog.Section>
 
 			<Blog.Group>
@@ -43,7 +44,7 @@ export default function StyleStudio() {
 
 		</Blog.Section>
 
-		<Blog.Constraints headline={p.constraints.anchor} items={p.constraints.body} />
+		{/* DELETEME <Blog.Constraints headline={p.constraints.anchor} items={p.constraints.body} />*/}
 
 		<Blog.Section>
 

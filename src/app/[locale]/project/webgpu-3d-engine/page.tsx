@@ -16,6 +16,7 @@ export default function WebgpuEngine() {
 
 	return (<Template project={PROJECT_DESCRIPTOR_WEBGPU}>
 
+		<Blog.Impact headline={p.impact.anchor} items={p.impact.items as any} />
 		<Blog.Section>
 
 			<Blog.Group>
@@ -25,7 +26,6 @@ export default function WebgpuEngine() {
 
 		</Blog.Section>
 
-		<Blog.Constraints headline={p.constraints.anchor} items={p.constraints.body} />
 
 		<Blog.Section>
 			<Blog.Headline>{p.exploration.anchor}</Blog.Headline>

@@ -1,5 +1,41 @@
 {
-	"description": "Figma plugin bolstering productivity by generating and scaling Design Systems in a click",
+	"name": "Workflow Acceleration Toolkit",
+	"description": "Boosting cross-functional productivity through workflow automation",
+	"impact": {
+		"anchor": "Impact",
+		"items": [
+			{
+				"value": "2 000",
+				"suffix": [
+					{
+						"text": "+",
+						"format": "exponent"
+					}
+				],
+				"label": "Users reached through the product"
+			},
+			{
+				"value": "60",
+				"suffix": [
+					{
+						"text": "%",
+						"format": "exponent"
+					}
+				],
+				"label": "Faster design system setup and configuration"
+			},
+			{
+				"value": "50",
+				"suffix": [
+					{
+						"text": "%",
+						"format": "exponent"
+					}
+				],
+				"label": "Saved engineering costs through reduced handoff iterations"
+			}
+		]
+	},
 	"problem": {
 		"anchor": "Problem Statement",
 		"headline": "Speeding up Design System creation and ensure proper handoff within a cross-functional team?",

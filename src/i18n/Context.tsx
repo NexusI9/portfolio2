@@ -5,6 +5,7 @@ import projectCommon from "@locales/en/projects/common.json";
 import home from "@locales/en/home.json";
 import animal from "@locales/en/projects/animal.json";
 import azusa from "@locales/en/projects/azusa.json";
+import usability from "@locales/en/projects/usability.json";
 import pulse from "@locales/en/projects/pulse.json";
 import stylestudio from "@locales/en/projects/stylestudio.json";
 import webgpu from "@locales/en/projects/webgpu.json";
@@ -19,6 +20,7 @@ export type Dictionary = {
 		common: typeof projectCommon;
 		animal: typeof animal;
 		azusa: typeof azusa;
+		usability: typeof usability;
 		pulse: typeof pulse;
 		stylestudio: typeof stylestudio;
 		webgpu: typeof webgpu;

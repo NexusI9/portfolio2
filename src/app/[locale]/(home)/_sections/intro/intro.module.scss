@@ -14,7 +14,6 @@
   height: auto;
 
   padding-top: var(--size-space-extra-large-7);
-  padding-bottom: var(--size-space-extra-large-4);
 
   // calculated according to H1 height so the video never get smaller than it and both heights are always even
   @media (max-width: #{$wrap-breakpoint}) {

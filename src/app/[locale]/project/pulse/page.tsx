@@ -20,14 +20,13 @@ export default function EmotionalMapper() {
 
 	return (<Template project={PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER}>
 
+		<Blog.Impact headline={p.impact.anchor} items={p.impact.items as any} />
 		<Blog.Section>
 			<Blog.Group>
 				<Blog.Headline>{p.problem.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.problem.body}</Blog.Paragraph>
 			</Blog.Group>
 		</Blog.Section>
-
-		<Blog.Constraints headline={p.constraints.anchor} items={p.constraints.body} />
 
 		<Blog.Section>
 

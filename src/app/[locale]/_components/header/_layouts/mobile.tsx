@@ -78,7 +78,7 @@ export default function MobileHeader() {
 					</Button>
 
 					{CONTACT_INFO(dico).map(({ icon: Icon, link, label }) =>
-						<Button key={label} size="MEDIUM" role="PRIMARY" style="GHOST" href={link} leadingIcon={<Icon />}>
+						<Button key={label} size="LARGE" role="PRIMARY" style="GHOST" href={link} leadingIcon={<Icon />}>
 							{label}
 						</Button>)}
 				</div>

@@ -1,6 +1,41 @@
 {
-	"name": "Azusa",
-	"description": "Procedural world-building and video game project developed in Unity",
+	"name": "Data-Driven UX Improvement",
+	"description": "Improving website PSI score through accessbility and usability test",
+	"impact": {
+		"anchor": "Impact",
+		"items": [
+			{
+				"value": "99",
+				"label": "PSI performance score"
+			},
+			{
+				"value": "6",
+				"prefix": [
+					{
+						"text": "+",
+						"format": "exponent"
+					}
+				],
+				"suffix": [
+					{
+						"text": "%",
+						"format": "exponent"
+					}
+				],
+				"label": "Accessibility improvement"
+			},
+			{
+				"value": "473",
+				"prefix": [
+					{
+						"text": "+",
+						"format": "exponent"
+					}
+				],
+				"label": "SEO ranking improvement"
+			}
+		]
+	},
 	"intention": {
 		"anchor": "Intention",
 		"body": "Starting as simple sketches, then concept art and drafted scripts in a notebook, Azusa is a long-term world-building project that never reached a final form. The following project explores a variant of Azusa through the lens of technical art and video game design."

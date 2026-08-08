@@ -112,6 +112,7 @@ h3,
   letter-spacing: var(--font-letter-spacing-heading-3);
   font-size: var(--font-size-heading-3);
   font-weight: var(--font-weight-normal);
+  line-height: var(--font-line-height-heading-3);
 
   @include responsive.mobile {
     font-size: var(--font-size-heading-3-mb);

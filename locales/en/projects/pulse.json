@@ -1,5 +1,38 @@
 {
-	"description": "Gamification framework and software to drive and sustain users engagement",
+	"name": "PULSE User Engagement System",
+	"description": "Enabling cross-functional teams to build sustainable user engagement",
+	"impact": {
+		"anchor": "Impact",
+		"items": [
+			{
+				"value": "7",
+				"label": "Projects reused the Design system across multiple products"
+			},
+			{
+				"value": "XX",
+				"suffix": [
+					{
+						"text": "M"
+					},
+					{
+						"text": "+",
+						"format": "exponent"
+					}
+				],
+				"label": "Estimated revenue generated across two phases"
+			},
+			{
+				"value": "30",
+				"suffix": [
+					{
+						"text": "%",
+						"format": "exponent"
+					}
+				],
+				"label": "Faster production time across design and development"
+			}
+		]
+	},
 	"problem": {
 		"anchor": "Problem Statement",
 		"body": "Develop a marketable strategy and actionable solutions to strengthen sustainable engagement, improving employee retention and attracting next-generation talent."

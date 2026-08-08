@@ -2,7 +2,7 @@ import { Dictionary } from "@/i18n/Context";
 import { IProjectDescriptor, TProjectDesciptorFn } from "../../_types/project";
 
 export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dictionary) => ({
-	name: "Style Studio",
+	name: dico.projects.stylestudio.name,
 	description: dico.projects.stylestudio.description,
 	pageName: "style-studio",
 	alt: "Style Studio plugin snapshot displayed on a macbook mockup.",
@@ -21,7 +21,7 @@ export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dicti
 });
 
 export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: Dictionary) => ({
-	name: "PULSE Framework",
+	name: dico.projects.pulse.name,
 	description: dico.projects.pulse.description,
 	pageName: "pulse",
 	alt: "Emotional Mapper software snapshot displayed on a macbook mockup with icons and other UI elements floating out of it.",
@@ -43,11 +43,11 @@ export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: D
 });
 
 export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) => ({
-	name: "Azusa",
+	name: dico.projects.azusa.name,
 	description: dico.projects.azusa.description,
 	pageName: "azusa",
 	alt: "Video game snapshot with 3D characters in front.",
-	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/usability.png" },
+	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/azusa.png" },
 	preview: "/assets/thumbnails/azusa.png",
 	roles: [
 		dico.projects.common.roles.developer,
@@ -65,8 +65,30 @@ export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) 
 	tableContent: dico.projects.azusa,
 });
 
+export const PROJECT_DESCRIPTOR_USABILITY: TProjectDesciptorFn = (dico: Dictionary) => ({
+	name: dico.projects.usability.name,
+	description: dico.projects.usability.description,
+	pageName: "usability",
+	alt: "Video game snapshot with 3D characters in front.",
+	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/usability.png" },
+	preview: "/assets/thumbnails/usability.png",
+	roles: [
+		dico.projects.common.roles.ui_ux_designer,
+		dico.projects.common.roles.developer,
+	],
+	status: "COMPLETE",
+	context: [
+		dico.projects.common.context.client_facing,
+		dico.projects.common.context.prod_ready
+	],
+	stack: ["ADOBE", "FIGMA"],
+	diagram: "/assets/diagrams/azusa.svg",
+	tableContent: dico.projects.usability,
+});
+
+
 export const PROJECT_DESCRIPTOR_WEBGPU: TProjectDesciptorFn = (dico: Dictionary) => ({
-	name: "WebGPU 3D Engine",
+	name: dico.projects.webgpu.name,
 	description: dico.projects.webgpu.description,
 	pageName: "webgpu-3d-engine",
 	alt: "A macbook mockup with a 3D engine interface displayed on the screen.",
@@ -89,7 +111,7 @@ export const PROJECT_DESCRIPTOR_WEBGPU: TProjectDesciptorFn = (dico: Dictionary)
 
 
 export const PROJECT_DESCRIPTOR_ANIMAL: TProjectDesciptorFn = (dico: Dictionary) => ({
-	name: "Animal Chamber Apocalypse Beat",
+	name: dico.projects.animal.name,
 	description: dico.projects.animal.description,
 	pageName: "animal-chamber-apocalypse-beat",
 	alt: "Video snapshots layed out next to 3D characters standing close to one another.",
@@ -115,7 +137,7 @@ export const PROJECT_DESCRIPTOR_ANIMAL: TProjectDesciptorFn = (dico: Dictionary)
 export const PROJECT_DESCRIPTOR_LIST: (dico: Dictionary) => IProjectDescriptor[] = (dico: Dictionary) => [
 	PROJECT_DESCRIPTOR_STYLE_STUDIO(dico),
 	PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER(dico),
-	PROJECT_DESCRIPTOR_AZUSA(dico),
+	PROJECT_DESCRIPTOR_USABILITY(dico),
 	PROJECT_DESCRIPTOR_WEBGPU(dico),
 	PROJECT_DESCRIPTOR_ANIMAL(dico),
 ]

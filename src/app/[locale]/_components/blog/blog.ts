@@ -9,6 +9,7 @@ import Heading from "./heading";
 import Group from "./group";
 import TagList from "./taglist";
 import HeadingOverline from "./HeadingOverline";
+import Impact from "./impact";
 
 export const Blog = {
 	TradeOffs,
@@ -22,4 +23,5 @@ export const Blog = {
 	HeadingOverline,
 	Group,
 	TagList,
+	Impact,
 };

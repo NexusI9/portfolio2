@@ -1,0 +1,69 @@
+@use "@styles/responsive" as responsive;
+
+.impact-cards {
+  $wrap-breakpoint: 1200px;
+
+  --border-left: solid 1px var(--color-border-subtlest-on-light);
+  --padding: var(--size-space-extra-large-3);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  @media (max-width: #{$wrap-breakpoint}) {
+    flex-direction: column;
+    gap: var(--size-space-extra-large-2);
+    --border-left: none;
+    --padding: 0;
+  }
+
+  & > .impact-card {
+    &:not(:first-child) {
+      border-left: var(--border-left);
+      padding-left: var(--padding);
+    }
+
+    &:not(:last-child) {
+      padding-right: var(--padding);
+    }
+  }
+
+  .impact-card {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    gap: var(--size-space-small);
+    flex-basis: 100%;
+    min-width: 200px;
+  }
+
+  .impact-value {
+    display: inline-block;
+  }
+
+  // Shrinks + raises a prefix/suffix, e.g. the "%" in 100% or the "st" in 1st.
+  .impact-affix--exponent {
+    font-size: 0.5em;
+    vertical-align: super;
+    line-height: 0;
+
+    @include responsive.mobile {
+      font-size: 1em;
+      vertical-align: baseline;
+      line-height: auto;
+    }
+  }
+
+  // Shrinks + drops a prefix/suffix, e.g. the "2" in CO2.
+  .impact-affix--subscript {
+    font-size: 0.5em;
+    vertical-align: sub;
+    line-height: 0;
+
+    @include responsive.mobile {
+      font-size: 1em;
+      vertical-align: baseline;
+      line-height: auto;
+    }
+  }
+}

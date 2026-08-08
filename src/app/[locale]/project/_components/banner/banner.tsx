@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef } from "react";
 import Status from "@components/status/status";
 import styles from "./banner.module.scss";
 import Container from "@components/container/container";
-import { Text } from "@components/text/text";
+import { Text, TextBase } from "@components/text/text";
 import AttributeRow from "./_components/attribute-row";
 import Stack from "./_components/stack";
 import Image from "next/image";
@@ -35,8 +35,8 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 				<div className="flex flex-col gap-(--size-space-extra-large-4)">
 					<hgroup>
 						{overline && <Text.Overline className="text-(--color-text-brand-base)">{overline}</Text.Overline>}
-						{headline && <Text.H2>{headline}</Text.H2>}
-						{subtitle && <Text.Subtitle1 className="text-(--color-text-subtle-on-light) mt-(--size-space-small)">{subtitle}</Text.Subtitle1>}
+						{headline && <TextBase role="H1" style="H3">{headline}</TextBase>}
+						{subtitle && <Text.H6 className="text-(--color-text-subtle-on-light) mt-(--size-space-small)">{subtitle}</Text.H6>}
 					</hgroup>
 
 					<ul className="flex flex-col gap-(--size-space-extra-large-2)">

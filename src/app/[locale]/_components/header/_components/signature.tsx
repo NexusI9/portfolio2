@@ -15,7 +15,7 @@ export function Signature() {
 
 	return <Link href={`/${locale}`} className={`${styles.signature} flex flex-row gap-(--size-space-medium)  [:lang(zh-TW)_&]:gap-(--size-space-large) items-center`}>
 		<LogoIcon />
-		<div className="flex flex-col [:lang(en)_&]:gap-(--size-space-small)">
+		<div className="flex flex-col">
 			<Text.LabelMedium>{dico.common.header.name}</Text.LabelMedium>
 			<div className="flex flex-row gap-(--size-space-small) items-center">
 				<Text.Caption>{dico.common.header.subtitle}</Text.Caption>

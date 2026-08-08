@@ -16,16 +16,13 @@ export default function AnimalChamberApocalypseBeat() {
 
 	return (<Template project={PROJECT_DESCRIPTOR_ANIMAL}>
 
-
+		<Blog.Impact headline={p.impact.anchor} items={p.impact.items as any} />
 		<Blog.Section>
 			<Blog.Group>
-				<Blog.Headline>{p.intention.headline}</Blog.Headline>
+				<Blog.Headline>{p.intention.anchor}</Blog.Headline>
 				<Blog.Paragraph>{p.intention.body}</Blog.Paragraph>
 			</Blog.Group>
 		</Blog.Section>
-
-		<Blog.Constraints headline={p.constraints.anchor} items={p.constraints.body} />
-
 
 		<Blog.Section>
 			<Blog.Headline>{p.exploration.anchor}</Blog.Headline>

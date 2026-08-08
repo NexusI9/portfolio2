@@ -2,7 +2,7 @@
 
 import Container from "@components/container/container";
 import { ComponentPropsWithoutRef, useRef } from "react";
-import ProjectCard from "./_components/project-card";
+import ProjectCard from "@components/project-card/project-card";
 import styles from "./project-category.module.scss"
 import clsx from "clsx";
 
