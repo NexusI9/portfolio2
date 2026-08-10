@@ -13,7 +13,7 @@ const dictionaryStructure = {
 		usability: "projects/usability.json",
 		azusa: "projects/azusa.json",
 		pulse: "projects/pulse.json",
-		stylestudio: "projects/stylestudio.json",
+		workflow: "projects/workflow.json",
 		webgpu: "projects/webgpu.json",
 	},
 } as const;

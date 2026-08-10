@@ -10,6 +10,12 @@ import Image from "next/image";
 import { useDictionary } from "@/i18n/Context";
 
 
+export interface IBannerVisual {
+	src?: string;
+	alt?: string;
+	color?: { start: string; end: string; }
+}
+
 interface IBanner {
 
 	overline?: string;
@@ -17,14 +23,16 @@ interface IBanner {
 	subtitle?: string;
 
 	roles?: string[];
+	team?: string[];
 	status?: ComponentPropsWithoutRef<typeof Status>["type"];
 	context?: string[];
 	stack?: Array<ComponentPropsWithoutRef<typeof Stack>["type"]>;
 
-	diagram?: string;
+	visual?: IBannerVisual;
+
 }
 
-export default function Banner({ overline, headline, subtitle, roles, status, context, stack, diagram }: IBanner) {
+export default function Banner({ overline, headline, subtitle, roles, status, context, stack, visual, team }: IBanner) {
 
 	const dico = useDictionary();
 
@@ -32,7 +40,7 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 		<div className={styles["banner-wrapper"]}>
 			<Container className={styles.banner}>
 
-				<div className="flex flex-col gap-(--size-space-extra-large-4)">
+				<div className={styles.content}>
 					<hgroup>
 						{overline && <Text.Overline className="text-(--color-text-brand-base)">{overline}</Text.Overline>}
 						{headline && <TextBase role="H1" style="H3">{headline}</TextBase>}
@@ -40,16 +48,63 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 					</hgroup>
 
 					<ul className="flex flex-col gap-(--size-space-extra-large-2)">
-						{roles && <AttributeRow header={dico.projects.common.attributes.roles} value={roles.join(dico.common.glyphs.separator_comma)} />}
-						{status && <AttributeRow header={dico.projects.common.attributes.status}><Status type={status} /></AttributeRow>}
-						{context && <AttributeRow header={dico.projects.common.attributes.context} value={context.join(dico.common.glyphs.separator_comma)} />}
-						{stack && <AttributeRow header={dico.projects.common.attributes.stack}>{
-							stack.map(item => <Stack key={item} type={item} />)
-						}</AttributeRow>}
+						{
+							roles &&
+							<AttributeRow
+								header={dico.projects.common.attributes.roles}
+								value={roles.join(dico.common.glyphs.separator_comma)}
+							/>
+						}
+
+						{
+							team &&
+							<AttributeRow
+								header={dico.projects.common.attributes.team}
+								value={team.join(dico.common.glyphs.separator_comma)}
+							/>
+						}
+
+						{
+							status &&
+							<AttributeRow
+								header={dico.projects.common.attributes.status}>
+								<Status type={status} />
+							</AttributeRow>
+						}
+
+						{
+							context &&
+							<AttributeRow
+								header={dico.projects.common.attributes.context}
+								value={context.join(dico.common.glyphs.separator_comma)} />
+						}
+
+						{
+							stack &&
+							<AttributeRow
+								header={dico.projects.common.attributes.stack}>
+								{
+									stack.map(item => <Stack key={item} type={item} />)
+								}
+							</AttributeRow>
+						}
 					</ul>
 				</div>
 
-				{/*diagram && <Image src={diagram} className={styles.diagram} alt="Triangular diagram highlighting project key expertises." width={545} height={347} />*/}
+				{visual && visual.src && <div
+					className={styles.visual}
+				>
+					{visual.color && <span
+						className={styles.backdrop}
+					 style={{ backgroundImage: `linear-gradient(${visual.color.start}, ${visual.color.end} 85%, #FFFFFF00 100%)` }} />
+					}
+					<Image
+						src={visual.src}
+						alt={visual.alt || "A macbook mockup with design work displayed on its screen."}
+						width={545}
+						height={347}
+					/>
+				</div>}
 
 			</Container>
 		</div>);

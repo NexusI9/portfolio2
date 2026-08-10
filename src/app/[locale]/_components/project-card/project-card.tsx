@@ -23,7 +23,7 @@ export default function ProjectCard({ headline, subtitle, thumbnail, alt, href, 
 
 	const dico = useDictionary();
 
-	const Name = size === "DEFAULT" ? Text.H5 : Text.Body;
+	const Name = size === "DEFAULT" ? Text.H4 : Text.Body;
 	const Desc = size === "DEFAULT" ? Text.Subtitle1 : Text.Body2;
 
 	const width = thumbnail.ratio

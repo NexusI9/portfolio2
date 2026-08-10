@@ -3,7 +3,7 @@
 @use "@styles/utils" as utils;
 
 :root {
-  --project-banner-height: 550px;
+  --project-banner-height: 580px;
 
   @include responsive.small-screen {
     --project-banner-height: 0px;
@@ -27,8 +27,7 @@
 
 .banner {
   height: var(--project-banner-height);
-  padding-top: 110px;
-  /* display: grid;
+  display: grid;
   grid-template-columns: auto utils.fluid-clamp(
       responsive.$tablet,
       responsive.$default-screen,
@@ -40,11 +39,20 @@
     responsive.$small-screen,
     responsive.$default-screen,
     12px,
-    96px
-  );*/
+    46px
+  );
   position: fixed;
   top: 0;
   text-wrap: pretty;
+
+  @media (min-width: #{responsive.$small-screen}) {
+    padding-right: utils.fluid-clamp(
+      responsive.$small-screen,
+      responsive.$default-screen,
+      4px,
+      100px // var(--size-margin-desktop)
+    );
+  }
 
   @mixin relative-mode() {
     position: relative;
@@ -70,8 +78,31 @@
   }
 }
 
-.diagram {
-  margin-top: var(--size-space-extra-large-3);
+.content {
+  padding-top: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-space-extra-large-3);
+
+  h1 {
+    text-wrap: pretty;
+  }
+}
+
+.visual {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+
+  img {
+    --offset: 136px;
+    transform: translate3d(0px, var(--offset), 0px);
+    position: relative;
+  }
+
+  align-self: end;
 
   @include responsive.small-screen {
     align-self: center;
@@ -79,5 +110,12 @@
 
   @include responsive.tablet {
     align-self: center;
+  }
+
+  .backdrop {
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 100%;
   }
 }

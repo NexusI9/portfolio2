@@ -13,8 +13,8 @@ import TradeOffHeader from "../_components/tradeoff-header/tradeoff-header";
 export default function StyleStudio() {
 
 	const dico = useDictionary();
-	const p = dico.projects.stylestudio;
-	const pName = "stylestudio";
+	const p = dico.projects.usability;
+	const pName = "usability";
 
 	return (<Template project={PROJECT_DESCRIPTOR_STYLE_STUDIO}>
 

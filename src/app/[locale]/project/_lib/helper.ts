@@ -17,9 +17,12 @@ export const mapFromDescriptor: (desc: IProjectDescriptor, dico: Dictionary) =>
 			subtitle: desc.description,
 			roles: desc.roles,
 			status: desc.status,
+			team: desc.team,
 			context: desc.context,
 			stack: desc.stack,
 			diagram: desc.diagram,
+			alt: desc.alt,
+			visual: desc.banner,
 		},
 		sidebar: {
 			content: desc.tableContent,

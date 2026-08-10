@@ -1,6 +1,6 @@
 {
 	"name": "Data-Driven UX Improvement",
-	"description": "Improving website PSI score through accessbility and usability test",
+	"description": "Led the usability process from research to client delivery, improving website performance and accessibility by 48%",
 	"impact": {
 		"anchor": "Impact",
 		"items": [
@@ -36,169 +36,141 @@
 			}
 		]
 	},
-	"intention": {
-		"anchor": "Intention",
-		"body": "Starting as simple sketches, then concept art and drafted scripts in a notebook, Azusa is a long-term world-building project that never reached a final form. The following project explores a variant of Azusa through the lens of technical art and video game design."
+	"problem": {
+		"anchor": "Problem Statement",
+		"headline": "Speeding up Design System creation and ensure proper handoff within a cross-functional team?",
+		"body": "While working on freelance project I noticed I was repeatedly doing the same boilerplate for each project and was lacking of a centralized way to actually create, edit and export my design systems for productions. <br/> Many disparate plugins already offer simple basic color scheme generation but they seems very Design Centered and very few actually encompass broader and realistic production scope including:",
+		"list": [
+			"Global hue adjustment to quickly update colors when clients request changes",
+			"Fine-tune font scales and color values while preserving visual harmony",
+			"Export design tokens in configurable formats (color formats, namespace prefixes, etc.)",
+			"Generate configurable color palettes for brand guidelines or handbook documentation"
+		]
 	},
 	"constraints": {
 		"anchor": "Constraints",
 		"body": [
-			"Create a cohesive game design experience",
-			"Reuse concepts and designs from previous projects",
-			"Deliver visually appealing results within 3–6 months",
-			"Develop Unity prototypes",
-			"Design art direction for low-performance devices"
+			"Complement existing Figma features",
+			"Use TypeScript with the Figma Plugin API",
+			"Fast design and development (~1 month timeline)",
+			"Use modular functions and an Agile approach",
+			"Keep architecture flexible for future Figma API changes",
+			"Maintain adaptable plugin architecture and data structures"
 		]
 	},
-	"exploration": {
-		"anchor": "Exploration",
-		"creative_research": {
-			"anchor": "Creative Research",
-			"early_concepts": {
-				"anchor": "Early Concepts",
-				"body": "Inspired by Gibson’s Sprawl trilogy, Snow Crash, and cyberpunk anthology Mirrorshades, I began developing environments reflecting these worlds, adding original ideas to create a cohesive narrative. A recurring element that intrigued me was the enclave, or spaces where people conduct alternative business, cultivate underground cultures, and form micro-civilizations with shared goals.",
-				"list": [
-					"The Raft in Snow Crash",
-					"Neuromancers’ space spindle Freeside",
-					"Mass Effect’s Citadel",
-					"Star Wars’ Cantinas"
-				]
+	"ui_research": {
+		"anchor": "UI Research",
+		"benchmark": {
+			"anchor": "Benchmark",
+			"headline": "Analysing industry standards and existing plugins features",
+			"body": "A benchmark was conducted to evaluate existing mechanics and useful interface patterns, such as expandable folder trees and curve-based color fine-tuning tools."
+		},
+		"layouts": {
+			"anchor": "Dynamic Layout",
+			"headline": "Getting user quickly to core information",
+			"body": "Due to the plugin’s complexity, a particular attention was given to accessibility and clear UI guidance. Two layout modes: minified and extended were established early-on to provide either a quick overview or detailed control, adapting to both font and color objects while keeping the interface consistent."
+		},
+		"swatch": {
+			"anchor": "Swatch Generators",
+			"headline": "Assessing technical reusability",
+			"body": "Beyond real-time synchronization, another key focus was style creation. The idea was to provide a dedicated “workbench” where users could craft and automatically generate font sets or color swatches. Since Figma plugins run in a constrained space, custom components were designed to stay flexible and support API interactions without cluttering the interface with too many nested dialogs or unnecessary complexity."
+		},
+		"google": {
+			"anchor": "Dynamic Shades",
+			"headline": "Offering users flexibility within a constrained space",
+			"body": "While most external system libraries offer automatic palette generation with minimal options beyond a primary color, the Google Design System library provides extensive configuration. This significantly increased the project’s complexity, although the previously designed workbench sidebar was flexible enough to accommodate these dynamic content changes."
+		},
+		"gradient": {
+			"anchor": "Gradient Stops",
+			"headline": "Compromising complexity within a constrained space",
+			"body": "The gradient generator (“Interpolation”) required special design consideration. Unlike typical tools like Adobe Photoshop or Figma, where gradients are created by adding stops with automatic interpolation, a design system requires explicitly defining how many colors are generated between stops. At the same time, the entire interpolation module had to fit within the sidebar, since adding controls outside the workbench would have exceeded the intended interface boundaries."
+		}
+	},
+	"tech_research": {
+		"anchor": "Technical Research",
+		"sync": {
+			"anchor": "Synchronization",
+			"headline": "Ensuring 2-way synchronisation between domains",
+			"context": {
+				"anchor": "Redux Store",
+				"body": "A key challenge was establishing synchronization between the application state and the Figma API, enabling live updates so users can immediately see how their actions impact the design system."
 			},
-			"satellite": {
-				"anchor": "Satellite Islands",
-				"body": "As an avid countryside and hiking enthusiast, I wanted players to experience exploration and vast landscapes. Since the initial citadel concept limited this, I designed a constellation of nomads and wild islands, awaiting settlers, tribes, and colonies."
-			},
-			"cartography": {
-				"anchor": "Cartographies",
-				"body": "After defining key locations and environment types, I explored the ideological structures governing these worlds. I also created distinct visual contrasts between environments (sprawl vs. nomad islands) so players could intuitively map mechanics."
-			},
-			"character_design": {
-				"anchor": "Character Design",
-				"body": "Due to the project constraint of reusing existing styles and assets, I revisited the design explored in Animal Chamber Apocalypse Beat. While technical and time limits had previously restricted character development, this project allowed me to create character designs balancing authenticity and practicality."
-			},
-			"iconography": {
-				"anchor": "Iconography",
-				"body": [
-					"Once I had a broad idea of the key mechanics, I began designing icons to match them. In terms of style, since a central theme was space tribes and island exploration, I aimed for shapes and concepts rooted in symbolism, archaism, and tribal aesthetics.",
-					"Because icons are often tied to deeper ideas and narratives, creating them early on pushed me to think more carefully about the underlying structures. This process helped clarify several mechanics as well as aspects of the world’s organization."
-				]
-			},
-			"ui": {
-				"anchor": "User Interface",
-				"body": [
-					"For the UI, I aimed for a sci-fi look that still felt friendly and stylized, while keeping it simple enough for low-performance devices. The overall direction combines futuristic elements with playful visual patterns inspired by interfaces like Mahjong pieces or card games."
-				]
+			"transformer": {
+				"anchor": "Set Transformer",
+				"body": "A dedicated Transformer acts as a buffer layer that converts complex Figma API objects into simplified plugin domain models while preserving their original IDs for synchronization back to Figma."
 			}
 		},
-		"procedural_systems": {
-			"anchor": "Procedural Systems",
-			"island": {
-				"anchor": "Island Terrain",
-				"body": "The game features a floating-island building mechanic that allows players to paint and merge island chunks together.",
-				"topology": {
-					"anchor": "Topology Generation",
-					"body": "Topology generation relies on a marching squares approach combined with Delaunay triangulation to seamlessly connect painted areas. The underside of each island is generated using weighted noise displacement"
-				},
-				"texture": {
-					"anchor": "Texture Generation",
-					"body": "The islands texturing is handled through an offscreen rendering pass that generates masks fed into a dedicated shader, allowing the terrain to update dynamically."
-				}
-			},
-			"vegetation": {
-				"anchor": "Vegetation",
-				"body": [
-					"The initial Perlin-based distribution resulted in excessive mesh clumping, so the flora generation was redesigned around a hierarchical jittered grid system.",
-					"Vegetation is divided into three categories based on spatial footprint (large, medium, and small), with elements placed progressively from the largest footprint, such as trees, down to the smallest, such as grass. This approach produces a more balanced and readable distribution."
-				]
-			},
-			"nomad_house": {
-				"anchor": "Nomad Houses",
-				"body": "The nomad house procedural generation relies on a simple radial rule set, where elements are distributed around a central base. To introduce visual variation, UVs are randomly offset along predefined texture patterns on the X axis, allowing multiple appearances from the same asset set."
-			}
+		"ownership": {
+			"anchor": "Ownership Management",
+			"headline": "Guaranteeing clear data ownership between Figma and the Plugin",
+			"body": "Another challenge was defining ownership and responsibilities between the plugin and Figma itself and specifically how different objects behave and interact within the Figma project."
+		},
+		"library": {
+			"anchor": "Libraries Ecosystem",
+			"headline": "Efficiently leveraging libraries to save development time",
+			"body": "The Radix UI library is combined with custom widgets to accelerate development while supporting plugin-specific modules. Figma colors ensure native consistency and light/dark mode support, while Radix provides ready-made interaction patterns."
 		}
 	},
 	"solution": {
-		"anchor": "Solution",
-		"props": {
-			"anchor": "Props Modelling",
-			"body": "Multiple props were modeled and textured to support the game's early functionalities and mechanics. The focus was placed on the assets most necessary for the first experiments. Creating original props rather than relying on downloaded assets also provided an opportunity to explore and better evaluate the project's future art direction."
-		},
-		"scenes": {
-			"anchor": "Game Scenes",
-			"body": "For this first stage, the focus was placed on two core scenes: the island-building system and the character editor. These provided a solid foundation for testing the project's main mechanics and overall direction."
-		}
+		"anchor": "Final Application"
 	},
 	"tradeoffs": {
 		"anchor": "Trade-offs",
 		"body": [
 			{
 				"heading": [
-					"Rapid prototyping in Unity",
-					"Custom engine control"
+					"System-level Control",
+					"Low Learning Curve"
 				],
 				"benefits": [
-					"Reduced engineering overhead",
-					"Existing tooling for gameplay, lighting, and asset integration"
+					"Reduces long-term maintenance cost",
+					"Aligns with brand and design system needs"
 				],
 				"costs": [
-					"Less control over the full rendering pipeline",
-					"Performance and workflow tied to Unity’s abstractions"
+					"Requires onboarding and documentation",
+					"Slower first interaction compared to simple palette tools"
 				]
 			},
 			{
 				"heading": [
-					"Custom Shading",
-					"Native PBR shader"
+					"Complementing Figma",
+					"Owning the Source of Truth"
 				],
 				"benefits": [
-					"Stronger art direction",
-					"Greater agency over vibe"
+					"Easier structure decision following Figma styles",
+					"Lower risk of conflicts with native features"
 				],
 				"costs": [
-					"Lighting Require extra attention",
-					"May lead to visual inconsistency or glitch"
+					"Must adapt to Figma’s constraints and API design",
+					"Requires careful ownership rules (set, map, strict)"
 				]
 			},
 			{
 				"heading": [
-					"Procedural Generation",
-					"Crafted Assets"
+					"Fast Delivery",
+					"Scalable Architecture"
 				],
 				"benefits": [
-					"Faster batch generation",
-					"Nice organic look & feel"
+					"Necessary features shipped in time for an upcoming project",
+					"Clear separation of concerns"
 				],
 				"costs": [
-					"Less control over final result",
-					"May lack of scalability"
+					"Deferred optimizations",
+					"Non-elegant architecture choice"
 				]
 			},
 			{
 				"heading": [
-					"Library based assets",
-					"Full custom sculpting"
+					"Wider Scope",
+					"Reduced Feature Depth"
 				],
 				"benefits": [
-					"Rapid iteration",
-					"More energy for art direction"
+					"Reduced context switching for teams",
+					"Consistent and centralized workflows across styles"
 				],
 				"costs": [
-					"Heavily influence final design",
-					"Reduced uniqueness at the base mesh level"
-				]
-			},
-			{
-				"heading": [
-					"3D animation",
-					"Frame-by-frame animation"
-				],
-				"benefits": [
-					"Reusability of assets",
-					"Better control over timing"
-				],
-				"costs": [
-					"Less organic, more cheap looking",
-					"Reduced hand-crafted feel"
+					"Higher overall system complexity",
+					"Limits each features deeper development to maintain balance"
 				]
 			}
 		]
@@ -206,8 +178,9 @@
 	"outcomes": {
 		"anchor": "Outcomes & Learning",
 		"body": [
-			"It’s not necessarily unproductive to develop a constellation of prototypes or unfinished artworks. While they may seem disconnected at first, they often find resonance with one another over time, eventually becoming valuable foundations for future projects.",
-			"It was important to find a better balance between key project objectives and practical constraints. For instance, while building a custom engine could have been lighter than using Unity, the development overhead and time required to rebuild core features would have far outweighed the actual performance gains."
+			"The plugin has received consistently positive feedback and continues to be improved over time.",
+			"This project highlighted the importance of using a robust technical stack for complex applications. Strongly typed languages with clearly defined interfaces help maintain consistency and structure, whereas JavaScript’s flexibility can sometimes lead to architectural inconsistencies despite its rapid development advantages.",
+			"One key improvement area is the synchronization between the client, the store, and the Figma API. The introduction of asynchronous requests added unexpected complexity, and the overall data flow would benefit from refactoring now that the full lifecycle of the system is better understood."
 		]
 	}
 }

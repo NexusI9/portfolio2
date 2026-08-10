@@ -49,7 +49,7 @@ export default function Stack({ type }: IStack) {
 		"REDUX": { icon: <Redux />, label: "Redux" },
 		"FIGMA": { icon: <Figma />, label: "Figma" },
 		"BLENDER": { icon: <Blender />, label: "Blender" },
-		"ADOBE": { icon: <Adobe />, label: "Adobe Suite" },
+		"ADOBE": { icon: <Adobe />, label: "Adobe Creative Suite" },
 		"C": { icon: <C />, label: "C" },
 		"C++": { icon: <CPlusPlus />, label: "C++" },
 		"C#": { icon: <CSharp />, label: "C#" },

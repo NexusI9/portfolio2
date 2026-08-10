@@ -7,14 +7,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--size-space-extra-large);
+  gap: var(--size-space-large);
 
   &-visual {
     position: relative;
     overflow: hidden;
 
-    & > img,
-    & > picture {
+    img,
+    picture {
       top: 0;
       left: 0;
       object-fit: cover;
@@ -71,9 +71,14 @@
     }
   }
 
+  hgroup {
+    //max-width: 40vw;
+  }
+
   @include interaction.hover {
     .project-card-visual {
-      & > img {
+      img,
+      picture {
         transform: scale3d(1.05, 1.05, 1.05);
       }
 

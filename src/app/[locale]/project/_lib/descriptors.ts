@@ -2,40 +2,54 @@ import { Dictionary } from "@/i18n/Context";
 import { IProjectDescriptor, TProjectDesciptorFn } from "../../_types/project";
 
 export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dictionary) => ({
-	name: dico.projects.stylestudio.name,
-	description: dico.projects.stylestudio.description,
-	pageName: "style-studio",
+	name: dico.projects.workflow.name,
+	description: dico.projects.workflow.description,
+	pageName: "workflow-acceleration-toolkit",
 	alt: "Style Studio plugin snapshot displayed on a macbook mockup.",
-	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/style-studio.png" },
-	preview: "/assets/thumbnails/style-studio.png",
+	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/workflow.png" },
+	preview: "/assets/thumbnails/workflow.png",
+	banner: {
+		src: "/assets/banners/workflow.png",
+		alt: "Style Studio plugin snapshot displayed on a macbook mockup.",
+		color: { start: "#FFFFFF00", end: "#7ABEDC" },
+	},
 	roles: [
 		dico.projects.common.roles.product_owner,
 		dico.projects.common.roles.developer,
 		dico.projects.common.roles.ui_ux_designer
 	],
-	status: "COMPLETE",
-	context: [dico.projects.common.context.prod_ready],
-	stack: ["TYPESCRIPT", "REACT", "REDUX", "FIGMA", "ADOBE"],
+	team: [
+		dico.projects.common.team.design,
+		dico.projects.common.team.engineer,
+		dico.projects.common.team.consultant,
+	],
+	stack: ["TYPESCRIPT", "REACT", "FIGMA", "ADOBE"],
 	diagram: "/assets/diagrams/style-studio.svg",
-	tableContent: dico.projects.stylestudio,
+	tableContent: dico.projects.workflow,
 });
 
 export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: Dictionary) => ({
 	name: dico.projects.pulse.name,
 	description: dico.projects.pulse.description,
-	pageName: "pulse",
+	pageName: "pulse-user-engagement-system",
 	alt: "Emotional Mapper software snapshot displayed on a macbook mockup with icons and other UI elements floating out of it.",
 	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/pulse.png" },
 	preview: "/assets/thumbnails/pulse.png",
+	banner: {
+		src: "/assets/banners/pulse.png",
+		alt: "Emotional Mapper software snapshot displayed on a macbook mockup with icons and other UI elements floating out of it.",
+		color: { start: "#FFFFFF00", end: "#E5B4EE" },
+	},
 	roles: [
 		dico.projects.common.roles.business_strategist,
 		dico.projects.common.roles.developer,
 		dico.projects.common.roles.ui_ux_designer
 	],
-	status: "PROGRESS",
-	context: [
-		dico.projects.common.context.client_facing,
-		dico.projects.common.context.internal_rd
+	team: [
+		dico.projects.common.team.design,
+		dico.projects.common.team.consultant,
+		dico.projects.common.team.analyst,
+		dico.projects.common.team.executive,
 	],
 	stack: ["C", "C++", "WEBGPU", "WASM", "FIGMA", "ADOBE"],
 	diagram: "/assets/diagrams/pulse.svg",
@@ -49,16 +63,16 @@ export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) 
 	alt: "Video game snapshot with 3D characters in front.",
 	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/azusa.png" },
 	preview: "/assets/thumbnails/azusa.png",
+	banner: {
+		src: "/assets/banners/azusa.png",
+		alt: "Video game snapshot with 3D characters in front.",
+		color: { start: "#FFFFFF00", end: "#D493D7" },
+	},
 	roles: [
 		dico.projects.common.roles.developer,
 		dico.projects.common.roles.tech_artist,
 		dico.projects.common.roles.game_designer,
 		dico.projects.common.roles.art_director,
-	],
-	status: "PROGRESS",
-	context: [
-		dico.projects.common.context.expe_proto,
-		dico.projects.common.context.internal_rd
 	],
 	stack: ["C", "C#", "UNITY", "ZBRUSH", "BLENDER", "SUBSTANCE_PAINTER", "ADOBE", "FIGMA"],
 	diagram: "/assets/diagrams/azusa.svg",
@@ -68,20 +82,26 @@ export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) 
 export const PROJECT_DESCRIPTOR_USABILITY: TProjectDesciptorFn = (dico: Dictionary) => ({
 	name: dico.projects.usability.name,
 	description: dico.projects.usability.description,
-	pageName: "usability",
+	pageName: "data-driven-ux-improvement",
 	alt: "Video game snapshot with 3D characters in front.",
 	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/usability.png" },
 	preview: "/assets/thumbnails/usability.png",
+	banner: {
+		src: "/assets/banners/usability.png",
+		alt: "Video game snapshot with 3D characters in front.",
+		color: { start: "#FFFFFF00", end: "#39A59F" },
+	},
 	roles: [
 		dico.projects.common.roles.ui_ux_designer,
 		dico.projects.common.roles.developer,
 	],
-	status: "COMPLETE",
-	context: [
-		dico.projects.common.context.client_facing,
-		dico.projects.common.context.prod_ready
-	],
 	stack: ["ADOBE", "FIGMA"],
+	team: [
+		dico.projects.common.team.design,
+		dico.projects.common.team.analyst,
+		dico.projects.common.team.pm,
+		dico.projects.common.team.executive,
+	],
 	diagram: "/assets/diagrams/azusa.svg",
 	tableContent: dico.projects.usability,
 });
@@ -93,18 +113,22 @@ export const PROJECT_DESCRIPTOR_WEBGPU: TProjectDesciptorFn = (dico: Dictionary)
 	pageName: "webgpu-3d-engine",
 	alt: "A macbook mockup with a 3D engine interface displayed on the screen.",
 	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/webgpu.png" },
-	preview: "/assets/thumbnails/webgpu-engine.png",
+	preview: "/assets/thumbnails/webgpu.png",
+	banner: {
+		src: "/assets/banners/webgpu.png",
+		alt: "A macbook mockup with a 3D engine interface displayed on the screen.",
+		color: { start: "#FFFFFF00", end: "#73C8C7" },
+	},
 	roles: [
 		dico.projects.common.roles.developer,
 		dico.projects.common.roles.ui_ux_designer,
 		dico.projects.common.roles.tech_artist,
 	],
-	status: "PROGRESS",
-	context: [
-		dico.projects.common.context.expe_proto,
-		dico.projects.common.context.internal_rd
+	stack: ["C", "C++", "WEBGPU", "WASM", "BLENDER", "FIGMA"],
+	team: [
+		dico.projects.common.team.design,
+		dico.projects.common.team.engineer,
 	],
-	stack: ["C", "C++", "WEBGPU", "WASM", "BLENDER", "FIGMA", "ADOBE"],
 	diagram: "/assets/diagrams/webgpu.svg",
 	tableContent: dico.projects.webgpu,
 });
@@ -121,13 +145,20 @@ export const PROJECT_DESCRIPTOR_ANIMAL: TProjectDesciptorFn = (dico: Dictionary)
 		small: "/assets/thumbnails/animal-sm.png",
 	},
 	preview: "/assets/thumbnails/animal-sm.png",
+	banner: {
+		src: "/assets/banners/animal.png",
+		alt: "Video snapshots layed out next to 3D characters standing close to one another.",
+		color: { start: "#FFFFFF00", end: "#EEB4CE" },
+	},
 	roles: [
 		dico.projects.common.roles.art_director,
 		dico.projects.common.roles.animator,
 		dico.projects.common.roles.compositor
 	],
-	status: "COMPLETE",
-	context: [dico.projects.common.context.prod_ready],
+	team: [
+		dico.projects.common.team.design,
+		dico.projects.common.team.producer,
+	],
 	stack: ["BLENDER", "ZBRUSH", "ADOBE", "SUBSTANCE_PAINTER"],
 	diagram: "/assets/diagrams/animal.svg",
 	tableContent: dico.projects.animal,

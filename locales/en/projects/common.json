@@ -1,7 +1,15 @@
 {
 	"case_study": "Case Study",
 	"other_projects": "See other projects",
-	"ownership": {}
+	"team": {
+		"design": "Design",
+		"engineer": "Engineer",
+		"consultant": "Consultants",
+		"analyst": "Analysts",
+		"pm": "Project Management",
+		"executive": "Executive",
+		"producer": "Music Production"
+	},
 	"roles": {
 		"business_strategist": "Business Strategist",
 		"developer": "Developer",
@@ -27,6 +35,7 @@
 		"roles": "Roles",
 		"status": "Status",
 		"context": "Context",
+		"team": "Team",
 		"stack": "Stack"
 	},
 	"sidebar": {

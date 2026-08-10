@@ -7,7 +7,7 @@ import animal from "@locales/en/projects/animal.json";
 import azusa from "@locales/en/projects/azusa.json";
 import usability from "@locales/en/projects/usability.json";
 import pulse from "@locales/en/projects/pulse.json";
-import stylestudio from "@locales/en/projects/stylestudio.json";
+import workflow from "@locales/en/projects/workflow.json";
 import webgpu from "@locales/en/projects/webgpu.json";
 
 import { createContext, useContext, ReactNode } from "react";
@@ -22,7 +22,7 @@ export type Dictionary = {
 		azusa: typeof azusa;
 		usability: typeof usability;
 		pulse: typeof pulse;
-		stylestudio: typeof stylestudio;
+		workflow: typeof workflow;
 		webgpu: typeof webgpu;
 	};
 };

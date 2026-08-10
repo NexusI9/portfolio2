@@ -1,15 +1,15 @@
 @use "@styles/var";
 
-.stack{
-    display: flex;
-    flex-direction: row;
-    gap: var(--size-space-medium);
-    align-items: center;
+.stack {
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-space-medium);
+  align-items: center;
 
-    & > span:first-child{
-	width: var(--size-icon-medium);
-	height: auto;
-	aspect-ratio: 1/1;
-	flex-shrink: 0;
-    }
+  & > svg:first-child {
+    width: var(--size-icon-medium);
+    height: auto;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+  }
 }
