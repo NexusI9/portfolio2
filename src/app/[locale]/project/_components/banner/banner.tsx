@@ -24,6 +24,7 @@ interface IBanner {
 
 	roles?: string[];
 	team?: string[];
+	timeline?: string;
 	status?: ComponentPropsWithoutRef<typeof Status>["type"];
 	context?: string[];
 	stack?: Array<ComponentPropsWithoutRef<typeof Stack>["type"]>;
@@ -32,7 +33,7 @@ interface IBanner {
 
 }
 
-export default function Banner({ overline, headline, subtitle, roles, status, context, stack, visual, team }: IBanner) {
+export default function Banner({ overline, headline, subtitle, roles, status, context, stack, visual, team, timeline }: IBanner) {
 
 	const dico = useDictionary();
 
@@ -61,6 +62,14 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 							<AttributeRow
 								header={dico.projects.common.attributes.team}
 								value={team.join(dico.common.glyphs.separator_comma)}
+							/>
+						}
+
+						{
+							timeline &&
+							<AttributeRow
+								header={dico.projects.common.attributes.timeline}
+								value={timeline}
 							/>
 						}
 
@@ -96,7 +105,7 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 				>
 					{visual.color && <span
 						className={styles.backdrop}
-					 style={{ backgroundImage: `linear-gradient(${visual.color.start}, ${visual.color.end} 85%, #FFFFFF00 100%)` }} />
+						style={{ backgroundImage: `linear-gradient(${visual.color.start}, ${visual.color.end} 85%, #FFFFFF00 100%)` }} />
 					}
 					<Image
 						src={visual.src}

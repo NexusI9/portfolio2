@@ -12,16 +12,10 @@ export const mapFromDescriptor: (desc: IProjectDescriptor, dico: Dictionary) =>
 		sidebar: ComponentPropsWithoutRef<typeof Sidebar>
 	} = (desc, dico) => ({
 		banner: {
+			...desc,
 			overline: dico.projects.common.case_study,
 			headline: desc.name,
 			subtitle: desc.description,
-			roles: desc.roles,
-			status: desc.status,
-			team: desc.team,
-			context: desc.context,
-			stack: desc.stack,
-			diagram: desc.diagram,
-			alt: desc.alt,
 			visual: desc.banner,
 		},
 		sidebar: {
@@ -36,3 +30,6 @@ export const projectPath = (name: string, locale: string) => `/${locale}/project
 
 
 export const imPath = (projectName: string, image: string) => `/assets/projects/${projectName}/${image}.png`;
+
+
+export const emptyVisual = { kind: "gallery" as const, rows: [] };

@@ -30,17 +30,17 @@ export default function ProjectCategoryWrapper() {
 				mapProjectFromDescriptor(PROJECT_DESCRIPTOR_WEBGPU(dico), locale as string),
 			]
 		},
-		{
+		/*{
 			id: PROJECT_CATEGORIES_ANCHORS(dico)[2].anchor,
 			projects: [
 				mapProjectFromDescriptor(PROJECT_DESCRIPTOR_ANIMAL(dico), locale as string),
 			]
-		}
+		}*/
 	];
 
 	return (
 		<>
-	  <Text.Display id="work" className="text-center relative mb-(--size-space-extra-large-4) pt-(--size-space-extra-large-7)">
+	  <Text.Display id="work" className="text-center relative mb-(--size-space-extra-large-4) pt-(--size-space-extra-large-6)">
 				{dico.home.headlines.work}
 			</Text.Display>
 			{PROJECT_SECTIONS.map(project => <ProjectCategory key={project.id} {...project} />)}

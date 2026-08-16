@@ -1,6 +1,7 @@
 {
 	"name": "Data-Driven UX Improvement",
 	"description": "Led the usability process from research to client delivery, improving website performance and accessibility by 48%",
+	"timeline": "6 months",
 	"impact": {
 		"anchor": "Impact",
 		"items": [
@@ -13,7 +14,7 @@
 				"prefix": [
 					{
 						"text": "+",
-						"format": "exponent"
+						"format": "default"
 					}
 				],
 				"suffix": [
@@ -29,158 +30,123 @@
 				"prefix": [
 					{
 						"text": "+",
-						"format": "exponent"
+						"format": "default"
 					}
 				],
 				"label": "SEO ranking improvement"
 			}
 		]
 	},
-	"problem": {
-		"anchor": "Problem Statement",
-		"headline": "Speeding up Design System creation and ensure proper handoff within a cross-functional team?",
-		"body": "While working on freelance project I noticed I was repeatedly doing the same boilerplate for each project and was lacking of a centralized way to actually create, edit and export my design systems for productions. <br/> Many disparate plugins already offer simple basic color scheme generation but they seems very Design Centered and very few actually encompass broader and realistic production scope including:",
-		"list": [
-			"Global hue adjustment to quickly update colors when clients request changes",
-			"Fine-tune font scales and color values while preserving visual harmony",
-			"Export design tokens in configurable formats (color formats, namespace prefixes, etc.)",
-			"Generate configurable color palettes for brand guidelines or handbook documentation"
-		]
-	},
-	"constraints": {
-		"anchor": "Constraints",
-		"body": [
-			"Complement existing Figma features",
-			"Use TypeScript with the Figma Plugin API",
-			"Fast design and development (~1 month timeline)",
-			"Use modular functions and an Agile approach",
-			"Keep architecture flexible for future Figma API changes",
-			"Maintain adaptable plugin architecture and data structures"
-		]
-	},
-	"ui_research": {
-		"anchor": "UI Research",
-		"benchmark": {
-			"anchor": "Benchmark",
-			"headline": "Analysing industry standards and existing plugins features",
-			"body": "A benchmark was conducted to evaluate existing mechanics and useful interface patterns, such as expandable folder trees and curve-based color fine-tuning tools."
+	"brief": {
+		"anchor": "Brief",
+		"goal": {
+			"headline": "The client wanted a faster, more accessible site",
+			"body": [
+				"It wasn't that simple: the site wasn't just an e-commerce platform, it was also a hub for scientific articles. The redesign had to balance dense information, reading comfort, and enough visual polish that the client felt the investment was worth it, without breaking the site's original purpose."
+			]
 		},
-		"layouts": {
-			"anchor": "Dynamic Layout",
-			"headline": "Getting user quickly to core information",
-			"body": "Due to the plugin’s complexity, a particular attention was given to accessibility and clear UI guidance. Two layout modes: minified and extended were established early-on to provide either a quick overview or detailed control, adapting to both font and color objects while keeping the interface consistent."
-		},
-		"swatch": {
-			"anchor": "Swatch Generators",
-			"headline": "Assessing technical reusability",
-			"body": "Beyond real-time synchronization, another key focus was style creation. The idea was to provide a dedicated “workbench” where users could craft and automatically generate font sets or color swatches. Since Figma plugins run in a constrained space, custom components were designed to stay flexible and support API interactions without cluttering the interface with too many nested dialogs or unnecessary complexity."
-		},
-		"google": {
-			"anchor": "Dynamic Shades",
-			"headline": "Offering users flexibility within a constrained space",
-			"body": "While most external system libraries offer automatic palette generation with minimal options beyond a primary color, the Google Design System library provides extensive configuration. This significantly increased the project’s complexity, although the previously designed workbench sidebar was flexible enough to accommodate these dynamic content changes."
-		},
-		"gradient": {
-			"anchor": "Gradient Stops",
-			"headline": "Compromising complexity within a constrained space",
-			"body": "The gradient generator (“Interpolation”) required special design consideration. Unlike typical tools like Adobe Photoshop or Figma, where gradients are created by adding stops with automatic interpolation, a design system requires explicitly defining how many colors are generated between stops. At the same time, the entire interpolation module had to fit within the sidebar, since adding controls outside the workbench would have exceeded the intended interface boundaries."
+		"priorities": {
+			"headline": "What did the client actually need to fix first?",
+			"body": [
+				"I collaborated with my manager and the project manager to build a survey sent to 25 employees and executives to surface goals, pain points, competitive positioning, and visual direction.",
+				"Three priorities came out on top:"
+			],
+			"list": [
+				"make purchasing easier",
+				"make article content accessible",
+				"generate more leads"
+			]
 		}
 	},
-	"tech_research": {
-		"anchor": "Technical Research",
-		"sync": {
-			"anchor": "Synchronization",
-			"headline": "Ensuring 2-way synchronisation between domains",
-			"context": {
-				"anchor": "Redux Store",
-				"body": "A key challenge was establishing synchronization between the application state and the Figma API, enabling live updates so users can immediately see how their actions impact the design system."
-			},
-			"transformer": {
-				"anchor": "Set Transformer",
-				"body": "A dedicated Transformer acts as a buffer layer that converts complex Figma API objects into simplified plugin domain models while preserving their original IDs for synchronization back to Figma."
-			}
+	"testing": {
+		"anchor": "Testing",
+		"setup": {
+			"headline": "I built a usability test around those three priorities",
+			"body": [
+				"The client worked in antibody synthesis, a scientific field, so a data-driven approach mattered for getting buy-in from decision makers. I scoped the test around the three priorities: purchase, information sharing, and lead generation, then split it into a task-based stage and a SUS stage to capture both quantitative and qualitative signal.",
+				"Five moderated sessions, enough to surface the majority of core usability issues, gave me completion rate, time on task, error count, click count, navigation style, and subjective satisfaction for each task. I combined those into a weighted efficiency score per task."
+			]
 		},
-		"ownership": {
-			"anchor": "Ownership Management",
-			"headline": "Guaranteeing clear data ownership between Figma and the Plugin",
-			"body": "Another challenge was defining ownership and responsibilities between the plugin and Figma itself and specifically how different objects behave and interact within the Figma project."
-		},
-		"library": {
-			"anchor": "Libraries Ecosystem",
-			"headline": "Efficiently leveraging libraries to save development time",
-			"body": "The Radix UI library is combined with custom widgets to accelerate development while supporting plugin-specific modules. Figma colors ensure native consistency and light/dark mode support, while Radix provides ready-made interaction patterns."
+		"findings": {
+			"headline": "Buying was fine. Everything else wasn't",
+			"body": [
+				"Purchasing was relatively efficient, though click count was higher than it should be. The real problem sat in the secondary goals: article search and lead generation both saw significant abandonment. The SUS results pointed to a site that felt unnecessarily complex to navigate, even though reading quality got positive feedback."
+			]
 		}
 	},
-	"solution": {
-		"anchor": "Final Application"
+	"analysis": {
+		"anchor": "Analysis",
+		"categories": {
+			"headline": "I organized every finding into six categories",
+			"body": [
+				"Qualitative, quantitative, behavioral, technical, user-journey, and accessibility. Each observation, from SUS sentiment to task data to video-based behavior patterns, was paired with a potential design fix."
+			]
+		},
+		"fixes": {
+			"headline": "Every insight had to be paired with an actual design",
+			"body": [
+				"So the impact was undeniable. I filtered the findings down to what mattered most against the client's original priorities, then matched each one to a concrete design change:"
+			],
+			"list": [
+				"Smarter use of space to shorten pages",
+				"Eye-catching sections built specifically for lead generation and contact",
+				"Dynamic content loading on scroll and tabs to speed up initial load",
+				"A sticky side panel to guide navigation toward key sections and products",
+				"Accessibility fixes to color contrast and font sizing, flagged directly against the site's PSI score"
+			],
+			"body2": [
+				"The redesign also extended into a full Design System refresh: new typography, colors, icons, and components."
+			]
+		}
 	},
-	"tradeoffs": {
-		"anchor": "Trade-offs",
-		"body": [
-			{
-				"heading": [
-					"System-level Control",
-					"Low Learning Curve"
-				],
-				"benefits": [
-					"Reduces long-term maintenance cost",
-					"Aligns with brand and design system needs"
-				],
-				"costs": [
-					"Requires onboarding and documentation",
-					"Slower first interaction compared to simple palette tools"
-				]
-			},
-			{
-				"heading": [
-					"Complementing Figma",
-					"Owning the Source of Truth"
-				],
-				"benefits": [
-					"Easier structure decision following Figma styles",
-					"Lower risk of conflicts with native features"
-				],
-				"costs": [
-					"Must adapt to Figma’s constraints and API design",
-					"Requires careful ownership rules (set, map, strict)"
-				]
-			},
-			{
-				"heading": [
-					"Fast Delivery",
-					"Scalable Architecture"
-				],
-				"benefits": [
-					"Necessary features shipped in time for an upcoming project",
-					"Clear separation of concerns"
-				],
-				"costs": [
-					"Deferred optimizations",
-					"Non-elegant architecture choice"
-				]
-			},
-			{
-				"heading": [
-					"Wider Scope",
-					"Reduced Feature Depth"
-				],
-				"benefits": [
-					"Reduced context switching for teams",
-					"Consistent and centralized workflows across styles"
-				],
-				"costs": [
-					"Higher overall system complexity",
-					"Limits each features deeper development to maintain balance"
-				]
-			}
-		]
+	"resolution": {
+		"anchor": "Resolution",
+		"trust": {
+			"headline": "The client didn't trust user sessions as proof",
+			"body": [
+				"So we brought in a score they did trust: the PageSpeed Insights (PSI) report, showing that specific choices like undersized text and weak color contrast weren't just usability issues, they were actively hurting the site's accessibility score. Showing the 90+ score within reach was what finally got their buy-in."
+			]
+		},
+		"feedback": {
+			"headline": "Every round of feedback multiplied into more back-and-forth",
+			"body": [
+				"To answer this, the PM and I decided to give them pieces to build with instead: static snapshots of individual Design System components, buttons, tabs, cards, letting the client assemble the exact layout they had in mind and turning the conversation into specifics instead of abstractions. Revision rounds dropped from 8 to 2."
+			]
+		},
+		"direction": {
+			"headline": "Client wanted to stay classic, but the data said otherwise",
+			"body": [
+				"I proposed two design directions: one brand-forward and bold, one closer to the existing classic, information-dense layout. The client's instinct leaned toward the safer, classic option, but working with the project manager, we made the case for the bolder direction instead, using the audience age data from GA4 to show it was the better fit. They went with it."
+			]
+		}
 	},
-	"outcomes": {
-		"anchor": "Outcomes & Learning",
-		"body": [
-			"The plugin has received consistently positive feedback and continues to be improved over time.",
-			"This project highlighted the importance of using a robust technical stack for complex applications. Strongly typed languages with clearly defined interfaces help maintain consistency and structure, whereas JavaScript’s flexibility can sometimes lead to architectural inconsistencies despite its rapid development advantages.",
-			"One key improvement area is the synchronization between the client, the store, and the Figma API. The introduction of asynchronous requests added unexpected complexity, and the overall data flow would benefit from refactoring now that the full lifecycle of the system is better understood."
-		]
+	"results": {
+		"anchor": "Results",
+		"impact": {
+			"headline": "I selected the four insights most likely to move the needle",
+			"body": [
+				"Not everything made the cut. Out of the full set of findings, I chose the four with the clearest link to the original priorities, the ones that would fix lead generation and resource navigation directly. The client stayed aligned with those priorities throughout, satisfaction was high, and it opened the door to additional phases of work."
+			]
+		}
+	},
+	"learning": {
+		"anchor": "Learning",
+		"next": {
+			"headline": "What I'd do differently",
+			"list": [
+				{
+					"title": "Automate user behavior analysis",
+					"body": "Behavioral data was hand-logged from session recordings. It was accurate, but used three days of work for five users. For future tests, I would provide automated tracking tools so quantitative data come out more quickly and accurately."
+				},
+				{
+					"title": "Challenge decisions that we knew wouldn't grow",
+					"body": "We let the client steer toward a layout that looked right short-term but wasn't scalable, and phase two is now patching around it. Since then, I introduced a version system so future adjustments build on the structure instead of overwriting it."
+				},
+				{
+					"title": "Flag the unproductive feedback pace earlier",
+					"body": "Revisions came in unpredictably, one-off change a day, large batches the next, which harmed the design system's scalability over time. I now set explicit feedback-cadence expectations with the PM upfront."
+				}
+			]
+		}
 	}
 }

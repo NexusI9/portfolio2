@@ -14,6 +14,7 @@
 		"business_strategist": "Business Strategist",
 		"developer": "Developer",
 		"ui_ux_designer": "UI/UX Designer",
+		"threed_designer": "3D Designer",
 		"product_owner": "Product Owner",
 		"tech_artist": "Technical Artist",
 		"game_designer": "Game Designer",
@@ -36,11 +37,15 @@
 		"status": "Status",
 		"context": "Context",
 		"team": "Team",
-		"stack": "Stack"
+		"stack": "Stack",
+		"timeline": "Timeline"
 	},
 	"sidebar": {
 		"table_content": "Table of Content",
 		"collapse_all": "Collapse All",
 		"all_projects": "All projects"
+	},
+	"headline": {
+		"overview": "Overview"
 	}
 }

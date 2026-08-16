@@ -10,6 +10,11 @@ import Group from "./group";
 import TagList from "./taglist";
 import HeadingOverline from "./HeadingOverline";
 import Impact from "./impact";
+import Stats from "./stat";
+import Quote from "./quote";
+import Learning from "./learning";
+import Layout from "./layout";
+
 
 export const Blog = {
 	TradeOffs,
@@ -24,4 +29,8 @@ export const Blog = {
 	Group,
 	TagList,
 	Impact,
+	Stats,
+	Quote,
+	Learning,
+	Layout,
 };

@@ -2,6 +2,7 @@
 
 import { Text, TextBase } from "../text/text";
 import { Blog } from "./blog";
+import { BLOG_HEADLINE_STYLE } from "./constants";
 import styles from "./impact.module.scss";
 
 type AffixFormat = "default" | "exponent" | "subscript";
@@ -11,7 +12,7 @@ interface IImpactAffix {
 	format?: AffixFormat;
 }
 
-interface IImpactItem {
+export interface IImpactItem {
 	value: string;
 	label: string;
 	prefix?: IImpactAffix[];
@@ -56,20 +57,26 @@ function ImpactValue({ value, prefix, suffix }: Omit<IImpactItem, "label">) {
 	);
 }
 
+export function ImpactRow({ items }: Pick<IImpact, "items">) {
+
+	return (<ul className={styles["impact-cards"]}>
+		{items.map((item) => (
+			<li className={styles["impact-card"]} key={item.label}>
+				<ImpactValue {...item} />
+				<Text.Body>{item.label}</Text.Body>
+			</li>
+		))}
+	</ul>);
+
+}
+
 export default function Impact({ headline, items }: IImpact) {
 	return (
 		<Blog.Section>
 
 			<Blog.Group>
-				<Blog.Anchor role="H3" style="H3">{headline}</Blog.Anchor>
-				<ul className={styles["impact-cards"]}>
-					{items.map((item) => (
-						<li className={styles["impact-card"]} key={item.label}>
-							<ImpactValue {...item} />
-							<Text.Body>{item.label}</Text.Body>
-						</li>
-					))}
-				</ul>
+				<Blog.Anchor role="H3" style={BLOG_HEADLINE_STYLE}>{headline}</Blog.Anchor>
+				<ImpactRow items={items} />
 			</Blog.Group>
 		</Blog.Section>
 	);

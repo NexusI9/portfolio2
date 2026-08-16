@@ -4,6 +4,7 @@ import { IProjectDescriptor, TProjectDesciptorFn } from "../../_types/project";
 export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dictionary) => ({
 	name: dico.projects.workflow.name,
 	description: dico.projects.workflow.description,
+	timeline: dico.projects.workflow.timeline,
 	pageName: "workflow-acceleration-toolkit",
 	alt: "Style Studio plugin snapshot displayed on a macbook mockup.",
 	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/workflow.png" },
@@ -31,13 +32,14 @@ export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dicti
 export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: Dictionary) => ({
 	name: dico.projects.pulse.name,
 	description: dico.projects.pulse.description,
-	pageName: "pulse-user-engagement-system",
-	alt: "Emotional Mapper software snapshot displayed on a macbook mockup with icons and other UI elements floating out of it.",
+	timeline: dico.projects.pulse.timeline,
+	pageName: "hr-engagement-platform",
+	alt: "A software snapshot displayed on a monitor with 2 iphones mockup next to it.",
 	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/pulse.png" },
 	preview: "/assets/thumbnails/pulse.png",
 	banner: {
 		src: "/assets/banners/pulse.png",
-		alt: "Emotional Mapper software snapshot displayed on a macbook mockup with icons and other UI elements floating out of it.",
+		alt: "A software snapshot displayed on a monitor with 2 iphones mockup next to it.",
 		color: { start: "#FFFFFF00", end: "#E5B4EE" },
 	},
 	roles: [
@@ -51,7 +53,7 @@ export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: D
 		dico.projects.common.team.analyst,
 		dico.projects.common.team.executive,
 	],
-	stack: ["C", "C++", "WEBGPU", "WASM", "FIGMA", "ADOBE"],
+	stack: ["C", "C++", "WEBGPU", "FIGMA"],
 	diagram: "/assets/diagrams/pulse.svg",
 	tableContent: dico.projects.pulse,
 });
@@ -59,6 +61,7 @@ export const PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER: TProjectDesciptorFn = (dico: D
 export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) => ({
 	name: dico.projects.azusa.name,
 	description: dico.projects.azusa.description,
+	timeline: dico.projects.azusa.timeline,
 	pageName: "azusa",
 	alt: "Video game snapshot with 3D characters in front.",
 	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/azusa.png" },
@@ -82,6 +85,7 @@ export const PROJECT_DESCRIPTOR_AZUSA: TProjectDesciptorFn = (dico: Dictionary) 
 export const PROJECT_DESCRIPTOR_USABILITY: TProjectDesciptorFn = (dico: Dictionary) => ({
 	name: dico.projects.usability.name,
 	description: dico.projects.usability.description,
+	timeline: dico.projects.usability.timeline,
 	pageName: "data-driven-ux-improvement",
 	alt: "Video game snapshot with 3D characters in front.",
 	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/usability.png" },
@@ -95,7 +99,7 @@ export const PROJECT_DESCRIPTOR_USABILITY: TProjectDesciptorFn = (dico: Dictiona
 		dico.projects.common.roles.ui_ux_designer,
 		dico.projects.common.roles.developer,
 	],
-	stack: ["ADOBE", "FIGMA"],
+	stack: ["GA4", "VISUAL_BASIC", "FIGMA"],
 	team: [
 		dico.projects.common.team.design,
 		dico.projects.common.team.analyst,
@@ -110,7 +114,8 @@ export const PROJECT_DESCRIPTOR_USABILITY: TProjectDesciptorFn = (dico: Dictiona
 export const PROJECT_DESCRIPTOR_WEBGPU: TProjectDesciptorFn = (dico: Dictionary) => ({
 	name: dico.projects.webgpu.name,
 	description: dico.projects.webgpu.description,
-	pageName: "webgpu-3d-engine",
+	timeline: dico.projects.webgpu.timeline,
+	pageName: "3d-production-pipeline",
 	alt: "A macbook mockup with a 3D engine interface displayed on the screen.",
 	thumbnail: { ratio: "DEFAULT", src: "/assets/thumbnails/webgpu.png" },
 	preview: "/assets/thumbnails/webgpu.png",
@@ -120,14 +125,14 @@ export const PROJECT_DESCRIPTOR_WEBGPU: TProjectDesciptorFn = (dico: Dictionary)
 		color: { start: "#FFFFFF00", end: "#73C8C7" },
 	},
 	roles: [
+		dico.projects.common.roles.threed_designer,
 		dico.projects.common.roles.developer,
-		dico.projects.common.roles.ui_ux_designer,
-		dico.projects.common.roles.tech_artist,
 	],
-	stack: ["C", "C++", "WEBGPU", "WASM", "BLENDER", "FIGMA"],
+	stack: ["C", "C++", "WEBGPU", "WASM", "BLENDER"],
 	team: [
 		dico.projects.common.team.design,
 		dico.projects.common.team.engineer,
+		dico.projects.common.team.executive,
 	],
 	diagram: "/assets/diagrams/webgpu.svg",
 	tableContent: dico.projects.webgpu,
@@ -137,6 +142,7 @@ export const PROJECT_DESCRIPTOR_WEBGPU: TProjectDesciptorFn = (dico: Dictionary)
 export const PROJECT_DESCRIPTOR_ANIMAL: TProjectDesciptorFn = (dico: Dictionary) => ({
 	name: dico.projects.animal.name,
 	description: dico.projects.animal.description,
+	timeline: dico.projects.animal.timeline,
 	pageName: "animal-chamber-apocalypse-beat",
 	alt: "Video snapshots layed out next to 3D characters standing close to one another.",
 	thumbnail: {
@@ -159,7 +165,7 @@ export const PROJECT_DESCRIPTOR_ANIMAL: TProjectDesciptorFn = (dico: Dictionary)
 		dico.projects.common.team.design,
 		dico.projects.common.team.producer,
 	],
-	stack: ["BLENDER", "ZBRUSH", "ADOBE", "SUBSTANCE_PAINTER"],
+	stack: ["BLENDER", "PYTHON", "ZBRUSH", "ADOBE", "SUBSTANCE_PAINTER"],
 	diagram: "/assets/diagrams/animal.svg",
 	tableContent: dico.projects.animal,
 });
@@ -170,5 +176,5 @@ export const PROJECT_DESCRIPTOR_LIST: (dico: Dictionary) => IProjectDescriptor[]
 	PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER(dico),
 	PROJECT_DESCRIPTOR_USABILITY(dico),
 	PROJECT_DESCRIPTOR_WEBGPU(dico),
-	PROJECT_DESCRIPTOR_ANIMAL(dico),
+	//PROJECT_DESCRIPTOR_ANIMAL(dico),
 ]

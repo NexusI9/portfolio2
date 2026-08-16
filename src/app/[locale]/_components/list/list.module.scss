@@ -1,5 +1,48 @@
 .list {
   list-style: auto;
   padding-left: var(--size-space-extra-large-3);
-  line-height: 1.8rem;
+  line-height: 1.6rem;
+
+  li {
+    margin-bottom: var(--size-space-medium);
+  }
+}
+
+.listItemIcon {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--size-space-medium);
+  list-style: none;
+  margin-left: -1.5em;
+}
+
+.iconReserve {
+  flex-shrink: 0;
+  width: var(--size-icon-small);
+  height: var(--size-icon-small);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.iconSuccess {
+  background: var(--color-background-success-base);
+}
+
+.iconFail {
+  background: var(--color-background-danger-base);
+}
+
+.iconWarning {
+  background: var(--color-background-warning-base);
+}
+
+.icon {
+  color: #fff;
+}
+
+.itemContent {
+  flex: 1;
 }

@@ -18,7 +18,7 @@ export default function DesktopHeader() {
 	return (<header className={styles.header} role="menubar" data-scrolled={scrolled}>
 		<div className={styles["header-inner"]}>
 			<Signature />
-			<div className="flex flex-row gap-(--size-space-extra-large-3) items-center">
+			<div className="flex flex-row gap-(--size-space-extra-large-2) items-center">
 				<Button size="MEDIUM" role="PRIMARY" style="GHOST">
 					<b>{dico.common.header.resume}</b>
 				</Button>

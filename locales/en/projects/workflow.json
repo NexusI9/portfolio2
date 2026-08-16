@@ -1,6 +1,7 @@
 {
 	"name": "Workflow Acceleration Toolkit",
 	"description": "Led the development of a plugin suite, cutting down company's production time by 60%",
+	"timeline": "9 months",
 	"impact": {
 		"anchor": "Impact",
 		"items": [
@@ -36,151 +37,124 @@
 			}
 		]
 	},
-	"problem": {
-		"anchor": "Problem Statement",
-		"headline": "Speeding up Design System creation and ensure proper handoff within a cross-functional team?",
-		"body": "While working on freelance project I noticed I was repeatedly doing the same boilerplate for each project and was lacking of a centralized way to actually create, edit and export my design systems for productions. <br/> Many disparate plugins already offer simple basic color scheme generation but they seems very Design Centered and very few actually encompass broader and realistic production scope including:",
-		"list": [
-			"Global hue adjustment to quickly update colors when clients request changes",
-			"Fine-tune font scales and color values while preserving visual harmony",
-			"Export design tokens in configurable formats (color formats, namespace prefixes, etc.)",
-			"Generate configurable color palettes for brand guidelines or handbook documentation"
-		]
-	},
-	"constraints": {
-		"anchor": "Constraints",
-		"body": [
-			"Complement existing Figma features",
-			"Use TypeScript with the Figma Plugin API",
-			"Fast design and development (~1 month timeline)",
-			"Use modular functions and an Agile approach",
-			"Keep architecture flexible for future Figma API changes",
-			"Maintain adaptable plugin architecture and data structures"
-		]
-	},
-	"ui_research": {
-		"anchor": "UI Research",
-		"benchmark": {
-			"anchor": "Benchmark",
-			"headline": "Analysing industry standards and existing plugins features",
-			"body": "A benchmark was conducted to evaluate existing mechanics and useful interface patterns, such as expandable folder trees and curve-based color fine-tuning tools."
+	"challenge": {
+		"anchor": "Challenge",
+		"pain": {
+			"headline": "Understanding why mid-budget contracts were taking too long to produce",
+			"body": [
+				"The company needed a way to shrink production time, without adding headcount or slowing down quality.",
+				"I sat down with Design, Sales, Development, and PM to find out. Four recurring pain points came up:"
+			],
+			"list": [
+				"Design System colors and typography needed constant manual adjustment",
+				"Navigating prototypes during client presentations was clunky",
+				"Exporting tokens to development had no clear process",
+				"Pulling copy from mockups for the client copywriting doc was fully manual"
+			]
 		},
-		"layouts": {
-			"anchor": "Dynamic Layout",
-			"headline": "Getting user quickly to core information",
-			"body": "Due to the plugin’s complexity, a particular attention was given to accessibility and clear UI guidance. Two layout modes: minified and extended were established early-on to provide either a quick overview or detailed control, adapting to both font and color objects while keeping the interface consistent."
-		},
-		"swatch": {
-			"anchor": "Swatch Generators",
-			"headline": "Assessing technical reusability",
-			"body": "Beyond real-time synchronization, another key focus was style creation. The idea was to provide a dedicated “workbench” where users could craft and automatically generate font sets or color swatches. Since Figma plugins run in a constrained space, custom components were designed to stay flexible and support API interactions without cluttering the interface with too many nested dialogs or unnecessary complexity."
-		},
-		"google": {
-			"anchor": "Dynamic Shades",
-			"headline": "Offering users flexibility within a constrained space",
-			"body": "While most external system libraries offer automatic palette generation with minimal options beyond a primary color, the Google Design System library provides extensive configuration. This significantly increased the project’s complexity, although the previously designed workbench sidebar was flexible enough to accommodate these dynamic content changes."
-		},
-		"gradient": {
-			"anchor": "Gradient Stops",
-			"headline": "Compromising complexity within a constrained space",
-			"body": "The gradient generator (“Interpolation”) required special design consideration. Unlike typical tools like Adobe Photoshop or Figma, where gradients are created by adding stops with automatic interpolation, a design system requires explicitly defining how many colors are generated between stops. At the same time, the entire interpolation module had to fit within the sidebar, since adding controls outside the workbench would have exceeded the intended interface boundaries."
-		}
-	},
-	"tech_research": {
-		"anchor": "Technical Research",
-		"sync": {
-			"anchor": "Synchronization",
-			"headline": "Ensuring 2-way synchronisation between domains",
-			"context": {
-				"anchor": "Redux Store",
-				"body": "A key challenge was establishing synchronization between the application state and the Figma API, enabling live updates so users can immediately see how their actions impact the design system."
-			},
-			"transformer": {
-				"anchor": "Set Transformer",
-				"body": "A dedicated Transformer acts as a buffer layer that converts complex Figma API objects into simplified plugin domain models while preserving their original IDs for synchronization back to Figma."
-			}
-		},
-		"ownership": {
-			"anchor": "Ownership Management",
-			"headline": "Guaranteeing clear data ownership between Figma and the Plugin",
-			"body": "Another challenge was defining ownership and responsibilities between the plugin and Figma itself and specifically how different objects behave and interact within the Figma project."
-		},
-		"library": {
-			"anchor": "Libraries Ecosystem",
-			"headline": "Efficiently leveraging libraries to save development time",
-			"body": "The Radix UI library is combined with custom widgets to accelerate development while supporting plugin-specific modules. Figma colors ensure native consistency and light/dark mode support, while Radix provides ready-made interaction patterns."
+		"source": {
+			"headline": "Every pain point traced back to the same file: Figma",
+			"body": [
+				"Four different problems, one shared source. Figma's plugin system was the obvious lever. The real question was how to structure it."
+			]
 		}
 	},
 	"solution": {
-		"anchor": "Final Application"
+		"anchor": "Solution",
+		"split": {
+			"headline": "I split the fix into three plugins, one per workflow",
+			"body": [
+				"Bundling everything into a single tool would have dumped all the work on designers. Instead, I segmented by need and audience:"
+			],
+			"list": [
+				"Style Studio: token & style management for Design",
+				"Site Mapper: prototype navigation for Design, Sales, and PM",
+				"Text 2 Sheet: copy extraction for PM"
+			]
+		},
+		"tokens": {
+			"headline": "What do designers and developers actually need from tokens?",
+			"body": [
+				"I worked directly with the design team to define core features, then partnered with staff engineers to align token exports with their pipeline. Benchmarking existing design systems and plugins helped the features coexist in one coherent interface."
+			]
+		},
+		"prototype": {
+			"headline": "Consultants didn't want to follow the prototype flow",
+			"body": [
+				"They wanted to jump straight to a specific page, or see only a limited subset of the prototype, not the full click-through. The fix was pretty obvious: auto-generate a sitemap so any exposed page is one click away."
+			]
+		},
+		"copy": {
+			"headline": "Managers required a specific copywriting output",
+			"body": [
+				"The text extractor tool was part of a broader automation system, as a result I worked closely with my manager to shape the CSV output for a downstream internal tool."
+			]
+		}
 	},
-	"tradeoffs": {
-		"anchor": "Trade-offs",
-		"body": [
-			{
-				"heading": [
-					"System-level Control",
-					"Low Learning Curve"
-				],
-				"benefits": [
-					"Reduces long-term maintenance cost",
-					"Aligns with brand and design system needs"
-				],
-				"costs": [
-					"Requires onboarding and documentation",
-					"Slower first interaction compared to simple palette tools"
-				]
-			},
-			{
-				"heading": [
-					"Complementing Figma",
-					"Owning the Source of Truth"
-				],
-				"benefits": [
-					"Easier structure decision following Figma styles",
-					"Lower risk of conflicts with native features"
-				],
-				"costs": [
-					"Must adapt to Figma’s constraints and API design",
-					"Requires careful ownership rules (set, map, strict)"
-				]
-			},
-			{
-				"heading": [
-					"Fast Delivery",
-					"Scalable Architecture"
-				],
-				"benefits": [
-					"Necessary features shipped in time for an upcoming project",
-					"Clear separation of concerns"
-				],
-				"costs": [
-					"Deferred optimizations",
-					"Non-elegant architecture choice"
-				]
-			},
-			{
-				"heading": [
-					"Wider Scope",
-					"Reduced Feature Depth"
-				],
-				"benefits": [
-					"Reduced context switching for teams",
-					"Consistent and centralized workflows across styles"
-				],
-				"costs": [
-					"Higher overall system complexity",
-					"Limits each features deeper development to maintain balance"
-				]
-			}
-		]
+	"resolution": {
+		"anchor": "Resolution",
+		"layout": {
+			"headline": "One layout didn't fit every element",
+			"body": [
+				"Colors worked well shown as swatches, but fonts displayed the same way (i.e. plain boxes), weren't legible enough to adjust with confidence. Switching to a full detail list (real size, letter spacing) fixed that, but made the list cumbersome to browse in the plugin's small window.",
+				"I added two extra layout options for colors and fonts, balancing quick scanning with precise editing. The team's feedback on the new layouts was positive."
+			]
+		},
+		"tagging": {
+			"headline": "Tagging text one layer at a time didn't scale, I proposed a faster flow",
+			"body": [
+				"Text2Sheet's first flow required selecting and marking text layers individually, too slow for real projects. I used the Figma API to auto-extract every text layer on a selected frame at once, adding filters to keep the output manageable. My manager's feedback on the change was positive as it greatly reduced the workload."
+			]
+		},
+		"latency": {
+			"headline": "The first-load latency for bigger project needed to be fixed",
+			"body": [
+				"The plugin ran fine on small files, but slowed to a crawl past 10+ pages. I rebuilt the storage layer to store only node IDs and load each tab's data asynchronously, instead of loading everything upfront. Initial load time dropped from 12 seconds to 89 milliseconds."
+			]
+		}
 	},
-	"outcomes": {
-		"anchor": "Outcomes & Learning",
-		"body": [
-			"The plugin has received consistently positive feedback and continues to be improved over time.",
-			"This project highlighted the importance of using a robust technical stack for complex applications. Strongly typed languages with clearly defined interfaces help maintain consistency and structure, whereas JavaScript’s flexibility can sometimes lead to architectural inconsistencies despite its rapid development advantages.",
-			"One key improvement area is the synchronization between the client, the store, and the Figma API. The introduction of asynchronous requests added unexpected complexity, and the overall data flow would benefit from refactoring now that the full lifecycle of the system is better understood."
-		]
+	"rollout": {
+		"anchor": "Rollout",
+		"phasing": {
+			"headline": "Each plugin shipped in phases, timed to departments urgency",
+			"body": [
+				"As I was the sole developer for this project, features were sequenced across Q1 to Q4 rather than shipped all at once, keeping scope realistic per team."
+			]
+		},
+		"adoption": {
+			"headline": "A tool nobody understands doesn't get adopted",
+			"body": [
+				"I wrote a cross-department source-of-truth doc covering not just the plugins, but Figma best practices in general: comment conventions, client prototype sharing, and more. Live training sessions with each department closed the gap written docs couldn't."
+			]
+		}
+	},
+	"outcome": {
+		"anchor": "Outcome",
+		"results": {
+			"headline": "The toolkit reached 2,000+ users",
+			"body": [
+				"It accelerated Design System adjustments from 1 hour to 20 minutes, made handoff faster by reducing by half the loopback between designer and developers, and community feedback kept improving it after launch like including Figma's sections in the navigation map or supporting manual variables reload."
+			]
+		}
+	},
+	"learning": {
+		"anchor": "Learning",
+		"next": {
+			"headline": "What I'd do differently",
+			"list": [
+				{
+					"title": "Less over-engineering.",
+					"body": "Style Studio used Redux with async thunks for a simple state management, more complexity than the plugin needed. I now default to the simplest state model that works and scale up only when the data proves it's necessary."
+				},
+				{
+					"title": "Giving a greater attention to the adoption strategy.",
+					"body": "Style Studio's token workflow still needs hand-holding for junior designers less familiar with design systems. I set in-app guidance (tips, hints, onboarding) and documentation as next phase priority."
+				},
+				{
+					"title": "Rethinking the pipeline rather than a part of it.",
+					"body": "Text2Sheet fixed extraction, but it still sits inside a multi-tool export chain, which is why some PMs skip it entirely. The next iteration would aim to centralize the export process into one tool."
+				}
+			]
+		}
 	}
 }

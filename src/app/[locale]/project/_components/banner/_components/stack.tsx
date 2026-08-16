@@ -12,6 +12,9 @@ import Wasm from "@assets/logos/wasm.svg";
 import Blender from "@assets/logos/blender.svg";
 import Unity from "@assets/logos/unity.svg";
 import ZBrush from "@assets/logos/zbrush.svg";
+import Python from "@assets/logos/python.svg";
+import Ga4 from "@assets/logos/ga4.svg";
+import VisualBasic from "@assets/logos/visual-basic.svg";
 import SubstancePainter from "@assets/logos/substance-painter.svg";
 
 import styles from "./stack.module.scss";
@@ -31,7 +34,10 @@ type TStack = "TYPESCRIPT"
 	| "WASM"
 	| "UNITY"
 	| "ZBRUSH"
-	| "SUBSTANCE_PAINTER";
+	| "SUBSTANCE_PAINTER"
+	| "VISUAL_BASIC"
+	| "GA4"
+	| "PYTHON";
 
 interface IStack {
 	type: TStack;
@@ -57,6 +63,9 @@ export default function Stack({ type }: IStack) {
 		"WASM": { icon: <Wasm />, label: "WASM" },
 		"UNITY": { icon: <Unity />, label: "Unity" },
 		"ZBRUSH": { icon: <ZBrush />, label: "ZBrush" },
+		"VISUAL_BASIC": { icon: <VisualBasic />, label: "Visual Basic" },
+		"GA4": { icon: <Ga4 />, label: "Google Analytics" },
+		"PYTHON": { icon: <Python />, label: "Python" },
 		"SUBSTANCE_PAINTER": {
 			icon: <SubstancePainter />,
 			label: "Substance Painter",

@@ -53,7 +53,7 @@
     h1 {
       min-width: 500px;
       height: calc(100% / 1.5);
-      text-wrap: pretty;
+      text-wrap: balance;
 
       @media (max-width: #{$wrap-breakpoint}) {
         height: auto;

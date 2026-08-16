@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Raleway } from "next/font/google";
+import { Big_Shoulders, Instrument_Serif, Michroma, Raleway, Smooch_Sans, Syncopate } from "next/font/google";
 import "./_styles/globals.scss";
 import Header from "@components/header/header";
 import Footer from "./_components/footer/footer";
@@ -19,7 +19,7 @@ const fontHeading = Raleway({
 	subsets: ["latin"],
 });
 
-const fontDisplay = Instrument_Serif({
+const fontDisplay = Big_Shoulders({
 	weight: '400',
 	variable: "--font-display",
 	subsets: ["latin"],

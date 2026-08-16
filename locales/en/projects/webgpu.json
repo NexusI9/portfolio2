@@ -1,6 +1,7 @@
 {
-	"name": "WebGPU 3D Engine",
-	"description": "Built an in-house C/C++ 3D engine to explore new service opportunities and expand the company’s 3D capabilities",
+	"name": "3D Production Pipeline",
+	"description": "Developed an internal 3D production pipeline combining a C/C++ WebGPU engine with procedural workflows",
+	"timeline": "8 months",
 	"impact": {
 		"anchor": "Impact",
 		"items": [
@@ -8,21 +9,21 @@
 				"value": "60",
 				"suffix": [
 					{
-					    "text": "FPS",
-					    "format":"exponent"
+						"text": "FPS",
+						"format": "exponent"
 					}
 				],
 				"label": "Stable real-time performance on lower-end devices"
 			},
 			{
-				"value": "87",
+				"value": "4",
 				"suffix": [
 					{
-						"text": "%",
-						"format": "exponent"
+						"text": "x",
+						"format": "default"
 					}
 				],
-				"label": "Improvement on ambient occlusion baking speed"
+				"label": "Faster visual production workflow"
 			},
 			{
 				"value": "48",
@@ -36,184 +37,112 @@
 			}
 		]
 	},
-	"problem": {
-		"anchor": "Problem Statement",
-		"body": "With the advent of WebGPU, major 3D libraries have started adopting this technology. However, many recent implementations still struggle to run smoothly on older devices. This engine development was therefore part of an R&D initiative aimed at gaining greater autonomy and a deeper understanding of WebGPU capabilities, in order to optimize performance and accessibility for future interactive 3D projects."
-	},
-	"constraints": {
-		"anchor": "Constraints",
-		"body": [
-			"Optimize engine for older or low-performance devices",
-			"Enable selectable performance modes for higher-quality renders",
-			"Use C for core engine and native export",
-			"Compile with WASM and Emscripten for web",
-			"Implement PBR graphics: lighting, shadows, reflections, PostFX"
-		]
-	},
-	"exploration": {
-		"anchor": "Exploration",
-		"ui_research": {
-			"anchor": "UI Research",
-			"body": "The engine layout and UX was inspired by Blender, Unity, Godot, and independent projects like Wicked Engine. From the start, runtime dynamic rendering was prioritized for debugging; though UI impact was minimal, the technical footprint was significant. An inspector was included to update object properties live, alongside monitoring and profiling tools to track performance."
+	"opportunity": {
+		"anchor": "Opportunity",
+		"service": {
+			"headline": "Leadership wanted to turn 3D rendering into a real service",
+			"body": [
+				"Until that time, a few renders had been produced here and there, but 3D had never been a central, sellable part of a project. The goal was to make it one, but the challenge was to define what to sell, and how."
+			]
 		},
-		"tech_research": {
-			"anchor": "Technical Research",
-			"dod": {
-				"anchor": "Data Oriented Design",
-				"body": "Prioritizing performance, I chose a DOD cache-friendly structure. Due to limited experience, establishing a fully optimized layout was challenging. To address this, I implemented a Packet System, where packets reorganize data to improve spatial locality, reducing cache misses and pointer chasing."
-			},
-			"material": {
-				"anchor": "Material API",
-				"body": [
-					"Initially, a Material API was implemented to simplify setting native mesh shaders via interface calls, avoiding manual bind group/index guessing.",
-					"However, this added complexity with extra branches and underused alternatives.",
-					"To streamline, render and compute pipelines were standardized, including a PSO with key bind group and binding constants for each shader.",
-					"The shader/material system now supports dynamic buffer, texture, and sampler updates for efficient shader data management."
-				]
-			},
-			"scene_pool": {
-				"anchor": "Scene Pool System",
-				"body": "Initially, all meshes were stored in a static pool and dispatched through the scene pipeline. After standardizing pipelines and adopting a global Resource Manager, the pool became unnecessary. The Resource Manager expanded the mesh pool concept to manage all engine resources globally."
-			},
-			"callback": {
-				"anchor": "Render Callbacks",
-				"body": "Another feature improving control over the main loop was a callback registration system. A more advanced approach, inspired by Bevy, would use a Scheduler object for greater flexibility, allowing functions to register at start, update, or end, similar to Unity’s MonoBehaviour methods like onUpdate() and onAwake()."
-			},
-			"mbin": {
-				"anchor": "Mesh Loading",
-				"body": "I experimented with directly importing small meshes, like gizmos, mapping them to memory without interleaving OBJ or glTF data to improve speed with a custom MBIN (Mesh Binary) format. While this slightly improved load-time for smaller meshes, the trade-off was significantly larger file sizes."
-			},
-			"ambient": {
-				"anchor": "CPU AO Baking",
-				"body": "An initial goal for the engine was to provide runtime performance-friendly tools like light and ambient occlusion baking. However, after implementing the AO baker, it became clear that its UV dependency posed constraints. Without UV tools in the engine, expanding this feature was not meaningful at this stage."
-			},
-			"reflection": {
-				"anchor": "Probe Reflections",
-				"body": "The engine currently supports both planar and probe-based reflections, with resolutions adjustable via the inspector. Currently, resolution is global, but future updates will allow per-probe grid settings. These reflections remain costly and will require further optimization."
-			}
+		"benchmark": {
+			"headline": "I benchmarked the agency's core industry and mined past client requests",
+			"body": [
+				"I had to shape a strategy grounded in real demand rather than an assumed persona.",
+				"I noticed client asked technical requests like 3D exhibits and virtual galleries or custom brand animations. Those insights helped define a two direction strategy."
+			]
 		}
 	},
-	"solution": {
-		"anchor": "Solutions",
-		"ubo": {
-			"anchor": "UBO Queuing",
-			"body": "For performance, each scene uses a dedicated uniform buffer combining mesh model matrices, light data, and view/projection information."
+	"strategy": {
+		"anchor": "Strategy",
+		"paths": {
+			"headline": "I proposed 2 solutions: one pragmatic, one ambitious",
+			"body": [
+				"The pragmatic path was a 3D module library: fast to build, easy to scale with procedural tools like Blender's Geometry Nodes, ready for static and animated renders in the short term.",
+				"The ambitious path was a web-based 3D engine: a longer-term, secondary priority that matched past client requests like virtual tours and 3D galleries, with real upside if built right. This project was explicitly framed as R&D rather than a near-term commercial deliverable."
+			]
 		},
-		"segmentation": {
-			"anchor": "Domains Segmentation",
-			"systems": {
-				"anchor": "Systems as Cross-Domain Orchestrator",
-				"body": "To prevent circular references, 'god objects,' and maintain structure, I designed systems as cross-domain crossroads. This preserves data integrity and centralizes complex or risky operations."
-			},
-			"core_split": {
-				"anchor": "Core & Editor Partitioning",
-				"body": "The engine separates its core from the editor: the core uses C, while the editor relies on C++ UI libraries. This approach ensures better performance control."
-			}
+		"focus": {
+			"headline": "84% of the agency's clients were in semiconductors",
+			"body": [
+				"So that's where the library started. I analyzed the agency's client base and built the model set around that industry, layering in recurring patterns and elements pulled from paid stock libraries to round out a complete ecosystem of models and effects."
+			]
 		},
-		"batch": {
-			"anchor": "Batch Pipeline Rendering",
-			"hash": {
-				"anchor": "Pipeline Hashing",
-				"body": "The engine hashes predefined pipelines based on their render attributes and role-specific flags, such as shadow mapping or reflections. This system makes it easier to retrieve pipelines by render state or execution order."
-			},
-			"organize": {
-				"anchor": "Object Sorting",
-				"body": "The renderer then sort each scene objects by pipelines to batch render them. Which proved to significantly improve the runtime performance."
-			}
-		},
-		"cold_hot": {
-			"anchor": "Branch-Free Hot Loop Strategy",
-			"semantic": {
-				"anchor": "Functions semantic",
-				"body": "To improve performance and avoid branching in hot loops, I adopted a clear cold/hot path function semantic where naming reflects call frequency. Initialization functions are designed to run only a few times and may include more conditional logic, while update and draw functions are optimized for linear, array-based processing with minimal last-minute decisions."
-			},
-			"process": {
-				"anchor": "Channel-Based Control Flow",
-				"body": "To ensure a smooth transition from initialization to continuous processing, I used a register pattern. Cold functions (init, loading) handle conditions and configuration, then register objects into dedicated channels so they can be processed contiguously during hot-path execution."
-			}
-		},
-		"resource_manager": {
-			"anchor": "Resource Manager",
-			"body": "A resource manager handles the lifecycle of engine entities, improving control and profiling of resource usage and system capacity. It works alongside a global registry for ID indexing. Since WebGPU opaque pointers cannot store pool identifiers, a hash table maps generated pointers to their corresponding pool indices."
-		},
-		"dynamic_rendering": {
-			"anchor": "Runtime Dynamic Rendering",
-			"body": "Since a key feature was runtime dynamic render modes (bounding box, wireframe, solid, textured), each mesh supports specific render modes. Therefore, every mesh includes predefined shaders and vertex topologies to enable these variations.",
-			"topology": {
-				"anchor": "Mesh Topology Flow",
-				"body": "The engine uses a topology system to generate wireframe and bounding box meshes derived from the base mesh. For faster dynamic updates, it relies on hash-based indexing to efficiently regenerate derived topologies when the base topology changes."
-			}
-		},
-		"ui_presentation": {
-			"anchor": "UI Presentation"
+		"flexibility": {
+			"headline": "The library had to offer flexibility & technical accuracy",
+			"body": [
+				"Clients care about details like pin count and component type, so I structured the library atomically, the same logic behind web design systems, keeping every element configurable per client. Procedural systems, from PCB generation to abstract pattern generation, kept every render exclusive and fast to produce."
+			]
 		}
 	},
-	"tradeoffs": {
-		"anchor": "Trade-offs",
-		"body": [
-			{
-				"heading": [
-					"Performance on low-end devices",
-					"Feature completeness"
-				],
-				"benefits": [
-					"Stable frame rate on low-end hardware",
-					"Better understanding of WebGPU bottlenecks"
-				],
-				"costs": [
-					"Reduced visual fidelity compared to high-end engines",
-					"Limited advanced effects"
-				]
-			},
-			{
-				"heading": [
-					"Data-Oriented Design",
-					"Development complexity"
-				],
-				"benefits": [
-					"Reduced cache misses",
-					"Clear separation between hot and cold paths"
-				],
-				"costs": [
-					"Lower readability compared to OOP",
-					"Refactoring cost when data layout assumptions were wrong"
-				]
-			},
-			{
-				"heading": [
-					"Centralized Resource Manager",
-					"Local ownership simplicity"
-				],
-				"benefits": [
-					"Better profiling and memory tracking",
-					"Unified lifetime and ID management"
-				],
-				"costs": [
-					"More complex mental model",
-					"Harder Ownership Control"
-				]
-			},
-			{
-				"heading": [
-					"ECS architecture",
-					"OOP"
-				],
-				"benefits": [
-					"Easy to test systems independently",
-					"Scales well as engine grows"
-				],
-				"costs": [
-					"Harder to debug execution flow",
-					"Requires strong discipline in system design"
-				]
-			}
-		]
+	"architecture": {
+		"anchor": "Architecture",
+		"performance": {
+			"headline": "Clients worried existing 3D demos were too heavy",
+			"body": [
+				"Three.js and Babylon.js demos in particular raised concerns about losing part of the audience to performance issues. That fear shaped the core goal: performance over photorealism.",
+				"I chose C and WebGPU for the engine's core, for tighter memory control, compiled to WASM for the web."
+			]
+		},
+		"split": {
+			"headline": "Core and UI were split for performance vs productivity",
+			"body": [
+				"The core had to be optimised for performance, as a result I used a DOD (Data-Oriented Design) approach with an ECS (Entity Component System) architecture to optimize computation speed.",
+				"The UI, only used during development, used C++ and an object-oriented approach instead, trading some performance for faster iteration and access to libraries like imGui."
+			]
+		}
 	},
-	"outcomes": {
-		"anchor": "Outcomes & Learning",
-		"body": [
-			"Data-Oriented Design granularity is challenging; depending on call frequency (hot vs cold paths), readability may be traded for cache-friendly structures over traditional OOP patterns.",
-			"API design is a discipline of its own; I sometimes focused too much on low-level technical complexity rather than overall API usability."
-		]
+	"resolution": {
+		"anchor": "Resolution",
+		"branding": {
+			"headline": "Client didn't see any added value in the renders",
+			"body": [
+				"Early feedback was blunt: clients didn't see why a generic render was worth more than a stock image. I built a guideline to anchor each client's actual branding into the render meaningfully, turning it into something a stock library could never produce.",
+				"The approach landed, one of the two pitched clients approved the direction on the spot."
+			]
+		},
+		"speed": {
+			"headline": "The 3D engine felt slow",
+			"body": [
+				"I hunted the bottlenecks down one by one: batching mesh rendering by pipeline, retuning the core PBR shader, and exposing more control over MSAA and post-fx.",
+				"The result: a stable 60fps even on a ten-year-old MacBook Pro on a basic scene with shadow mapping sun light."
+			]
+		},
+		"profiling": {
+			"headline": "Bottlenecks had to be tracked",
+			"body": [
+				"To better profile the whole project, runtime debug tools were added such as live render-mode switching (boundbox, wireframe, solid, texture), a per-pass latency profiler, and a logging console were built in."
+			]
+		}
+	},
+	"outcome": {
+		"anchor": "Outcome",
+		"impact": {
+			"headline": "The library paid for itself. The engine paid in knowledge",
+			"body": [
+				"The 3D module library was reused across multiple projects for key visuals, brand refreshes, and infographics, cutting production time by 4 and driving contract renewals through strong client feedback.",
+				"The engine is still in development and currently deprioritized, but it produced WebGPU expertise that's ready to apply with Three.js when the opportunity comes up."
+			]
+		}
+	},
+	"learning": {
+		"anchor": "Learning",
+		"next": {
+			"headline": "What I'd do differently",
+			"list": [
+				{
+					"title": "Narrow efforts on 1 efficient solution rather than 2.",
+					"body": "The library saved real time but adoption stayed narrow (3 key visuals and 1 infographic). I wish to develop a strategy as to increase its adoption and use it as a mean to shape the brand's whole 3D direction."
+				},
+				{
+					"title": "Better assessing technical workload for greater result.",
+					"body": "The WebGPU engine was correctly framed as R&D from the start, which contained the risk, but I still underestimated the build time versus using existing libraries. I now reconsider more closely existing solution vs reinventing the wheel in R&D."
+				},
+				{
+					"title": "Scale the solution to make it available for other creatives.",
+					"body": "I'm still the only designer with the 3D skill to use the library, which caps its reach. The next step would be exporting pre-rendered assets so the rest of the design team can use it without touching the 3D pipeline."
+				}
+			]
+		}
 	}
 }
