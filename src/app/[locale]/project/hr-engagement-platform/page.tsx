@@ -92,6 +92,14 @@ export default function EmotionalMapper() {
 			visual={emptyVisual}
 		/>
 
+		<Blog.Layout
+			variant="TEXT_RIGHT_GALLERY_LEFT"
+			headline={p.resolution.demo.headline}
+			body={p.resolution.demo.body}
+			visual={emptyVisual}
+		/>
+
+
 		{/* --- Features --- */}
 		<Blog.Layout
 			variant="TEXT_TOP_GALLERY_BOTTOM"
@@ -107,14 +115,6 @@ export default function EmotionalMapper() {
 			visual={emptyVisual}
 		/>
 
-		{/* --- Prototype --- */}
-		<Blog.Layout
-			variant="TEXT_RIGHT_GALLERY_LEFT"
-			anchor={p.prototype.anchor}
-			headline={p.prototype.demo.headline}
-			body={p.prototype.demo.body}
-			visual={emptyVisual}
-		/>
 
 		{/* --- Design System --- */}
 		<Blog.Layout

@@ -52,9 +52,43 @@
 				"Three priorities came out on top:"
 			],
 			"list": [
-				"make purchasing easier",
-				"make article content accessible",
-				"generate more leads"
+				"Make purchasing easier",
+				"Make article content accessible",
+				"Generate more leads"
+			],
+			"stat": [
+				[
+					{
+						"value": "94",
+						"suffix": [
+							{
+								"text": "%",
+								"format": "exponent"
+							}
+						],
+						"label": "Of top management put purchase as first action priority"
+					},
+					{
+						"value": "1",
+						"suffix": [
+							{
+								"text": "st",
+								"format": "exponent"
+							}
+						],
+						"label": "Employee usage is browsing scientific resources"
+					},
+					{
+						"value": "66",
+						"suffix": [
+							{
+								"text": "%",
+								"format": "exponent"
+							}
+						],
+						"label": "Of respondents have struggle navigate the website"
+					}
+				]
 			]
 		}
 	},
@@ -71,6 +105,40 @@
 			"headline": "Buying was fine. Everything else wasn't",
 			"body": [
 				"Purchasing was relatively efficient, though click count was higher than it should be. The real problem sat in the secondary goals: article search and lead generation both saw significant abandonment. The SUS results pointed to a site that felt unnecessarily complex to navigate, even though reading quality got positive feedback."
+			],
+			"stat": [
+				[
+					{
+						"value": "100",
+						"suffix": [
+							{
+								"text": "%",
+								"format": "exponent"
+							}
+						],
+						"label": "Of users found the right product"
+					},
+					{
+						"value": "3",
+						"suffix": [
+							{
+								"text": "min",
+								"format": "default"
+							}
+						],
+						"label": "Spent per tasks in average"
+					},
+					{
+						"value": "40",
+						"suffix": [
+							{
+								"text": "%",
+								"format": "exponent"
+							}
+						],
+						"label": "Of users were unable to send an inquiry"
+					}
+				]
 			]
 		}
 	},
@@ -135,16 +203,22 @@
 			"headline": "What I'd do differently",
 			"list": [
 				{
-					"title": "Automate user behavior analysis",
-					"body": "Behavioral data was hand-logged from session recordings. It was accurate, but used three days of work for five users. For future tests, I would provide automated tracking tools so quantitative data come out more quickly and accurately."
+					"icon": "cog",
+					"headline": "Automate user behavior analysis",
+					"challenge": "Behavioral data was hand-logged from session recordings. It was accurate, but used three days of work for five users.",
+					"outcome": "For future tests, I would provide automated tracking tools so quantitative data come out more quickly and accurately."
 				},
 				{
-					"title": "Challenge decisions that we knew wouldn't grow",
-					"body": "We let the client steer toward a layout that looked right short-term but wasn't scalable, and phase two is now patching around it. Since then, I introduced a version system so future adjustments build on the structure instead of overwriting it."
+					"icon": "shield-alert",
+					"headline": "Challenge decisions that we knew wouldn't grow",
+					"challenge": "We let the client steer toward a layout that looked right short-term but wasn't scalable, and phase two is now patching around it.",
+					"outcome": "Since then, I introduced a version system so future adjustments build on the structure instead of overwriting it."
 				},
 				{
-					"title": "Flag the unproductive feedback pace earlier",
-					"body": "Revisions came in unpredictably, one-off change a day, large batches the next, which harmed the design system's scalability over time. I now set explicit feedback-cadence expectations with the PM upfront."
+					"icon": "flag-triangle-right",
+					"headline": "Flag the unproductive feedback pace earlier",
+					"challenge": "Revisions came in unpredictably, one-off change a day, large batches the next, which harmed the design system's scalability over time.",
+					"outcome": "I now set explicit feedback-cadence expectations with the PM upfront."
 				}
 			]
 		}

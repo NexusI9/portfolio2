@@ -1,6 +1,6 @@
 {
 	"name": "3D Production Pipeline",
-	"description": "Developed an internal 3D production pipeline combining a C/C++ WebGPU engine with procedural workflows",
+	"description": "Developed an internal 3D production pipeline combining a C/C++ 3D engine with procedural workflows",
 	"timeline": "8 months",
 	"impact": {
 		"anchor": "Impact",
@@ -49,7 +49,29 @@
 			"headline": "I benchmarked the agency's core industry and mined past client requests",
 			"body": [
 				"I had to shape a strategy grounded in real demand rather than an assumed persona.",
-				"I noticed client asked technical requests like 3D exhibits and virtual galleries or custom brand animations. Those insights helped define a two direction strategy."
+				"I noticed client asked technical requests like 3D exhibits and virtual galleries or custom brand animations. Those insights helped narrow down the possible services to be provided."
+			],
+			"stat": [
+				[
+					{
+						"value": "84",
+						"suffix": [
+							{
+								"text": "%",
+								"format": "exponent"
+							}
+						],
+						"label": "Of the agency's clients were in semiconductors"
+					},
+					{
+						"value": "3",
+						"label": "Clients asked for 3D enabled digital experience over the year"
+					},
+					{
+						"value": "2",
+						"label": "Major competitors already provided 3D related services"
+					}
+				]
 			]
 		}
 	},
@@ -72,7 +94,11 @@
 			"headline": "The library had to offer flexibility & technical accuracy",
 			"body": [
 				"Clients care about details like pin count and component type, so I structured the library atomically, the same logic behind web design systems, keeping every element configurable per client. Procedural systems, from PCB generation to abstract pattern generation, kept every render exclusive and fast to produce."
-			]
+			],
+			"quote": {
+				"quote": "The PCB shape isn't exactly like our product, also the number of pins is not right either",
+				"author": "Client"
+			}
 		}
 	},
 	"architecture": {
@@ -106,6 +132,64 @@
 			"body": [
 				"I hunted the bottlenecks down one by one: batching mesh rendering by pipeline, retuning the core PBR shader, and exposing more control over MSAA and post-fx.",
 				"The result: a stable 60fps even on a ten-year-old MacBook Pro on a basic scene with shadow mapping sun light."
+			],
+			"stat": [
+				[
+					{
+						"value": "48",
+						"suffix": [
+							{
+								"text": "%",
+								"format": "exponent"
+							}
+						],
+						"label": "Faster mesh loading and initialization"
+					},
+					{
+						"value": "87",
+						"suffix": [
+							{
+								"text": "%",
+								"format": "exponent"
+							}
+						],
+						"label": "Speed improvement on ambient occlusion baking"
+					}
+				],
+				[
+					{
+						"value": "30",
+						"prefix": [
+							{
+								"text": "+",
+								"format": "default"
+							}
+						],
+						"suffix": [
+							{
+								"text": " FPS",
+								"format": "exponent"
+							}
+						],
+						"label": "After sharing global memory buffer (UBO)"
+					},
+					{
+						"value": "4",
+						"prefix": [
+							{
+								"text": "+",
+								"format": "default"
+							}
+						],
+						"suffix": [
+							{
+								"text": " FPS",
+								"format": "exponent"
+							}
+						],
+						"label": "After batch rendering meshes per pipeline"
+					}
+				]
 			]
 		},
 		"profiling": {
@@ -131,16 +215,22 @@
 			"headline": "What I'd do differently",
 			"list": [
 				{
-					"title": "Narrow efforts on 1 efficient solution rather than 2.",
-					"body": "The library saved real time but adoption stayed narrow (3 key visuals and 1 infographic). I wish to develop a strategy as to increase its adoption and use it as a mean to shape the brand's whole 3D direction."
+					"icon": "funnel",
+					"headline": "Narrow efforts on 1 efficient solution rather than 2",
+					"challenge": "The library saved real time but adoption stayed narrow (3 key visuals and 1 infographic).",
+					"outcome": "I wish to develop a strategy as to increase its adoption and use it as a mean to shape the brand's whole 3D direction."
 				},
 				{
-					"title": "Better assessing technical workload for greater result.",
-					"body": "The WebGPU engine was correctly framed as R&D from the start, which contained the risk, but I still underestimated the build time versus using existing libraries. I now reconsider more closely existing solution vs reinventing the wheel in R&D."
+					"icon": "weight",
+					"headline": "Better assessing technical workload for greater result",
+					"challenge": "The WebGPU engine was correctly framed as R&D from the start, which contained the risk, but I still underestimated the build time versus using existing libraries.",
+					"outcome": "I now reconsider more closely existing solution vs reinventing the wheel in R&D."
 				},
 				{
-					"title": "Scale the solution to make it available for other creatives.",
-					"body": "I'm still the only designer with the 3D skill to use the library, which caps its reach. The next step would be exporting pre-rendered assets so the rest of the design team can use it without touching the 3D pipeline."
+					"icon": "users-round",
+					"headline": "Scale the solution to make it available for others",
+					"challenge": "I'm still the only designer with the 3D skill to use the library, which caps its reach.",
+					"outcome": "The next step would be exporting pre-rendered assets so the rest of the design team can use it without touching the 3D pipeline."
 				}
 			]
 		}

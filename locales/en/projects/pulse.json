@@ -109,6 +109,12 @@
 				"To answer this, I built a guideline that let each client dial the expression up or down, more playful or more restrained, based on their culture, and reframed the entire concept as a \"Reward-Driven System.\"",
 				"The reframe worked, sales finally had a pitch that landed with both executives and clients."
 			]
+		},
+		"demo": {
+			"headline": "Slides couldn't sell something this abstract",
+			"body": [
+				"The concept was too new for sales to pitch on slides alone, so we go asked to build something they could actually show. I worked with the dev team to code an early, functional prototype with the core mechanics live and testable, and produced a promotional video using AI to bring the pitch to life."
+			]
 		}
 	},
 	"features": {
@@ -131,15 +137,6 @@
 			],
 			"body2": [
 				"This made it far easier to see how each mechanic would affect the system, and to align it with each client's specific problem."
-			]
-		}
-	},
-	"prototype": {
-		"anchor": "Prototype",
-		"demo": {
-			"headline": "Slides couldn't sell something this abstract.",
-			"body": [
-				"The concept was too new for sales to pitch on slides alone, so we go asked to build something they could actually show. I worked with the dev team to code an early, functional prototype with the core mechanics live and testable, and produced a promotional video using AI to bring the pitch to life."
 			]
 		}
 	},
@@ -167,16 +164,22 @@
 			"headline": "What I'd do differently",
 			"list": [
 				{
-					"title": "Confirming what really matters to clients before deepen research",
-					"body": "The reward economy and the R&D journey-mapping tool were more sophisticated than what the client actually used: coins redeemed for gifts. I now confirm what KPI matter to the client's before scoping investment."
+					"icon": "book-open-check",
+					"headline": "Confirming what really matters to clients before deepen research",
+					"challenge": "The reward economy and the R&D journey-mapping tool were more sophisticated than what the client actually used: coins redeemed for gifts.",
+					"outcome": "I now confirm what KPI matter to the client's before scoping investment."
 				},
 				{
-					"title": "Pilot-testing the methodology, not just pitching it",
-					"body": "The strategy was grounded in strong research and market trends, but shipped without empirical validation. Going forward, I would pilot-test surveys and processes like this before rolling them out, to confirm they actually work as intended rather than just sound right."
+					"icon": "flask-conical",
+					"headline": "Pilot-testing the methodology, not just pitching it",
+					"challenge": "The strategy was grounded in strong research and market trends, but shipped without empirical validation.",
+					"outcome": "Going forward, I would pilot-test surveys and processes like this before rolling them out, to confirm they actually work as intended rather than just sound right."
 				},
 				{
-					"title": "Push for a greater cohesive user-journey",
-					"body": "Design decisions leaned on leadership preference more than employee validated needs, and features shipped as disconnected pieces gather from benchmark rather than a meaningful journey. For further instance, I would further exchange with PM and analysts to develop a solid user requirements methodology."
+					"icon": "waypoints",
+					"headline": "Push for a greater cohesive user-journey",
+					"challenge": "Design decisions leaned on leadership preference more than employee validated needs, and features shipped as disconnected pieces gather from benchmark rather than a meaningful journey.",
+					"outcome": "For further instance, I would further exchange with PM and analysts to develop a solid user requirements methodology."
 				}
 			]
 		}

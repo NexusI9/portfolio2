@@ -76,6 +76,20 @@
 			"headline": "What do designers and developers actually need from tokens?",
 			"body": [
 				"I worked directly with the design team to define core features, then partnered with staff engineers to align token exports with their pipeline. Benchmarking existing design systems and plugins helped the features coexist in one coherent interface."
+			],
+			"stat": [
+				[
+					{
+						"value": "64",
+						"suffix": [
+							{
+								"text": "%",
+								"format": "exponent"
+							}
+						],
+						"label": "Of front-end developers found the variable handoff inefficient"
+					}
+				]
 			]
 		},
 		"prototype": {
@@ -110,6 +124,20 @@
 			"headline": "The first-load latency for bigger project needed to be fixed",
 			"body": [
 				"The plugin ran fine on small files, but slowed to a crawl past 10+ pages. I rebuilt the storage layer to store only node IDs and load each tab's data asynchronously, instead of loading everything upfront. Initial load time dropped from 12 seconds to 89 milliseconds."
+			],
+			"stat": [
+				[
+					{
+						"value": "135×",
+						"label": "Faster loading time on larger projects"
+					}
+				]
+			]
+		},
+		"tab": {
+			"headline": "The initial tab bar made multi-level projects hard to navigate",
+			"body": [
+				"With dozens of frames and nested pages, the tab bar turned into a flat, unreadable row, making it hard to find a specific tab. I replaced it with an expandable tree view that mirrors the project's actual page hierarchy, letting users drill down into nested pages instead of scanning a flat list, so navigating a large multi-level project became straightforward again."
 			]
 		}
 	},
@@ -131,7 +159,7 @@
 	"outcome": {
 		"anchor": "Outcome",
 		"results": {
-			"headline": "The toolkit reached 2,000+ users",
+			"headline": "The toolkit sped up design production by 60% & reached 2,000+ users",
 			"body": [
 				"It accelerated Design System adjustments from 1 hour to 20 minutes, made handoff faster by reducing by half the loopback between designer and developers, and community feedback kept improving it after launch like including Figma's sections in the navigation map or supporting manual variables reload."
 			]
@@ -143,16 +171,22 @@
 			"headline": "What I'd do differently",
 			"list": [
 				{
-					"title": "Less over-engineering.",
-					"body": "Style Studio used Redux with async thunks for a simple state management, more complexity than the plugin needed. I now default to the simplest state model that works and scale up only when the data proves it's necessary."
+					"icon": "flame",
+					"headline": "Less over-engineering",
+					"challenge": "Style Studio used Redux with async thunks for a simple state management, more complexity than the plugin needed.",
+					"outcome": "I now default to the simplest state model that works and scale up only when the data proves it's necessary."
 				},
 				{
-					"title": "Giving a greater attention to the adoption strategy.",
-					"body": "Style Studio's token workflow still needs hand-holding for junior designers less familiar with design systems. I set in-app guidance (tips, hints, onboarding) and documentation as next phase priority."
+					"icon": "graduation-cap",
+					"headline": "Giving a greater attention to the adoption strategy",
+					"challenge": "Style Studio's token workflow still needs hand-holding for junior designers less familiar with design systems.",
+					"outcome": "I set in-app guidance (tips, hints, onboarding) and documentation as next phase priority."
 				},
 				{
-					"title": "Rethinking the pipeline rather than a part of it.",
-					"body": "Text2Sheet fixed extraction, but it still sits inside a multi-tool export chain, which is why some PMs skip it entirely. The next iteration would aim to centralize the export process into one tool."
+					"icon": "blocks",
+					"headline": "Rethinking the pipeline rather than a part of it",
+					"challenge": "Text2Sheet fixed extraction, but it still sits inside a multi-tool export chain, which is why some PMs skip it entirely.",
+					"outcome": "The next iteration would aim to centralize the export process into one tool."
 				}
 			]
 		}

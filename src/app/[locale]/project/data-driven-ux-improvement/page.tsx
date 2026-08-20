@@ -4,7 +4,7 @@ import { Blog } from "@components/blog/blog";
 import Template from "../_components/template/template"
 import { PROJECT_DESCRIPTOR_USABILITY } from "../_lib/descriptors";
 import { useDictionary } from "@/i18n/Context";
-import { emptyVisual, imPath } from "../_lib/helper";
+import { emptyVisual, imPath, statsVisual } from "../_lib/helper";
 import { renderList } from "@components/list/helper";
 import { BLOG_HEADLINE_STYLE } from "../../_components/blog/constants";
 
@@ -37,7 +37,7 @@ export default function Usability() {
 			headline={p.brief.priorities.headline}
 			body={[...p.brief.priorities.body, renderList(p.brief.priorities.list)]}
 			visual={emptyVisual}
-			extra={emptyVisual} // Extra Section Below: Stats
+			extra={statsVisual(p.brief.priorities.stat as any)} // Extra Section Below: Stats
 		/>
 
 		{/* --- Testing --- */}
@@ -52,7 +52,7 @@ export default function Usability() {
 			variant="TEXT_TOP_STAT_BOTTOM"
 			headline={p.testing.findings.headline}
 			body={p.testing.findings.body}
-			visual={emptyVisual}
+			visual={statsVisual(p.testing.findings.stat as any)}
 		/>
 
 		{/* --- Analysis --- */}

@@ -4,7 +4,7 @@ import { useDictionary } from "@/i18n/Context";
 import Template from "../_components/template/template"
 import { PROJECT_DESCRIPTOR_WEBGPU } from "../_lib/descriptors";
 import { Blog } from "../../_components/blog/blog";
-import { emptyVisual, imPath } from "../_lib/helper";
+import { emptyVisual, imPath, statsVisual } from "../_lib/helper";
 import { BLOG_HEADLINE_STYLE } from "../../_components/blog/constants";
 
 export default function Webgpu() {
@@ -35,12 +35,12 @@ export default function Webgpu() {
 			variant="TEXT_TOP_STAT_BOTTOM"
 			headline={p.opportunity.benchmark.headline}
 			body={p.opportunity.benchmark.body}
-			visual={emptyVisual}
+			visual={statsVisual(p.opportunity.benchmark.stat)}
 		/>
 
 		{/* --- Strategy --- */}
 		<Blog.Layout
-			variant="TEXT_LEFT_GALLERY_RIGHT"
+			variant="TEXT_TOP_GALLERY_BOTTOM"
 			anchor={p.strategy.anchor}
 			headline={p.strategy.paths.headline}
 			body={p.strategy.paths.body}
@@ -85,7 +85,7 @@ export default function Webgpu() {
 			variant="TEXT_TOP_STAT_BOTTOM"
 			headline={p.resolution.speed.headline}
 			body={p.resolution.speed.body}
-			visual={emptyVisual}
+			visual={statsVisual(p.resolution.speed.stat)}
 		/>
 		<Blog.Layout
 			variant="TEXT_TOP_GALLERY_BOTTOM"

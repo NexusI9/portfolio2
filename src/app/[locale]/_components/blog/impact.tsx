@@ -1,11 +1,13 @@
 "use client"
 
+import clsx from "clsx";
 import { Text, TextBase } from "../text/text";
 import { Blog } from "./blog";
 import { BLOG_HEADLINE_STYLE } from "./constants";
 import styles from "./impact.module.scss";
 
 type AffixFormat = "default" | "exponent" | "subscript";
+type ImpactStyle = "SOLID" | "GHOST";
 
 interface IImpactAffix {
 	text: string;
@@ -22,6 +24,7 @@ export interface IImpactItem {
 interface IImpact {
 	headline: string;
 	items: IImpactItem[];
+	style?: ImpactStyle;
 }
 
 // "exponent" raises + shrinks a segment, e.g. 100% -> 100 with a small raised %,
@@ -49,7 +52,7 @@ function ImpactAffixGroup({ segments }: { segments: IImpactAffix[] }) {
 
 function ImpactValue({ value, prefix, suffix }: Omit<IImpactItem, "label">) {
 	return (
-		<TextBase role="BODY" style="H2" className={`${styles["impact-value"]} text-(--color-text-brand-base)`}>
+		<TextBase role="BODY" style="H2" className={`${styles["impact-value"]}`}>
 			{prefix && <ImpactAffixGroup segments={prefix} />}
 			{value}
 			{suffix && <ImpactAffixGroup segments={suffix} />}
@@ -57,9 +60,12 @@ function ImpactValue({ value, prefix, suffix }: Omit<IImpactItem, "label">) {
 	);
 }
 
-export function ImpactRow({ items }: Pick<IImpact, "items">) {
+export function ImpactRow({ items, className, style = "GHOST" }: { items: IImpactItem[], className?: string, style?: ImpactStyle; }) {
 
-	return (<ul className={styles["impact-cards"]}>
+	return (<ul
+		className={clsx(styles["impact-cards"], className)}
+		data-style={style}
+	>
 		{items.map((item) => (
 			<li className={styles["impact-card"]} key={item.label}>
 				<ImpactValue {...item} />
@@ -70,7 +76,7 @@ export function ImpactRow({ items }: Pick<IImpact, "items">) {
 
 }
 
-export default function Impact({ headline, items }: IImpact) {
+export default function Impact({ headline, items, style = "GHOST" }: IImpact) {
 	return (
 		<Blog.Section>
 

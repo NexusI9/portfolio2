@@ -2,14 +2,13 @@ import { Fragment, ReactNode } from "react";
 import { Gallery } from "../gallery/gallery";
 import Group from "./group";
 import HeadingOverline from "./HeadingOverline";
-import Impact, { IImpactItem, ImpactRow } from "./impact";
+import { IImpactItem, ImpactRow } from "./impact";
 import Paragraph from "./paragraph";
 import Section from "./section";
-import Heading from "./heading";
 import Headline from "./headline";
 import { BLOG_HEADLINE_STYLE } from "./constants";
 
-type IBlogVisual =
+export type IBlogVisual =
 	| { kind: "gallery"; rows: string[][] } // passed straight to Gallery.AutoLayout
 	| { kind: "stats"; rows: IImpactItem[][] }; // each row -> one <Impact items={row} />
 
@@ -46,7 +45,7 @@ function VisualBlock({ visual }: { visual: IBlogVisual }) {
 	return (
 		<>
 			{visual.rows.map((row, i) =>
-				<ImpactRow key={i} items={row} />
+				<ImpactRow key={i} items={row} style="SOLID" />
 			)}
 		</>
 	);
@@ -80,7 +79,7 @@ export default function Layout({ variant, anchor, headline, body, visual, extra 
 	const text = (
 		<Group>
 			{(anchor && headline) && <HeadingOverline overline={anchor} headline={headline} />}
-	 {(!anchor && headline) && <Headline role={BLOG_HEADLINE_STYLE}>{headline}</Headline>}
+			{(!anchor && headline) && <Headline role={BLOG_HEADLINE_STYLE}>{headline}</Headline>}
 			{entries.map((entry, i) => (
 				<BodyEntry key={i} entry={entry} index={i} />
 			))}

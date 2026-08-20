@@ -4,7 +4,7 @@ import { Blog } from "@components/blog/blog";
 import Template from "../_components/template/template"
 import { PROJECT_DESCRIPTOR_STYLE_STUDIO } from "../_lib/descriptors";
 import { useDictionary } from "@/i18n/Context";
-import { emptyVisual } from "../_lib/helper";
+import { emptyVisual, statsVisual } from "../_lib/helper";
 import { renderList } from "@components/list/helper";
 import { BLOG_HEADLINE_STYLE } from "../../_components/blog/constants";
 
@@ -28,7 +28,7 @@ export default function Workflow() {
 				variant="TEXT_ONLY"
 				anchor={p.challenge.anchor}
 				headline={p.challenge.pain.headline}
-	 body={[...p.challenge.pain.body, renderList(p.challenge.pain.list, "FAIL")]}
+				body={[...p.challenge.pain.body, renderList(p.challenge.pain.list, "FAIL")]}
 			/>
 			<Blog.Layout
 				variant="TEXT_LEFT_GALLERY_RIGHT"
@@ -49,7 +49,7 @@ export default function Workflow() {
 				variant="TEXT_RIGHT_GALLERY_LEFT"
 				headline={p.solution.tokens.headline}
 				body={p.solution.tokens.body}
-				visual={emptyVisual}
+				visual={statsVisual(p.solution.tokens.stat as any)}
 			/>
 			<Blog.Layout
 				variant="TEXT_LEFT_GALLERY_RIGHT"
@@ -82,6 +82,13 @@ export default function Workflow() {
 				variant="TEXT_LEFT_GALLERY_RIGHT"
 				headline={p.resolution.latency.headline}
 				body={p.resolution.latency.body}
+				visual={statsVisual(p.resolution.latency.stat as any)}
+			/>
+
+			<Blog.Layout
+				variant="TEXT_TOP_GALLERY_BOTTOM"
+				headline={p.resolution.tab.headline}
+				body={p.resolution.tab.body}
 				visual={emptyVisual}
 			/>
 

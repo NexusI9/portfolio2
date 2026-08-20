@@ -4,6 +4,7 @@ import Sidebar from "../_components/sidebar/sidebar";
 import { PROJECT_DESCRIPTOR_LIST } from "./descriptors";
 import { Dictionary } from "@/i18n/Context";
 import Banner from "../_components/banner/banner";
+import { IBlogVisual } from "../../_components/blog/layout";
 
 
 export const mapFromDescriptor: (desc: IProjectDescriptor, dico: Dictionary) =>
@@ -33,3 +34,5 @@ export const imPath = (projectName: string, image: string) => `/assets/projects/
 
 
 export const emptyVisual = { kind: "gallery" as const, rows: [] };
+
+export const statsVisual: (stats: any[][]) => IBlogVisual = (stats: any[][]) => ({ kind: "stats", rows: stats as any });

@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-space-medium);
+}
+
+.item {
+  flex-basis: 100%;
+  background: var(--color-surface-high);
+  padding-inline: var(--size-space-extra-large);
+  padding-top: var(--size-space-large);
+  padding-bottom: var(--size-space-extra-large-2);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-space-medium);
+
+  svg {
+    color: var(--color-icon-brand-base);
+  }
+}
