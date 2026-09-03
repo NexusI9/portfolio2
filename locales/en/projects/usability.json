@@ -37,18 +37,26 @@
 			}
 		]
 	},
+	"overview": {
+		"anchor": "Overview",
+		"legend": {
+			"website": "A full brand revision and website update has been done for this project.",
+			"test": "We combined a usability test along with technical knowledge to not only improve the user experience but also boost the overall website PageSpeed Insight."
+		}
+	},
 	"brief": {
 		"anchor": "Brief",
 		"goal": {
 			"headline": "The client wanted a faster, more accessible site",
 			"body": [
-				"It wasn't that simple: the site wasn't just an e-commerce platform, it was also a hub for scientific articles. The redesign had to balance dense information, reading comfort, and enough visual polish that the client felt the investment was worth it, without breaking the site's original purpose."
+				"The website was complex as it combined an e-commerce platform with academic articles, so the redesign had to balance dense scientific information with reading comfort.",
+				"However, to make the client feel that their investment was worth it, we needed to create something visually striking without breaking the site's original purpose."
 			]
 		},
 		"priorities": {
 			"headline": "What did the client actually need to fix first?",
 			"body": [
-				"I collaborated with my manager and the project manager to build a survey sent to 25 employees and executives to surface goals, pain points, competitive positioning, and visual direction.",
+				"I collaborated with my manager and the project manager to build a survey sent to 25 employees and executives to get feedback on the company’s goals, pain points, competitive positioning, and visual direction.",
 				"Three priorities came out on top:"
 			],
 			"list": [
@@ -86,7 +94,7 @@
 								"format": "exponent"
 							}
 						],
-						"label": "Of respondents have struggle navigate the website"
+						"label": "Of respondents struggled to navigate the website"
 					}
 				]
 			]
@@ -97,14 +105,20 @@
 		"setup": {
 			"headline": "I built a usability test around those three priorities",
 			"body": [
-				"The client worked in antibody synthesis, a scientific field, so a data-driven approach mattered for getting buy-in from decision makers. I scoped the test around the three priorities: purchase, information sharing, and lead generation, then split it into a task-based stage and a SUS stage to capture both quantitative and qualitative signal.",
-				"Five moderated sessions, enough to surface the majority of core usability issues, gave me completion rate, time on task, error count, click count, navigation style, and subjective satisfaction for each task. I combined those into a weighted efficiency score per task."
-			]
+				"The client worked in a scientific field, so a data-driven approach felt necessary to ease decision making.",
+				"I scoped the test around the three priorities: purchase, information sharing, and lead generation. I combined task scenarios with a System Usability Scale (SUS) to capture both quantitative and qualitative data.",
+				"Five moderated sessions were enough to surface the majority of usability issues. It gave me useful information such as completion rate, time on task, and subjective satisfaction for each task."
+			],
+			"legend": {
+				"dashboard": "User data was individually collected and then gathered in a global dashboard to better observe the trends.",
+				"sus": "Each user was also asked to fill a System Usability Scale (SUS) to better assess qualitative data such as subjective response."
+			}
 		},
 		"findings": {
 			"headline": "Buying was fine. Everything else wasn't",
 			"body": [
-				"Purchasing was relatively efficient, though click count was higher than it should be. The real problem sat in the secondary goals: article search and lead generation both saw significant abandonment. The SUS results pointed to a site that felt unnecessarily complex to navigate, even though reading quality got positive feedback."
+				"Purchasing was relatively efficient, though click count was higher than it should be. The real problem sat in the secondary goals such as article search and lead generation as they saw significant abandonment.",
+				"The SUS results pointed out that the site felt unnecessarily complex to navigate, even though reading quality got positive feedback."
 			],
 			"stat": [
 				[
@@ -129,7 +143,7 @@
 						"label": "Spent per tasks in average"
 					},
 					{
-						"value": "40",
+						"value": "33",
 						"suffix": [
 							{
 								"text": "%",
@@ -147,23 +161,16 @@
 		"categories": {
 			"headline": "I organized every finding into six categories",
 			"body": [
-				"Qualitative, quantitative, behavioral, technical, user-journey, and accessibility. Each observation, from SUS sentiment to task data to video-based behavior patterns, was paired with a potential design fix."
-			]
+				"Each observation, from SUS sentiment to task data and video-based behavior patterns, was paired with a potential design fix. I also highlighted the points that would have the most impact on the user experience or would require heavy work design-wise."
+			],
+			"legend": "Each observation was segmented by type and paired with a visual or user-experience improvement."
 		},
 		"fixes": {
-			"headline": "Every insight had to be paired with an actual design",
+			"headline": "Stakeholders needed to see visual results, not insights",
 			"body": [
-				"So the impact was undeniable. I filtered the findings down to what mattered most against the client's original priorities, then matched each one to a concrete design change:"
-			],
-			"list": [
-				"Smarter use of space to shorten pages",
-				"Eye-catching sections built specifically for lead generation and contact",
-				"Dynamic content loading on scroll and tabs to speed up initial load",
-				"A sticky side panel to guide navigation toward key sections and products",
-				"Accessibility fixes to color contrast and font sizing, flagged directly against the site's PSI score"
-			],
-			"body2": [
-				"The redesign also extended into a full Design System refresh: new typography, colors, icons, and components."
+				"The project manager suggested to pair every insight with an actual design so the impact was obvious for the client.",
+				"I filtered the findings according to what mattered most to the client's priorities, and matched each one to a concrete design change.",
+				"I also considered accessibility improvements in the new design system including new typography scale or enhanced color contrast."
 			]
 		}
 	},
@@ -172,29 +179,54 @@
 		"trust": {
 			"headline": "The client didn't trust user sessions as proof",
 			"body": [
-				"So we brought in a score they did trust: the PageSpeed Insights (PSI) report, showing that specific choices like undersized text and weak color contrast weren't just usability issues, they were actively hurting the site's accessibility score. Showing the 90+ score within reach was what finally got their buy-in."
+				"Instead we decided to use our second lever to drive the decision making: the PageSpeed Insights (PSI) report, which we knew the client would trust.",
+				"Showing how specific choices like undersized text or weak color contrast would hurt the overall score helped prevent further accessibility or navigation issues."
 			]
 		},
 		"feedback": {
 			"headline": "Every round of feedback multiplied into more back-and-forth",
 			"body": [
-				"To answer this, the PM and I decided to give them pieces to build with instead: static snapshots of individual Design System components, buttons, tabs, cards, letting the client assemble the exact layout they had in mind and turning the conversation into specifics instead of abstractions. Revision rounds dropped from 8 to 2."
+				"To answer this, the PM and I decided to give them static snapshots of the design system components, buttons, tabs, or cards.",
+				"The provided kit allowed client to assemble the exact layout they had in mind and work with concrete visual rather than speculations.",
+				"The revision rounds dropped from 8 to 2."
 			]
 		},
 		"direction": {
 			"headline": "Client wanted to stay classic, but the data said otherwise",
 			"body": [
-				"I proposed two design directions: one brand-forward and bold, one closer to the existing classic, information-dense layout. The client's instinct leaned toward the safer, classic option, but working with the project manager, we made the case for the bolder direction instead, using the audience age data from GA4 to show it was the better fit. They went with it."
-			]
+				"Among the two proposed indexes, the client leaned toward the safer and classic option; but working with the project manager, we convinced them to go for the bolder direction instead by using the data from GA4 as the main argument."
+			],
+			"legend": {
+				"classic": "The first index was pretty safe regarding client's industry, however it lacked clear brand positioning.",
+				"modern": "The second index was designed with client's main demography in mind and with ambition to better compete with competitors from that area."
+			}
 		}
 	},
 	"results": {
 		"anchor": "Results",
 		"impact": {
-			"headline": "I selected the four insights most likely to move the needle",
+			"headline": "The improvements opened the door to a second phase",
 			"body": [
-				"Not everything made the cut. Out of the full set of findings, I chose the four with the clearest link to the original priorities, the ones that would fix lead generation and resource navigation directly. The client stayed aligned with those priorities throughout, satisfaction was high, and it opened the door to additional phases of work."
-			]
+				"Although not all proposed improvements were approved, we implemented the fixes that aligned with the client’s initial priorities. By providing the client with a design kit, we accelerated decision-making and delivered the project on time. The client satisfaction led to a second phase that included changes related to the product flow."
+			],
+			"legend": {
+				"product": {
+					"before": "Before users had to scroll through a side panel to filter products.",
+					"after": "After, we decided to add a horizontal sticky menu so users have access to filters at all time."
+				},
+				"lead": {
+					"before": "Initially the sign-in page lacked instruction and benefits on why users should create accounts.",
+					"after": "To encourage account creation we improved the overall page layout with a more marketing approach and added lead magnets across the website."
+				},
+				"resources": {
+					"before": "On the previous version, news and downloadable resources were gathered under a common tab navigation.",
+					"after": "We decided to split them into two distinct units so it's clearer for users to understand each page's intent."
+				},
+				"inquiry": {
+					"before": "Initially the inquiry only had one small touch point in the About unit.",
+					"after": "We decided to multiply the touch points and add eye-catching modules throughout the website in various forms."
+				}
+			}
 		}
 	},
 	"learning": {
@@ -206,7 +238,7 @@
 					"icon": "cog",
 					"headline": "Automate user behavior analysis",
 					"challenge": "Behavioral data was hand-logged from session recordings. It was accurate, but used three days of work for five users.",
-					"outcome": "For future tests, I would provide automated tracking tools so quantitative data come out more quickly and accurately."
+					"outcome": "For future tests, I would provide automated tracking tools so quantitative data comes out more quickly and accurately."
 				},
 				{
 					"icon": "shield-alert",

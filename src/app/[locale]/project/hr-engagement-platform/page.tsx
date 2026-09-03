@@ -4,9 +4,11 @@ import { useDictionary } from "@/i18n/Context";
 import { Blog } from "../../_components/blog/blog";
 import Template from "../_components/template/template"
 import { PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER } from "../_lib/descriptors";
-import { emptyVisual } from "../_lib/helper";
+import { emptyVisual, imPath } from "../_lib/helper";
 import { renderList } from "@components/list/helper";
 import { BLOG_HEADLINE_STYLE } from "../../_components/blog/constants";
+import { RATIO_HALF, RATIO_SQUARE } from "../../_lib/constants";
+import { Gallery } from "../../_components/gallery/gallery";
 
 export default function EmotionalMapper() {
 
@@ -21,67 +23,141 @@ export default function EmotionalMapper() {
 
 		<Blog.Section>
 			<Blog.Anchor role="H3" style={BLOG_HEADLINE_STYLE}>
-				{dico.projects.common.headline.overview}
+				{p.overview.anchor}
 			</Blog.Anchor>
+
+			<Gallery.AutoLayout rows={[
+				[{
+					src: imPath(pName, "overview-1"),
+					legend: p.overview.legend.app,
+				}],
+				[{
+					src: imPath(pName, "overview-2"),
+					legend: p.overview.legend.system
+				}],
+				[{
+					src: imPath(pName, "overview-3"),
+					legend: p.overview.legend.flow
+				}],
+			]} />
 		</Blog.Section>
 
 		{/* --- Challenge --- */}
 		<Blog.Layout
-			variant="TEXT_RIGHT_GALLERY_LEFT"
-			anchor={p.challenge.anchor}
-			headline={p.challenge.genz.headline}
-			body={p.challenge.genz.body}
-			visual={emptyVisual}
-		/>
-		<Blog.Layout
-			variant="TEXT_LEFT_GALLERY_RIGHT"
-			headline={p.challenge.personas.headline}
-			body={p.challenge.personas.body}
-			visual={emptyVisual}
-		/>
-		<Blog.Layout
 			variant="TEXT_TOP_GALLERY_BOTTOM"
-			headline={p.challenge.industry.headline}
-			body={p.challenge.industry.body}
-			visual={emptyVisual}
+			anchor={p.challenge.anchor}
+			headline={p.challenge.attract.headline}
+			body={p.challenge.attract.body}
+			visual={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "persona"),
+						static: true,
+						ratio: "1440 / 580"
+					}]]
+			}}
 		/>
 
-		{/* --- Strategy --- */}
 		<Blog.Layout
-			variant="TEXT_TOP_STAT_BOTTOM"
-			anchor={p.strategy.anchor}
-			headline={p.strategy.cultures.headline}
-			body={p.strategy.cultures.body}
-			visual={emptyVisual}
+			variant="TEXT_TOP_GALLERY_BOTTOM"
+			headline={p.challenge.cultures.headline}
+			body={p.challenge.cultures.body}
+			visual={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "toxic"),
+						static: true
+					}]]
+			}}
 		/>
+
+
 		<Blog.Layout
 			variant="TEXT_LEFT_GALLERY_RIGHT"
-			headline={p.strategy.gamification.headline}
-			body={p.strategy.gamification.body}
-			visual={emptyVisual}
-			extra={emptyVisual} // Extra Section Below: Stats
+			headline={p.challenge.industry.headline}
+			body={p.challenge.industry.body}
+			visual={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "ocai"),
+						static: true,
+						ratio: RATIO_HALF,
+					}]]
+			}}
+			extra={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "matrice"),
+						legend: p.challenge.industry.legend,
+					}]]
+			}}
 		/>
+
 
 		{/* --- Rewards System --- */}
 		<Blog.Layout
 			variant="TEXT_LEFT_GALLERY_RIGHT"
 			anchor={p.rewards.anchor}
-			headline={p.rewards.pillars.headline}
-			body={[...p.rewards.pillars.body, renderList(p.rewards.pillars.list), ...p.rewards.pillars.body2]}
-			visual={emptyVisual}
+			headline={p.rewards.gamification.headline}
+			body={p.rewards.gamification.body}
+			visual={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "gami-articles"),
+						static: true,
+						ratio: RATIO_SQUARE,
+					}]]
+			}}
 		/>
-		<Blog.Layout
-			variant="TEXT_RIGHT_GALLERY_LEFT"
-			headline={p.rewards.balance.headline}
-			body={p.rewards.balance.body}
-			visual={emptyVisual}
-		/>
+
 		<Blog.Layout
 			variant="TEXT_TOP_GALLERY_BOTTOM"
 			headline={p.rewards.tenure.headline}
 			body={p.rewards.tenure.body}
-			visual={emptyVisual}
+			visual={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "reward"),
+						ratio: "1440 / 680"
+					}]]
+			}}
 		/>
+
+
+
+		{/* --- Design System --- */}
+		<Blog.Layout
+			variant="TEXT_TOP_GALLERY_BOTTOM"
+			anchor={p.design.anchor}
+			headline={p.design.extend.headline}
+			body={p.design.extend.body}
+			visual={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "reuse-components"),
+						ratio: RATIO_HALF,
+						legend: p.design.extend.legend.system,
+					},
+					{
+						src: imPath(pName, "reuse-strategy"),
+						ratio: RATIO_HALF,
+						legend: p.design.extend.legend.strategy,
+					}]]
+			}}
+		/>
+
+		<Blog.Layout
+			variant="TEXT_TOP_GALLERY_BOTTOM"
+			headline={p.design.engines.headline}
+			body={[...p.design.engines.body, renderList(p.design.engines.list), ...p.design.engines.body2]}
+			visual={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "engines")
+					}]]
+			}}
+		/>
+
 
 		{/* --- Resolution --- */}
 		<Blog.Layout
@@ -89,42 +165,64 @@ export default function EmotionalMapper() {
 			anchor={p.resolution.anchor}
 			headline={p.resolution.reframe.headline}
 			body={p.resolution.reframe.body}
-			visual={emptyVisual}
+			visual={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "reward-driven"),
+						static: true,
+						ratio: RATIO_HALF,
+					}]]
+			}}
 		/>
 
-		<Blog.Layout
-			variant="TEXT_RIGHT_GALLERY_LEFT"
-			headline={p.resolution.demo.headline}
-			body={p.resolution.demo.body}
-			visual={emptyVisual}
-		/>
-
-
-		{/* --- Features --- */}
 		<Blog.Layout
 			variant="TEXT_TOP_GALLERY_BOTTOM"
-			anchor={p.features.anchor}
-			headline={p.features.restructure.headline}
-			body={p.features.restructure.body}
-			visual={emptyVisual}
+			headline={p.resolution.demo.headline}
+			body={p.resolution.demo.body}
+			visual={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "prototype-before"),
+						ratio: RATIO_HALF,
+						legend: p.resolution.demo.legend.before,
+					},
+					{
+						src: imPath(pName, "prototype-after"),
+						ratio: RATIO_HALF,
+						legend: p.resolution.demo.legend.after,
+					}]]
+			}}
 		/>
+
+
+
+		<Blog.Layout
+			variant="TEXT_TOP_GALLERY_BOTTOM"
+			headline={p.resolution.restructure.headline}
+			body={p.resolution.restructure.body}
+			visual={{
+				kind: "gallery", rows: [[
+					{
+						src: imPath(pName, "feature-before"),
+						ratio: RATIO_HALF,
+						legend: p.resolution.restructure.legend.before,
+					},
+					{
+						src: imPath(pName, "feature-after"),
+						ratio: RATIO_HALF,
+						legend: p.resolution.restructure.legend.after,
+					}]]
+			}}
+		/>
+
+
 		<Blog.Layout
 			variant="TEXT_LEFT_GALLERY_RIGHT"
-			headline={p.features.engines.headline}
-			body={[...p.features.engines.body, renderList(p.features.engines.list), ...p.features.engines.body2]}
+			headline={p.resolution.balance.headline}
+			body={p.resolution.balance.body}
 			visual={emptyVisual}
 		/>
 
-
-		{/* --- Design System --- */}
-		<Blog.Layout
-			variant="TEXT_LEFT_STAT_RIGHT"
-			anchor={p.design.anchor}
-			headline={p.design.extend.headline}
-			body={p.design.extend.body}
-			visual={emptyVisual}
-			extra={emptyVisual} // Extra Section Below: Gallery
-		/>
 
 		{/* --- Results --- */}
 		<Blog.Layout

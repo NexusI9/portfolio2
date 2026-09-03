@@ -1,10 +1,10 @@
 "use client"
 
 import { Gallery } from "./gallery";
-
+import { TGalleryImage, normalizeImage } from "./image";
 
 interface IDefault {
-	images: string[];
+	images: TGalleryImage[];
 }
 
 /**
@@ -15,7 +15,10 @@ export default function Default({ images }: IDefault) {
 	return (
 		<Gallery.Wrapper>
 			<Gallery.Row>
-				{images.map(src => <Gallery.Image key={src} src={src} />)}
+				{images.map((img, i) => {
+					const normalized = normalizeImage(img);
+					return <Gallery.Image key={`${normalized.src}-${i}`} {...normalized} />;
+				})}
 			</Gallery.Row>
 		</Gallery.Wrapper>
 	);

@@ -1,5 +1,6 @@
 import { Fragment, ReactNode } from "react";
 import { Gallery } from "../gallery/gallery";
+import type { TGalleryImage } from "../gallery/gallery";
 import Group from "./group";
 import HeadingOverline from "./HeadingOverline";
 import { IImpactItem, ImpactRow } from "./impact";
@@ -9,7 +10,7 @@ import Headline from "./headline";
 import { BLOG_HEADLINE_STYLE } from "./constants";
 
 export type IBlogVisual =
-	| { kind: "gallery"; rows: string[][] } // passed straight to Gallery.AutoLayout
+	| { kind: "gallery"; rows: TGalleryImage[][] } // passed straight to Gallery.AutoLayout
 	| { kind: "stats"; rows: IImpactItem[][] }; // each row -> one <Impact items={row} />
 
 
@@ -36,6 +37,7 @@ export interface IBlogLayoutProps {
 	body?: BlogLayoutBodyEntry | BlogLayoutBodyEntry[];
 	visual?: IBlogVisual; // gallery or stats — the variant decides the arrangement
 	extra?: IBlogVisual; // "Extra Section Below" from the CSV — always rendered under the block
+	asChild?: boolean;
 }
 
 function VisualBlock({ visual }: { visual: IBlogVisual }) {
@@ -73,9 +75,10 @@ const VISUAL_FIRST_VARIANTS = new Set<BlogLayoutVariant>([
 	"TEXT_RIGHT_STAT_LEFT",
 ]);
 
-export default function Layout({ variant, anchor, headline, body, visual, extra }: IBlogLayoutProps) {
+export default function Layout({ variant, anchor, headline, body, visual, extra, asChild = false }: IBlogLayoutProps) {
 	const entries = Array.isArray(body) ? body : body != null ? [body] : [];
 
+	const Container = asChild ? Fragment : Section;
 	const text = (
 		<Group>
 			{(anchor && headline) && <HeadingOverline overline={anchor} headline={headline} />}
@@ -110,7 +113,7 @@ export default function Layout({ variant, anchor, headline, body, visual, extra 
 		);
 
 	return (
-		<Section>
+		<Container>
 			{content}
 			{/* "Extra Section Below" from the CSV — embedded as its own group under the block */}
 			{extra && (
@@ -118,6 +121,6 @@ export default function Layout({ variant, anchor, headline, body, visual, extra 
 					<VisualBlock visual={extra} />
 				</Group>
 			)}
-		</Section>
+		</Container>
 	);
 }

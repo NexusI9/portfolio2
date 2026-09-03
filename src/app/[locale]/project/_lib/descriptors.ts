@@ -15,7 +15,6 @@ export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dicti
 		color: { start: "#FFFFFF00", end: "#7ABEDC" },
 	},
 	roles: [
-		dico.projects.common.roles.product_owner,
 		dico.projects.common.roles.developer,
 		dico.projects.common.roles.ui_ux_designer
 	],

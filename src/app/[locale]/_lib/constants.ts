@@ -32,3 +32,7 @@ export const TABLET_WIDTH = 768;
 export const SIZE_ICON_SM = "16px";
 export const SIZE_ICON_MD = "24px"
 export const SIZE_ICON_L = "46px";
+
+
+export const RATIO_HALF = "8 / 9";
+export const RATIO_SQUARE = "1 / 1";

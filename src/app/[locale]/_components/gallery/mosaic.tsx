@@ -2,17 +2,17 @@
 
 import styles from "./mosaic.module.scss";
 import { Gallery } from "./gallery";
+import { TGalleryImage, normalizeImage } from "./image";
 
 interface IMosaic {
-	images: string[];
+	images: TGalleryImage[];
 }
 
 export default function Mosaic({ images }: IMosaic) {
 
-
 	return (<div className={styles.mosaic}>
-		<Gallery.Image src={images[0]} />
-		<Gallery.Image src={images[1]} />
-		<Gallery.Image src={images[2]} />
+		<Gallery.Image {...normalizeImage(images[0])} />
+		<Gallery.Image {...normalizeImage(images[1])} />
+		<Gallery.Image {...normalizeImage(images[2])} />
 	</div>);
 }

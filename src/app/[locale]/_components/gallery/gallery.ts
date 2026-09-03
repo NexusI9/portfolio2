@@ -15,3 +15,5 @@ export const Gallery = {
 	Mosaic,
 	AutoLayout,
 };
+
+export type { TGalleryImage, IImage } from "./image";

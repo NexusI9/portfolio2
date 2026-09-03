@@ -34,109 +34,56 @@
 			}
 		]
 	},
-	"challenge": {
-		"anchor": "Challenge",
-		"genz": {
-			"headline": "Clients wanted to attract Gen Z talent",
-			"body": [
-				"Without losing the generations already in their workforce. The company needed a digital solution that could speak to a wide persona range, from Gen X to Gen Z, in one coherent product."
-			]
-		},
-		"personas": {
-			"headline": "We weren't designing for one persona",
-			"body": [
-				"With the help of analysts, we mapped six generic personas, Pioneer, Giver, Striver, Operator, Crafter, and Explorer, onto a two-axis graph plotting seniority (Leadership to Executional) against generation (Veteran to Gen-Z). That let us pin down what each persona actually expected, valued, and how they'd interact with the platform, without needing one specific client's data."
-			]
-		},
-		"industry": {
-			"headline": "It had to adapt to different industries",
-			"body": [
-				"The concept started from one client's clear feature requests. But shipping it as a single fixed product meant every client got the same features, regardless of what actually fit their culture or industry.",
-				"We combined two survey layers to fix that: the persona survey already used to map seniority and generation, plus an OCAI-based employee survey to read each client's actual workplace culture. Together, they let us assemble a package suited to each client's industry and workforce, instead of shipping one generic version."
-			]
+	"overview": {
+		"anchor": "Overview",
+		"legend": {
+			"app": "A mobile app was developed to drive talent engagement and improve company culture.",
+			"system": "A comprehensive design system was created for the solution.",
+			"flow": "An experimental user-flow tool was developed to better predict user engagement and analyse rewards balance."
 		}
 	},
-	"strategy": {
-		"anchor": "Strategy",
+	"challenge": {
+		"anchor": "Challenge",
+		"attract": {
+			"headline": "Clients wanted to improve talent retention across every generation",
+			"body": [
+				"They wanted to attract new talents while sustaining the seniors already in the workforce. So our goal was to develop a digital product that speaks to a wide persona range from Gen X to Gen Z.",
+				"To better understand the motivations of our targeted users, I collaborated with analysts to map 6 generic personas to pin down their expectations, values, and how they’d interact with the platform."
+			],
+			"legend": "We gathered generic personas as a base to then analyse their motivations, interests and emotional drives."
+		},
 		"cultures": {
 			"headline": "People don't quit jobs. They quit cultures",
 			"body": [
-				"Toxic environments, feeling unseen, and feeling stuck were the three reasons that kept coming up. That became the north star: build a platform that makes people feel like they're growing, valued, and included, and turns individual actions into collective belonging."
+				"Research showed that toxic environments, feeling unseen, and feeling stuck were three main reasons talents left companies.",
+				"Those pain points became our north star for the project. We needed a platform that makes people feel like they're growing, valued, included. We wanted to turn individual actions into collective belonging."
 			]
 		},
-		"gamification": {
-			"headline": "We build the engagement layer around gamification",
+		"industry": {
+			"headline": "The platform had to adapt to different industries",
 			"body": [
-				"Social mechanics like gifting, sharing memories, and referrals needed a system to sustain long-term engagement. I partnered with an Analyst who owned the sales and delivery side, while I owned the technical architecture, keeping every design decision tied to a business lens executives could easily grasp."
-			]
+				"Shipping it as a fixed product meant every client got the same features regardless of what actually fit their culture or industry, so we needed to keep it flexible from the start.",
+				"To do so, I decided to establish a flow made of two surveys combined with the project scopes, so the final application would satisfy the initial human needs.",
+				"I also built a UI guideline that would let us dial the expression up or down, more playful or more restrained, based on each client's culture."
+			],
+			"legend": "We built a guide to better define the gamification strategy to better suit each company's culture."
 		}
 	},
 	"rewards": {
 		"anchor": "Rewards System",
-		"pillars": {
-			"headline": "What makes a reward system actually motivating?",
+		"gamification": {
+			"headline": "We build the engagement layer around gamification",
 			"body": [
-				"I use past research in Game Design and built the reward economy around three pillars:"
+				"Many articles defined \"Gamification\" as the ideal candidate for sustainable engagement. However developing the reward system was only half of the challenge, we also needed a way to sell it and educate clients on the matter.",
+				"To do so, I partnered with an analyst who owned the sales and delivery side, while I owned the technical architecture. The numerous exchanges helped keep every technical decision tied to a business lens."
 			],
-			"list": [
-				"Flexibility: reward levels that flex with both the action's weight and the client's culture",
-				"Hierarchy: tiers of rarity and privilege",
-				"Evolution: rewards distributed over time so they keep their value"
-			],
-			"body2": [
-				"Each reward also needed to map to something meaningful in the real world. That shaped five reward classes, from common experience points to extremely rare custom interface skins."
-			]
-		},
-		"balance": {
-			"headline": "A reward system only works if it's balanced",
-			"body": [
-				"Too much reward kills the sense of accomplishment. Too little kills engagement. As an R&D side project, I built a C/C++ user-journey mapping tool with a heatmap layer to track reward density, social connection, excitement, and friction across the flow, so imbalances could be caught early."
-			]
+			"legend": "We split responsibilities according to our expertise, this led to a balanced collaboration where we dove into technical details without losing the initial business goals."
 		},
 		"tenure": {
 			"headline": "Should a new hire and a veteran earn the same way?",
 			"body": [
-				"I designed the journey so early individual actions (bookings, purchases) earn basic tokens, while experienced users unlock prestige rewards tied to team-building actions like organizing events or creating clubs."
-			]
-		}
-	},
-	"resolution": {
-		"anchor": "Resolution",
-		"reframe": {
-			"headline": "Executives didn't want \"gamification\"",
-			"body": [
-				"The word itself was the problem: it read as gimmicky to decision-makers evaluating a serious HR tool. They wanted something that felt professional.",
-				"To answer this, I built a guideline that let each client dial the expression up or down, more playful or more restrained, based on their culture, and reframed the entire concept as a \"Reward-Driven System.\"",
-				"The reframe worked, sales finally had a pitch that landed with both executives and clients."
-			]
-		},
-		"demo": {
-			"headline": "Slides couldn't sell something this abstract",
-			"body": [
-				"The concept was too new for sales to pitch on slides alone, so we go asked to build something they could actually show. I worked with the dev team to code an early, functional prototype with the core mechanics live and testable, and produced a promotional video using AI to bring the pitch to life."
-			]
-		}
-	},
-	"features": {
-		"anchor": "Features",
-		"restructure": {
-			"headline": "The initial feature list mixed engagement mechanics with generic app functions",
-			"body": [
-				"A senior consultant handed me the initial feature table, built from benchmarks and client interest. I worked with the Analyst to restructure it, separating gamified mechanics from standard functions so gamification could plug into any generic feature rather than compete with it."
-			]
-		},
-		"engines": {
-			"headline": "Engagement drives had to by classified for greater flexibility",
-			"body": [
-				"I grouped every engagement mechanic into three engines:"
-			],
-			"list": [
-				"Motivation engine: intrinsic drivers like gifts and points",
-				"Emotion engine: personalized, \"just for you\" content",
-				"Social engine: collective contribution like photo sharing and public status"
-			],
-			"body2": [
-				"This made it far easier to see how each mechanic would affect the system, and to align it with each client's specific problem."
+				"Early on, we considered talent growth and purpose as a central point within our reward system.",
+				"As a result we designed the user journey so beginners would focus more on building habits through self-fulfilment, while veterans would be highly rewarded by contribution to the collective engagement."
 			]
 		}
 	},
@@ -145,16 +92,75 @@
 		"extend": {
 			"headline": "How do you extend a Design System without bloating it?",
 			"body": [
-				"Since we wanted to reuse this solution across clients, every new component had to be reusable, not client-specific. I worked closely with my manager and synced early with development and management to hold the line on scope, protecting the Design System's scalability from client requests that would have compromised it."
+				"Since we wanted to reuse this solution across clients, every new component had to be reusable, not client-specific.",
+				"However, the real challenge sat on how to educate clients on why some customization could not be done as it would harm the project's scalability.",
+				"To answer this, I coupled the design system with a business-oriented guideline, so client would better understand the value of such design system. The guideline was used as a guardrail that we could adapt to each client."
+			],
+			"legend": {
+				"system": "I first added necessary components to the library, ensuring they would serve the project and be reused across devices.",
+				"strategy": "The design system was coupled to a business-oriented guideline, so clients would better understand the design system benefits."
+			}
+		},
+		"engines": {
+			"headline": "Gamification needed a UX framework, not just a strategy deck",
+			"body": [
+				"Although our understanding of gamification was solid in theory, we lacked a proper framework to apply it to our design and user-journey.",
+				"I decided to create three engagement engines that aligned with our initial goals:"
+			],
+			"list": [
+				"<b>Motivation:</b> handling extrinsic motivation (points, gifts).",
+				"<b>Emotion:</b> creating intrinsic engagement (storytelling, personalized content).",
+				"<b>Social:</b> responsible for team bonding (shared milestones, public recognition)."
+			],
+			"body2": [
+				"Each engine became its own set of UI patterns, so a client could dial recognition up, keep rewards subtle, or boost social interaction to better fit their culture."
+			]
+		}
+	},
+	"resolution": {
+		"anchor": "Resolution",
+		"reframe": {
+			"headline": "Executives didn't want \"gamification\"",
+			"body": [
+				"The word itself read as gimmicky to stakeholders, they wanted something that felt professional.",
+				"We decided to reframe the entire concept as \"Reward-Driven Engagement\", and built a story around it that would better align with client's initial concerns."
+			]
+		},
+		"demo": {
+			"headline": "Slides couldn't sell something this complex",
+			"body": [
+				"The concept was too new for sales to pitch on slides alone, so we were asked to build something they could actually show.",
+				"I worked with the dev team to code an early prototype so sales could directly showcase basic mechanics. I also got to create a promotional video mixing AI with mockups to bring the pitch to life."
+			],
+			"legend": {
+				"before": "Sales reported the initial slides were too abstract and received mitigated feedback from clients.",
+				"after": "A prototype with basic functions was developed as to directly showcase clients."
+			}
+		},
+		"restructure": {
+			"headline": "Gamification was competing with the product instead of enhancing it",
+			"body": [
+				"The senior consultant handed me a feature table built from client interests. However the table mixed engagement mechanics with generic app functions which made it hard to leverage engagement in each function.",
+				"I collaborated with the analyst to separate gamified mechanics from standard functions, so the gamification mechanics could be plugged into any generic feature instead of fighting it for space."
+			],
+			"legend": {
+				"before": "Initially both functions and gamification features were mixed together, which led to an unbalanced reward economy.",
+				"after": "We decided to segment them into either core functions vs engagement drive to better leverage engagement in each function."
+			}
+		},
+		"balance": {
+			"headline": "A reward system only works if it's balanced",
+			"body": [
+				"(TODO)"
 			]
 		}
 	},
 	"results": {
 		"anchor": "Results",
 		"deals": {
-			"headline": "The prototypes and demos closed two client deals.",
+			"headline": "The concept sold twice before it shipped",
 			"body": [
-				"One of them already signed for phase two."
+				"The prototype and demo were convincing enough and helped close two client deals. One of them was confident enough to sign for a phase two that would include additional features and a more comprehensive reward system."
 			]
 		}
 	},
@@ -165,9 +171,9 @@
 			"list": [
 				{
 					"icon": "book-open-check",
-					"headline": "Confirming what really matters to clients before deepen research",
+					"headline": "Confirming what really matters to clients before deepening research",
 					"challenge": "The reward economy and the R&D journey-mapping tool were more sophisticated than what the client actually used: coins redeemed for gifts.",
-					"outcome": "I now confirm what KPI matter to the client's before scoping investment."
+					"outcome": "I now confirm what KPIs matter to the client before scoping investment."
 				},
 				{
 					"icon": "flask-conical",
@@ -177,9 +183,9 @@
 				},
 				{
 					"icon": "waypoints",
-					"headline": "Push for a greater cohesive user-journey",
-					"challenge": "Design decisions leaned on leadership preference more than employee validated needs, and features shipped as disconnected pieces gather from benchmark rather than a meaningful journey.",
-					"outcome": "For further instance, I would further exchange with PM and analysts to develop a solid user requirements methodology."
+					"headline": "Push for a more cohesive user-journey",
+					"challenge": "Design decisions leaned on leadership preference more than employee-validated needs, and features shipped as disconnected pieces gathered from benchmarks rather than a meaningful journey.",
+					"outcome": "Going forward, I would further exchange with PM and analysts to develop a solid user requirements methodology."
 				}
 			]
 		}

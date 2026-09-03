@@ -15,9 +15,13 @@
 .image-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: var(--image-ratio, 16 / 9);
   cursor: pointer;
   overflow: hidden;
+
+  &[data-static="true"] {
+    cursor: default;
+  }
 
   @include interaction.hover {
     .image-lens {
@@ -90,4 +94,25 @@
 
 .modal-thumbnail {
   object-fit: cover;
+}
+
+.modal-legend {
+  color: var(--color-text-on-dark);
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  padding: 0 1rem;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.image-legend {
+  font-size: 0.85rem;
+  color: var(--color-text-muted, #666);
+  margin: 0;
+  margin-bottom: var(--size-space-large);
 }

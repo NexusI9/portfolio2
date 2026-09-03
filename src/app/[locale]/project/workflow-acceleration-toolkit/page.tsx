@@ -4,13 +4,16 @@ import { Blog } from "@components/blog/blog";
 import Template from "../_components/template/template"
 import { PROJECT_DESCRIPTOR_STYLE_STUDIO } from "../_lib/descriptors";
 import { useDictionary } from "@/i18n/Context";
-import { emptyVisual, statsVisual } from "../_lib/helper";
+import { emptyVisual, imPath, statsVisual } from "../_lib/helper";
 import { renderList } from "@components/list/helper";
 import { BLOG_HEADLINE_STYLE } from "../../_components/blog/constants";
+import { RATIO_HALF, RATIO_SQUARE } from "../../_lib/constants";
+import { Gallery } from "../../_components/gallery/gallery";
 
 export default function Workflow() {
 	const dico = useDictionary();
 	const p = dico.projects.workflow;
+	const pName = "workflow";
 
 	return (
 		<Template project={PROJECT_DESCRIPTOR_STYLE_STUDIO}>
@@ -19,8 +22,23 @@ export default function Workflow() {
 
 			<Blog.Section>
 				<Blog.Anchor role="H3" style={BLOG_HEADLINE_STYLE}>
-					{dico.projects.common.headline.overview}
+					{p.overview.anchor}
 				</Blog.Anchor>
+
+				<Gallery.AutoLayout rows={[
+					[{
+						src: imPath(pName, "overview-1"),
+						legend: p.overview.legend.style,
+					}],
+					[{
+						src: imPath(pName, "overview-2"),
+						legend: p.overview.legend.sitemap
+					}],
+					[{
+						src: imPath(pName, "overview-3"),
+						legend: p.overview.legend.text
+					}],
+				]} />
 			</Blog.Section>
 
 			{/* --- Challenge --- */}
@@ -34,7 +52,13 @@ export default function Workflow() {
 				variant="TEXT_LEFT_GALLERY_RIGHT"
 				headline={p.challenge.source.headline}
 				body={p.challenge.source.body}
-				visual={emptyVisual}
+				visual={{
+					kind: "gallery", rows: [[{
+						src: imPath(pName, "figma-core"),
+						ratio: RATIO_HALF,
+						static: true,
+					}]]
+				}}
 			/>
 
 			{/* --- Solution --- */}
@@ -43,25 +67,52 @@ export default function Workflow() {
 				anchor={p.solution.anchor}
 				headline={p.solution.split.headline}
 				body={[...p.solution.split.body, renderList(p.solution.split.list)]}
-				visual={emptyVisual}
+				visual={{ kind: "gallery", rows: [[imPath(pName, "plugin-functions")]] }}
 			/>
 			<Blog.Layout
-				variant="TEXT_RIGHT_GALLERY_LEFT"
+				variant="TEXT_TOP_GALLERY_BOTTOM"
 				headline={p.solution.tokens.headline}
 				body={p.solution.tokens.body}
-				visual={statsVisual(p.solution.tokens.stat as any)}
+				visual={{
+					kind: "gallery", rows: [[{
+						src: imPath(pName, "benchmark"),
+						legend: p.solution.tokens.legend,
+					}]]
+				}}
 			/>
 			<Blog.Layout
-				variant="TEXT_LEFT_GALLERY_RIGHT"
+				variant="TEXT_TOP_GALLERY_BOTTOM"
 				headline={p.solution.prototype.headline}
 				body={p.solution.prototype.body}
-				visual={emptyVisual}
+				visual={
+					{
+						kind: "gallery",
+						rows: [[
+							{
+								src: imPath(pName, "flow-before"),
+								ratio: RATIO_HALF,
+								legend: p.solution.prototype.legend.before
+							},
+							{
+								src: imPath(pName, "flow-after"),
+								ratio: RATIO_HALF,
+								legend: p.solution.prototype.legend.after
+							}
+						]]
+					}
+				}
 			/>
 			<Blog.Layout
 				variant="TEXT_RIGHT_GALLERY_LEFT"
 				headline={p.solution.copy.headline}
 				body={p.solution.copy.body}
-				visual={emptyVisual}
+				visual={{
+					kind: "gallery", rows: [[{
+						src: imPath(pName, "structure"),
+						static: true,
+						ratio: RATIO_SQUARE
+					}]]
+				}}
 			/>
 
 			{/* --- Resolution --- */}
@@ -70,27 +121,73 @@ export default function Workflow() {
 				anchor={p.resolution.anchor}
 				headline={p.resolution.layout.headline}
 				body={p.resolution.layout.body}
-				visual={emptyVisual}
+				visual={{
+					kind: "gallery", rows: [
+						[{
+							src: imPath(pName, "layout-before"),
+							legend: p.resolution.layout.legend.before
+						}],
+						[{
+							src: imPath(pName, "layout-after"),
+							legend: p.resolution.layout.legend.after
+						}]
+					]
+				}}
 			/>
-			<Blog.Layout
-				variant="TEXT_TOP_GALLERY_BOTTOM"
-				headline={p.resolution.tagging.headline}
-				body={p.resolution.tagging.body}
-				visual={emptyVisual}
-			/>
-			<Blog.Layout
-				variant="TEXT_LEFT_GALLERY_RIGHT"
-				headline={p.resolution.latency.headline}
-				body={p.resolution.latency.body}
-				visual={statsVisual(p.resolution.latency.stat as any)}
-			/>
+
 
 			<Blog.Layout
 				variant="TEXT_TOP_GALLERY_BOTTOM"
 				headline={p.resolution.tab.headline}
 				body={p.resolution.tab.body}
-				visual={emptyVisual}
+				visual={{
+					kind: "gallery", rows: [
+						[{
+							src: imPath(pName, "tab-before"),
+							legend: p.resolution.tab.legend.before,
+							ratio: RATIO_HALF
+						},
+						{
+							src: imPath(pName, "tab-after"),
+							legend: p.resolution.tab.legend.after,
+							ratio: RATIO_HALF
+						}
+						],
+					]
+				}}
 			/>
+
+			<Blog.Layout
+				variant="TEXT_TOP_GALLERY_BOTTOM"
+				headline={p.resolution.tagging.headline}
+				body={p.resolution.tagging.body}
+				visual={{
+					kind: "gallery", rows: [
+						[{
+							src: imPath(pName, "tag-before"),
+							legend: p.resolution.tagging.legend.before
+						}],
+						[{
+							src: imPath(pName, "tag-after"),
+							legend: p.resolution.tagging.legend.after
+						}]
+					]
+				}}
+			/>
+			<Blog.Layout
+				variant="TEXT_TOP_GALLERY_BOTTOM"
+				headline={p.resolution.latency.headline}
+				body={p.resolution.latency.body}
+				visual={{
+					kind: "gallery", rows: [
+						[{
+							src: imPath(pName, "load-benchmark"),
+							ratio: "144 / 58"
+						}],
+					]
+				}}
+			/>
+
 
 			{/* --- Rollout --- */}
 			<Blog.Layout
@@ -98,13 +195,37 @@ export default function Workflow() {
 				anchor={p.rollout.anchor}
 				headline={p.rollout.phasing.headline}
 				body={p.rollout.phasing.body}
-				visual={emptyVisual}
+				visual={{
+					kind: "gallery", rows: [
+						[{
+							src: imPath(pName, "phases"),
+							static: true,
+							ratio: RATIO_HALF
+						}],
+					]
+				}}
 			/>
+
+			<Blog.Layout
+				variant="TEXT_TOP_GALLERY_BOTTOM"
+				headline={p.rollout.ai.headline}
+				body={p.rollout.ai.body}
+				visual={{
+					kind: "gallery", rows: [
+						[{ src: imPath(pName, "ai"), ratio: "144 / 69" }],
+					]
+				}}
+			/>
+
 			<Blog.Layout
 				variant="TEXT_LEFT_GALLERY_RIGHT"
 				headline={p.rollout.adoption.headline}
 				body={p.rollout.adoption.body}
-				visual={emptyVisual}
+				visual={{
+					kind: "gallery", rows: [
+						[{ src: imPath(pName, "docu"), static: true, ratio: RATIO_HALF }],
+					]
+				}}
 			/>
 
 			{/* --- Outcome --- */}

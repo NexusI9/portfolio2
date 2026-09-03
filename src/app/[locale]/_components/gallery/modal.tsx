@@ -54,7 +54,10 @@ export default function Modal({
 			className={styles.modal}
 		>
 			{/* Main Image */}
-			<div className={styles["modal-image-container"]} >
+			<div
+				className={styles["modal-image-container"]}
+				style={active.background ? { background: active.background } : undefined}
+			>
 				<NextImage
 					src={active.src}
 					alt={active.alt || ""}
@@ -62,6 +65,16 @@ export default function Modal({
 					className={styles["modal-image"]}
 				/>
 			</div>
+
+			{/* Legend — sits above the thumbnail strip */}
+			{active.legend && (
+				<p
+					onClick={e => e.stopPropagation()}
+					className={styles["modal-legend"]}
+				>
+					{active.legend}
+				</p>
+			)}
 
 			{/* Thumbnails */}
 			{images.length > 1 && <div
@@ -74,6 +87,7 @@ export default function Modal({
 						onClick={() => onSelect(img.id)}
 						className={styles["modal-thumbnail-container"]}
 						data-active={img.id === activeId}
+						style={img.background ? { background: img.background } : undefined}
 					>
 						<NextImage
 							src={img.src}

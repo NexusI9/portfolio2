@@ -37,19 +37,27 @@
 			}
 		]
 	},
+	"overview": {
+		"anchor": "Overview",
+		"legend": {
+			"engine": "A web based 3D engine was developed to assess further business opportunities.",
+			"website": "Exclusive static 3D visuals were created to elevate client's corporate image value.",
+			"infographic": "The library also helped creating tailor-made infographics for clients with specific technical needs."
+		}
+	},
 	"opportunity": {
 		"anchor": "Opportunity",
 		"service": {
 			"headline": "Leadership wanted to turn 3D rendering into a real service",
 			"body": [
-				"Until that time, a few renders had been produced here and there, but 3D had never been a central, sellable part of a project. The goal was to make it one, but the challenge was to define what to sell, and how."
+				"Up until now, a few renders had been produced, but 3D had never been a sellable part of any project. We thus decided to make it a marketable solution, but the challenge was to define what to sell, and how."
 			]
 		},
 		"benchmark": {
-			"headline": "I benchmarked the agency's core industry and mined past client requests",
+			"headline": "I benchmarked the agency's core industry and listed past client requests",
 			"body": [
-				"I had to shape a strategy grounded in real demand rather than an assumed persona.",
-				"I noticed client asked technical requests like 3D exhibits and virtual galleries or custom brand animations. Those insights helped narrow down the possible services to be provided."
+				"I decided to define the strategy according to past demand rather than an assumed persona.",
+				"I noticed clients asked technical requests like 3D exhibits and virtual galleries or custom brand animations. Those insights helped me to define a base for the possible services to be provided."
 			],
 			"stat": [
 				[
@@ -80,21 +88,27 @@
 		"paths": {
 			"headline": "I proposed 2 solutions: one pragmatic, one ambitious",
 			"body": [
-				"The pragmatic path was a 3D module library: fast to build, easy to scale with procedural tools like Blender's Geometry Nodes, ready for static and animated renders in the short term.",
-				"The ambitious path was a web-based 3D engine: a longer-term, secondary priority that matched past client requests like virtual tours and 3D galleries, with real upside if built right. This project was explicitly framed as R&D rather than a near-term commercial deliverable."
+				"The pragmatic one was a 3D module library: it would be fast to build, easy to scale, ready for static and animated renders in the short term.",
+				"The ambitious path was a web-based 3D engine: a second priority and long-term project that matched past client requests like virtual tours and 3D galleries. This project was explicitly framed as R&D rather than a sellable solution."
 			]
 		},
 		"focus": {
-			"headline": "84% of the agency's clients were in semiconductors",
+			"headline": "How to choose models with efficiency?",
 			"body": [
-				"So that's where the library started. I analyzed the agency's client base and built the model set around that industry, layering in recurring patterns and elements pulled from paid stock libraries to round out a complete ecosystem of models and effects."
+				"I analyzed the agency's client base and narrowed the models list around the dominating field: the tech industry.",
+				"I then gathered inspiration from premium stock libraries to create a complete ecosystem of models and effects."
 			]
 		},
 		"flexibility": {
 			"headline": "The library had to offer flexibility & technical accuracy",
 			"body": [
-				"Clients care about details like pin count and component type, so I structured the library atomically, the same logic behind web design systems, keeping every element configurable per client. Procedural systems, from PCB generation to abstract pattern generation, kept every render exclusive and fast to produce."
+				"From experience, I knew clients cared about details like pin count and component type, so I structured the library atomically, the same logic behind web design systems, keeping every element configurable per client.",
+				"To keep every render unique and fast to produce, I created procedural systems to generate most models going from PCB to abstract patterns."
 			],
+			"legend": {
+				"procedural": "Each model could quickly be adjusted according to client needs.",
+				"geometry": "Blender Geometry Node was used to create complex procedural structures easily adjustable."
+			},
 			"quote": {
 				"quote": "The PCB shape isn't exactly like our product, also the number of pins is not right either",
 				"author": "Client"
@@ -106,15 +120,16 @@
 		"performance": {
 			"headline": "Clients worried existing 3D demos were too heavy",
 			"body": [
-				"Three.js and Babylon.js demos in particular raised concerns about losing part of the audience to performance issues. That fear shaped the core goal: performance over photorealism.",
-				"I chose C and WebGPU for the engine's core, for tighter memory control, compiled to WASM for the web."
+				"Three.js and Babylon.js demos raised concerns about losing part of the audience due to performance issues.",
+				"This recurring comment drove the stack choice for the engine: using C and WebGPU for a stricter memory control. The whole project would then be compiled to WASM for the web."
 			]
 		},
 		"split": {
-			"headline": "Core and UI were split for performance vs productivity",
+			"headline": "C was memory-efficient, but slowed down development",
 			"body": [
-				"The core had to be optimised for performance, as a result I used a DOD (Data-Oriented Design) approach with an ECS (Entity Component System) architecture to optimize computation speed.",
-				"The UI, only used during development, used C++ and an object-oriented approach instead, trading some performance for faster iteration and access to libraries like imGui."
+				"To answer this, I decided to split the core and UI to trade productivity over performance.",
+				"Since the core had to be optimised for performance, I kept C and used a DOD (Data-Oriented Design) approach with an ECS (Entity Component System) architecture to optimize computation speed.",
+				"The UI on the other hand, was only used during development and debugging. Therefore, I decided to use C++ with an object-oriented approach, which led to faster iteration and access to libraries like imGui."
 			]
 		}
 	},
@@ -123,88 +138,88 @@
 		"branding": {
 			"headline": "Client didn't see any added value in the renders",
 			"body": [
-				"Early feedback was blunt: clients didn't see why a generic render was worth more than a stock image. I built a guideline to anchor each client's actual branding into the render meaningfully, turning it into something a stock library could never produce.",
-				"The approach landed, one of the two pitched clients approved the direction on the spot."
-			]
+				"After delivering the first 3D renders, we noticed clients didn't see why a generic render was worth more than a stock image.",
+				"To answer this, I decided to integrate each client's actual branding into the renders, and provide them a short guideline on the visual and how it elevates their brand.",
+				"Providing clients with more context helped get the visuals approved for one client out of two."
+			],
+			"legend": {
+				"before": "At first, client felt that the visual didn't connect well enough with their brand and industry.",
+				"after": "After adding their logo on the visual and providing them a short introduction of the new guidelines, the client validated the latest visual."
+			}
 		},
 		"speed": {
 			"headline": "The 3D engine felt slow",
 			"body": [
-				"I hunted the bottlenecks down one by one: batching mesh rendering by pipeline, retuning the core PBR shader, and exposing more control over MSAA and post-fx.",
-				"The result: a stable 60fps even on a ten-year-old MacBook Pro on a basic scene with shadow mapping sun light."
+				"After doing some research, I targeted two potential bottlenecks worth trying to fix."
 			],
+			"ubo": {
+				"headline": "1. Optimizing memory by sharing it across objects",
+				"body": "Each object had to carry its own copy of the data, creating unnecessary memory usage and slowing down performance.",
+				"legend": {
+					"before": "Before, all resources duplicated data from each other.",
+					"after": "After, all resources shared and retrieved data from a common storage, preventing bloating data redundancy."
+				}
+			},
+			"batch": {
+				"headline": "2. Grouping objects to render for greater efficiency",
+				"body": "The original rendering architecture processed objects independently instead of drawing them by material, creating redundant GPU operations as scene complexity increased.",
+				"legend": {
+					"before": "Before, objects were processed according to their instantiation in the scene.",
+					"after": "After, objects were first grouped by material, leading to much less costly GPU compute."
+				}
+			},
+			"result": {
+				"headline": "The results spoke for themselves",
+				"body": "Both fixes led to clear performance improvements as well as greater scalability."
+			},
 			"stat": [
-				[
-					{
-						"value": "48",
-						"suffix": [
-							{
-								"text": "%",
-								"format": "exponent"
-							}
-						],
-						"label": "Faster mesh loading and initialization"
-					},
-					{
-						"value": "87",
-						"suffix": [
-							{
-								"text": "%",
-								"format": "exponent"
-							}
-						],
-						"label": "Speed improvement on ambient occlusion baking"
-					}
-				],
-				[
-					{
-						"value": "30",
-						"prefix": [
-							{
-								"text": "+",
-								"format": "default"
-							}
-						],
-						"suffix": [
-							{
-								"text": " FPS",
-								"format": "exponent"
-							}
-						],
-						"label": "After sharing global memory buffer (UBO)"
-					},
-					{
-						"value": "4",
-						"prefix": [
-							{
-								"text": "+",
-								"format": "default"
-							}
-						],
-						"suffix": [
-							{
-								"text": " FPS",
-								"format": "exponent"
-							}
-						],
-						"label": "After batch rendering meshes per pipeline"
-					}
-				]
+				{
+					"value": "30",
+					"prefix": [
+						{
+							"text": "+",
+							"format": "default"
+						}
+					],
+					"suffix": [
+						{
+							"text": " FPS",
+							"format": "exponent"
+						}
+					],
+					"label": "After sharing global memory buffer (UBO)"
+				},
+				{
+					"value": "4",
+					"prefix": [
+						{
+							"text": "+",
+							"format": "default"
+						}
+					],
+					"suffix": [
+						{
+							"text": " FPS",
+							"format": "exponent"
+						}
+					],
+					"label": "After batch rendering meshes per pipeline"
+				}
 			]
 		},
 		"profiling": {
 			"headline": "Bottlenecks had to be tracked",
 			"body": [
-				"To better profile the whole project, runtime debug tools were added such as live render-mode switching (boundbox, wireframe, solid, texture), a per-pass latency profiler, and a logging console were built in."
+				"To better profile the whole project, runtime debug tools were added such as live render-mode switching (boundbox, wireframe, solid, texture), a per-pass latency profiler, and a logging console built in."
 			]
 		}
 	},
 	"outcome": {
 		"anchor": "Outcome",
 		"impact": {
-			"headline": "The library paid for itself. The engine paid in knowledge",
+			"headline": "The library helped close 4 contracts. <br/> The engine paid in knowledge",
 			"body": [
-				"The 3D module library was reused across multiple projects for key visuals, brand refreshes, and infographics, cutting production time by 4 and driving contract renewals through strong client feedback.",
+				"The 3D module library was reused across multiple projects for key visuals, brand revamping, and infographics. It cut the production time by 4x and the strong client feedback led to contract renewals.",
 				"The engine is still in development and currently deprioritized, but it produced WebGPU expertise that's ready to apply with Three.js when the opportunity comes up."
 			]
 		}
@@ -218,13 +233,13 @@
 					"icon": "funnel",
 					"headline": "Narrow efforts on 1 efficient solution rather than 2",
 					"challenge": "The library saved real time but adoption stayed narrow (3 key visuals and 1 infographic).",
-					"outcome": "I wish to develop a strategy as to increase its adoption and use it as a mean to shape the brand's whole 3D direction."
+					"outcome": "I wish to develop a strategy to increase its adoption and use it as a means to shape the brand's whole 3D direction."
 				},
 				{
 					"icon": "weight",
 					"headline": "Better assessing technical workload for greater result",
 					"challenge": "The WebGPU engine was correctly framed as R&D from the start, which contained the risk, but I still underestimated the build time versus using existing libraries.",
-					"outcome": "I now reconsider more closely existing solution vs reinventing the wheel in R&D."
+					"outcome": "I now reconsider more closely existing solutions vs reinventing the wheel in R&D."
 				},
 				{
 					"icon": "users-round",

@@ -32,8 +32,8 @@ const fontDisplayZh = localFont({
 
 
 export const metadata: Metadata = {
-	title: "Nassim El Khantour - Design Engineer",
-	description: "Design Engineer based in Taiwan with over 10 years of experience across numerous industries.",
+	title: "Nassim El Khantour - UX Engineer",
+	description: "UX Engineer based in Taiwan with over 7 years of experience across numerous industries.",
 };
 
 

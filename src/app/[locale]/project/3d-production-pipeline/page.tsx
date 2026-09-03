@@ -6,6 +6,10 @@ import { PROJECT_DESCRIPTOR_WEBGPU } from "../_lib/descriptors";
 import { Blog } from "../../_components/blog/blog";
 import { emptyVisual, imPath, statsVisual } from "../_lib/helper";
 import { BLOG_HEADLINE_STYLE } from "../../_components/blog/constants";
+import { Gallery } from "../../_components/gallery/gallery";
+import { ImpactRow } from "../../_components/blog/impact";
+import { RATIO_HALF } from "../../_lib/constants";
+import { renderList } from "../../_components/list/helper";
 
 export default function Webgpu() {
 
@@ -20,8 +24,25 @@ export default function Webgpu() {
 
 		<Blog.Section>
 			<Blog.Anchor role="H3" style={BLOG_HEADLINE_STYLE}>
-				{dico.projects.common.headline.overview}
+				{p.overview.anchor}
 			</Blog.Anchor>
+
+			<Gallery.AutoLayout rows={[
+				[{
+					src: imPath(pName, "overview-1"),
+					legend: p.overview.legend.engine,
+					ratio: "720 / 439",
+				}],
+				[{
+					src: imPath(pName, "overview-2"),
+					legend: p.overview.legend.website
+				}],
+				[{
+					src: imPath(pName, "overview-3"),
+					legend: p.overview.legend.infographic
+				}],
+			]} />
+
 		</Blog.Section>
 
 		{/* --- Opportunity --- */}
@@ -44,33 +65,59 @@ export default function Webgpu() {
 			anchor={p.strategy.anchor}
 			headline={p.strategy.paths.headline}
 			body={p.strategy.paths.body}
-			visual={emptyVisual}
+			visual={{ kind: "gallery", rows: [[imPath(pName, "roadmap")]] }}
 		/>
 		<Blog.Layout
 			variant="TEXT_RIGHT_GALLERY_LEFT"
 			headline={p.strategy.focus.headline}
 			body={p.strategy.focus.body}
-			visual={emptyVisual}
+			visual={{
+				kind: "gallery", rows: [[{
+					src: imPath(pName, "models-examples"),
+					static: true,
+					ratio: RATIO_HALF,
+				}]]
+			}}
 		/>
 		<Blog.Layout
 			variant="TEXT_LEFT_GALLERY_RIGHT"
 			headline={p.strategy.flexibility.headline}
 			body={p.strategy.flexibility.body}
-			visual={emptyVisual}
+			visual={{
+				kind: "gallery", rows: [[{
+					src: imPath(pName, "atomic-structure"),
+					static: true,
+					ratio: RATIO_HALF,
+				}]]
+			}}
+			extra={{
+				kind: "gallery", rows: [
+					[{
+						src: imPath(pName, "geomertry-node"),
+						legend: p.strategy.flexibility.legend.geometry
+					}],
+					[{
+						src: imPath(pName, "procedural"),
+						legend: p.strategy.flexibility.legend.procedural
+					}]
+				]
+			}}
+
 		/>
 
 		{/* --- Architecture --- */}
 		<Blog.Layout
-			variant="TEXT_ONLY"
+			variant="TEXT_TOP_GALLERY_BOTTOM"
 			anchor={p.architecture.anchor}
 			headline={p.architecture.performance.headline}
 			body={p.architecture.performance.body}
+			visual={{ kind: "gallery", rows: [[imPath(pName, "engine-stack")]] }}
 		/>
 		<Blog.Layout
 			variant="TEXT_TOP_GALLERY_BOTTOM"
 			headline={p.architecture.split.headline}
 			body={p.architecture.split.body}
-			visual={emptyVisual}
+			visual={{ kind: "gallery", rows: [[imPath(pName, "split-core-ui")]] }}
 		/>
 
 		{/* --- Resolution --- */}
@@ -79,19 +126,91 @@ export default function Webgpu() {
 			anchor={p.resolution.anchor}
 			headline={p.resolution.branding.headline}
 			body={p.resolution.branding.body}
-			visual={emptyVisual}
+			visual={{
+				kind: "gallery", rows: [
+					[{
+						src: imPath(pName, "kv-rejected"),
+						legend: p.resolution.branding.legend.before
+					}],
+					[{
+						src: imPath(pName, "kv-accepted"),
+						legend: p.resolution.branding.legend.after
+					}]
+				]
+			}}
 		/>
-		<Blog.Layout
-			variant="TEXT_TOP_STAT_BOTTOM"
-			headline={p.resolution.speed.headline}
-			body={p.resolution.speed.body}
-			visual={statsVisual(p.resolution.speed.stat)}
-		/>
+
+		<Blog.Section>
+			<Blog.Layout
+				asChild
+				variant="TEXT_ONLY"
+				headline={p.resolution.speed.headline}
+				body={p.resolution.speed.body}
+			/>
+
+			<Blog.Group>
+				<Blog.Headline role="H5">{p.resolution.speed.ubo.headline}</Blog.Headline>
+				<Blog.Paragraph>{p.resolution.speed.ubo.body}</Blog.Paragraph>
+				<Gallery.AutoLayout rows={[
+					[
+						{
+							src: imPath(pName, "ubo-diagram-before"),
+							legend: p.resolution.speed.ubo.legend.before,
+							ratio: RATIO_HALF,
+
+						},
+						{
+							src: imPath(pName, "ubo-diagram-after"),
+							legend: p.resolution.speed.ubo.legend.after,
+							ratio: RATIO_HALF,
+						}
+					]
+				]} />
+			</Blog.Group>
+
+			<Blog.Group>
+				<Blog.Headline role="H5">{p.resolution.speed.batch.headline}</Blog.Headline>
+				<Blog.Paragraph>{p.resolution.speed.batch.body}</Blog.Paragraph>
+
+				<Gallery.AutoLayout rows={[
+					[
+						{
+							src: imPath(pName, "batch-rendering-diagram-before"),
+							legend: p.resolution.speed.batch.legend.before,
+							ratio: RATIO_HALF,
+
+						},
+						{
+							src: imPath(pName, "batch-rendering-diagram-after"),
+							legend: p.resolution.speed.batch.legend.after,
+							ratio: RATIO_HALF,
+						}
+					]
+				]} />
+			</Blog.Group>
+
+
+			<Blog.Group>
+				<Blog.Headline role="H5">{p.resolution.speed.result.headline}</Blog.Headline>
+				<Blog.Paragraph>{p.resolution.speed.result.body}</Blog.Paragraph>
+
+				<ImpactRow items={p.resolution.speed.stat as any} style="SOLID" />
+			</Blog.Group>
+
+
+		</Blog.Section>
+
+
 		<Blog.Layout
 			variant="TEXT_TOP_GALLERY_BOTTOM"
 			headline={p.resolution.profiling.headline}
 			body={p.resolution.profiling.body}
-			visual={emptyVisual}
+			visual={{
+				kind: "gallery", rows: [
+					[imPath(pName, "inspector")],
+					[imPath(pName, "dynamic-rendering")]
+				]
+			}}
 		/>
 
 		{/* --- Outcome --- */}
