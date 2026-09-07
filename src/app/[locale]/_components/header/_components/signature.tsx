@@ -5,15 +5,19 @@ import Link from "next/link";
 import styles from "./signature.module.scss"
 import { useDictionary } from "@/i18n/Context";
 import { useParams } from "next/navigation";
+import { IComponentTheme } from "@/app/[locale]/_types/component";
 
-export function Signature() {
+interface ISignature {
+	theme?: IComponentTheme;
+}
 
+export function Signature({ theme = "LIGHT" }: ISignature) {
 
 	const dico = useDictionary();
 	const params = useParams();
 	const { locale } = params;
 
-	return <Link href={`/${locale}`} className={`${styles.signature} flex flex-row gap-(--size-space-medium)  [:lang(zh-TW)_&]:gap-(--size-space-large) items-center`}>
+	return <Link href={`/${locale}`} className={`${styles.signature} flex flex-row gap-(--size-space-medium)  [:lang(zh-TW)_&]:gap-(--size-space-large) items-center`} data-theme={theme}>
 		<LogoIcon />
 		<div className="flex flex-col">
 			<Text.LabelMedium>{dico.common.header.name}</Text.LabelMedium>

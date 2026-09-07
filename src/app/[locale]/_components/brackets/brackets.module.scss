@@ -1,33 +1,34 @@
 @use "@styles/var";
 
+.brackets {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-.brackets{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  &[data-theme="DARK"] {
+    .bracket {
+      border-color: var(--color-border-brand-subtle);
+    }
+  }
 }
 
-.bracket{
-    width: 4px;
-    display:block;
-    height:100%;
+.bracket {
+  width: 4px;
+  display: block;
+  height: 100%;
 
-    border-style: solid;
-    border-color: var(--color-border-brand-base);
+  border-style: solid;
+  border-color: var(--color-border-brand-base);
 
-    border-top-width: var(--size-width-border-base);
-    border-bottom-width: var(--size-width-border-base);
-    
-    &[data-side=LEFT]{
-	border-left-width: var(--size-width-border-base);
-    }
+  border-top-width: var(--size-width-border-base);
+  border-bottom-width: var(--size-width-border-base);
 
-    
-    &[data-side=RIGHT]{
-	border-right-width: var(--size-width-border-base);
-    }
-    
-    
-    
+  &[data-side="LEFT"] {
+    border-left-width: var(--size-width-border-base);
+  }
+
+  &[data-side="RIGHT"] {
+    border-right-width: var(--size-width-border-base);
+  }
 }

@@ -33,6 +33,7 @@ interface IBanner {
 
 }
 
+
 export default function Banner({ overline, headline, subtitle, roles, status, context, stack, visual, team, timeline }: IBanner) {
 
 	const dico = useDictionary();
@@ -41,11 +42,18 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 		<div className={styles["banner-wrapper"]}>
 			<Container className={styles.banner}>
 
+				<picture className={styles.background}>
+					<source media="(min-width: 1440px)" srcSet="/assets/project-banner-bg@1440w.png" />
+					<source media="(max-width: 1024px)" srcSet="/assets/project-banner-bg@1024w.png" />
+					<source media="(max-width: 360px)" srcSet="/assets/project-banner-bg@360w.png" />
+					<img src="/assets/project-banner-bg@1440w.png" alt="Abstract dark background with purple lines" />
+				</picture>
+
 				<div className={styles.content}>
 					<hgroup>
-						{overline && <Text.Overline className="text-(--color-text-brand-base)">{overline}</Text.Overline>}
+						{overline && <Text.Overline className="text-(--color-text-brand-subtle)">{overline}</Text.Overline>}
 						{headline && <TextBase role="H1" style="H3">{headline}</TextBase>}
-						{subtitle && <Text.H6 className="text-(--color-text-subtle-on-light) mt-(--size-space-small)">{subtitle}</Text.H6>}
+						{subtitle && <Text.H6 className="mt-(--size-space-small)">{subtitle}</Text.H6>}
 					</hgroup>
 
 					<ul className="flex flex-col gap-(--size-space-extra-large-2)">
@@ -103,10 +111,10 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 				{visual && visual.src && <div
 					className={styles.visual}
 				>
-					{visual.color && <span
+					{/*visual.color && <span
 						className={styles.backdrop}
 						style={{ backgroundImage: `linear-gradient(${visual.color.start}, ${visual.color.end} 85%, #FFFFFF00 100%)` }} />
-					}
+					*/}
 					<Image
 						src={visual.src}
 						alt={visual.alt || "A macbook mockup with design work displayed on its screen."}

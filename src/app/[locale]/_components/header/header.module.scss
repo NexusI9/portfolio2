@@ -28,6 +28,10 @@
   &[data-scrolled="true"] {
     background: var(--color-surface-higher);
   }
+
+  &[data-theme="DARK"] {
+    color: var(--color-text-on-dark);
+  }
 }
 
 .mobile-menu {
@@ -36,6 +40,12 @@
   position: fixed;
   z-index: 100;
   pointer-events: none;
+
+  &[data-theme="DARK"] {
+    .mobile-menu-bars span {
+      background-color: var(--color-icon-on-dark);
+    }
+  }
 
   hr {
     border-color: var(--color-border-subtle-on-light);

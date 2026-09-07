@@ -6,11 +6,11 @@
 		"anchor": "Impact",
 		"items": [
 			{
-				"value": "99",
-				"label": "PSI performance score"
+				"value": "96",
+				"label": "Average PSI score"
 			},
 			{
-				"value": "6",
+				"value": "48",
 				"prefix": [
 					{
 						"text": "+",
@@ -23,7 +23,7 @@
 						"format": "exponent"
 					}
 				],
-				"label": "Accessibility improvement"
+				"label": "Performance & accessibility improvement"
 			},
 			{
 				"value": "473",
@@ -33,7 +33,7 @@
 						"format": "default"
 					}
 				],
-				"label": "SEO ranking improvement"
+				"label": "SEO position ranking"
 			}
 		]
 	},

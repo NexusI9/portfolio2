@@ -23,6 +23,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--color-text-on-dark);
+  background-color: var(--color-surface-lowest);
+  position: fixed;
+  height: calc(var(--project-banner-height) + 30vh);
+
+  @include responsive.small-screen {
+    height: auto;
+    position: inherit;
+  }
+
+  @include responsive.tablet {
+    height: auto;
+    position: inherit;
+  }
 }
 
 .banner {
@@ -79,6 +93,7 @@
 }
 
 .content {
+  position: relative;
   padding-top: 110px;
   display: flex;
   flex-direction: column;
@@ -86,6 +101,29 @@
 
   h1 {
     text-wrap: pretty;
+  }
+
+  hgroup {
+    p.overline {
+      color: var(--color-text-brand-subtle);
+    }
+  }
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  @include responsive.small-screen {
+    top: auto;
+    bottom: 0;
+  }
+
+  @include responsive.tablet {
+    top: auto;
+    bottom: 0;
   }
 }
 

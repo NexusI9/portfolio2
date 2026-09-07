@@ -10,3 +10,5 @@ export type IComponentRole = "PRIMARY"
 	| "DISABLED";
 
 export type IComponentStyle = "SOLID" | "OUTLINE" | "GHOST";
+
+export type IComponentTheme = "LIGHT" | "DARK";

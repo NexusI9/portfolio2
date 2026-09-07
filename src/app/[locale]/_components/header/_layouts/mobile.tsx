@@ -11,7 +11,9 @@ import { CONTACT_INFO } from "../constants";
 
 import CaseIcon from "@assets/icons/solid/briefcase.svg"
 import { Signature } from "../_components/signature";
-import { useScrolled } from "../use-scrolled";
+import { useScrolled } from "../_hooks/use-scrolled";
+import { useIsProjectPage } from "../_hooks/use-is-project-page";
+import { IComponentTheme } from "@/app/[locale]/_types/component";
 
 export default function MobileHeader() {
 
@@ -20,17 +22,19 @@ export default function MobileHeader() {
 	const params = useParams();
 	const { locale } = params;
 	const scrolled = useScrolled(24);
+	const isProjectPage = useIsProjectPage();
+	const theme: IComponentTheme = isProjectPage && !scrolled && !open ? "DARK" : "LIGHT";
 
 	function toggleMenu() {
 		setOpen(!open)
 	}
 
 	return (
-		<header className={styles["mobile-menu"]} data-open={open} data-scrolled={scrolled}>
+		<header className={styles["mobile-menu"]} data-open={open} data-scrolled={scrolled} data-theme={theme}>
 
 			<div className={styles["mobile-menu-bar"]}>
 
-				<Signature />
+				<Signature theme={theme} />
 
 				<div className={styles["mobile-menu-actions"]}>
 
