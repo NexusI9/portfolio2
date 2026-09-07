@@ -53,7 +53,7 @@ const Portrait = ({ children, className }: ComponentPropsWithoutRef<"div">) => {
 
 		{children}
 		<div className={styles["portrait-container"]} ref={container}>
-			{!sceneRef.current && <Image alt="3D Render Static Portrait" src="/assets/portrait-static.png" fill />}
+			{sceneRef.current && !sceneRef.current.supported && <Image alt="3D Render Static Portrait" src="/assets/portrait-static.png" fill />}
 		</div>
 	</div>);
 }

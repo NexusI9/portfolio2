@@ -77,7 +77,14 @@ export default function MobileHeader() {
 				<hr />
 				<div className={styles["mobile-menu-section"]}>
 					<Text.Overline className={styles["mobile-menu-overline"]}>{dico.common.header.mobile.resources}</Text.Overline>
-					<Button size="LARGE" role="PRIMARY" style="GHOST" leadingIcon={<CaseIcon />}>
+					<Button
+						size="LARGE"
+						role="PRIMARY"
+						style="GHOST"
+						leadingIcon={<CaseIcon />}
+						href={dico.common.header["resume-url"]}
+						openNewTab
+					>
 						{dico.common.header.resume}
 					</Button>
 

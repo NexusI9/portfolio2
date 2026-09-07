@@ -19,10 +19,25 @@ interface IButton {
 	href?: string;
 	className?: string;
 	decoration?: boolean;
+	openNewTab?: boolean;
 }
-export const Button = ({ leadingIcon, trailingIcon, size = "LARGE", role = "PRIMARY", style = "SOLID", theme = "LIGHT", children, className, onClick, href, type = "TEXT", decoration = true }: IButton) => {
+export const Button = ({
+	leadingIcon,
+	trailingIcon,
+	size = "LARGE",
+	role = "PRIMARY",
+	style = "SOLID",
+	theme = "LIGHT",
+	children,
+	className,
+	onClick,
+	href,
+	type = "TEXT",
+	decoration = true,
+	openNewTab = false
+}: IButton) => {
 	const Wrapper = href ? Link : "div";
-	const isExternal = href?.startsWith("https");
+	const isExternal = openNewTab || href?.startsWith("https");
 	return (
 		<Wrapper className={clsx([className, styles.button])}
 			data-size={size}

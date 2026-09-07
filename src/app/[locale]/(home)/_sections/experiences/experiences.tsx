@@ -20,7 +20,13 @@ export default function Experiences() {
 						<TextBase role="H2" style="H2">
 							{dico.home.headlines.experiences}
 						</TextBase>
-						<Button style="OUTLINE" size="MEDIUM" leadingIcon={<DownloadIcon />}><b>{dico.home["resume-button"]}</b></Button>
+						<Button
+							style="OUTLINE"
+							size="MEDIUM"
+							leadingIcon={<DownloadIcon />}
+							href={dico.common.header["resume-url"]}
+							openNewTab
+						><b>{dico.home["resume-button"]}</b></Button>
 					</div>
 				</div>
 

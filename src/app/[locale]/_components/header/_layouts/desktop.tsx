@@ -21,7 +21,14 @@ export default function DesktopHeader() {
 		<div className={styles["header-inner"]}>
 			<Signature theme={theme} />
 			<div className="flex flex-row gap-(--size-space-extra-large-2) items-center">
-				<Button size="MEDIUM" role="PRIMARY" style="GHOST" theme={theme}>
+				<Button
+					size="MEDIUM"
+					role="PRIMARY"
+					style="GHOST"
+					theme={theme}
+					href={dico.common.header["resume-url"]}
+					openNewTab
+				>
 					<b>{dico.common.header.resume}</b>
 				</Button>
 				<div className="flex flex-row gap-(--size-space-extra-large) items-center">
