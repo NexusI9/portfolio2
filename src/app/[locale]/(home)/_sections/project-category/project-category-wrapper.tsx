@@ -40,8 +40,8 @@ export default function ProjectCategoryWrapper() {
 	];
 
 	return (
-		<Container>
-	  <TextBase role="H2" style="H2" id="work" className="text-center relative mb-(--size-space-extra-large-3) pt-(--size-space-extra-large-6)">
+	 <Container className="pb-(--size-space-extra-large-5)">
+			<TextBase role="H2" style="H2" id="work" className="text-center relative mb-(--size-space-extra-large-3) pt-(--size-space-extra-large-6)">
 				{dico.home.headlines.work}
 			</TextBase>
 			{PROJECT_SECTIONS.map(project => <ProjectCategory key={project.id} {...project} />)}

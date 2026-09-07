@@ -1,42 +1,107 @@
 {
 	"headlines": {
-		"uvp": "融合工程、UX 與 3D 專業，讓複雜系統呈現毫不費力的體驗",
-		"subtitle": "7 年以上橫跨視覺、動態與 3D 即時系統的經驗，服務 B2C 與 B2B 平台，銜接技術與創意",
-		"quotes": "我們一起<br/>推動了這些專案",
-		"work": "精選作品"
+		"uvp": "融合工程、使用者體驗與 3D 專業，讓複雜系統呈現直覺流暢的體驗",
+		"subtitle": "擁有 7 年以上視覺、動態與即時 3D 系統經驗，橫跨 B2C 與 B2B 平台，串聯技術與創意",
+		"quotes": "我們一起推動了這些專案",
+		"work": "精選作品",
+		"experiences": "過往經歷"
 	},
-	"intro-button": "查看我的作品",
+	"intro-button": "查看作品",
 	"work-button": "閱讀案例研究",
+	"resume-button": "下載履歷",
 	"quotes": [
 		{
 			"quote": "他是一位極具才華且多才多藝的創意人才，總是以積極主動的態度解決問題。",
 			"author": "Louhann M.",
-			"position": "Grazia Magazine 記者兼文案撰稿人",
-			"location": "法國巴黎"
+			"position": "記者暨文案撰稿人",
+			"location": "法國，巴黎"
 		},
 		{
-			"quote": "我強烈推薦讓他加入任何需要技術實力的專案。<br />真正的高手！！！",
+			"quote": "我強烈推薦他參與任何技術導向的專案。<br />真的是一位奇才！！！",
 			"author": "Paul-André C.",
-			"position": "Celsius Communication 業務開發與合夥人",
-			"location": "加拿大蒙特婁"
+			"position": "業務開發暨合夥人",
+			"location": "加拿大，蒙特婁"
 		},
 		{
-			"quote": "他的創作不僅在美感上令人驚豔，在細節與視覺一致性上也展現出極高的用心。",
+			"quote": "他的作品不僅在美學上令人驚艷，更兼具細節與視覺一致性的用心設計。",
 			"author": "Matteo M.",
-			"position": "SEM 廣告活動專員兼專案經理",
-			"location": "法國馬賽"
+			"position": "SEM 廣告活動專員",
+			"location": "法國，馬賽"
 		},
 		{
-			"quote": "與 Nassim 合作，我找到了設計與功能之間恰到好處的平衡。他在指導與跟其他成員協作方面也表現得非常出色。",
+			"quote": "與 Nassim 合作，我找到了設計與功能之間的完美平衡。他也很擅長指導與協作團隊成員。",
 			"author": "Alex B.",
-			"position": "MTLVibe 執行長兼行銷總監",
-			"location": "加拿大蒙特婁"
+			"position": "執行長暨行銷總監",
+			"location": "加拿大，蒙特婁"
 		},
 		{
-			"quote": "除了出色的技能之外，Nassim 也是一位優秀的團隊夥伴，他對這份工作的熱情帶動了強烈的團隊凝聚力。",
+			"quote": "除了出色的技能之外，Nassim 也是一位出色的團隊合作者，他對工作的熱情帶動了團隊的凝聚力。",
 			"author": "Nader B.M.",
-			"position": "Redbox Media 共同創辦人兼數位策略師",
-			"location": "加拿大蒙特婁"
+			"position": "共同創辦人暨數位策略總監",
+			"location": "加拿大，蒙特婁"
+		}
+	],
+	"experiences": [
+		{
+			"logoSrc": "/assets/experiences/akacia.png",
+			"logoAlt": "Akacia Co. Ltd. 標誌",
+			"company": "Akacia",
+			"roles": [
+				{
+					"position": "UX 工程師",
+					"location": "台灣，桃園",
+					"date": {
+						"start": "2024",
+						"end": "至今"
+					}
+				}
+			]
+		},
+		{
+			"logoSrc": "/assets/experiences/redbox.png",
+			"logoAlt": "Redbox Media 標誌",
+			"company": "Redbox Media",
+			"roles": [
+				{
+					"position": "首席設計師",
+					"location": "加拿大，蒙特婁",
+					"date": {
+						"start": "2022",
+						"end": "2023"
+					}
+				},
+				{
+					"position": "多媒體設計師",
+					"location": "加拿大，蒙特婁",
+					"date": {
+						"start": "2023",
+						"end": "2024"
+					}
+				}
+			]
+		},
+		{
+			"logoSrc": "/assets/experiences/nek.png",
+			"logoAlt": "Nassim El Khantour 標誌",
+			"company": "自由接案",
+			"roles": [
+				{
+					"position": "網頁設計師暨前端開發工程師",
+					"location": "法國，史特拉斯堡",
+					"date": {
+						"start": "2020",
+						"end": "2022"
+					}
+				},
+				{
+					"position": "即時技術美術師",
+					"location": "法國，南錫",
+					"date": {
+						"start": "2016",
+						"end": "2020"
+					}
+				}
+			]
 		}
 	]
 }

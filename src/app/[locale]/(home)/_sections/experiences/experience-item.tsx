@@ -40,7 +40,7 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 										/>
 									</div>
 								) : (
-									<span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-(--color-surface-low)" />
+									<span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-(--color-surface-low)" />
 								)}
 								{!isLast && (
 								 <span className="my-1 w-px flex-1 bg-(--color-surface-base)" />
