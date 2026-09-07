@@ -1,11 +1,12 @@
 @use "@styles/var";
 
 .quote-card {
-  background: var(--color-surface-highest);
+  //background: var(--color-surface-highest);
   padding-inline: var(--size-space-extra-large);
   padding-top: var(--size-space-extra-large);
   padding-bottom: var(--size-space-extra-large-2);
-  box-shadow: var(--shadow-medium);
+  //box-shadow: var(--shadow-medium);
+  border: 1px solid var(--color-border-subtlest-on-light);
 
   display: flex;
   flex-direction: column;

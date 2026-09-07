@@ -2,7 +2,7 @@
 	"headlines": {
 		"uvp": "Fusing Engineering, UX & 3D expertises to make complex systems feel effortless",
 		"subtitle": "7+ year accross visual, motion and real-time 3D systems, in B2C and B2B platforms, bridging technical with creativity",
-		"quotes": "We propelled <br/> projects together",
+		"quotes": "We propelled projects together",
 		"work": "Selected Work"
 	},
 	"intro-button": "See my work",
@@ -11,32 +11,95 @@
 		{
 			"quote": "An incredibly talented and versatile Creative. He consistently demonstrates a proactive approach to problem-solving.",
 			"author": "Louhann M.",
-			"position": "Journalist & Copywriter at Grazia Magazine",
+			"position": "Journalist & Copywriter",
 			"location": "Paris, France"
 		},
 		{
 			"quote": "I strongly recommend having him on your side for any tech-savvy initiative. <br />A real wizard!!!",
 			"author": "Paul-André C.",
-			"position": "Business development & Associate at Celsius Communication",
+			"position": "Business Development & Associate",
 			"location": "Montréal, Canada"
 		},
 		{
 			"quote": "His creations are not only aesthetically captivating, they are also designed with a great attention to detail and visual coherence.",
 			"author": "Matteo M.",
-			"position": "SEM Campaign Specialist & Project Manager",
+			"position": "SEM Campaign Specialist",
 			"location": "Marseille, France"
 		},
 		{
 			"quote": "With Nassim, I was able to find that perfect balance of design and functionality. He was also great at coaching and collaborating with other members.",
 			"author": "Alex B.",
-			"position": "CEO & Marketing Director at MTLVibe",
+			"position": "CEO & Marketing Director",
 			"location": "Montréal, Canada"
 		},
 		{
 			"quote": "In addition to his remarkable skill set, Nassim shines as a team player, his passion for his craft driving a strong collective spirit.",
 			"author": "Nader B.M.",
-			"position": "Co-Founder & Digital Strategist at Redbox Media",
+			"position": "Co-Founder & Digital Strategist",
 			"location": "Montréal, Canada"
+		}
+	],
+	"experiences": [
+		{
+			"logoSrc": "/assets/experiences/akacia.png",
+			"logoAlt": "Akacia Co. Ltd. logo",
+			"company": "Akacia",
+			"roles": [
+				{
+					"position": "UX Engineer",
+					"location": "Taoyuan, Taiwan",
+					"date": {
+						"start": "2024",
+						"end": "Present"
+					}
+				}
+			]
+		},
+		{
+			"logoSrc": "/assets/experiences/redbox.png",
+			"logoAlt": "Redbox Media logo",
+			"company": "Redbox Media",
+			"roles": [
+				{
+					"position": "Lead Designer",
+					"location": "Montréal, Canada",
+					"date": {
+						"start": "2022",
+						"end": "2023"
+					}
+				},
+				{
+					"position": "Multimedia Designer",
+					"location": "Montréal, Canada",
+					"date": {
+						"start": "2023",
+						"end": "2024"
+					}
+				}
+			]
+		},
+		{
+			"logoSrc": "/assets/experiences/nek.png",
+			"logoAlt": "Nassim El Khantour logo",
+			"company": "Freelance",
+			"roles": [
+				{
+					"position": "Web Designer & Front-End Developer",
+					"location": "Strasbourg, France",
+					"date": {
+						"start": "2020",
+						"end": "2022"
+					}
+				},
+				{
+					"position": "Real-Time Technical Artist",
+					"location": "Nancy, France",
+					"date": {
+						"start": "2016",
+						"end": "2020"
+					}
+				}
+			]
 		}
 	]
 }

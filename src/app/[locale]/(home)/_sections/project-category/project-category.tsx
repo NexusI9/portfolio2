@@ -1,6 +1,5 @@
 "use client"
 
-import Container from "@components/container/container";
 import { ComponentPropsWithoutRef, useRef } from "react";
 import ProjectCard from "@components/project-card/project-card";
 import styles from "./project-category.module.scss"
@@ -12,13 +11,13 @@ interface IProjectCategory extends ComponentPropsWithoutRef<"section"> {
 
 export default function ProjectCategory({ projects, id }: IProjectCategory) {
 
-	const containerRef = useRef<HTMLElement>(null);
+	const containerRef = useRef<HTMLDivElement>(null);
 
 	return (
 
-		<Container ref={containerRef} id={id} className={clsx(styles["project-category"], "flex flex-col gap-(--size-space-extra-large-4) py-(--size-space-extra-large-3)")}>
+		<div ref={containerRef} id={id} className={clsx(styles["project-category"], "flex flex-col gap-(--size-space-extra-large-4) py-(--size-space-extra-large-3)")}>
 			{projects.map((props) => <ProjectCard key={props.thumbnail.src} {...props} />)}
-		</Container>
+		</div>
 
 	);
 

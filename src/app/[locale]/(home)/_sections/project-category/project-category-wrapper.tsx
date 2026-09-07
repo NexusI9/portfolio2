@@ -8,6 +8,7 @@ import { useDictionary } from "@/i18n/Context";
 import { useParams } from "next/navigation";
 import { Text, TextBase } from "@/app/[locale]/_components/text/text";
 import { mapProjectFromDescriptor } from "@/app/[locale]/_lib/utils";
+import Container from "@/app/[locale]/_components/container/container";
 
 export default function ProjectCategoryWrapper() {
 
@@ -39,11 +40,11 @@ export default function ProjectCategoryWrapper() {
 	];
 
 	return (
-		<>
-	  <TextBase role="H2" style="H1" id="work" className="text-center relative mb-(--size-space-extra-large-3) pt-(--size-space-extra-large-2)">
+		<Container>
+	  <TextBase role="H2" style="H2" id="work" className="text-center relative mb-(--size-space-extra-large-3) pt-(--size-space-extra-large-6)">
 				{dico.home.headlines.work}
 			</TextBase>
 			{PROJECT_SECTIONS.map(project => <ProjectCategory key={project.id} {...project} />)}
-		</>);
+		</Container>);
 
 }

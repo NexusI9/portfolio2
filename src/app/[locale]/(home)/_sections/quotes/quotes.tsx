@@ -28,7 +28,7 @@ export default function Quotes() {
 	return (
 		<Container id="quotes" className={styles.quotes}>
 			<hgroup className="w-fit m-auto relative">
-				<TextBase role="H2" style="H1" className="text-center relative">
+				<TextBase role="H2" style="H2" className="text-left relative">
 					{dico.home.headlines.quotes}
 				</TextBase>
 			</hgroup>
