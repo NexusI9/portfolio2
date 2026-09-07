@@ -1,183 +1,253 @@
 {
-	"description": "以 C 開發、專注於低效能硬體即時渲染的圖形引擎。",
-	"problem": {
-		"headline": "問題陳述",
-		"body": "隨著 WebGPU 的推出，主流 3D 函式庫開始逐步採用這項技術。然而，目前許多實作在較舊或效能較低的裝置上仍難以流暢運行。因此，本引擎作為一項研發（R&D）計畫的一部分，希望透過深入理解 WebGPU 的運作原理，建立更高的技術自主性，並為未來的互動式 3D 專案打造兼具高效能與高可及性的渲染架構。"
-	},
-	"constraints": {
-		"headline": "專案限制",
-		"body": [
-			"針對舊型或低效能裝置進行最佳化。",
-			"提供可切換的效能模式，以支援更高品質的渲染。",
-			"核心引擎使用 C 開發，支援原生平台輸出。",
-			"透過 WASM 與 Emscripten 編譯至 Web 平台。",
-			"實作完整 PBR 渲染流程，包括光照、陰影、反射與 PostFX。"
+	"name": "3D 製作管線",
+	"description": "開發了一套內部 3D 製作管線，結合 C/C++ 3D 引擎與程序化工作流程",
+	"timeline": "8 個月",
+	"impact": {
+		"anchor": "成效",
+		"items": [
+			{
+				"value": "60",
+				"suffix": [
+					{
+						"text": "FPS",
+						"format": "exponent"
+					}
+				],
+				"label": "在低階裝置上維持穩定的即時效能"
+			},
+			{
+				"value": "4",
+				"suffix": [
+					{
+						"text": "x",
+						"format": "default"
+					}
+				],
+				"label": "視覺內容製作流程加快倍數"
+			},
+			{
+				"value": "48",
+				"suffix": [
+					{
+						"text": "%",
+						"format": "exponent"
+					}
+				],
+				"label": "網格載入與初始化速度提升比例"
+			}
 		]
 	},
-	"exploration": {
-		"headline": "技術探索",
-		"ui_research": {
-			"headline": "介面研究",
-			"body": "引擎介面與使用體驗參考了 Blender、Unity、Godot，以及 Wicked Engine 等獨立專案。由於執行期間的動態渲染模式對除錯至關重要，因此從一開始便將其列為核心功能。雖然對 UI 的影響有限，卻大幅增加了底層技術複雜度。此外，也加入 Inspector 即時編輯功能，以及效能監控與分析工具，以便即時觀察物件與系統狀態。"
+	"overview": {
+		"anchor": "總覽",
+		"legend": {
+			"engine": "開發了一套網頁版 3D 引擎，用以評估更多商業機會。",
+			"website": "打造了專屬的靜態 3D 視覺內容，以提升客戶的企業形象價值。",
+			"infographic": "此元件庫也協助為有特定技術需求的客戶製作量身打造的資訊圖表。"
+		}
+	},
+	"opportunity": {
+		"anchor": "機會",
+		"service": {
+			"headline": "領導層希望將 3D 渲染打造成真正的服務項目",
+			"body": [
+				"在此之前，雖已產出一些渲染成果，但 3D 從未成為任何專案中可銷售的部分。因此我們決定將其打造成可行銷的解決方案，然而挑戰在於釐清要銷售什麼，以及如何銷售。"
+			]
 		},
-		"tech_research": {
-			"headline": "技術研究",
-			"dod": {
-				"headline": "資料導向設計（DOD）",
-				"body": "由於效能是首要目標，因此整體架構採用了較符合 CPU Cache 的 Data-Oriented Design。考量自己當時的經驗有限，要建立真正最佳化的資料布局並不容易，因此額外設計了 Packet System，透過重新排列資料提升空間區域性（Spatial Locality），降低 Cache Miss 與 Pointer Chasing。"
-			},
-			"material": {
-				"headline": "Material API",
-				"body": [
-					"最初建立了一套 Material API，透過介面呼叫即可設定 Mesh 所需 Shader，而不必手動管理 Bind Group 或 Binding Index。",
-					"然而，這也增加了大量額外分支與很少使用的抽象層。",
-					"因此後續重新統一 Render Pipeline 與 Compute Pipeline 的設計，建立包含固定 Bind Group 與 Binding 常數的 Pipeline State Object（PSO）。",
-					"目前 Shader／Material 系統支援 Buffer、Texture 與 Sampler 的動態更新，使 Shader 資料管理更加有效率。"
+		"benchmark": {
+			"headline": "我針對代理商的核心產業進行標竿分析，並整理過往的客戶需求",
+			"body": [
+				"我決定依據過往需求而非假設的人物誌來制定策略。",
+				"我注意到客戶提出的技術需求包括 3D 展覽、虛擬藝廊或客製化品牌動畫。這些洞察幫助我建立可提供服務的基礎框架。"
+			],
+			"stat": [
+				[
+					{
+						"value": "84",
+						"suffix": [
+							{
+								"text": "%",
+								"format": "exponent"
+							}
+						],
+						"label": "該代理商客戶屬於半導體產業的比例"
+					},
+					{
+						"value": "3",
+						"label": "該年度提出 3D 數位體驗需求的客戶數"
+					},
+					{
+						"value": "2",
+						"label": "已提供 3D 相關服務的主要競爭對手數量"
+					}
 				]
+			]
+		}
+	},
+	"strategy": {
+		"anchor": "策略",
+		"paths": {
+			"headline": "我提出兩項方案：一項務實，一項具野心",
+			"body": [
+				"務實的方案是建立一套 3D 模組元件庫：建置速度快、易於擴展，可在短期內用於靜態與動態渲染。",
+				"具野心的方案則是一套網頁版 3D 引擎：屬於次要優先事項的長期專案，能對應過往客戶需求，例如虛擬導覽與 3D 藝廊。此專案明確定位為研發性質，而非可銷售的方案。"
+			]
+		},
+		"focus": {
+			"headline": "如何有效率地挑選模型？",
+			"body": [
+				"我分析了代理商的客戶群，並將模型清單聚焦於佔比最高的科技產業領域。",
+				"接著我從高階素材庫汲取靈感，打造出一套完整的模型與特效生態系統。"
+			]
+		},
+		"flexibility": {
+			"headline": "元件庫必須兼具彈性與技術精確度",
+			"body": [
+				"根據經驗，我知道客戶在意接腳數量與元件類型等細節，因此我以原子化的方式建構元件庫，這與網頁設計系統的邏輯相同，讓每個元素都能依客戶需求進行設定。",
+				"為了讓每次渲染都獨特且能快速產出，我建立了程序化系統，可生成大部分模型，範圍從電路板到抽象圖案皆涵蓋在內。"
+			],
+			"legend": {
+				"procedural": "每個模型都能依客戶需求快速調整。",
+				"geometry": "使用 Blender 幾何節點打造複雜且易於調整的程序化結構。"
 			},
-			"scene_pool": {
-				"headline": "Scene Pool 系統",
-				"body": "最初所有 Mesh 都存放於固定的 Scene Pool，再交由場景渲染流程管理。隨著 Pipeline 標準化與全域 Resource Manager 的建立，Scene Pool 已不再必要，其概念也被擴展為可統一管理所有引擎資源的 Resource Manager。"
-			},
-			"callback": {
-				"headline": "Render Callback",
-				"body": "另一項提升主迴圈彈性的功能，是 Callback 註冊系統。未來更理想的做法將參考 Bevy 的 Scheduler 架構，讓函式能註冊至 Start、Update、End 等不同生命週期，類似 Unity MonoBehaviour 的 onAwake() 與 onUpdate()。"
-			},
-			"mbin": {
-				"headline": "Mesh 載入格式",
-				"body": "我曾嘗試建立自訂 MBIN（Mesh Binary）格式，直接將小型 Mesh（如 Gizmo）映射到記憶體，而非經過 OBJ 或 glTF 的解析流程。雖然能略微提升小型模型的載入速度，但代價是檔案容量明顯增加。"
-			},
-			"ambient": {
-				"headline": "CPU AO Baking",
-				"body": "引擎最初希望提供適合執行期使用的 Light Baking 與 Ambient Occlusion Baking 工具。然而，在完成 AO Baking 後發現其高度依賴 UV 展開，而引擎本身並未提供相關工具，因此現階段繼續擴充此功能的價值有限。"
-			},
-			"reflection": {
-				"headline": "Reflection Probe",
-				"body": "目前引擎支援平面反射（Planar Reflection）與 Reflection Probe，解析度可透過 Inspector 調整。目前解析度仍採全域設定，未來則計畫支援各 Probe 個別設定。由於此功能仍具有較高成本，後續仍需進一步最佳化。"
+			"quote": {
+				"quote": "這個電路板的形狀跟我們的產品不太一樣，接腳數量也不對",
+				"author": "客戶"
 			}
 		}
 	},
-	"solution": {
-		"headline": "解決方案",
-		"ubo": {
-			"headline": "UBO 排程",
-			"body": "為提升效能，每個場景皆建立專屬 Uniform Buffer，整合 Mesh Model Matrix、光源資訊，以及 View／Projection Matrix，以減少更新成本。"
+	"architecture": {
+		"anchor": "架構",
+		"performance": {
+			"headline": "客戶擔心現有的 3D 展示範例過於沉重",
+			"body": [
+				"Three.js 與 Babylon.js 的展示範例，讓人擔心效能問題可能導致部分受眾流失。",
+				"這項反覆出現的意見，主導了引擎技術堆疊的選擇：採用 C 語言與 WebGPU 以更嚴格地控制記憶體，整個專案再編譯為 WASM 以供網頁使用。"
+			]
 		},
-		"segmentation": {
-			"headline": "模組分層",
-			"systems": {
-				"headline": "System 作為跨領域協調者",
-				"body": "為避免循環依賴（Circular Reference）、God Object 等問題，同時維持架構清晰，我將 System 設計為各領域之間的協調中心，集中處理跨模組操作，確保資料一致性並降低高風險邏輯分散。"
-			},
-			"core_split": {
-				"headline": "Core 與 Editor 分離",
-				"body": "引擎核心與編輯器完全分離：核心使用 C 實作，而 Editor 則使用 C++ UI 函式庫。此做法可降低核心依賴，並提供更好的效能控制。"
-			}
-		},
-		"batch": {
-			"headline": "批次渲染流程",
-			"hash": {
-				"headline": "Pipeline Hashing",
-				"body": "引擎根據 Pipeline 的渲染屬性與用途（例如 Shadow Mapping、Reflection）建立 Hash，使 Pipeline 能依據 Render State 或執行順序快速查詢。"
-			},
-			"organize": {
-				"headline": "物件排序",
-				"body": "Renderer 會先依照 Pipeline 對場景中的物件進行排序，再進行 Batch Rendering，大幅提升執行期間的整體渲染效率。"
-			}
-		},
-		"cold_hot": {
-			"headline": "Hot Loop 無分支策略",
-			"semantic": {
-				"headline": "函式語意",
-				"body": "為了降低 Hot Loop 中的分支判斷，我建立了一套明確的 Cold／Hot Path 命名規則，使函式名稱即可反映其呼叫頻率。初始化函式允許較多條件判斷，而 Update 與 Draw 函式則專注於線性陣列處理，盡量避免執行期間再做額外決策。"
-			},
-			"process": {
-				"headline": "Channel 控制流程",
-				"body": "為了讓初始化與執行階段順利銜接，我採用了 Register Pattern。Cold Path（初始化、載入）負責完成設定與判斷，再將物件註冊至不同 Channel，使 Hot Path 能以連續方式快速處理所有資料。"
-			}
-		},
-		"resource_manager": {
-			"headline": "Resource Manager",
-			"body": "Resource Manager 統一管理所有引擎資源的生命週期，有助於監控記憶體使用、系統容量與效能分析，並搭配全域 Registry 管理資源 ID。由於 WebGPU 的 Opaque Pointer 無法直接儲存 Pool Index，因此另外建立 Hash Table，將 Pointer 對應至其所在資源池。"
-		},
-		"dynamic_rendering": {
-			"headline": "執行期動態渲染",
-			"body": "由於執行期間切換渲染模式（Bounding Box、Wireframe、Solid、Textured）是核心功能，因此每個 Mesh 都預先配置對應的 Shader 與 Vertex Topology，以支援不同渲染方式。",
-			"topology": {
-				"headline": "Mesh Topology 流程",
-				"body": "引擎使用 Topology System，自動由原始 Mesh 產生 Wireframe 與 Bounding Box。為提升動態更新效率，採用 Hash-Based Indexing，使原始 Topology 變更時能快速重新建立衍生拓樸。"
-			}
-		},
-		"ui_presentation": {
-			"headline": "介面展示"
+		"split": {
+			"headline": "C 語言在記憶體使用上很有效率，卻拖慢了開發速度",
+			"body": [
+				"為此，我決定將核心與 UI 分離，以生產力換取效能。",
+				"由於核心必須針對效能進行優化，我保留了 C 語言，並採用資料導向設計（DOD）搭配實體元件系統（ECS）架構，以優化運算速度。",
+				"另一方面，UI 僅在開發與除錯階段使用。因此我決定採用 C++ 搭配物件導向的方式，這使得迭代速度更快，也能使用像 imGui 這樣的函式庫。"
+			]
 		}
 	},
-	"tradeoffs": {
-		"headline": "設計取捨",
-		"body": [
-			{
-				"heading": [
-					"低階硬體效能",
-					"完整功能"
-				],
-				"benefits": [
-					"在低效能裝置維持穩定幀率",
-					"更深入理解 WebGPU 的效能瓶頸"
-				],
-				"costs": [
-					"畫面品質不如大型商業引擎",
-					"高階視覺效果較受限制"
-				]
-			},
-			{
-				"heading": [
-					"資料導向設計",
-					"開發複雜度"
-				],
-				"benefits": [
-					"降低 Cache Miss",
-					"清楚區分 Hot Path 與 Cold Path"
-				],
-				"costs": [
-					"可讀性不如 OOP",
-					"若資料布局設計錯誤，重構成本較高"
-				]
-			},
-			{
-				"heading": [
-					"集中式 Resource Manager",
-					"簡單的區域管理"
-				],
-				"benefits": [
-					"更容易進行效能分析與記憶體追蹤",
-					"統一管理資源生命週期與 ID"
-				],
-				"costs": [
-					"整體架構較難理解",
-					"Ownership 管理更加複雜"
-				]
-			},
-			{
-				"heading": [
-					"ECS 架構",
-					"OOP"
-				],
-				"benefits": [
-					"各系統可獨立測試",
-					"更容易隨引擎規模擴充"
-				],
-				"costs": [
-					"執行流程較難追蹤",
-					"需要高度自律的系統設計"
-				]
+	"resolution": {
+		"anchor": "解決方案",
+		"branding": {
+			"headline": "客戶看不出渲染成果的附加價值",
+			"body": [
+				"在交付第一批 3D 渲染成果後，我們發現客戶看不出一般渲染圖為何比現成素材圖更有價值。",
+				"為此，我決定將每位客戶實際的品牌元素融入渲染成果中，並提供一份簡短指南，說明這些視覺如何提升其品牌形象。",
+				"提供更多脈絡說明，使得兩位客戶中有一位順利核准了視覺成果。"
+			],
+			"legend": {
+				"before": "起初，客戶覺得視覺成果與其品牌及產業的連結不夠緊密。",
+				"after": "在視覺成果中加入客戶標誌，並提供新指南的簡短介紹後，客戶核准了最新版本的視覺成果。"
 			}
-		]
+		},
+		"speed": {
+			"headline": "3D 引擎的運作感覺很慢",
+			"body": [
+				"經過一番研究後，我鎖定了兩個值得嘗試修正的潛在瓶頸。"
+			],
+			"ubo": {
+				"headline": "1. 透過物件間共享記憶體來優化效能",
+				"body": "每個物件都必須自行攜帶一份資料副本，造成不必要的記憶體佔用，並拖慢效能。",
+				"legend": {
+					"before": "先前，所有資源都各自重複複製資料。",
+					"after": "之後，所有資源共用同一個儲存空間並從中讀取資料，避免了資料重複膨脹的問題。"
+				}
+			},
+			"batch": {
+				"headline": "2. 將物件分組渲染以提升效率",
+				"body": "原本的渲染架構是逐一獨立處理各個物件，而非依材質分組繪製，隨著場景複雜度提高，這導致了大量重複的 GPU 運算。",
+				"legend": {
+					"before": "先前，物件是依照其在場景中的實例化順序來處理。",
+					"after": "之後，物件會先依材質分組，大幅降低 GPU 運算成本。"
+				}
+			},
+			"result": {
+				"headline": "成果不言自明",
+				"body": "這兩項修正都帶來明顯的效能提升，也提高了可擴展性。"
+			},
+			"stat": [
+				{
+					"value": "30",
+					"prefix": [
+						{
+							"text": "+",
+							"format": "default"
+						}
+					],
+					"suffix": [
+						{
+							"text": " FPS",
+							"format": "exponent"
+						}
+					],
+					"label": "共享全域記憶體緩衝區（UBO）後的提升"
+				},
+				{
+					"value": "4",
+					"prefix": [
+						{
+							"text": "+",
+							"format": "default"
+						}
+					],
+					"suffix": [
+						{
+							"text": " FPS",
+							"format": "exponent"
+						}
+					],
+					"label": "依管線批次渲染網格後的提升"
+				}
+			]
+		},
+		"profiling": {
+			"headline": "必須追蹤效能瓶頸",
+			"body": [
+				"為了更完善地分析整個專案，我加入了執行期除錯工具，包括即時渲染模式切換（邊界框、線框、實體、材質）、每一渲染階段的延遲分析器，以及內建的日誌主控台。"
+			]
+		}
 	},
-	"outcomes": {
-		"headline": "成果與收穫",
-		"body": [
-			"Data-Oriented Design 的資料切分並不容易，需要依據函式呼叫頻率（Hot／Cold Path）權衡可讀性與快取效率，有時甚至必須放棄傳統 OOP 的設計方式，以換取更高的執行效能。",
-			"API 設計本身就是一門獨立的學問。回顧這個專案，我有時過於專注於底層技術細節，而忽略了 API 本身的易用性與整體開發體驗。"
-		]
+	"outcome": {
+		"anchor": "成果總結",
+		"impact": {
+			"headline": "此元件庫協助促成 4 份合約。<br/> 引擎則以知識累積作為回報",
+			"body": [
+				"3D 模組元件庫在多個專案中重複使用，涵蓋關鍵視覺、品牌改版與資訊圖表，將製作時間縮短為原本的四分之一，強烈的客戶回饋也促成了合約續約。",
+				"引擎目前仍在開發中，優先順序暫時調低，但已累積出可應用於 Three.js 的 WebGPU 專業知識，時機成熟時便能派上用場。"
+			]
+		}
+	},
+	"learning": {
+		"anchor": "學習心得",
+		"next": {
+			"headline": "我會做出哪些不同的選擇",
+			"list": [
+				{
+					"icon": "funnel",
+					"headline": "將心力集中在一個有效方案上，而非分散於兩個",
+					"challenge": "此元件庫確實節省了時間，但採用範圍仍相當有限（僅 3 項關鍵視覺與 1 項資訊圖表）。",
+					"outcome": "我希望能發展一套策略來提升其採用率，並將其作為塑造品牌整體 3D 方向的工具。"
+				},
+				{
+					"icon": "weight",
+					"headline": "更精準評估技術工作量以獲得更好成果",
+					"challenge": "WebGPU 引擎從一開始就正確地定位為研發性質，控制住了風險，但我仍低估了自行開發相較於使用現成函式庫所需的建置時間。",
+					"outcome": "現在在研發階段，我會更仔細地權衡使用現成方案與重新打造的利弊。"
+				},
+				{
+					"icon": "users-round",
+					"headline": "擴展此方案，讓其他人也能使用",
+					"challenge": "目前我仍是唯一具備 3D 技能、能使用此元件庫的設計師，這限制了它的普及範圍。",
+					"outcome": "下一步是匯出預渲染資產，讓設計團隊其他成員無需接觸 3D 管線也能使用。"
+				}
+			]
+		}
 	}
 }

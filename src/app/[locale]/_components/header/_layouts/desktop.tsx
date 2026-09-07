@@ -29,7 +29,7 @@ export default function DesktopHeader() {
 						<Button key={label} size="MEDIUM" role="PRIMARY" style="GHOST" theme={theme} href={link}>
 							<Icon />
 						</Button>)}
-					<LocaleSelector />
+					<LocaleSelector theme={theme} />
 				</div>
 			</div>
 		</div>

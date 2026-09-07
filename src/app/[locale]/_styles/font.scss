@@ -27,7 +27,7 @@
   }
 
   p {
-    line-height: 1.6rem;
+    line-height: 1.6em;
 
     &.label {
       &-large {
@@ -41,6 +41,10 @@
       &-small {
         font-size: 0.9rem;
       }
+    }
+
+    &.overline {
+      font-size: 1.2rem;
     }
 
     &.caption {

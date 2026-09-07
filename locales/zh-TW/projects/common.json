@@ -1,34 +1,48 @@
 {
 	"case_study": "案例研究",
+	"other_projects": "查看其他專案",
+	"team": {
+		"design": "設計",
+		"engineer": "工程",
+		"consultant": "顧問",
+		"analyst": "分析師",
+		"pm": "專案管理",
+		"executive": "高階主管",
+		"producer": "音樂製作"
+	},
 	"roles": {
-		"business_strategist": "商業策略顧問",
-		"developer": "軟體工程師",
+		"business_strategist": "商業策略師",
+		"developer": "開發人員",
 		"ui_ux_designer": "UI/UX 設計師",
+		"threed_designer": "3D 設計師",
 		"product_owner": "產品負責人",
-		"tech_artist": "技術美術 (TA)",
+		"tech_artist": "技術美術",
 		"game_designer": "遊戲設計師",
-		"art_director": "美術總監",
-		"animator": "動畫設計師",
-		"compositor": "合成設計師"
+		"art_director": "藝術總監",
+		"animator": "動畫師",
+		"compositor": "合成師"
 	},
 	"status": {
 		"complete": "已完成",
-		"progress": "開發中"
+		"progress": "進行中"
 	},
 	"context": {
-		"prod_ready": "正式上線",
-		"client_facing": "客戶專案",
+		"prod_ready": "可上線",
+		"client_facing": "客戶端專案",
 		"internal_rd": "內部研發",
-		"expe_proto": "實驗原型"
+		"expe_proto": "實驗性原型"
 	},
 	"attributes": {
 		"roles": "角色",
 		"status": "狀態",
-		"context": "專案類型",
-		"stack": "技術堆疊"
+		"context": "情境",
+		"team": "團隊",
+		"stack": "技術堆疊",
+		"timeline": "時程"
 	},
 	"sidebar": {
 		"table_content": "目錄",
+		"collapse_all": "全部收合",
 		"all_projects": "所有專案"
 	}
 }

@@ -1,177 +1,179 @@
 {
-  "description": "使用 Unity 開發的程序化世界建構與遊戲專案。",
-  "intention": {
-    "headline": "設計理念",
-    "body": "Azusa 最初只是筆記本中的草圖、概念設計與零散劇本，逐漸發展成一個長期的世界觀建構計畫，至今仍未真正定型。以下內容探索的是 Azusa 的其中一種可能版本，並以技術美術（Technical Art）與遊戲設計的角度重新詮釋這個世界。"
-  },
-  "constraints": {
-    "headline": "專案限制",
-    "body": [
-      "打造一致且完整的遊戲體驗。",
-      "重複利用過去專案中的設計概念與素材。",
-      "在 3 至 6 個月內完成具有吸引力的視覺成果。",
-      "開發 Unity 原型。",
-      "設計適合低效能裝置的美術風格。"
-    ]
-  },
-  "exploration": {
-    "headline": "設計探索",
-    "creative_research": {
-      "headline": "創意研究",
-      "early_concepts": {
-        "headline": "早期概念",
-        "body": "受到 Gibson《Sprawl》三部曲、《Snow Crash》以及賽博龐克選集《Mirrorshades》的啟發，我開始構思與這些作品相呼應的世界，同時加入自己的原創設定，建立一個具有一致性的敘事架構。其中最吸引我的概念之一，是各種「飛地（Enclave）」──人們進行另類商業活動、孕育地下文化，並形成擁有共同目標的微型文明。",
-        "list": [
-          "《Snow Crash》中的 Raft",
-          "《Neuromancer》中的 Freeside 太空殖民地",
-          "《Mass Effect》的 Citadel",
-          "《Star Wars》的 Cantina 酒館"
-        ]
-      },
-      "satellite": {
-        "headline": "衛星群島",
-        "body": "由於我熱愛鄉村風景與登山，因此希望玩家能體驗廣闊世界中的探索感。然而，最初的巨型城塞概念限制了這種體驗，因此我改為設計由眾多漂浮島嶼所組成的世界，居住著遊牧民族，並等待新的居民、部落與殖民地逐步建立。"
-      },
-      "cartography": {
-        "headline": "世界地圖",
-        "body": "在確立主要地點與環境類型後，我開始思考各個區域背後的社會結構與意識形態。同時，我也刻意強化不同環境之間的視覺對比（例如都市蔓延區與遊牧島嶼），讓玩家能更直覺地理解各區域對應的遊戲機制。"
-      },
-      "character_design": {
-        "headline": "角色設計",
-        "body": "由於本專案設定需要重複利用既有的設計風格與素材，因此我重新檢視了《Animal Chamber Apocalypse Beat》中建立的角色設計。相較於當時受限於時間與技術，本專案讓我有機會重新設計角色，在風格真實性與實際製作之間取得更好的平衡。"
-      },
-      "iconography": {
-        "headline": "圖示設計",
-        "body": [
-          "當主要遊戲機制逐漸成形後，我開始設計與之對應的圖示。由於遊戲圍繞著太空部落與群島探索，因此圖示風格採用了具有象徵性、古典感與部落特色的造型語言。",
-          "圖示往往承載著更深層的概念與世界設定，因此提早設計它們，也促使我重新思考整個系統背後的結構，進一步釐清了許多遊戲機制與世界組織方式。"
-        ]
-      },
-      "ui": {
-        "headline": "使用者介面",
-        "body": [
-          "介面設計希望兼具科幻感與親和力，同時保持足夠簡潔，以適用於低效能裝置。整體視覺融合了未來科技元素，以及類似麻將牌或卡牌遊戲所帶來的趣味圖形語言。"
-        ]
-      }
-    },
-    "procedural_systems": {
-      "headline": "程序生成系統",
-      "island": {
-        "headline": "島嶼地形",
-        "body": "遊戲提供漂浮島嶼建造系統，玩家可透過繪製方式建立並合併不同的島嶼區塊。",
-        "topology": {
-          "headline": "拓樸生成",
-          "body": "地形生成採用 Marching Squares 結合 Delaunay Triangulation，使玩家繪製的區域能自然連接，而島嶼底部則透過加權雜訊（Weighted Noise）產生起伏變化。"
-        },
-        "texture": {
-          "headline": "材質生成",
-          "body": "島嶼材質透過離屏渲染（Offscreen Rendering）產生遮罩，再傳遞至專屬 Shader，使地形能即時更新與重新著色。"
-        }
-      },
-      "vegetation": {
-        "headline": "植被生成",
-        "body": [
-          "最初使用 Perlin Noise 分布植物時，容易造成模型過度聚集，因此後來重新設計為分層式 Jittered Grid 系統。",
-          "植被依照空間占用大小分為大型、中型與小型三類，從樹木等大型元素開始放置，再逐步填入灌木與草地，最終獲得更均衡且易於閱讀的分布效果。"
-        ]
-      },
-      "nomad_house": {
-        "headline": "遊牧建築",
-        "body": "遊牧建築採用簡單的放射狀程序生成規則，所有元素圍繞中央核心配置。為了增加變化，同一套模型透過 UV 在 X 軸上隨機偏移不同的材質圖樣，即可產生多種外觀。"
-      }
-    }
-  },
-  "solution": {
-    "headline": "解決方案",
-    "props": {
-      "headline": "道具建模",
-      "body": "為了支援遊戲初期功能與核心玩法，我製作了多組原創道具模型與材質，優先完成最重要的實驗內容。相較於直接使用下載素材，自行製作資產也讓我更容易探索並驗證未來的美術方向。"
-    },
-    "scenes": {
-      "headline": "遊戲場景",
-      "body": "專案初期主要聚焦於兩個核心場景：島嶼建造系統與角色編輯器。這兩個場景提供了穩固的基礎，用於驗證主要遊戲機制與整體設計方向。"
-    }
-  },
-  "tradeoffs": {
-    "headline": "設計取捨",
-    "body": [
-      {
-        "heading": [
-          "Unity 快速原型",
-          "自製遊戲引擎"
-        ],
-        "benefits": [
-          "降低工程開發成本",
-          "直接利用既有的遊戲、光照與素材整合工具"
-        ],
-        "costs": [
-          "對完整渲染流程的掌控較少",
-          "效能與工作流程受限於 Unity 的架構"
-        ]
-      },
-      {
-        "heading": [
-          "自訂 Shader",
-          "原生 PBR Shader"
-        ],
-        "benefits": [
-          "更鮮明的美術風格",
-          "更能掌控整體氛圍"
-        ],
-        "costs": [
-          "光照需要更多調整",
-          "可能導致畫面不一致或產生瑕疵"
-        ]
-      },
-      {
-        "heading": [
-          "程序生成",
-          "手工製作素材"
-        ],
-        "benefits": [
-          "大量內容生成速度更快",
-          "呈現自然且有機的視覺效果"
-        ],
-        "costs": [
-          "較難完全控制最終成果",
-          "擴充性可能受到限制"
-        ]
-      },
-      {
-        "heading": [
-          "使用現成素材庫",
-          "完全自行雕塑"
-        ],
-        "benefits": [
-          "快速反覆調整",
-          "將更多精力投入美術指導"
-        ],
-        "costs": [
-          "基礎素材會影響最終設計",
-          "角色與模型的獨特性較低"
-        ]
-      },
-      {
-        "heading": [
-          "3D 動畫",
-          "逐格動畫"
-        ],
-        "benefits": [
-          "素材可重複利用",
-          "更容易掌控動畫節奏"
-        ],
-        "costs": [
-          "較缺乏自然手感",
-          "手工動畫質感較弱"
-        ]
-      }
-    ]
-  },
-  "outcomes": {
-    "headline": "成果與收穫",
-    "body": [
-      "發展大量原型或未完成作品並非毫無價值。雖然它們初期看似彼此無關，但隨著時間推移，往往會彼此呼應，最終成為未來專案的重要基礎。",
-      "這個專案也讓我更加理解，在理想目標與實際限制之間取得平衡的重要性。例如，雖然自行開發遊戲引擎理論上可能比 Unity 更輕量，但重新實作所有核心功能所需投入的時間與成本，遠遠超過實際能獲得的效能提升。"
-    ]
-  }
+	"name": "Azusa",
+	"description": "Procedural world-building and video game project developed in Unity",
+	"timeline": "2 years",
+	"intention": {
+		"anchor": "Intention",
+		"body": "Starting as simple sketches, then concept art and drafted scripts in a notebook, Azusa is a long-term world-building project that never reached a final form. The following project explores a variant of Azusa through the lens of technical art and video game design."
+	},
+	"constraints": {
+		"anchor": "Constraints",
+		"body": [
+			"Create a cohesive game design experience",
+			"Reuse concepts and designs from previous projects",
+			"Deliver visually appealing results within 3–6 months",
+			"Develop Unity prototypes",
+			"Design art direction for low-performance devices"
+		]
+	},
+	"exploration": {
+		"anchor": "Exploration",
+		"creative_research": {
+			"anchor": "Creative Research",
+			"early_concepts": {
+				"anchor": "Early Concepts",
+				"body": "Inspired by Gibson’s Sprawl trilogy, Snow Crash, and cyberpunk anthology Mirrorshades, I began developing environments reflecting these worlds, adding original ideas to create a cohesive narrative. A recurring element that intrigued me was the enclave, or spaces where people conduct alternative business, cultivate underground cultures, and form micro-civilizations with shared goals.",
+				"list": [
+					"The Raft in Snow Crash",
+					"Neuromancers’ space spindle Freeside",
+					"Mass Effect’s Citadel",
+					"Star Wars’ Cantinas"
+				]
+			},
+			"satellite": {
+				"anchor": "Satellite Islands",
+				"body": "As an avid countryside and hiking enthusiast, I wanted players to experience exploration and vast landscapes. Since the initial citadel concept limited this, I designed a constellation of nomads and wild islands, awaiting settlers, tribes, and colonies."
+			},
+			"cartography": {
+				"anchor": "Cartographies",
+				"body": "After defining key locations and environment types, I explored the ideological structures governing these worlds. I also created distinct visual contrasts between environments (sprawl vs. nomad islands) so players could intuitively map mechanics."
+			},
+			"character_design": {
+				"anchor": "Character Design",
+				"body": "Due to the project constraint of reusing existing styles and assets, I revisited the design explored in Animal Chamber Apocalypse Beat. While technical and time limits had previously restricted character development, this project allowed me to create character designs balancing authenticity and practicality."
+			},
+			"iconography": {
+				"anchor": "Iconography",
+				"body": [
+					"Once I had a broad idea of the key mechanics, I began designing icons to match them. In terms of style, since a central theme was space tribes and island exploration, I aimed for shapes and concepts rooted in symbolism, archaism, and tribal aesthetics.",
+					"Because icons are often tied to deeper ideas and narratives, creating them early on pushed me to think more carefully about the underlying structures. This process helped clarify several mechanics as well as aspects of the world’s organization."
+				]
+			},
+			"ui": {
+				"anchor": "User Interface",
+				"body": [
+					"For the UI, I aimed for a sci-fi look that still felt friendly and stylized, while keeping it simple enough for low-performance devices. The overall direction combines futuristic elements with playful visual patterns inspired by interfaces like Mahjong pieces or card games."
+				]
+			}
+		},
+		"procedural_systems": {
+			"anchor": "Procedural Systems",
+			"island": {
+				"anchor": "Island Terrain",
+				"body": "The game features a floating-island building mechanic that allows players to paint and merge island chunks together.",
+				"topology": {
+					"anchor": "Topology Generation",
+					"body": "Topology generation relies on a marching squares approach combined with Delaunay triangulation to seamlessly connect painted areas. The underside of each island is generated using weighted noise displacement"
+				},
+				"texture": {
+					"anchor": "Texture Generation",
+					"body": "The islands texturing is handled through an offscreen rendering pass that generates masks fed into a dedicated shader, allowing the terrain to update dynamically."
+				}
+			},
+			"vegetation": {
+				"anchor": "Vegetation",
+				"body": [
+					"The initial Perlin-based distribution resulted in excessive mesh clumping, so the flora generation was redesigned around a hierarchical jittered grid system.",
+					"Vegetation is divided into three categories based on spatial footprint (large, medium, and small), with elements placed progressively from the largest footprint, such as trees, down to the smallest, such as grass. This approach produces a more balanced and readable distribution."
+				]
+			},
+			"nomad_house": {
+				"anchor": "Nomad Houses",
+				"body": "The nomad house procedural generation relies on a simple radial rule set, where elements are distributed around a central base. To introduce visual variation, UVs are randomly offset along predefined texture patterns on the X axis, allowing multiple appearances from the same asset set."
+			}
+		}
+	},
+	"solution": {
+		"anchor": "Solution",
+		"props": {
+			"anchor": "Props Modelling",
+			"body": "Multiple props were modeled and textured to support the game's early functionalities and mechanics. The focus was placed on the assets most necessary for the first experiments. Creating original props rather than relying on downloaded assets also provided an opportunity to explore and better evaluate the project's future art direction."
+		},
+		"scenes": {
+			"anchor": "Game Scenes",
+			"body": "For this first stage, the focus was placed on two core scenes: the island-building system and the character editor. These provided a solid foundation for testing the project's main mechanics and overall direction."
+		}
+	},
+	"tradeoffs": {
+		"anchor": "Trade-offs",
+		"body": [
+			{
+				"heading": [
+					"Rapid prototyping in Unity",
+					"Custom engine control"
+				],
+				"benefits": [
+					"Reduced engineering overhead",
+					"Existing tooling for gameplay, lighting, and asset integration"
+				],
+				"costs": [
+					"Less control over the full rendering pipeline",
+					"Performance and workflow tied to Unity’s abstractions"
+				]
+			},
+			{
+				"heading": [
+					"Custom Shading",
+					"Native PBR shader"
+				],
+				"benefits": [
+					"Stronger art direction",
+					"Greater agency over vibe"
+				],
+				"costs": [
+					"Lighting Require extra attention",
+					"May lead to visual inconsistency or glitch"
+				]
+			},
+			{
+				"heading": [
+					"Procedural Generation",
+					"Crafted Assets"
+				],
+				"benefits": [
+					"Faster batch generation",
+					"Nice organic look & feel"
+				],
+				"costs": [
+					"Less control over final result",
+					"May lack of scalability"
+				]
+			},
+			{
+				"heading": [
+					"Library based assets",
+					"Full custom sculpting"
+				],
+				"benefits": [
+					"Rapid iteration",
+					"More energy for art direction"
+				],
+				"costs": [
+					"Heavily influence final design",
+					"Reduced uniqueness at the base mesh level"
+				]
+			},
+			{
+				"heading": [
+					"3D animation",
+					"Frame-by-frame animation"
+				],
+				"benefits": [
+					"Reusability of assets",
+					"Better control over timing"
+				],
+				"costs": [
+					"Less organic, more cheap looking",
+					"Reduced hand-crafted feel"
+				]
+			}
+		]
+	},
+	"outcomes": {
+		"anchor": "Outcomes & Learning",
+		"body": [
+			"It’s not necessarily unproductive to develop a constellation of prototypes or unfinished artworks. While they may seem disconnected at first, they often find resonance with one another over time, eventually becoming valuable foundations for future projects.",
+			"It was important to find a better balance between key project objectives and practical constraints. For instance, while building a custom engine could have been lighter than using Unity, the development overhead and time required to rebuild core features would have far outweighed the actual performance gains."
+		]
+	}
 }

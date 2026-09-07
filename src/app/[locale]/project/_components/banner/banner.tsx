@@ -51,7 +51,7 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 
 				<div className={styles.content}>
 					<hgroup>
-						{overline && <Text.Overline className="text-(--color-text-brand-subtle)">{overline}</Text.Overline>}
+						{overline && <Text.Overline className={styles.overline}>{overline}</Text.Overline>}
 						{headline && <TextBase role="H1" style="H3">{headline}</TextBase>}
 						{subtitle && <Text.H6 className="mt-(--size-space-small)">{subtitle}</Text.H6>}
 					</hgroup>

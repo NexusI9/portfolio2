@@ -2,37 +2,37 @@
 	"categories": {
 		"digital": {
 			"default": "數位產品",
-			"headline": "数位产品"
+			"headline": "數位產品"
 		},
 		"game": {
 			"default": "遊戲開發",
-			"headline": "游戏开发"
+			"headline": "遊戲開發"
 		},
 		"film": {
-			"default": "影視製作",
-			"headline": "影视制作"
+			"default": "影片製作",
+			"headline": "影片製作"
 		}
 	},
 	"header": {
-		"name": "安俊凱",
+		"name": "Nassim El Khantour",
 		"subtitle": "UX 工程師",
 		"location": "台灣",
 		"resume": "履歷",
-		"contact": "聯絡",
+		"contact": "聯絡方式",
 		"mobile": {
-			"project-categories": "專案分類",
+			"project-categories": "專案類別",
 			"resources": "資源"
 		}
 	},
 	"footer": {
-		"credits": "網站設計與開發：Nassim El Khantour",
-		"contact": "让我们联络吧！"
+		"credits": "網站由 Nassim El Khantour 設計與開發",
+		"contact": "與我聯繫"
 	},
 	"metadata": {
-		"title": "Nassim El Khantour 安俊凱 - 設計工程師",
-		"description": "常駐台灣的設計工程師，擁有超過十年的跨產業經驗。"
+		"title": "Nassim El Khantour - 設計工程師",
+		"description": "現居台灣的設計工程師，擁有橫跨多個產業超過 10 年的經驗。"
 	},
 	"glyphs": {
-		"separator_comma": "，"
+		"separator_comma": "、"
 	}
 }

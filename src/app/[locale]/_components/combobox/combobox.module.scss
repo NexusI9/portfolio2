@@ -9,6 +9,10 @@
 
   @include interaction.hover {
     color: var(--color-text-brand-base);
+
+    &[data-theme="DARK"] {
+      color: var(--color-text-brand-subtle);
+    }
   }
 
   svg {

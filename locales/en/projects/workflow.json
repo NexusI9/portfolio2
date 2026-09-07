@@ -75,9 +75,9 @@
 				"Bundling everything into a single tool would have dumped all the work on designers. Instead, I segmented by need and audience:"
 			],
 			"list": [
-				"Style Studio: token & style management for Design",
-				"Site Mapper: prototype navigation for Design, Sales, and PM",
-				"Text 2 Sheet: copy extraction for PM"
+				"<b>Style Studio</b>: token & style management for Design",
+				"<b>Site Mapper</b>: prototype navigation for Design, Sales, and PM",
+				"<b>Text2Sheet</b>: copy extraction for PM"
 			]
 		},
 		"tokens": {

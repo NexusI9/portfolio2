@@ -1,40 +1,42 @@
 {
 	"headlines": {
-		"quotes": [
-			"我们共同推动了",
-			"这些专案"
-		]
+		"uvp": "融合工程、UX 與 3D 專業，讓複雜系統呈現毫不費力的體驗",
+		"subtitle": "7 年以上橫跨視覺、動態與 3D 即時系統的經驗，服務 B2C 與 B2B 平台，銜接技術與創意",
+		"quotes": "我們一起<br/>推動了這些專案",
+		"work": "精選作品"
 	},
+	"intro-button": "查看我的作品",
+	"work-button": "閱讀案例研究",
 	"quotes": [
 		{
-			"quote": "一位極具才華且多面向的創意工作者。他始終展現出<mark>積極主動解決問題的態度</mark>。",
+			"quote": "他是一位極具才華且多才多藝的創意人才，總是以積極主動的態度解決問題。",
 			"author": "Louhann M.",
-			"position": "Grazia 雜誌記者與文案撰寫",
-			"location": "法國，巴黎"
+			"position": "Grazia Magazine 記者兼文案撰稿人",
+			"location": "法國巴黎"
 		},
 		{
-			"quote": "我強烈建議在任何科技專案中與他合作。<br /><mark>真的是個高手！</mark>",
+			"quote": "我強烈推薦讓他加入任何需要技術實力的專案。<br />真正的高手！！！",
 			"author": "Paul-André C.",
-			"position": "Celsius Communication 商務發展與副理",
-			"location": "加拿大，蒙特婁"
+			"position": "Celsius Communication 業務開發與合夥人",
+			"location": "加拿大蒙特婁"
 		},
 		{
-			"quote": "他的創作不僅美觀迷人，同時也展現出<mark>對細節的高度重視</mark>與視覺一致性。",
+			"quote": "他的創作不僅在美感上令人驚豔，在細節與視覺一致性上也展現出極高的用心。",
 			"author": "Matteo M.",
-			"position": "SEM 活動專家與專案經理",
-			"location": "法國，馬賽"
+			"position": "SEM 廣告活動專員兼專案經理",
+			"location": "法國馬賽"
 		},
 		{
-			"quote": "與 Nassim 合作，我能找到<mark>設計與功能的完美平衡</mark>。他也<mark>非常擅長指導與合作</mark>，與設計團隊其他成員共同推進專案。",
+			"quote": "與 Nassim 合作，我找到了設計與功能之間恰到好處的平衡。他在指導與跟其他成員協作方面也表現得非常出色。",
 			"author": "Alex B.",
-			"position": "MTLVibe 執行長暨行銷總監",
-			"location": "加拿大，蒙特婁"
+			"position": "MTLVibe 執行長兼行銷總監",
+			"location": "加拿大蒙特婁"
 		},
 		{
-			"quote": "除了他<mark>卓越的專業技能</mark>，Nassim 也是一位<mark>團隊合作者</mark>，他對工作的熱情帶動了強烈的<mark>集體精神</mark>。",
+			"quote": "除了出色的技能之外，Nassim 也是一位優秀的團隊夥伴，他對這份工作的熱情帶動了強烈的團隊凝聚力。",
 			"author": "Nader B.M.",
-			"position": "Redbox Media 聯合創辦人暨數位策略師",
-			"location": "加拿大，蒙特婁"
+			"position": "Redbox Media 共同創辦人兼數位策略師",
+			"location": "加拿大蒙特婁"
 		}
 	]
 }

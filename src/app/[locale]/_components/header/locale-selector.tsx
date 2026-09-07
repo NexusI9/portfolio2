@@ -3,12 +3,14 @@
 import { useParams, usePathname, useRouter } from "next/navigation";
 import Combobox from "@components/combobox/combobox";
 import GlobeIcon from "@assets/icons/solid/globe-alt.svg"
+import { IComponentTheme } from "../../_types/component";
 
 interface ILocaleSelector {
 	className?: string;
+	theme?: IComponentTheme;
 }
 
-export default function LocaleSelector({ className }: ILocaleSelector) {
+export default function LocaleSelector({ className, theme = "LIGHT" }: ILocaleSelector) {
 
 	const comboboxOptions = [
 		{ value: "en", label: "EN" },
@@ -36,6 +38,7 @@ export default function LocaleSelector({ className }: ILocaleSelector) {
 			placeholder={currentOption.label}
 			onChange={handleChange}
 			triggerIcon={<GlobeIcon />}
+			theme={theme}
 		/>
 	);
 

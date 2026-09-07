@@ -12,7 +12,7 @@ import styles from "./combobox.module.scss"
 import { Text } from "../text/text"
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 import clsx from "clsx"
-import { SIZE_ICON_SM } from "../../_lib/constants"
+import { IComponentTheme } from "../../_types/component"
 
 type Option = {
 	value: string
@@ -27,6 +27,7 @@ type ComboboxProps = {
 	className?: string
 	/** Show this instead of the selected label in the trigger (e.g. <GlobeIcon /> for a language picker) */
 	triggerIcon?: React.ReactNode
+	theme?: IComponentTheme;
 }
 
 export default function Combobox({
@@ -36,6 +37,7 @@ export default function Combobox({
 	placeholder = "Select...",
 	className,
 	triggerIcon,
+	theme = "LIGHT",
 }: ComboboxProps) {
 	const [open, setOpen] = useState(false)
 	const [internalValue, setInternalValue] = useState<Option | undefined>(value)
@@ -104,6 +106,7 @@ export default function Combobox({
 			role="combobox"
 			aria-expanded={open}
 			aria-label={triggerIcon ? (selected?.label ?? placeholder) : undefined}
+			data-theme={theme}
 		>
 			<div onClick={() => setOpen(o => !o)} className="flex flex-row items-center gap-(--size-space-small)">
 				{triggerIcon ?? <Text.LabelMedium>{selected?.label ?? placeholder}</Text.LabelMedium>}

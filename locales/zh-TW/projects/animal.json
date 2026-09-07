@@ -1,148 +1,179 @@
 {
-	"description": "一部獲獎的短片，以充滿活力的未來世界描繪一個詭異而神秘的存在。",
+	"name": "Animal Chamber Apocalypse Beat",
+	"description": "Collaborated with a music producer to direct an award-winning music video featured across international publications",
+	"timeline": "5 months",
+	"impact": {
+		"anchor": "Impact",
+		"items": [
+			{
+				"value": "4,800",
+				"suffix": [
+					{
+						"text": "+",
+						"format": "exponent"
+					}
+				],
+				"label": "Views across online platforms"
+			},
+			{
+				"value": "6",
+				"label": "International editorial features"
+			},
+			{
+				"value": "1",
+				"suffix": [
+					{
+						"text": "st",
+						"format": "exponent"
+					}
+				],
+				"label": "Prize at Seize Neuvième Festival"
+			}
+		]
+	},
 	"intention": {
-		"headline": "設計理念",
-		"body": "受法國音樂人 Philip Pentacle 委託，我很榮幸參與他第二張 EP 中〈Animal Chamber Apocalypse Beat〉這首作品的音樂錄影帶製作。這個專案讓我挑戰自己，嘗試一種過去較少接觸的美術方向：採用更加風格化而非寫實的表現方式，跳脫傳統的實體渲染流程（PBR）。專案誕生於疫情封鎖期間，我將它視為一種電影式的精神逃離，因此選擇了大膽且高度飽和的視覺美學。"
+		"anchor": "Intention",
+		"body": "Commissioned by French musician Philip Pentacle, I had the pleasure of collaborating on his second EP for the track 'Animal Chamber Apocalypse Beat'. For this project, I challenged myself to explore an art direction I wasn’t familiar with: something more stylized rather than realistic, moving away from the usual physical rendering pipeline. Emerging during lockdown, I used this project as a form of cinematic escapism, which inspired bold and highly saturated aesthetic choices."
 	},
 	"constraints": {
-		"headline": "專案限制",
+		"anchor": "Constraints",
 		"body": [
-			"採用卡通化、風格化的美術方向。",
-			"設計角色並建立完整的世界觀。",
-			"負責完整製作流程：分鏡、美術指導與動畫。",
-			"在襯托催眠氛圍音樂的同時，持續吸引觀眾注意力。",
-			"於六個月內完成專案，以配合 EP 發行。"
+			"Adopt a cartoonish, stylized art direction.",
+			"Design characters and build the project’s world.",
+			"Manage entire pipeline: storyboarding, art direction, animation.",
+			"Complement hypnotic track while keeping viewer engaged.",
+			"Complete project within six months for EP release."
 		]
 	},
 	"exploration": {
-		"headline": "設計探索",
+		"anchor": "Exploration",
 		"genre": {
-			"headline": "主要靈感來源",
-			"body": "科幻題材是本專案最重要的靈感來源。其中包括《第五元素》以及 Warren Ellis 的《Transmetropolitan》，兩者皆展現出華麗、鮮豔且充滿未來感的世界觀。較近期的作品則包括《Love, Death & Robots》與《Black Mirror》，它們獨特的藝術風格與引人深思的敘事方式也帶來了許多啟發。"
+			"anchor": "Key Inspiration",
+			"body": "A key inspiration was the sci-fi genre. Notable examples include 'The Fifth Element' and Warren Ellis’ 'Transmetropolitan', both capturing an extravagant, colorful futuristic style. More contemporary influences include 'Love, Death & Robots' and 'Black Mirror' for their distinctive artistic universes and intense, thought-provoking storytelling."
 		},
 		"character": {
-			"headline": "角色設計",
+			"anchor": "Character Design",
 			"design": {
-				"headline": "整體方向",
-				"body": "角色設計主要受到 Jamie Hewlett 惡魔風格的影響，例如純白眼睛與誇張的五官造型，同時也參考 Philippe Druillet 的設計語言以及漫畫風格。我也加入了一些個人特色，例如略為放大的手掌與腳掌比例。"
+				"anchor": "Overal Direction",
+				"body": "For the character design, I drew inspiration from Jamie Hewlett’s demonic style with white eyes and grotesquely exaggerated facial features often seen in Philippe Druillet's design or manga. I also added personal touches, such as slightly enlarged hands and feet."
 			},
 			"tech": {
-				"headline": "技術與專案限制",
-				"body": "考量自身的技術能力與製作時程，我需要一套穩定且高效率的角色、道具建模與綁定流程。因此，我尋找能快速嘗試造型、雕刻與 Rigging 的工具，最終選擇使用 Daz3D 作為基礎模型來源，並快速探索不同的角色設定與骨架配置。"
+				"anchor": "Technical & Project Constraints",
+				"body": "Being aware of my technical limitations and time constraints, I needed a reliable workflow for character and prop modeling, as well as rigging. I looked for tools that would allow quick experimentation with shapes, sculpting, and rigging possibilities. As a result, I used Daz3D as a base for models and rapid rigging exploration."
 			}
 		},
 		"environment": {
-			"headline": "場景設計",
-			"body": "我一直著迷於橋梁與多層交錯的都市結構，因此希望透過高度堆疊的場景設計，呈現令人暈眩的垂直空間感，讓視覺動線同時向水平與垂直方向延伸，打造道路與交通網絡彼此交織、充滿活力的未來都市。"
+			"anchor": "Environment",
+			"body": "Fascinated by bridges and overlapping urban structures, I aimed to convey their vertiginous feeling by creating a highly layered environment, where movement extends vertically as well as horizontally. A dense, bustling space with roads and communication channels interweaving in every direction."
 		},
 		"vehicles": {
-			"headline": "交通載具",
-			"body": "交通工具方面，我主要聚焦於懸浮汽車與違反重力的列車。我探索了各種不同的外型，以研究視覺語言如何傳達功能定位。例如，圓潤寬大的車體象徵家庭與一般市民使用，而細長尖銳的設計則傳達速度感與攻擊性，適合執法單位。"
+			"anchor": "Vehicles",
+			"body": "Regarding the vehicles, I focused on hover-cars and gravity-defying trains. I explored different shapes to study how visual language can imply function. As instance, round and wide vehicles for families and civilians, and needle-shaped designs conveying speed or aggression for law enforcement."
 		},
 		"design_language": {
-			"headline": "設計語言",
-			"body": "隨著美術方向逐漸明確，我建立了一套技術規範，包括統一的造型元素、模型套件（Model Kits）以及特定的筆刷技巧，並在所有場景中保持一致性。"
+			"anchor": "Design Language",
+			"body": "As the art direction became clearer, I established technical guidelines, defining key shapes with model kits and specific brush techniques consistently applied across all scenes."
 		},
 		"pachinko": {
-			"headline": "走進柏青哥",
-			"body": "我偶然接觸到日本的柏青哥遊戲，很快便對它產生濃厚興趣，最後甚至成為整部動畫的重要敘事元素。我特別著迷於它融合彈珠台與吃角子老虎機的玩法，以及柏青哥店鋪高度普及、人人皆可進入的特性，與傳統賭場封閉且高門檻的氛圍形成鮮明對比。"
+			"anchor": "Enter the Pachinko",
+			"body": "I randomly discovered the Japanese game Pachinko, which quickly sparked my interest and eventually became a key narrative element in the final animation. I was fascinated by the hybrid nature of the game: a mix of pinball and casual slot mechanics, and by how democratic and publicly accessible Pachinko parlors are, far from the exclusive, closed-door atmosphere of traditional casinos."
 		}
 	},
 	"production": {
-		"headline": "製作過程",
+		"anchor": "Production",
 		"storyboard": {
-			"headline": "高保真分鏡",
-			"body": "由於風格化美術對我而言仍是新的挑戰，因此我希望完整掌控每個畫面的色彩、光線與整體風格。我因此製作了一套高保真分鏡，不僅有助於統一視覺方向，也成為後續最終畫面的基礎，大幅節省了製作時間。"
+			"anchor": "Hi-Fi Storyboard",
+			"body": "As stylized art direction was relatively new to me, I wanted full control over color progression, lighting, and style across the frames. I therefore created a high-fidelity storyboard, which later proved useful as a base for the final frames, saving both time and effort."
 		},
 		"shader": {
-			"headline": "Shader Graph 與 Grease Pencil",
-			"body": "我也深入研究 Blender 的材質節點，建立非 PBR 的材質系統，讓陰影與光線邊緣具有可調整的手繪質感。同時，我也嘗試使用 Grease Pencil。雖然我對逐格動畫（Onion Skin）的工作流程並不熟悉，但我非常欣賞它所提供的創作彈性，尤其是能夠自由雕塑線條，甚至將其視為接近 3D 曲線的創作方式。"
+			"anchor": "Shader Graph & Grease Pencil",
+			"body": "I also experimented extensively with Blender material nodes to create non-PBR materials with textured, configurable shadow and light edges. I explored the Grease Pencil tool as well; although I was less comfortable with its frame-by-frame, onion-skin animation workflow, I appreciated the flexibility it offers, especially the ability to sculpt lines and treat them almost like 3D curves."
 		},
 		"render": {
-			"headline": "最終成品",
-			"body": "最終的音樂錄影帶結合了 3D 角色與主要物件，以及手繪的 2D 背景。這種混合式流程在維持整體視覺一致性的同時，也有效降低技術上的複雜度。角色採用 3D 動畫能提升製作效率，而背景維持 2D 則減少了工作量，同時更符合整體卡通風格的藝術方向。"
+			"anchor": "Final Render",
+			"body": "The final music video combines 3D characters and key elements with 2D hand-painted backgrounds. This approach ensured a cohesive visual result while easing technical constraints. Animating characters in 3D was more efficient, while keeping backgrounds in 2D reduced complexity and supported the overall cartoon-inspired art direction."
 		}
 	},
 	"tradeoffs": {
-		"headline": "設計取捨",
+		"anchor": "Trade-offs",
 		"body": [
 			{
 				"heading": [
-					"非 PBR 視覺風格",
-					"PBR 寫實渲染"
+					"non-PBR visual language",
+					"PBR rendering"
 				],
 				"benefits": [
-					"更鮮明的藝術辨識度",
-					"色彩、對比與造型擁有更高自由度"
+					"Strong artistic identity",
+					"Freedom in color, contrast, and shape exaggeration"
 				],
 				"costs": [
-					"建置流程較為複雜",
-					"不同光源下較容易產生不一致的效果"
+					"Harder to set up",
+					"May lead to inconsistent result depending on light"
 				]
 			},
 			{
 				"heading": [
-					"隱喻式敘事",
-					"清晰直接的故事"
+					"Metaphor",
+					"Narrative Clarity"
 				],
 				"benefits": [
-					"鼓勵觀眾自行詮釋與想像",
-					"更專注於視覺體驗而非劇情"
+					"Encourages interpretation and imagination",
+					"Direct focus on visuals quality rather than story"
 				],
 				"costs": [
-					"部分觀眾可能感到困惑或難以投入",
-					"容易被認為缺乏敘事深度"
+					"Some viewers may feel lost or disconnected",
+					"Can be seen as lazy and lose value"
 				]
 			},
 			{
 				"heading": [
-					"2D / 3D 混合流程",
-					"完全統一的媒材"
+					"Hybrid 2D/3D pipeline",
+					"Fully unified medium"
 				],
 				"benefits": [
-					"降低技術負擔",
-					"更容易在有限時間內完成製作"
+					"Reduced technical overhead",
+					"Faster production under time constraints"
 				],
 				"costs": [
-					"鏡頭運用不如完整 3D 場景自由",
-					"偶爾可能產生視覺落差"
+					"Less camera freedom than a full 3D environment",
+					"Occasional visual dissonance"
 				]
 			},
 			{
 				"heading": [
-					"使用現成素材庫",
-					"完全自行雕塑"
+					"Library based assets",
+					"Full custom sculpting"
 				],
 				"benefits": [
-					"可快速反覆調整",
-					"將更多精力投入美術指導"
+					"Rapid iteration",
+					"More energy for art direction"
 				],
 				"costs": [
-					"基礎模型會影響最終設計",
-					"角色獨特性較低"
+					"Heavily influence final design",
+					"Reduced uniqueness at the base mesh level"
 				]
 			},
 			{
 				"heading": [
-					"3D 動畫",
-					"逐格動畫"
+					"3D animation",
+					"Frame-by-frame animation"
 				],
 				"benefits": [
-					"素材可重複利用",
-					"更容易掌控節奏與時機"
+					"Reusability of assets",
+					"Better control over timing"
 				],
 				"costs": [
-					"較缺乏手工動畫的自然感",
-					"手作質感較弱"
+					"Less organic, more cheap looking",
+					"Reduced hand-crafted feel"
 				]
 			}
 		]
 	},
 	"outcomes": {
-		"headline": "成果與收穫",
+		"anchor": "Outcomes & Learning",
 		"body": [
-			"至今仍是我最引以為傲的創作之一，累積超過 3,000 次觀看，並獲得獎項肯定。",
-			"這個專案也讓我意識到自己在複雜動畫上的限制，促使我發展出更多技術與敘事上的解決方案，以在限制中取得平衡。"
+			"To this day, one of the creative projects I am most proud of, reaching over 3k views and receiving an award.",
+			"The project highlighted my limitations with complex animation, pushing me to develop technical and narrative workarounds to balance these constraints."
 		]
 	}
 }
