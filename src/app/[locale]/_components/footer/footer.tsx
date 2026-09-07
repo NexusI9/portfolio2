@@ -30,7 +30,7 @@ export default function Footer() {
 					</Portrait>
 
 					<hgroup className="flex flex-col gap-(--size-space-extra-large-2)">
-						<TextBase role="H2" style="DISPLAY" className={styles.display}>{dico.common.footer.contact}</TextBase>
+						<TextBase role="H2" style="H1" className={styles.display}>{dico.common.footer.contact}</TextBase>
 						<a href="mailto:nassim.elkhantour@gmail.com" className="flex flex-row gap-(--size-space-large) items-center">
 							<Arrow className={styles.arrow} />
 							<div className={styles.email}>

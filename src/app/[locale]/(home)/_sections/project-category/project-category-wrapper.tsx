@@ -6,7 +6,7 @@ import ProjectCategory from "./project-category";
 import { PROJECT_DESCRIPTOR_ANIMAL, PROJECT_DESCRIPTOR_AZUSA, PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER, PROJECT_DESCRIPTOR_STYLE_STUDIO, PROJECT_DESCRIPTOR_USABILITY, PROJECT_DESCRIPTOR_WEBGPU } from "@/app/[locale]/project/_lib/descriptors";
 import { useDictionary } from "@/i18n/Context";
 import { useParams } from "next/navigation";
-import { Text } from "@/app/[locale]/_components/text/text";
+import { Text, TextBase } from "@/app/[locale]/_components/text/text";
 import { mapProjectFromDescriptor } from "@/app/[locale]/_lib/utils";
 
 export default function ProjectCategoryWrapper() {
@@ -40,9 +40,9 @@ export default function ProjectCategoryWrapper() {
 
 	return (
 		<>
-	  <Text.Display id="work" className="text-center relative mb-(--size-space-extra-large-4) pt-(--size-space-extra-large-6)">
+	  <TextBase role="H2" style="H1" id="work" className="text-center relative mb-(--size-space-extra-large-3) pt-(--size-space-extra-large-2)">
 				{dico.home.headlines.work}
-			</Text.Display>
+			</TextBase>
 			{PROJECT_SECTIONS.map(project => <ProjectCategory key={project.id} {...project} />)}
 		</>);
 
