@@ -1,0 +1,216 @@
+@use "@/styles/var";
+@use "@/components/corner-frame/animation" as cornerframe;
+@use "@/styles/interaction" as interaction;
+@use "@/styles/animation";
+@use "@/styles/responsive" as responsive;
+@use "@/styles/utils" as utils;
+
+.footer {
+  --padding-top: var(--size-space-extra-large-4);
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    var(--color-surface-higher) 50%,
+    var(--color-background-brand-base) 120%
+  );
+  padding-top: var(--padding-top);
+
+  @include responsive.small-screen {
+    --padding-top: var(--size-space-extra-large-4);
+  }
+
+  @include responsive.tablet {
+    --padding-top: var(--size-space-extra-large-4);
+  }
+}
+
+.container {
+  height: 100%;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  background: var(--color-surface-highest);
+  box-shadow: var(--shadow-medium);
+
+  justify-content: center;
+
+  --padding-side: var(--size-space-extra-large-3);
+  --padding-top: var(--size-space-extra-large-5);
+  padding-top: var(--padding-top);
+  padding-bottom: var(--size-space-extra-large-2);
+
+  padding-inline: var(--padding-side);
+  display: grid;
+  grid-template-rows: 1fr auto;
+
+  @include responsive.tablet {
+    --padding-side: var(--size-space-large);
+    --padding-top: var(--size-space-extra-large-3);
+    gap: var(--size-space-extra-large-2);
+  }
+}
+
+.contact {
+  display: grid;
+
+  grid-template-columns:
+    utils.fluid-clamp(
+      responsive.$small-screen,
+      responsive.$default-screen,
+      240px,
+      350px
+    )
+    auto;
+  align-items: center;
+  gap: utils.fluid-clamp(
+    responsive.$small-screen,
+    responsive.$large-screen,
+    0px,
+    124px
+  );
+
+  @include responsive.tablet {
+    grid-template-columns: none;
+    justify-items: center;
+
+    hgroup {
+      text-align: center;
+      a {
+        justify-content: center;
+        & > svg {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include responsive.small-screen {
+    h2.display {
+      font-size: utils.fluid-clamp(
+        responsive.$tablet,
+        responsive.$default-screen,
+        57px,
+        104.96px
+      );
+      line-height: utils.fluid-clamp(
+        responsive.$tablet,
+        responsive.$default-screen,
+        64px,
+        116px
+      );
+    }
+  }
+}
+
+.portrait {
+  position: relative;
+  canvas {
+    position: relative;
+  }
+}
+
+.portrait-top-deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate3d(3em, 1em, 0);
+}
+
+.portrait-mosaic {
+  position: absolute;
+  transform: translate3d(-1em, -7em, 0);
+}
+
+.portrait-bottom-frame {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate3d(-3em, -3em, 0);
+}
+
+.arrow {
+  stroke: var(--color-border-brand-base);
+  stroke-width: var(--size-width-border-large);
+  width: 60px;
+}
+
+.email {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: var(--color-background-brand-base);
+    width: 0%;
+    height: 70%;
+    transition: width var(--transition-long);
+    transition-delay: 250ms;
+  }
+
+  h4 {
+    text-transform: none;
+
+    @include responsive.desktop {
+      font-size: utils.fluid-clamp(
+        responsive.$tablet,
+        responsive.$default-screen,
+        20px,
+        34.08px
+      );
+    }
+
+    @include responsive.tablet {
+      font-size: utils.fluid-clamp(
+        responsive.$mobile,
+        responsive.$tablet,
+        16px,
+        34.08px
+      );
+    }
+    padding: var(--size-space-medium) var(--size-space-extra-large);
+    position: relative;
+    transition: color var(--transition-short);
+    transition-delay: 250ms;
+  }
+
+  .corner-frame {
+    position: absolute;
+    @include cornerframe.default;
+  }
+
+  @include interaction.hover {
+    .corner-frame {
+      @include cornerframe.active;
+    }
+
+    &::before {
+      width: 96%;
+    }
+
+    h4 {
+      color: var(--color-text-brand-on-brand);
+    }
+  }
+}
+
+.credits {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--size-space-large);
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-subtle-on-light);
+
+  @include responsive.tablet {
+    text-align: center;
+    justify-content: center;
+  }
+}

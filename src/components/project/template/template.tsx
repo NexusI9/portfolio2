@@ -1,0 +1,38 @@
+"use client"
+
+import Banner from "../banner/banner"
+import Content from "../content/content";
+import Sidebar from "../sidebar/sidebar";
+import styles from "./template.module.scss"
+import Container from "@/components/container/container";
+import { TProjectDesciptorFn } from "@/types/project";
+import { useDictionary } from "@/i18n/Context";
+import OtherProjects from "../other-projects/other-projects";
+import { mapFromDescriptor } from "@/lib/utils";
+
+interface ITemplate {
+	children?: React.ReactNode;
+	project: TProjectDesciptorFn;
+}
+
+export default function Template({ project, children }: ITemplate) {
+
+	const dico = useDictionary();
+	const projectDescriptor = project(dico);
+	const { banner, sidebar } = mapFromDescriptor(projectDescriptor, dico);
+
+	return (<>
+		<Banner {...banner} />
+		<div className="inline-block w-full">
+			<div className={styles.container}>
+				<Container className={styles.inner} size="DEFAULT" type="DEFAULT">
+					<Content>{children}</Content>
+					<Sidebar {...sidebar} />
+				</Container>
+
+				<OtherProjects activeProject={project} />
+			</div>
+		</div>
+	</>);
+
+}

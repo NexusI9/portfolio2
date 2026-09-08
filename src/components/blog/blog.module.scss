@@ -1,0 +1,20 @@
+@use "@/styles/utils" as utils;
+@use "@/styles/responsive" as responsive;
+
+:root {
+  --size-margin-blog: #{utils.fluid-clamp(
+      responsive.$tablet,
+      responsive.$default-screen,
+      30px,
+      112px
+    )};
+}
+
+.number {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-style: italic;
+  text-box-trim: trim-both;
+  color: var(--color-text-brand-base);
+  width: 44px;
+}

@@ -1,0 +1,39 @@
+@use "sass:math";
+
+.mosaic {
+  span {
+    width: var(--size-mosaic-square);
+    height: auto;
+    aspect-ratio: 1/1;
+    display: block;
+    background: var(--color-background-brand-base);
+  }
+
+  &[data-animation="BLINK"] {
+    $max_count: 6;
+
+    @for $i from 1 through $max_count {
+      & > div:nth-child(#{$i}) {
+        @for $j from 1 through $max_count {
+          span:nth-child(#{$j}) {
+            animation-duration: 2s;
+            animation-delay: #{math.random(10)}s;
+            animation-name: blink-keyframes;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes blink-keyframes {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}

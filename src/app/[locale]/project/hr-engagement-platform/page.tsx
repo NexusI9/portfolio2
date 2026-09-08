@@ -1,14 +1,14 @@
 "use client"
 
 import { useDictionary } from "@/i18n/Context";
-import { Blog } from "../../_components/blog/blog";
-import Template from "../_components/template/template"
-import { PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER } from "../_lib/descriptors";
-import { emptyVisual, imPath } from "../_lib/helper";
-import { renderList } from "@components/list/helper";
-import { BLOG_HEADLINE_STYLE } from "../../_components/blog/constants";
-import { RATIO_HALF, RATIO_SQUARE } from "../../_lib/constants";
-import { Gallery } from "../../_components/gallery/gallery";
+import Template from "@/components/project/template/template"
+import { PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER } from "@/lib/project-descriptors";
+import { Blog } from "@/components/blog/blog";
+import { BLOG_HEADLINE_STYLE } from "@/components/blog/constants";
+import { Gallery } from "@/components/gallery/gallery";
+import { RATIO_HALF, RATIO_SQUARE } from "@/lib/constants";
+import { renderList } from "@/components/list/helper";
+import { imPath } from "@/lib/utils";
 
 export default function EmotionalMapper() {
 

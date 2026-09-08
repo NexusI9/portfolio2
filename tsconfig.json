@@ -26,27 +26,6 @@
 		"paths": {
 			"@/*": [
 				"./src/*"
-			],
-			"@assets/*": [
-				"./src/app/[locale]/_assets/*"
-			],
-			"@components/*": [
-				"./src/app/[locale]/_components/*"
-			],
-			"@styles/*": [
-				"./src/app/[locale]/_styles/*"
-			],
-			"@types/*": [
-				"./src/app/[locale]/_types/*"
-			],
-			"@lib/*": [
-				"./src/app/[locale]/_lib/*"
-			],
-			"@locales/*": [
-				"./locales/*"
-			],
-			"@contexts/*": [
-				"./src/app/[locale]/_context/*"
 			]
 		}
 	},

@@ -1,0 +1,27 @@
+@use "@/styles/responsive" as responsive;
+
+.mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  aspect-ratio: 16 / 9;
+  height: fit-content;
+
+  gap: var(--size-space-extra-large);
+
+  & > div:first-child {
+    grid-row: 1 / span 2;
+    aspect-ratio: auto;
+  }
+
+  @include responsive.tablet {
+    grid-template-columns: none;
+    grid-template-rows: auto;
+    height: auto;
+
+    & > div:first-child {
+      grid-row: 1;
+      aspect-ratio: 16/9;
+    }
+  }
+}

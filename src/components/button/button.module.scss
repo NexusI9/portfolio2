@@ -1,0 +1,96 @@
+@use "@/styles/animation";
+@use "@/styles/interaction" as interaction;
+@use "@/components/brackets/animation" as brackets;
+
+.button {
+  position: relative;
+
+  svg {
+    stroke: currentcolor;
+  }
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  gap: var(--size-space-medium);
+  border-radius: var(--size-radius-button);
+  padding: 0 var(--size-space-extra-large-2);
+  cursor: pointer;
+
+  &[data-type="ICON"] {
+    aspect-ratio: 1/1;
+  }
+
+  &[data-size="LARGE"] {
+    height: var(--size-height-input-large);
+  }
+
+  &[data-size="MEDIUM"] {
+    height: var(--size-height-input-medium);
+  }
+
+  &[data-size="SMALL"] {
+    padding: var(--size-space-extra-small) var(--size-space-small);
+    height: fit-content;
+  }
+
+  &[data-role="DISABLED"] {
+    pointer-events: none;
+    color: var(--color-text-disabled-on-light);
+    fill: var(--color-icon-disabled-on-light);
+
+    &[data-style="SOLID"] {
+      background: var(--color-background-disabled-on-light);
+    }
+
+    &[data-style="OUTLINE"] {
+      border-color: var(--color-border-disabled-on-light);
+    }
+  }
+
+  &[data-style="SOLID"],
+  &[data-style="OUTLINE"] {
+    transition: background, color, border-color, var(--transition-short);
+
+    @include interaction.hover {
+      background: var(--color-background-brand-hovered);
+      border-color: transparent;
+      color: var(--color-text-brand-on-brand);
+    }
+  }
+
+  &[data-style="SOLID"] {
+    background: var(--color-background-brand-base);
+    color: var(--color-text-brand-on-brand);
+  }
+
+  &[data-style="OUTLINE"] {
+    border: solid var(--size-width-border-base) var(--color-border-brand-base);
+  }
+
+  &[data-style="GHOST"] {
+    padding: 0 var(--size-space-small);
+    transition: fill, color, var(--transition-short);
+    height: fit-content;
+
+    @include interaction.hover {
+      color: var(--color-text-brand-base);
+
+      &[data-theme="DARK"] {
+        color: var(--color-text-brand-subtle);
+      }
+
+      .brackets {
+        @include brackets.active;
+      }
+    }
+  }
+}
+
+.brackets {
+  position: absolute;
+  height: 1.2em;
+  @include brackets.default;
+}

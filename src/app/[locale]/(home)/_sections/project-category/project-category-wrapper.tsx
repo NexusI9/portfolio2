@@ -1,14 +1,21 @@
 "use client"
 
-import { PROJECT_CATEGORIES_ANCHORS } from "@lib/constants";
+import { PROJECT_CATEGORIES_ANCHORS } from "@/lib/constants";
 import { ComponentPropsWithoutRef } from "react";
 import ProjectCategory from "./project-category";
-import { PROJECT_DESCRIPTOR_ANIMAL, PROJECT_DESCRIPTOR_AZUSA, PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER, PROJECT_DESCRIPTOR_STYLE_STUDIO, PROJECT_DESCRIPTOR_USABILITY, PROJECT_DESCRIPTOR_WEBGPU } from "@/app/[locale]/project/_lib/descriptors";
+import {
+	PROJECT_DESCRIPTOR_ANIMAL,
+	PROJECT_DESCRIPTOR_AZUSA,
+	PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER,
+	PROJECT_DESCRIPTOR_STYLE_STUDIO,
+	PROJECT_DESCRIPTOR_USABILITY,
+	PROJECT_DESCRIPTOR_WEBGPU
+} from "@/lib/project-descriptors";
 import { useDictionary } from "@/i18n/Context";
 import { useParams } from "next/navigation";
-import { Text, TextBase } from "@/app/[locale]/_components/text/text";
-import { mapProjectFromDescriptor } from "@/app/[locale]/_lib/utils";
-import Container from "@/app/[locale]/_components/container/container";
+import { TextBase } from "@/components/text/text";
+import { mapProjectFromDescriptor } from "@/lib/utils";
+import Container from "@/components/container/container";
 
 export default function ProjectCategoryWrapper() {
 
@@ -40,7 +47,7 @@ export default function ProjectCategoryWrapper() {
 	];
 
 	return (
-	 <Container className="pb-(--size-space-extra-large-5)">
+		<Container className="pb-(--size-space-extra-large-5)">
 			<TextBase role="H2" style="H2" id="work" className="text-center relative mb-(--size-space-extra-large-3) pt-(--size-space-extra-large-6)">
 				{dico.home.headlines.work}
 			</TextBase>

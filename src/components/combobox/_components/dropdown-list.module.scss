@@ -1,0 +1,41 @@
+@use "@/styles/var";
+@use "@/styles/animation";
+
+.dropdown-list {
+  background: var(--color-surface-highest);
+  padding: var(--size-space-small) 0;
+  box-shadow: var(--shadow-medium);
+  min-width: 100px;
+
+  position: fixed;
+  overflow: auto;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: var(--size-radius-base);
+
+  li {
+    padding: var(--size-space-small) var(--size-space-medium);
+    position: relative;
+    color: var(--color-text-subtle-on-light);
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      background: var(--color-background-brand-base);
+    }
+
+    &.highlight {
+      background: var(--color-background-brand-subtlest);
+      &::before {
+        width: var(--size-width-border-large);
+      }
+      color: var(--color-text-brand-strong);
+    }
+  }
+}

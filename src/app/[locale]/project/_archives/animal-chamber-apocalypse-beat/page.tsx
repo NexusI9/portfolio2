@@ -1,12 +1,12 @@
 "use client"
 
 import { useDictionary } from "@/i18n/Context";
-import Template from "../_components/template/template"
-import { PROJECT_DESCRIPTOR_ANIMAL } from "../_lib/descriptors";
-import { Blog } from "../../_components/blog/blog";
-import TradeOffHeader from "../_components/tradeoff-header/tradeoff-header";
-import { Gallery } from "../../_components/gallery/gallery";
-import { imPath } from "../_lib/helper";
+import Template from "@/components/project/template/template"
+import { PROJECT_DESCRIPTOR_ANIMAL } from "@/lib/project-descriptors";
+import { Blog } from "@/components/blog/blog";
+import { Gallery } from "@/components/gallery/gallery";
+import { imPath } from "@/lib/utils";
+import TradeOffHeader from "@/components/project/tradeoff-header/tradeoff-header";
 
 export default function AnimalChamberApocalypseBeat() {
 

@@ -1,15 +1,14 @@
 "use client"
 
 import { useDictionary } from "@/i18n/Context";
-import Template from "../_components/template/template"
-import { PROJECT_DESCRIPTOR_WEBGPU } from "../_lib/descriptors";
-import { Blog } from "../../_components/blog/blog";
-import { emptyVisual, imPath, statsVisual } from "../_lib/helper";
-import { BLOG_HEADLINE_STYLE } from "../../_components/blog/constants";
-import { Gallery } from "../../_components/gallery/gallery";
-import { ImpactRow } from "../../_components/blog/impact";
-import { RATIO_HALF } from "../../_lib/constants";
-import { renderList } from "../../_components/list/helper";
+import Template from "@/components/project/template/template"
+import { PROJECT_DESCRIPTOR_WEBGPU } from "@/lib/project-descriptors";
+import { Blog } from "@/components/blog/blog";
+import { BLOG_HEADLINE_STYLE } from "@/components/blog/constants";
+import { Gallery } from "@/components/gallery/gallery";
+import { ImpactRow } from "@/components/blog/impact";
+import { RATIO_HALF } from "@/lib/constants";
+import { imPath, statsVisual } from "@/lib/utils";
 
 export default function Webgpu() {
 

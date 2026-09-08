@@ -1,0 +1,123 @@
+@use "@/styles/animation";
+@use "@/styles/interaction" as interaction;
+@use "@/components/corner-frame/animation" as cornerframe;
+@use "@/styles/responsive" as responsive;
+@use "@/styles/utils" as utils;
+
+$smallscreen-breakpoint: 1310px;
+
+.navbar-wrapper {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: sticky;
+  padding-top: calc(var(--size-space-extra-large-3) - 8px);
+  top: 0;
+  z-index: 5;
+
+  @media (max-width: $smallscreen-breakpoint) {
+    padding-top: calc(
+      var(--size-space-extra-large-5) + var(--size-space-extra-large)
+    );
+  }
+
+  @include responsive.tablet {
+    display: none;
+  }
+}
+
+.navbar {
+  position: relative;
+  background: var(--color-surface-highest);
+  box-shadow: var(--shadow-low);
+
+  border-radius: var(--size-radius-base);
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-items: center;
+
+  $baseWidth: 684px;
+  width: utils.fluid-clamp(
+    responsive.$small-screen,
+    responsive.$default-screen,
+    545px,
+    $baseWidth
+  );
+  height: var(--size-height-input-large);
+
+  &:has(a:hover):not(:has(a.active:hover)) {
+    a.active {
+      //color: var(--color-text-on-light);
+      .corner-frame {
+        height: 0%;
+        opacity: 0;
+        & > div {
+          width: 0%;
+        }
+      }
+    }
+  }
+
+  a {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 0%;
+      opacity: 100%;
+      display: block;
+      background: var(--color-background-brand-base);
+      border-radius: var(--size-radius-small);
+      transition: none;
+    }
+
+    @include interaction.hover {
+      // color: var(--color-text-brand-base);
+
+      .corner-frame {
+        height: 100%;
+        opacity: 1;
+
+        & > div {
+          width: 100%;
+        }
+      }
+    }
+
+    &.active {
+      color: var(--color-text-brand-base);
+
+      &::before {
+        transition:
+          width,
+          height,
+          opacity,
+          450ms cubic-bezier(0.17, 0.67, 0.41, 0.91);
+        width: 100%;
+        height: 100%;
+        opacity: 0%;
+      }
+
+      .corner-frame {
+        @include cornerframe.active;
+      }
+    }
+
+    .corner-frame {
+      @include cornerframe.default;
+    }
+  }
+
+  @media (max-width: $smallscreen-breakpoint) {
+    width: $baseWidth;
+  }
+}

@@ -1,10 +1,11 @@
 "use client"
-import Container from "@components/container/container";
+
+import Container from "@/components/container/container";
 import styles from "./intro.module.scss";
-import VideoWrapper from "./_components/video-wrapper";
+import VideoWrapper from "@/components/intro/video-wrapper";
 import { useDictionary } from "@/i18n/Context";
-import { TextBase } from "@/app/[locale]/_components/text/text";
-import { Button } from "@/app/[locale]/_components/button/button";
+import { TextBase } from "@/components/text/text";
+import { Button } from "@/components/button/button";
 import { ArrowDownIcon } from "lucide-react";
 
 export default function Intro() {

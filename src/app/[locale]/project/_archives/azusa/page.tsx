@@ -1,14 +1,14 @@
 "use client"
 
 import { useDictionary } from "@/i18n/Context";
-import Template from "../_components/template/template"
-import { PROJECT_DESCRIPTOR_AZUSA } from "../_lib/descriptors";
-import { Blog } from "../../_components/blog/blog";
-import { Gallery } from "../../_components/gallery/gallery";
-import { List } from "../../_components/list/list";
-import { Text } from "../../_components/text/text";
-import { imPath } from "../_lib/helper";
-import TradeOffHeader from "../_components/tradeoff-header/tradeoff-header";
+import Template from "@/components/project/template/template"
+import { PROJECT_DESCRIPTOR_AZUSA } from "@/lib/project-descriptors";
+import { Blog } from "@/components/blog/blog";
+import { Gallery } from "@/components/gallery/gallery";
+import { imPath } from "@/lib/utils";
+import { List } from "@/components/list/list";
+import { Text } from "@/components/text/text";
+import TradeOffHeader from "@/components/project/tradeoff-header/tradeoff-header";
 
 export default function Azusa() {
 

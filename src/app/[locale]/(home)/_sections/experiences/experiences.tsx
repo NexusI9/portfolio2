@@ -1,8 +1,8 @@
-import Container from "@/app/[locale]/_components/container/container";
-import { TextBase } from "@/app/[locale]/_components/text/text";
+import Container from "@/components/container/container";
+import { TextBase } from "@/components/text/text";
 import { useDictionary } from "@/i18n/Context";
 import ExperienceItem, { Experience } from "./experience-item";
-import { Button } from "@/app/[locale]/_components/button/button";
+import { Button } from "@/components/button/button";
 import { DownloadIcon } from "lucide-react";
 
 export default function Experiences() {

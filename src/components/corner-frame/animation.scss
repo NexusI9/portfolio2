@@ -1,0 +1,34 @@
+@use "@/styles/var";
+@use "@/styles/animation";
+
+@mixin default {
+  transition: opacity, height, var(--transition-base);
+  pointer-events: none;
+  height: 0%;
+  width: 100%;
+  opacity: 0;
+  padding: var(--size-space-small);
+  position: absolute;
+
+  & > div {
+    width: 0%;
+    transition: width var(--transition-long);
+    transition-delay: 0.25s;
+  }
+}
+
+@mixin active {
+  height: 100%;
+  opacity: 1;
+  // TODO: anim border
+  .corner {
+    &[data-side="TOP_LEFT"] {
+      border-top-width: var(--size-width-border-large);
+      border-left-width: var(--size-width-border-large);
+    }
+  }
+
+  & > div {
+    width: 100%;
+  }
+}

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Big_Shoulders, Raleway } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google'
-import "./_styles/globals.scss";
-import Header from "@components/header/header";
-import Footer from "./_components/footer/footer";
-import { NavigationProvider } from "./_context/navigation/navigation";
+import "@/styles/globals.scss";
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
+import { NavigationProvider } from "@/contexts/navigation/navigation";
 import { DEFAULT_LOCALE, isRtl, Locale, locales, } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { DictionaryProvider } from "@/i18n/Context";

@@ -1,8 +1,8 @@
 "use client"
-import Container from "@components/container/container";
+import Container from "@/components/container/container";
 import styles from "./quotes.module.scss"
-import { TextBase } from "@components/text/text";
-import QuoteCard from "./_components/quote-card";
+import { TextBase } from "@/components/text/text";
+import QuoteCard from "@/components/quote-card/quote-card";
 import { useDictionary } from "@/i18n/Context";
 import { mapQuoteFromDico } from "./helper";
 

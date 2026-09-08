@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Text, TextBase } from "@/app/[locale]/_components/text/text";
+import { Text } from "@/components/text/text";
 
 export interface ExperienceRole {
 	position: string;

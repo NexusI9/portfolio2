@@ -1,0 +1,29 @@
+@use "@/styles/utils" as utils;
+@use "@/styles/responsive" as responsive;
+
+.video {
+  height: auto;
+
+  min-width: 300px;
+  max-width: calc(100vw * 2 / 3);
+  height: calc(100% / 1.5);
+
+  video {
+    height: 100%;
+    width: 100%;
+  }
+
+  @include responsive.small-screen {
+    max-width: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  @include responsive.tablet {
+    max-width: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+}
