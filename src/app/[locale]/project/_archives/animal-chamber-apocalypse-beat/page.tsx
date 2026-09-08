@@ -209,7 +209,7 @@ export default function AnimalChamberApocalypseBeat() {
 		</Blog.Section>
 
 
-		<Blog.TradeOffs headline={p.tradeoffs.anchor} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.TradeOffs headline={p.tradeoffs.anchor} items={p.tradeoffs.body.map((t: any) => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
 		<Blog.Outcome headline={p.outcomes.anchor} items={p.outcomes.body} />
 
 

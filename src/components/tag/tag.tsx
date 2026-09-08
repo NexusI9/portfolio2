@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef } from "react";
-import { IComponentRole } from "../../_types/component";
+import { IComponentRole } from "@/types/component";
 import styles from "./tag.module.scss";
 import clsx from "clsx";
 

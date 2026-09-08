@@ -1,5 +1,5 @@
-import { IProjectCategoriesAnchors } from "../_types/project";
-import { Dictionary } from "../../../i18n/Context";
+import { IProjectCategoriesAnchors } from "@/types/project";
+import { Dictionary } from "@/i18n/Context";
 
 export const PROJECT_CATEGORY_ID_DIGITAL_PRODUCT = "digital-product";
 export const PROJECT_CATEGORY_ID_GAME_DEVELOPMENT = "game-development";

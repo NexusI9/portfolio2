@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 import styles from "./sidebar.module.scss";
 import Image from "next/image";
-import { THUMBNAIL_HEIGHT, THUMBNAIL_WIDTH } from "@/app/[locale]/_lib/constants";
+import { THUMBNAIL_HEIGHT, THUMBNAIL_WIDTH } from "@/lib/constants";
 
 type PreviewProps = {
 	src: string | null;

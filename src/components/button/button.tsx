@@ -1,5 +1,5 @@
 "use client"
-import { IComponentRole, IComponentSize, IComponentStyle, IComponentTheme } from "@/app/[locale]/_types/component";
+import { IComponentRole, IComponentSize, IComponentStyle, IComponentTheme } from "@/types/component";
 import styles from "./button.module.scss"
 import { BaseSyntheticEvent } from "react";
 import Link from "next/link";

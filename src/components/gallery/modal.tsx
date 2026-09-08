@@ -1,13 +1,13 @@
 "use client"
 
 import NextImage from "next/image";
-import { TouchEvent, useState, ComponentPropsWithoutRef } from "react";
+import { TouchEvent, useState } from "react";
 import { createPortal } from "react-dom";
-import GalleryImage from "./image";
+import { IRegisterableImage } from "./image";
 import styles from "./gallery.module.scss";
 
 interface IModal {
-	images: ComponentPropsWithoutRef<typeof GalleryImage>[];
+	images: IRegisterableImage[];
 	activeId: string;
 	onClose: () => void;
 	onSelect: (id: string) => void;

@@ -1,8 +1,8 @@
 "use client"
 
 import { useDictionary } from "@/i18n/Context";
-import Tag from "../tag/tag";
-import { Text } from "../text/text";
+import Tag from "@/components/tag/tag";
+import { Text } from "@/components/text/text";
 import styles from "./status.module.scss";
 import { CheckIcon, RefreshCwIcon } from "lucide-react";
 

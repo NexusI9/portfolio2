@@ -1,6 +1,6 @@
 "use client"
 
-import { IComponentSize } from "@/app/[locale]/_types/component";
+import { IComponentSize } from "@/types/component";
 import styles from "./label.module.scss"
 import { Text } from "../text/text";
 import clsx from "clsx";

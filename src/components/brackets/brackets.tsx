@@ -2,7 +2,7 @@
 import { ComponentPropsWithoutRef } from "react";
 import styles from "./brackets.module.scss";
 import clsx from "clsx";
-import { IComponentTheme } from "../../_types/component";
+import { IComponentTheme } from "@/types/component";
 
 interface IBrackets extends ComponentPropsWithoutRef<"span"> {
 	theme?: IComponentTheme;

@@ -1,10 +1,10 @@
 "use client";
 
 import styles from "./navbar.module.scss";
-import { Text } from "@components/text/text";
+import { Text } from "@/components/text/text";
 import CornerFrame from "../corner-frame/corner-frame";
-import { IProjectCategoriesAnchors } from "@/app/[locale]/_types/project";
-import { useNavigation } from "@/app/[locale]/_context/navigation/navigation";
+import { IProjectCategoriesAnchors } from "@/types/project";
+import { useNavigation } from "@/contexts/navigation/navigation";
 
 interface INavBar {
 	options: Array<IProjectCategoriesAnchors>;

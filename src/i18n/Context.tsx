@@ -1,14 +1,14 @@
 "use client";
 
-import common from "@locales/en/common.json";
-import projectCommon from "@locales/en/projects/common.json";
-import home from "@locales/en/home.json";
-import animal from "@locales/en/projects/animal.json";
-import azusa from "@locales/en/projects/azusa.json";
-import usability from "@locales/en/projects/usability.json";
-import pulse from "@locales/en/projects/pulse.json";
-import workflow from "@locales/en/projects/workflow.json";
-import webgpu from "@locales/en/projects/webgpu.json";
+import common from "../../locales/en/common.json";
+import projectCommon from "../../locales/en/projects/common.json";
+import home from "../../locales/en/home.json";
+import animal from "../../locales/en/projects/animal.json";
+import azusa from "../../locales/en/projects/azusa.json";
+import usability from "../../locales/en/projects/usability.json";
+import pulse from "../../locales/en/projects/pulse.json";
+import workflow from "../../locales/en/projects/workflow.json";
+import webgpu from "../../locales/en/projects/webgpu.json";
 
 import { createContext, useContext, ReactNode } from "react";
 

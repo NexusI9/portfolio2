@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { FloatingPreview } from "./floating-preview";
-import { Button } from "@components/button/button";
-import { IProjectDescriptor } from "@/app/[locale]/_types/project";
+import { Button } from "@/components/button/button";
+import { IProjectDescriptor } from "@/types/project";
 import { useParams } from "next/navigation";
-import { projectPath } from "../../_lib/helper";
+import { projectPath } from "@/lib/utils";
 import { DEFAULT_LOCALE } from "@/i18n/config";
 
 interface IPreview {

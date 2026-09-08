@@ -1,7 +1,7 @@
 "use client"
 
 import { ReactNode } from "react";
-import { Button } from "@components/button/button";
+import { Button } from "@/components/button/button";
 import { useSlider } from "./context";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 

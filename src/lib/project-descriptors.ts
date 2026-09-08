@@ -1,5 +1,5 @@
 import { Dictionary } from "@/i18n/Context";
-import { IProjectDescriptor, TProjectDesciptorFn } from "../../_types/project";
+import { IProjectDescriptor, TProjectDesciptorFn } from "@/types/project";
 
 export const PROJECT_DESCRIPTOR_STYLE_STUDIO: TProjectDesciptorFn = (dico: Dictionary) => ({
 	name: dico.projects.workflow.name,

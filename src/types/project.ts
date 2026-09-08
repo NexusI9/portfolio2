@@ -1,9 +1,9 @@
 import { ComponentPropsWithoutRef } from "react";
-import Status from "../_components/status/status";
-import Sidebar from "../project/_components/sidebar/sidebar";
-import Stack from "../project/_components/banner/_components/stack";
+import Status from "@/components/status/status";
+import Sidebar from "@/components/project/sidebar/sidebar";
+import Stack from "@/components/project/banner/_components/stack";
 import { Dictionary } from "@/i18n/Context";
-import { IBannerVisual } from "../project/_components/banner/banner";
+import { IBannerVisual } from "@/components/project/banner/banner";
 
 export interface IProjectCategoriesAnchors {
 	label: string;

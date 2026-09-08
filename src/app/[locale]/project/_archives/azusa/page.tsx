@@ -48,7 +48,7 @@ export default function Azusa() {
 								<Blog.Headline role="H5">{p.exploration.creative_research.early_concepts.anchor}</Blog.Headline>
 								<Blog.Paragraph>{p.exploration.creative_research.early_concepts.body}</Blog.Paragraph>
 								<List.Root>
-									{p.exploration.creative_research.early_concepts.list.map(it => <List.Item key={it}><Text.Body>{it}</Text.Body></List.Item>)}
+									{p.exploration.creative_research.early_concepts.list.map((it: any) => <List.Item key={it}><Text.Body>{it}</Text.Body></List.Item>)}
 								</List.Root>
 							</Blog.Group>
 
@@ -270,7 +270,7 @@ export default function Azusa() {
 
 		</Blog.Section>
 
-		<Blog.TradeOffs headline={p.tradeoffs.anchor} items={p.tradeoffs.body.map(t => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
+		<Blog.TradeOffs headline={p.tradeoffs.anchor} items={p.tradeoffs.body.map((t: any) => ({ ...t, heading: <TradeOffHeader items={t.heading} /> }))} />
 		<Blog.Outcome headline={p.outcomes.anchor} items={p.outcomes.body} />
 
 	</Template>);

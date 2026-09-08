@@ -1,15 +1,15 @@
 "use client"
 
-import { ReactNode, useMemo, ComponentPropsWithoutRef, useState } from "react";
-import GalleryImage from "./image";
+import { ReactNode, useMemo, useState } from "react";
+import { IRegisterableImage } from "./image";
 import GalleryContext from "./context";
 import Modal from "./modal";
 
 export default function Wrapper({ children }: { children: ReactNode }) {
-	const [images, setImages] = useState<ComponentPropsWithoutRef<typeof GalleryImage>[]>([]);
+	const [images, setImages] = useState<IRegisterableImage[]>([]);
 	const [activeId, setActiveId] = useState<string | null>(null);
 
-	const registerImage = (img: ComponentPropsWithoutRef<typeof GalleryImage>) => {
+	const registerImage = (img: IRegisterableImage) => {
 		setImages(prev => {
 			if (prev.find(i => i.id === img.id)) return prev;
 			return [...prev, img];
