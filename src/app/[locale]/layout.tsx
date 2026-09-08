@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Big_Shoulders, Instrument_Serif, Michroma, Raleway, Smooch_Sans, Syncopate } from "next/font/google";
+import { Big_Shoulders, Raleway } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./_styles/globals.scss";
 import Header from "@components/header/header";
 import Footer from "./_components/footer/footer";
@@ -8,6 +9,7 @@ import { DEFAULT_LOCALE, isRtl, Locale, locales, } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { DictionaryProvider } from "@/i18n/Context";
 import localFont from "next/font/local";
+import Script from "next/script";
 
 const fontBody = Raleway({
 	variable: "--font-body",
@@ -71,6 +73,25 @@ export default async function RootLayout({
 						<Footer />
 					</NavigationProvider>
 				</DictionaryProvider>
+
+
+				<GoogleAnalytics gaId={'G-6BRRN05LJJ'} />
+				<Script
+					id="hotjar"
+					strategy="afterInteractive"
+				>
+					{`
+                                          //hotjar
+                                          (function(h,o,t,j,a,r){
+                                              h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                                              h._hjSettings={hjid:3433824,hjsv:6};
+                                              a=o.getElementsByTagName('head')[0];
+                                              r=o.createElement('script');r.async=1;
+                                              r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                                              a.appendChild(r);
+                                          })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+                                        `}
+				</Script>
 			</body>
 		</html>
 	);

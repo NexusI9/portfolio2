@@ -216,12 +216,12 @@ export default function EmotionalMapper() {
 		/>
 
 
-		<Blog.Layout
+		{/* TODO <Blog.Layout
 			variant="TEXT_LEFT_GALLERY_RIGHT"
 			headline={p.resolution.balance.headline}
 			body={p.resolution.balance.body}
 			visual={emptyVisual}
-		/>
+			/>*/}
 
 
 		{/* --- Results --- */}
