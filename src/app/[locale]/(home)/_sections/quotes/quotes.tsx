@@ -9,11 +9,11 @@ import { mapQuoteFromDico } from "./helper";
 export default function Quotes() {
 	const dico = useDictionary();
 	const QUOTES_THUMBNAIL: Array<string> = [
-		"/assets/avatars/louhann.png",
-		"/assets/avatars/pa.png",
-		"/assets/avatars/matteo.png",
-		"/assets/avatars/alex.png",
-		"/assets/avatars/nader.png"
+		"/assets/avatars/louhann.webp",
+		"/assets/avatars/pa.webp",
+		"/assets/avatars/matteo.webp",
+		"/assets/avatars/alex.webp",
+		"/assets/avatars/nader.webp"
 	];
 
 	const renderQuotes = (keyPrefix: string) =>

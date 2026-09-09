@@ -19,7 +19,7 @@
   i {
     &.display {
       font-feature-settings: "trad";
-      font-family: var(--font-display-zh);
+      font-family: var(--font-heading);
       font-style: normal;
       font-size: 5.56rem;
       letter-spacing: -1.2rem;
@@ -65,7 +65,7 @@ h5,
 h6,
 p {
   &.display {
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
     font-size: 8rem;
     letter-spacing: -0.02em;
     line-height: 1.2em;

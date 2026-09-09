@@ -33,7 +33,7 @@ export const mapProjectFromDescriptor: (desc: IProjectDescriptor, locale: string
 
 export const projectPath = (name: string, locale: string) => `/${locale}/project/${name}`;
 
-export const imPath = (projectName: string, image: string) => `/assets/projects/${projectName}/${image}.png`;
+export const imPath = (projectName: string, image: string) => `/assets/projects/${projectName}/${image}.webp`;
 
 
 export const mapFromDescriptor: (desc: IProjectDescriptor, dico: Dictionary) =>

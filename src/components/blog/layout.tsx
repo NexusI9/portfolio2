@@ -97,7 +97,7 @@ export default function Layout({ variant, anchor, headline, body, visual, extra,
 		variant === "TEXT_ONLY" ? (
 			text
 		) : (
-			<Group direction={isRow ? "ROW" : "COLUMN"}>
+		 <Group direction={isRow ? "ROW" : "COLUMN"} swapLayoutMobile={visualFirst && isRow}>
 				{visualFirst ? (
 					<>
 						{visualNode}

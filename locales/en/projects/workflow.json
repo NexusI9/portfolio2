@@ -68,7 +68,7 @@
 		}
 	},
 	"solution": {
-		"anchor": "Solution",
+		"anchor": "Approach",
 		"split": {
 			"headline": "I split the fix into three plugins, one per workflow",
 			"body": [

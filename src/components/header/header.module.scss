@@ -45,6 +45,7 @@
     .mobile-menu-bars span {
       background-color: var(--color-icon-on-dark);
     }
+    color: var(--color-text-on-dark);
   }
 
   hr {
@@ -108,7 +109,7 @@
 
     background: var(--color-surface-highest);
 
-    padding: var(--size-space-extra-large-6) var(--size-margin-container)
+    padding: var(--size-space-extra-large-6) var(--size-margin-mobile)
       var(--size-space-extra-large-2);
 
     display: flex;

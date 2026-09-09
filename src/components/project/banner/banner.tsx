@@ -43,10 +43,10 @@ export default function Banner({ overline, headline, subtitle, roles, status, co
 			<Container className={styles.banner}>
 
 				<picture className={styles.background}>
-					<source media="(min-width: 1440px)" srcSet="/assets/project-banner-bg@1440w.png" />
-					<source media="(max-width: 1024px)" srcSet="/assets/project-banner-bg@1024w.png" />
-					<source media="(max-width: 360px)" srcSet="/assets/project-banner-bg@360w.png" />
-					<img src="/assets/project-banner-bg@1440w.png" alt="Abstract dark background with purple lines" />
+					<source media="(min-width: 1440px)" srcSet="/assets/project-banner-bg@1440w.webp" />
+					<source media="(max-width: 1024px)" srcSet="/assets/project-banner-bg@1024w.webp" />
+					<source media="(max-width: 360px)" srcSet="/assets/project-banner-bg@360w.webp" />
+					<img src="/assets/project-banner-bg@1440w.webp" alt="Abstract dark background with purple lines" />
 				</picture>
 
 				<div className={styles.content}>

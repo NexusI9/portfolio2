@@ -1,4 +1,4 @@
-@use "@/styles/var";
+@use "@/styles/responsive" as responsive;
 
 .quotes {
   display: flex;
@@ -29,6 +29,10 @@
   width: 12rem; // adjust fade width as needed
   z-index: 2;
   pointer-events: none;
+
+  @include responsive.tablet {
+    width: 2rem;
+  }
 }
 
 .quotes-fade-left {

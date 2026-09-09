@@ -2,7 +2,6 @@
 
 import { PROJECT_CATEGORIES_ANCHORS } from "@/lib/constants";
 import { ComponentPropsWithoutRef } from "react";
-import ProjectCategory from "./project-category";
 import {
 	PROJECT_DESCRIPTOR_ANIMAL,
 	PROJECT_DESCRIPTOR_AZUSA,
@@ -16,34 +15,20 @@ import { useParams } from "next/navigation";
 import { TextBase } from "@/components/text/text";
 import { mapProjectFromDescriptor } from "@/lib/utils";
 import Container from "@/components/container/container";
+import ProjectCard from "@/components/project-card/project-card";
+import styles from "./projects.module.scss";
 
-export default function ProjectCategoryWrapper() {
+export default function Projects() {
 
 	const dico = useDictionary();
 	const params = useParams();
 	const { locale } = params;
 
-	const PROJECT_SECTIONS: Array<ComponentPropsWithoutRef<typeof ProjectCategory>> = [
-		{
-			id: PROJECT_CATEGORIES_ANCHORS(dico)[0].anchor,
-			projects: [
-				mapProjectFromDescriptor(PROJECT_DESCRIPTOR_STYLE_STUDIO(dico), locale as string),
-				mapProjectFromDescriptor(PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER(dico), locale as string),
-			],
-		},
-		{
-			id: PROJECT_CATEGORIES_ANCHORS(dico)[1].anchor,
-			projects: [
-				mapProjectFromDescriptor(PROJECT_DESCRIPTOR_USABILITY(dico), locale as string),
-				mapProjectFromDescriptor(PROJECT_DESCRIPTOR_WEBGPU(dico), locale as string),
-			]
-		},
-		/*{
-			id: PROJECT_CATEGORIES_ANCHORS(dico)[2].anchor,
-			projects: [
-				mapProjectFromDescriptor(PROJECT_DESCRIPTOR_ANIMAL(dico), locale as string),
-			]
-		}*/
+	const PROJECT_SECTIONS: Array<ComponentPropsWithoutRef<typeof ProjectCard>> = [
+		mapProjectFromDescriptor(PROJECT_DESCRIPTOR_STYLE_STUDIO(dico), locale as string),
+		mapProjectFromDescriptor(PROJECT_DESCRIPTOR_EMOTIONAL_MAPPER(dico), locale as string),
+		mapProjectFromDescriptor(PROJECT_DESCRIPTOR_USABILITY(dico), locale as string),
+		mapProjectFromDescriptor(PROJECT_DESCRIPTOR_WEBGPU(dico), locale as string),
 	];
 
 	return (
@@ -51,7 +36,10 @@ export default function ProjectCategoryWrapper() {
 			<TextBase role="H2" style="H2" id="work" className="text-center relative mb-(--size-space-extra-large-3) pt-(--size-space-extra-large-6)">
 				{dico.home.headlines.work}
 			</TextBase>
-			{PROJECT_SECTIONS.map(project => <ProjectCategory key={project.id} {...project} />)}
+
+			<div className={styles["projects"]}>
+				{PROJECT_SECTIONS.map((props) => <ProjectCard key={props.thumbnail.src} {...props} />)}
+			</div>
 		</Container>);
 
 }

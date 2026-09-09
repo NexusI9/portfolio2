@@ -4,15 +4,11 @@
 :root {
   --project-banner-height: 560px;
 
+  @media (max-width: 1400px) {
+    --project-banner-height: 600px;
+  }
+
   @include responsive.small-screen {
-    --project-banner-height: 0px;
-  }
-
-  @include responsive.tablet {
-    --project-banner-height: 0px;
-  }
-
-  @include responsive.mobile {
     --project-banner-height: 0px;
   }
 }
@@ -68,20 +64,16 @@
   }
 
   @mixin relative-mode() {
+    gap: 0;
     position: relative;
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: var(--size-space-extra-large-4);
     padding-bottom: var(--size-space-extra-large-5);
   }
 
   @include responsive.small-screen {
-    @include relative-mode();
-  }
-
-  @include responsive.tablet {
     @include relative-mode();
   }
 
@@ -137,6 +129,10 @@
     --offset: 136px;
     transform: translate3d(0px, var(--offset), 0px);
     position: relative;
+
+    @include responsive.small-screen {
+      --offset: 240px;
+    }
   }
 
   align-self: end;

@@ -1,7 +1,13 @@
+@use "@/styles/responsive" as responsive;
+
 .container {
   display: flex;
   flex-direction: row;
   gap: var(--size-space-medium);
+
+  @include responsive.small-screen {
+    flex-direction: column;
+  }
 }
 
 .item {

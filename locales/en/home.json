@@ -43,7 +43,7 @@
 	],
 	"experiences": [
 		{
-			"logoSrc": "/assets/experiences/akacia.png",
+			"logoSrc": "/assets/experiences/akacia.webp",
 			"logoAlt": "Akacia Co. Ltd. logo",
 			"company": "Akacia",
 			"roles": [
@@ -58,7 +58,7 @@
 			]
 		},
 		{
-			"logoSrc": "/assets/experiences/redbox.png",
+			"logoSrc": "/assets/experiences/redbox.webp",
 			"logoAlt": "Redbox Media logo",
 			"company": "Redbox Media",
 			"roles": [
@@ -81,7 +81,7 @@
 			]
 		},
 		{
-			"logoSrc": "/assets/experiences/nek.png",
+			"logoSrc": "/assets/experiences/nek.webp",
 			"logoAlt": "Nassim El Khantour logo",
 			"company": "Freelance",
 			"roles": [

@@ -2,7 +2,7 @@
 
 import Intro from "./_sections/intro/intro";
 import Quotes from "./_sections/quotes/quotes";
-import ProjectCategoryWrapper from "./_sections/project-category/project-category-wrapper";
+import Projects from "./_sections/projects/projects";
 import Experiences from "./_sections/experiences/experiences";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
 		<>
 
 			<Intro />
-			<ProjectCategoryWrapper />
+			<Projects />
 			<Experiences />
 			<Quotes />
 		</>

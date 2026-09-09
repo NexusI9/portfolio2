@@ -11,13 +11,15 @@
     flex-basis: 100%;
   }
 
+  @include responsive.small-screen {
+    flex-direction: column;
+  }
+
   @include responsive.tablet {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
   }
 
   @include responsive.mobile {
-    display: flex;
     flex-direction: column;
   }
 }

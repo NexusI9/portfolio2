@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Big_Shoulders, Raleway } from "next/font/google";
+import { Raleway } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import "@/styles/globals.scss";
 import Header from "@/components/header/header";
@@ -8,7 +8,6 @@ import { NavigationProvider } from "@/contexts/navigation/navigation";
 import { DEFAULT_LOCALE, isRtl, Locale, locales, } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { DictionaryProvider } from "@/i18n/Context";
-import localFont from "next/font/local";
 import Script from "next/script";
 
 const fontBody = Raleway({
@@ -20,18 +19,6 @@ const fontHeading = Raleway({
 	variable: "--font-heading",
 	subsets: ["latin"],
 });
-
-const fontDisplay = Big_Shoulders({
-	weight: '400',
-	variable: "--font-display",
-	subsets: ["latin"],
-});
-
-const fontDisplayZh = localFont({
-	src: "../../../public/assets/fonts/chuhuo.woff2",
-	variable: "--font-display-zh",
-});
-
 
 export const metadata: Metadata = {
 	title: "Nassim El Khantour - UX Engineer",
@@ -65,7 +52,7 @@ export default async function RootLayout({
 
 	return (
 		<html lang={locale} dir={dir} data-scroll-behavior="smooth">
-			<body className={`${fontBody.variable} ${fontHeading.variable} ${fontDisplay.variable} ${fontDisplayZh.variable}`}>
+			<body className={`${fontBody.variable} ${fontHeading.variable}`}>
 				<DictionaryProvider dictionary={dico}>
 					<NavigationProvider>
 						<Header />
@@ -76,21 +63,17 @@ export default async function RootLayout({
 
 
 				<GoogleAnalytics gaId={'G-6BRRN05LJJ'} />
-				<Script
-					id="hotjar"
-					strategy="afterInteractive"
-				>
+				<Script>
 					{`
-                                          //hotjar
-                                          (function(h,o,t,j,a,r){
-                                              h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                                              h._hjSettings={hjid:3433824,hjsv:6};
-                                              a=o.getElementsByTagName('head')[0];
-                                              r=o.createElement('script');r.async=1;
-                                              r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                                              a.appendChild(r);
-                                          })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-                                        `}
+                                           (function(h,o,t,j,a,r){
+                                               h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                                               h._hjSettings={hjid:3433824,hjsv:6};
+                                               a=o.getElementsByTagName('head')[0];
+                                               r=o.createElement('script');r.async=1;
+                                               r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                                               a.appendChild(r);
+                                           })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+                                       `}
 				</Script>
 			</body>
 		</html>

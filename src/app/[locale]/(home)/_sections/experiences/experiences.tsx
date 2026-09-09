@@ -12,8 +12,8 @@ export default function Experiences() {
 	const experiences: Experience[] = dico.home.experiences;
 
 	return (
-		<Container className="py-(--size-space-extra-large-7)">
-			<div className="mx-auto flex flex-col gap-(--size-space-large) md:flex-row md:gap-(--size-space-extra-large-7)">
+	 <Container className="py-(--size-space-extra-large) md:py-(--size-space-extra-large-7)">
+	  <div className="mx-auto flex flex-col gap-(--size-space-extra-large-5) md:flex-row md:gap-(--size-space-extra-large-7)">
 				{/* Left: headline */}
 				<div className="md:w-1/3 md:shrink-0">
 					<div className="md:top-24 flex flex-col gap-(--size-space-extra-large-3)">

@@ -22,7 +22,7 @@ $extra-large-screen: 2560px;
 }
 
 @mixin small-screen {
-  @media (min-width: #{$tablet + 1}) and (max-width: #{$small-screen}) {
+  @media (max-width: #{$small-screen}) {
     @content;
   }
 }

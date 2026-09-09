@@ -19,6 +19,8 @@
   flex-shrink: 0;
 
   @include responsive.tablet {
+    display: none;
+    /*
     --position: fixed;
 
     background: var(--color-surface-highest);
@@ -53,6 +55,7 @@
       pointer-events: auto;
       opacity: 1;
     }
+      */
   }
 }
 

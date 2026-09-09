@@ -3,9 +3,7 @@ import { useState } from "react";
 import LocaleSelector from "../locale-selector";
 import styles from "../header.module.scss";
 import { useDictionary } from "@/i18n/Context";
-import { useParams } from "next/navigation";
 import { Button } from "@/components/button/button";
-import { PROJECT_CATEGORIES_ANCHORS } from "@/lib/constants";
 import { Text } from "@/components/text/text";
 import { CONTACT_INFO } from "../constants";
 
@@ -19,8 +17,6 @@ export default function MobileHeader() {
 
 	const [open, setOpen] = useState(false)
 	const dico = useDictionary();
-	const params = useParams();
-	const { locale } = params;
 	const scrolled = useScrolled(24);
 	const isProjectPage = useIsProjectPage();
 	const theme: IComponentTheme = isProjectPage && !scrolled && !open ? "DARK" : "LIGHT";
@@ -61,22 +57,6 @@ export default function MobileHeader() {
 			<nav className={styles["mobile-menu-panel"]}>
 
 				<div className={styles["mobile-menu-section"]}>
-					<Text.Overline className={styles["mobile-menu-overline"]}>{dico.common.header.mobile["project-categories"]}</Text.Overline>
-					{PROJECT_CATEGORIES_ANCHORS(dico).map(({ label, anchor }) =>
-						<Button
-							key={`anchor${label}${anchor}`}
-							size="LARGE"
-							role="PRIMARY"
-							style="GHOST"
-							href={`/${locale}#${anchor}`}
-							onClick={() => setOpen(false)}>
-							{label}
-						</Button>)}
-
-				</div>
-				<hr />
-				<div className={styles["mobile-menu-section"]}>
-					<Text.Overline className={styles["mobile-menu-overline"]}>{dico.common.header.mobile.resources}</Text.Overline>
 					<Button
 						size="LARGE"
 						role="PRIMARY"

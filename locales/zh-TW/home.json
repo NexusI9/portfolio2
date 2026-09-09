@@ -43,7 +43,7 @@
 	],
 	"experiences": [
 		{
-			"logoSrc": "/assets/experiences/akacia.png",
+			"logoSrc": "/assets/experiences/akacia.webp",
 			"logoAlt": "Akacia Co. Ltd. 標誌",
 			"company": "Akacia",
 			"roles": [
@@ -58,7 +58,7 @@
 			]
 		},
 		{
-			"logoSrc": "/assets/experiences/redbox.png",
+			"logoSrc": "/assets/experiences/redbox.webp",
 			"logoAlt": "Redbox Media 標誌",
 			"company": "Redbox Media",
 			"roles": [
@@ -81,7 +81,7 @@
 			]
 		},
 		{
-			"logoSrc": "/assets/experiences/nek.png",
+			"logoSrc": "/assets/experiences/nek.webp",
 			"logoAlt": "Nassim El Khantour 標誌",
 			"company": "自由接案",
 			"roles": [

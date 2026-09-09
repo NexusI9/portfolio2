@@ -21,26 +21,20 @@
 
   &[data-direction="ROW"] {
     flex-direction: row;
-    flex-wrap: wrap;
 
     @include responsive.tablet {
       flex-direction: column;
+
+      &[data-swap-mobile="true"] {
+        flex-direction: column-reverse;
+      }
     }
 
     @include responsive.mobile {
       flex-direction: column;
-    }
 
-    & > * {
-      flex: 1;
-      min-width: 350px;
-
-      @include responsive.tablet {
-        min-width: 0;
-      }
-
-      @include responsive.mobile {
-        min-width: 0;
+      &[data-swap-mobile="true"] {
+        flex-direction: column-reverse;
       }
     }
   }

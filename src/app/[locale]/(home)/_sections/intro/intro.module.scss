@@ -39,6 +39,7 @@
     flex-shrink: 0;
     flex-direction: column;
     gap: var(--size-space-extra-large-4);
+    width: 100%;
 
     @media (max-width: #{$wrap-breakpoint}) {
       gap: var(--size-space-extra-large-2);
@@ -57,6 +58,11 @@
 
       @media (max-width: #{$wrap-breakpoint}) {
         height: auto;
+        min-width: 0;
+      }
+
+      @include responsive.mobile {
+        font-size: var(--font-size-heading-4);
       }
     }
   }
